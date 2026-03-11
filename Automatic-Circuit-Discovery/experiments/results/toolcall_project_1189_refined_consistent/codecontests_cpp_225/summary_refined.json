@@ -1,0 +1,160 @@
+{
+  "sample_id": "codecontests_cpp_225",
+  "sample_rank": 525,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "MLP2",
+    "L2H15",
+    "L5H5",
+    "L9H3",
+    "L11H1",
+    "MLP12",
+    "MLP16",
+    "MLP17",
+    "L17H1",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP12",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP12"
+    ],
+    [
+      "MLP11",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "L21H12"
+    ]
+  ],
+  "k_local": 1,
+  "local_nodes": [
+    "MLP12"
+  ],
+  "refined_suff_ratio_vs_gap": 1.0,
+  "refined_necessity_ratio_vs_gap": 0.96875,
+  "orig_suff_ratio_vs_gap": 0.984375,
+  "orig_necessity_ratio_vs_gap": 0.953125,
+  "gap": 8.0,
+  "ap_mode": "full"
+}

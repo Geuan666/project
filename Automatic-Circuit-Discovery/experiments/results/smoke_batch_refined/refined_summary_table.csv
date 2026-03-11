@@ -1,0 +1,3 @@
+sample_id,sample_rank,q_index,gap,orig_suff_ratio,orig_nec_ratio,refined_suff_ratio,refined_nec_ratio,k_local,n_refined_nodes,n_orig_nodes
+codecontests_cpp_186,456,,7.75,0.967741935483871,0.9838709677419355,0.967741935483871,0.9838709677419355,0,16,16
+codecontests_cpp_284,621,,16.25,0.9538461538461539,0.9384615384615385,0.9923076923076923,1.0,0,16,16

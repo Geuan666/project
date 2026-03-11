@@ -1,0 +1,719 @@
+{
+  "sample_id": "codecontests_cpp_542",
+  "sample_rank": 1041,
+  "filename": "codecontests_cpp_542.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "clean_prompt": "/root/autodl-tmp/project/datasets/clean/codecontests_cpp_542.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/datasets/corrupt/codecontests_cpp_542.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 234,
+  "corrupt_prompt_token_length": 234,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 151657,
+  "target_token_str": "<tool_call>",
+  "distractor_token_id": 40,
+  "distractor_token_str": "I",
+  "ap_mode": "full",
+  "ct_mode": "ap_pruned_exact_ct",
+  "ct_candidate_ap_top_per_layer": 2,
+  "ct_candidate_ap_top_global": 24,
+  "ct_candidate_head_count": 61,
+  "clean_obj": 3.25,
+  "corrupt_obj": -2.75,
+  "gap": 6.0,
+  "detailed_obj": 3.0,
+  "detailed_ratio_vs_gap": 0.9583333333333334,
+  "rough_obj": 2.625,
+  "rough_ratio_vs_gap": 0.8958333333333334,
+  "clean_with_detailed_corrupted": -2.375,
+  "necessity_drop": 5.625,
+  "necessity_ratio_vs_gap": 0.9375,
+  "clean_with_rough_corrupted": -2.0,
+  "rough_necessity_drop": 5.25,
+  "rough_necessity_ratio_vs_gap": 0.875,
+  "probe_head": "L21H12",
+  "probe_corrupt_with_head": 0.375,
+  "probe_clean_with_head_corrupt": 1.625,
+  "detailed_nodes": [
+    "L0H7",
+    "MLP4",
+    "L5H13",
+    "MLP7",
+    "L13H13",
+    "L13H6",
+    "L17H2",
+    "MLP19",
+    "MLP20",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "L0H7"
+    ],
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "L0H7",
+      "MLP4"
+    ],
+    [
+      "MLP4",
+      "L5H13"
+    ],
+    [
+      "L0H7",
+      "L5H13"
+    ],
+    [
+      "L5H13",
+      "MLP7"
+    ],
+    [
+      "L0H7",
+      "MLP7"
+    ],
+    [
+      "MLP7",
+      "L13H13"
+    ],
+    [
+      "MLP4",
+      "L13H13"
+    ],
+    [
+      "MLP7",
+      "L13H6"
+    ],
+    [
+      "MLP4",
+      "L13H6"
+    ],
+    [
+      "MLP7",
+      "L17H2"
+    ],
+    [
+      "L13H6",
+      "L17H2"
+    ],
+    [
+      "L17H2",
+      "MLP19"
+    ],
+    [
+      "L13H6",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "MLP20"
+    ],
+    [
+      "L17H2",
+      "MLP20"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "L17H2",
+      "L20H5"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "MLP20",
+      "MLP21"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP20",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP20",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "MLP21",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L13H13",
+      "L21H12"
+    ],
+    [
+      "L20H5",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ]
+  ],
+  "rough_nodes": [
+    "L0H7",
+    "MLP7",
+    "MLP19",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "L0H7"
+    ],
+    [
+      "Input Embed",
+      "MLP7"
+    ],
+    [
+      "L0H7",
+      "MLP7"
+    ],
+    [
+      "MLP7",
+      "MLP19"
+    ],
+    [
+      "L0H7",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "MLP7",
+      "MLP21"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP7",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP7",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "MLP21",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H12",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Write",
+      "corrupt_token": "Develop"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225
+  ],
+  "sample_catalog_record": {
+    "sample_id": "codecontests_cpp_542",
+    "sample_rank": 1041,
+    "filename": "codecontests_cpp_542.txt",
+    "clean_path": "/root/autodl-tmp/project/datasets/clean/codecontests_cpp_542.txt",
+    "corrupt_path": "/root/autodl-tmp/project/datasets/corrupt/codecontests_cpp_542.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "write",
+    "clean_candidate_type": "verb",
+    "corrupt_candidate": "develop",
+    "corrupt_candidate_type": "verb",
+    "dataset_name": "codecontests",
+    "language": "cpp",
+    "global_row_id": 642,
+    "clean_prompt_token_length": 234,
+    "corrupt_prompt_token_length": 234,
+    "clean_manifest": {
+      "global_row_id": 642,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_cpp_542.txt",
+      "source_filename": "codecontests_cpp_542.txt",
+      "dataset_name": "codecontests",
+      "language": "cpp",
+      "sample_index": 542,
+      "template_kind": "solve.cpp",
+      "original_first_user_line": "Write the function body in solve.cpp based on the function definition and docstring below:",
+      "original_prompt_sha1": "b09d93ee7b71814f48b782d48983b49f722563c9",
+      "original_prompt_char_length": 1054,
+      "dataset": "codecontests",
+      "split_local_id": 542,
+      "original_source_id": "199_A. Hexadecimal's theorem",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00024-of-00039-f4e3da0e5661e6d1.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 8467,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_cpp_542.txt",
+      "assigned_candidate": "develop",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "develop",
+      "assigned_tool_call_prob": 0.022471200674772263,
+      "assigned_tool_call_rank": 3,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.8432255983352661,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.10070893168449402,
+      "assigned_top1_top2_prob_gap": 0.7425166666507721,
+      "assigned_rendered_first_user_line": "Develop the function body in solve.cpp based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "fccca72087117e7eba03b89da3ec861ab97b87a5",
+      "corrupt_candidate": "develop",
+      "corrupt_candidate_type": "verb",
+      "clean_candidate": "write",
+      "clean_candidate_type": "verb",
+      "clean_candidate_slug": "write",
+      "clean_rendered_first_user_line": "Write the function body in solve.cpp based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.9406986832618713,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 234,
+      "clean_prompt_token_length": 234,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.9406986832618713,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.041331417858600616,
+      "clean_top1_top2_prob_gap": 0.8993672654032707,
+      "clean_tool_call_prob": 0.9406986832618713,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true
+    },
+    "corrupt_manifest": {
+      "global_row_id": 642,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_cpp_542.txt",
+      "source_filename": "codecontests_cpp_542.txt",
+      "dataset_name": "codecontests",
+      "language": "cpp",
+      "sample_index": 542,
+      "template_kind": "solve.cpp",
+      "original_first_user_line": "Write the function body in solve.cpp based on the function definition and docstring below:",
+      "original_prompt_sha1": "b09d93ee7b71814f48b782d48983b49f722563c9",
+      "original_prompt_char_length": 1054,
+      "dataset": "codecontests",
+      "split_local_id": 542,
+      "original_source_id": "199_A. Hexadecimal's theorem",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00024-of-00039-f4e3da0e5661e6d1.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 8467,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_cpp_542.txt",
+      "assigned_candidate": "develop",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "develop",
+      "assigned_tool_call_prob": 0.022471200674772263,
+      "assigned_tool_call_rank": 3,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.8432255983352661,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.10070893168449402,
+      "assigned_top1_top2_prob_gap": 0.7425166666507721,
+      "assigned_rendered_first_user_line": "Develop the function body in solve.cpp based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "fccca72087117e7eba03b89da3ec861ab97b87a5"
+    }
+  },
+  "top_node_scores": [
+    {
+      "name": "L21H12",
+      "score": 3.299999952316284,
+      "ct": 2.625,
+      "ap": 4.125
+    },
+    {
+      "name": "MLP27",
+      "score": 2.5,
+      "ct": 2.5,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP19",
+      "score": 2.0,
+      "ct": 2.0,
+      "ap": 0.0
+    },
+    {
+      "name": "L21H1",
+      "score": 1.9765625,
+      "ct": 1.625,
+      "ap": 2.40625
+    },
+    {
+      "name": "MLP21",
+      "score": 1.875,
+      "ct": 1.875,
+      "ap": 0.0
+    },
+    {
+      "name": "L23H6",
+      "score": 1.6648437976837158,
+      "ct": 1.25,
+      "ap": 2.171875
+    },
+    {
+      "name": "MLP7",
+      "score": 1.625,
+      "ct": 1.625,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 1.571874976158142,
+      "ct": 1.375,
+      "ap": 1.8125
+    },
+    {
+      "name": "MLP20",
+      "score": 1.5,
+      "ct": 1.5,
+      "ap": 0.0
+    },
+    {
+      "name": "L17H2",
+      "score": 0.9964843988418579,
+      "ct": 1.0,
+      "ap": 0.9921875
+    },
+    {
+      "name": "L20H5",
+      "score": 0.966015636920929,
+      "ct": 0.625,
+      "ap": 1.3828125
+    },
+    {
+      "name": "L13H6",
+      "score": 0.7882812023162842,
+      "ct": 0.5,
+      "ap": 1.140625
+    },
+    {
+      "name": "L5H13",
+      "score": 0.5581543445587158,
+      "ct": 0.875,
+      "ap": 0.1708984375
+    },
+    {
+      "name": "L13H13",
+      "score": 0.4222656488418579,
+      "ct": 0.25,
+      "ap": 0.6328125
+    },
+    {
+      "name": "L0H7",
+      "score": 0.2764900326728821,
+      "ct": 0.5,
+      "ap": 0.0033111572265625
+    },
+    {
+      "name": "MLP4",
+      "score": 0.25,
+      "ct": 0.25,
+      "ap": 0.0
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_542/ap_head_heatmap.png",
+    "ct_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_542/ct_head_heatmap.png",
+    "probe": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_542/L21H12_probe.png",
+    "final_circuit_detailed": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_542/final_circuit_detailed.png",
+    "final_circuit": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_542/final_circuit.png"
+  }
+}

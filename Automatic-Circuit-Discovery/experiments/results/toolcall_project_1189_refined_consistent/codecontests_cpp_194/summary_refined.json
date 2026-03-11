@@ -1,0 +1,164 @@
+{
+  "sample_id": "codecontests_cpp_194",
+  "sample_rank": 470,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "L1H1",
+    "L5H15",
+    "MLP9",
+    "MLP11",
+    "L11H9",
+    "MLP12",
+    "L12H6",
+    "MLP13",
+    "L17H8",
+    "MLP19",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP12",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP12"
+    ],
+    [
+      "MLP11",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP11",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "MLP11",
+      "L17H8"
+    ],
+    [
+      "MLP12",
+      "MLP19"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "MLP12",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP12",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ]
+  ],
+  "k_local": 1,
+  "local_nodes": [
+    "MLP12"
+  ],
+  "refined_suff_ratio_vs_gap": 0.9436619718309859,
+  "refined_necessity_ratio_vs_gap": 0.9577464788732394,
+  "orig_suff_ratio_vs_gap": 0.971830985915493,
+  "orig_necessity_ratio_vs_gap": 1.028169014084507,
+  "gap": 8.875,
+  "ap_mode": "full"
+}

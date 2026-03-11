@@ -1,0 +1,500 @@
+{
+  "input_root": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch",
+  "n_samples": 2,
+  "total_weight": 1.8472811235830529,
+  "weight_params": {
+    "gap_min": 0.5,
+    "ap_discount": 0.7
+  },
+  "core_thresholds": {
+    "node": 0.5,
+    "edge": 0.35
+  },
+  "relaxed_thresholds": {
+    "node": 0.25,
+    "edge": 0.15
+  },
+  "core_nodes": [
+    "L1H5",
+    "L4H11",
+    "L11H1",
+    "MLP12",
+    "L13H9",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "MLP20",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "core_edges": [
+    [
+      "L11H1",
+      "MLP16"
+    ],
+    [
+      "L1H5",
+      "L11H1"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "MLP20"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "L13H9"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L13H9",
+      "MLP16"
+    ],
+    [
+      "Input Embed",
+      "L1H5"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "L18H14",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "MLP20"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L4H11",
+      "MLP12"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L11H1",
+      "L13H9"
+    ],
+    [
+      "L11H1",
+      "MLP12"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L1H5",
+      "L4H11"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP20",
+      "L21H1"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "MLP20",
+      "L21H12"
+    ],
+    [
+      "Input Embed",
+      "L4H11"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L4H11",
+      "L11H1"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ]
+  ],
+  "relaxed_nodes": [
+    "L0H11",
+    "L1H10",
+    "L1H5",
+    "L4H11",
+    "MLP5",
+    "L10H2",
+    "MLP11",
+    "L11H1",
+    "MLP12",
+    "L13H9",
+    "MLP16",
+    "MLP17",
+    "L17H12",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "MLP20",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "MLP22",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "relaxed_edges": [
+    [
+      "L11H1",
+      "MLP16"
+    ],
+    [
+      "L1H5",
+      "L11H1"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "MLP20"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "L13H9"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L13H9",
+      "MLP16"
+    ],
+    [
+      "Input Embed",
+      "L1H5"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "L18H14",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "MLP20"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L4H11",
+      "MLP12"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L11H1",
+      "L13H9"
+    ],
+    [
+      "L11H1",
+      "MLP12"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L1H5",
+      "L4H11"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP20",
+      "L21H1"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "MLP20",
+      "L21H12"
+    ],
+    [
+      "Input Embed",
+      "L4H11"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L4H11",
+      "L11H1"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "MLP22"
+    ],
+    [
+      "L1H10",
+      "L10H2"
+    ],
+    [
+      "MLP11",
+      "MLP19"
+    ],
+    [
+      "MLP5",
+      "L10H2"
+    ],
+    [
+      "L20H5",
+      "L21H12"
+    ],
+    [
+      "L20H5",
+      "L21H1"
+    ],
+    [
+      "L21H12",
+      "MLP22"
+    ],
+    [
+      "MLP5",
+      "L13H9"
+    ],
+    [
+      "L17H12",
+      "MLP19"
+    ],
+    [
+      "MLP5",
+      "MLP11"
+    ],
+    [
+      "L20H5",
+      "MLP21"
+    ],
+    [
+      "L10H2",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "L1H10"
+    ],
+    [
+      "MLP11",
+      "L13H9"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L0H11",
+      "MLP5"
+    ],
+    [
+      "MLP11",
+      "L17H12"
+    ],
+    [
+      "MLP21",
+      "MLP27"
+    ],
+    [
+      "Input Embed",
+      "L0H11"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "L17H12",
+      "L20H5"
+    ],
+    [
+      "MLP22",
+      "MLP27"
+    ],
+    [
+      "L0H11",
+      "L1H10"
+    ],
+    [
+      "L13H9",
+      "L17H12"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "L1H10",
+      "MLP5"
+    ]
+  ],
+  "n_clusters": 2,
+  "cluster_sizes": {
+    "0": 1,
+    "1": 1
+  },
+  "cluster_summaries": [],
+  "replay_summary": {
+    "ran_samples": 2,
+    "global_suff_ratio_median": 0.9800248138957817,
+    "global_nec_ratio_median": 0.9919354838709677,
+    "random_suff_ratio_mean_median": 0.9008684863523573,
+    "global_minus_random_median": 0.07915632754342433
+  },
+  "artifacts": {
+    "node_support_csv": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/node_support.csv",
+    "edge_support_csv": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/edge_support.csv",
+    "sample_weights_csv": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/sample_weights.csv",
+    "cluster_assignments_csv": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/cluster_assignments.csv",
+    "global_core_png": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/final_circuit_global_core.png",
+    "global_relaxed_png": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/final_circuit_global_relaxed.png",
+    "global_replay_json": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/smoke_batch_aggregate/global_core_replay.json"
+  }
+}

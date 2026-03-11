@@ -1,0 +1,192 @@
+{
+  "sample_id": "apps_python_13",
+  "sample_rank": 29,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "L1H13",
+    "MLP5",
+    "L5H5",
+    "L8H10",
+    "MLP12",
+    "L12H3",
+    "MLP16",
+    "MLP17",
+    "L18H14",
+    "MLP19",
+    "L20H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP12",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "L20H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP12"
+    ],
+    [
+      "MLP11",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H14"
+    ],
+    [
+      "MLP17",
+      "L20H14"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "L18H14",
+      "MLP19"
+    ],
+    [
+      "L20H14",
+      "L21H1"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ]
+  ],
+  "k_local": 3,
+  "local_nodes": [
+    "MLP12",
+    "L20H14",
+    "L18H14"
+  ],
+  "refined_suff_ratio_vs_gap": 1.018181818181818,
+  "refined_necessity_ratio_vs_gap": 1.0,
+  "orig_suff_ratio_vs_gap": 1.0,
+  "orig_necessity_ratio_vs_gap": 1.0,
+  "gap": 6.875,
+  "ap_mode": "full"
+}

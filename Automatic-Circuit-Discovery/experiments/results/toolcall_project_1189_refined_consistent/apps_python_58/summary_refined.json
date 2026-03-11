@@ -1,0 +1,168 @@
+{
+  "sample_id": "apps_python_58",
+  "sample_rank": 144,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "MLP0",
+    "MLP10",
+    "L10H4",
+    "L12H0",
+    "MLP16",
+    "L16H8",
+    "MLP17",
+    "L17H2",
+    "L17H8",
+    "MLP18",
+    "L18H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP18",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP11",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP11",
+      "L17H8"
+    ],
+    [
+      "MLP17",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "MLP18",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP18",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP18",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "MLP17",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "MLP18"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ]
+  ],
+  "k_local": 1,
+  "local_nodes": [
+    "MLP18"
+  ],
+  "refined_suff_ratio_vs_gap": 1.0232558139534884,
+  "refined_necessity_ratio_vs_gap": 1.1162790697674418,
+  "orig_suff_ratio_vs_gap": 1.1162790697674418,
+  "orig_necessity_ratio_vs_gap": 1.1627906976744187,
+  "gap": 5.375,
+  "ap_mode": "full"
+}

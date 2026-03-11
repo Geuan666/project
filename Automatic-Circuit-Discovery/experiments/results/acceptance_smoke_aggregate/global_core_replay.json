@@ -1,0 +1,34 @@
+{
+  "ran_samples": 2,
+  "n_random": 2,
+  "global_suff_ratio_median": 0.9638957816377172,
+  "global_suff_ratio_mean": 0.9638957816377172,
+  "global_nec_ratio_median": 0.9919354838709677,
+  "global_nec_ratio_mean": 0.9919354838709677,
+  "random_suff_ratio_mean_median": 0.9166253101736972,
+  "random_suff_ratio_mean_mean": 0.9166253101736972,
+  "global_minus_random_median": 0.04727047146401986,
+  "global_minus_random_mean": 0.04727047146401986,
+  "per_sample": [
+    {
+      "sample_id": "codecontests_cpp_186",
+      "sample_rank": 456,
+      "q_index": null,
+      "weight": 0.9203954214360042,
+      "global_suff_ratio": 0.9354838709677419,
+      "global_nec_ratio": 0.9838709677419355,
+      "random_suff_ratio_mean": 0.8870967741935484,
+      "random_suff_ratio_std": 0.016129032258064502
+    },
+    {
+      "sample_id": "codecontests_cpp_284",
+      "sample_rank": 621,
+      "q_index": null,
+      "weight": 0.9023668639053255,
+      "global_suff_ratio": 0.9923076923076923,
+      "global_nec_ratio": 1.0,
+      "random_suff_ratio_mean": 0.9461538461538461,
+      "random_suff_ratio_std": 0.015384615384615385
+    }
+  ]
+}

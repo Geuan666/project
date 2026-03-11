@@ -1,0 +1,168 @@
+{
+  "sample_id": "codecontests_java_592",
+  "sample_rank": 1124,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "L3H12",
+    "MLP5",
+    "L5H12",
+    "L10H2",
+    "MLP11",
+    "MLP12",
+    "L12H6",
+    "MLP13",
+    "MLP17",
+    "L17H8",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP13",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP13"
+    ],
+    [
+      "MLP11",
+      "MLP13"
+    ],
+    [
+      "MLP13",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP13",
+      "MLP17"
+    ],
+    [
+      "MLP11",
+      "MLP17"
+    ],
+    [
+      "MLP13",
+      "L17H8"
+    ],
+    [
+      "MLP11",
+      "L17H8"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP13",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP13",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP13",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "L17H8",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ]
+  ],
+  "k_local": 1,
+  "local_nodes": [
+    "MLP13"
+  ],
+  "refined_suff_ratio_vs_gap": 0.958904109589041,
+  "refined_necessity_ratio_vs_gap": 0.9178082191780822,
+  "orig_suff_ratio_vs_gap": 0.9041095890410958,
+  "orig_necessity_ratio_vs_gap": 0.8904109589041096,
+  "gap": 9.125,
+  "ap_mode": "full"
+}

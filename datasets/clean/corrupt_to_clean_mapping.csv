@@ -1,0 +1,59 @@
+corrupt_candidate,clean_candidate,n_rows
+author,create,11
+author,edit,3
+author,insert,24
+author,paste,18
+author,prepare,16
+author,write,5
+build,append,42
+build,create,1
+build,edit,6
+build,insert,5
+build,paste,5
+build,save,18
+build out,write out,77
+carefully implement,directly build,21
+carefully implement,directly implement,27
+carefully implement,manually build,30
+compose,create,2
+compose,edit,24
+compose,insert,24
+compose,paste,20
+compose,prepare,3
+compose,write,4
+craft,edit,27
+craft,insert,12
+craft,paste,21
+craft,prepare,12
+craft,write,5
+design,append,16
+design,edit,9
+design,insert,8
+design,paste,8
+design,prepare,1
+design,save,34
+design,write,1
+develop,create,32
+develop,prepare,20
+develop,write,54
+devise,finalize,77
+formulate,prefill,77
+implement,create,34
+implement,edit,1
+implement,insert,1
+implement,paste,4
+implement,prepare,27
+implement,write,11
+independently develop,directly build,37
+independently develop,directly implement,21
+independently develop,manually build,20
+manually develop,directly build,20
+manually develop,directly implement,30
+manually develop,manually build,28
+properly develop,properly add,78
+supply,append,23
+supply,edit,11
+supply,insert,7
+supply,paste,5
+supply,prepare,2
+supply,save,29

@@ -1,0 +1,213 @@
+{
+  "sample_id": "codecontests_cpp_284",
+  "sample_rank": 621,
+  "q_index": null,
+  "backbone_nodes": [
+    "L1H5",
+    "L4H11",
+    "L11H1",
+    "MLP12",
+    "L13H9",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "MLP20",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "L0H11",
+    "L1H10",
+    "MLP5",
+    "L10H2",
+    "MLP11",
+    "L13H9",
+    "L17H12",
+    "MLP19",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "MLP22",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "L1H5",
+    "L4H11",
+    "L11H1",
+    "MLP12",
+    "L13H9",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "MLP20",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "L1H5"
+    ],
+    [
+      "Input Embed",
+      "L4H11"
+    ],
+    [
+      "L1H5",
+      "L4H11"
+    ],
+    [
+      "L4H11",
+      "L11H1"
+    ],
+    [
+      "L1H5",
+      "L11H1"
+    ],
+    [
+      "L11H1",
+      "MLP12"
+    ],
+    [
+      "L4H11",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "L13H9"
+    ],
+    [
+      "L11H1",
+      "L13H9"
+    ],
+    [
+      "L13H9",
+      "MLP16"
+    ],
+    [
+      "L11H1",
+      "MLP16"
+    ],
+    [
+      "L13H9",
+      "MLP17"
+    ],
+    [
+      "L11H1",
+      "MLP17"
+    ],
+    [
+      "L13H9",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "L13H9",
+      "L18H14"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "L13H9",
+      "MLP19"
+    ],
+    [
+      "L18H14",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "MLP20"
+    ],
+    [
+      "L13H9",
+      "MLP20"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L13H9",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L13H9",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "L21H12"
+    ],
+    [
+      "MLP20",
+      "L21H12"
+    ]
+  ],
+  "k_local": 0,
+  "local_nodes": [],
+  "refined_suff_ratio_vs_gap": 0.9923076923076923,
+  "refined_necessity_ratio_vs_gap": 1.0,
+  "orig_suff_ratio_vs_gap": 0.9538461538461539,
+  "orig_necessity_ratio_vs_gap": 0.9384615384615385,
+  "gap": 16.25,
+  "ap_mode": "full"
+}

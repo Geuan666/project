@@ -1,0 +1,39 @@
+{
+  "n_samples": 1189,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "max_local": 4,
+  "gap_min_for_metrics": 0.5,
+  "orig_metrics": {
+    "suff_median": 0.9782608695652174,
+    "nec_median": 0.98,
+    "suff_mean": 0.9843894415159212,
+    "nec_mean": 0.986252039147543
+  },
+  "refined_metrics": {
+    "suff_median": 0.972972972972973,
+    "nec_median": 0.9803921568627451,
+    "suff_mean": 0.978626933091506,
+    "nec_mean": 0.9801244862475733
+  },
+  "consistency": {
+    "orig_pairwise_jaccard_mean": 0.3509552769630143,
+    "orig_pairwise_jaccard_median": 0.3333333333333333,
+    "refined_pairwise_jaccard_mean": 0.942657936181194,
+    "refined_pairwise_jaccard_median": 1.0
+  },
+  "artifacts": {
+    "table_csv": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_refined_consistent/refined_summary_table.csv",
+    "global_union_png": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_refined_consistent/final_circuit_refined_global_union.png"
+  }
+}
