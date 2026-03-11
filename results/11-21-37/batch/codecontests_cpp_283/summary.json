@@ -1,0 +1,731 @@
+{
+  "sample_id": "codecontests_cpp_283",
+  "sample_rank": 619,
+  "filename": "codecontests_cpp_283.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "clean_prompt": "/root/autodl-tmp/project/datasets/clean/codecontests_cpp_283.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/datasets/corrupt/codecontests_cpp_283.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 242,
+  "corrupt_prompt_token_length": 242,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 151657,
+  "target_token_str": "<tool_call>",
+  "distractor_token_id": 40,
+  "distractor_token_str": "I",
+  "ap_mode": "full",
+  "ct_mode": "ap_pruned_exact_ct",
+  "ct_candidate_ap_top_per_layer": 2,
+  "ct_candidate_ap_top_global": 24,
+  "ct_candidate_head_count": 60,
+  "clean_obj": 1.25,
+  "corrupt_obj": -3.375,
+  "gap": 4.625,
+  "detailed_obj": 1.375,
+  "detailed_ratio_vs_gap": 1.027027027027027,
+  "rough_obj": 1.5,
+  "rough_ratio_vs_gap": 1.054054054054054,
+  "clean_with_detailed_corrupted": -3.5,
+  "necessity_drop": 4.75,
+  "necessity_ratio_vs_gap": 1.027027027027027,
+  "clean_with_rough_corrupted": -3.25,
+  "rough_necessity_drop": 4.5,
+  "rough_necessity_ratio_vs_gap": 0.972972972972973,
+  "probe_head": "L21H12",
+  "probe_corrupt_with_head": -0.75,
+  "probe_clean_with_head_corrupt": -0.25,
+  "detailed_nodes": [
+    "L9H8",
+    "MLP11",
+    "L13H3",
+    "MLP15",
+    "MLP16",
+    "L16H8",
+    "L17H8",
+    "MLP18",
+    "MLP19",
+    "L19H6",
+    "L21H1",
+    "L21H12",
+    "L23H5",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "L9H8"
+    ],
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "L9H8",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "L13H3"
+    ],
+    [
+      "L9H8",
+      "L13H3"
+    ],
+    [
+      "MLP11",
+      "MLP15"
+    ],
+    [
+      "L13H3",
+      "MLP15"
+    ],
+    [
+      "MLP15",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP15",
+      "L16H8"
+    ],
+    [
+      "MLP11",
+      "L16H8"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP15",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "MLP15",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP18",
+      "MLP19"
+    ],
+    [
+      "MLP16",
+      "L19H6"
+    ],
+    [
+      "MLP18",
+      "L19H6"
+    ],
+    [
+      "MLP16",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L23H5"
+    ],
+    [
+      "L21H1",
+      "L23H5"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L16H8",
+      "L21H12"
+    ],
+    [
+      "L17H8",
+      "L21H12"
+    ],
+    [
+      "L19H6",
+      "L21H12"
+    ],
+    [
+      "L23H5",
+      "MLP27"
+    ]
+  ],
+  "rough_nodes": [
+    "L9H8",
+    "MLP11",
+    "MLP15",
+    "MLP16",
+    "L21H1",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "L9H8"
+    ],
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "L9H8",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "MLP15"
+    ],
+    [
+      "L9H8",
+      "MLP15"
+    ],
+    [
+      "MLP15",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "L21H1"
+    ],
+    [
+      "MLP15",
+      "L21H1"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP15",
+      "L21H12"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H12",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Create",
+      "corrupt_token": "Author"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233
+  ],
+  "sample_catalog_record": {
+    "sample_id": "codecontests_cpp_283",
+    "sample_rank": 619,
+    "filename": "codecontests_cpp_283.txt",
+    "clean_path": "/root/autodl-tmp/project/datasets/clean/codecontests_cpp_283.txt",
+    "corrupt_path": "/root/autodl-tmp/project/datasets/corrupt/codecontests_cpp_283.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "create",
+    "clean_candidate_type": "verb",
+    "corrupt_candidate": "author",
+    "corrupt_candidate_type": "verb",
+    "dataset_name": "codecontests",
+    "language": "cpp",
+    "global_row_id": 354,
+    "clean_prompt_token_length": 242,
+    "corrupt_prompt_token_length": 242,
+    "clean_manifest": {
+      "global_row_id": 354,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_cpp_283.txt",
+      "source_filename": "codecontests_cpp_283.txt",
+      "dataset_name": "codecontests",
+      "language": "cpp",
+      "sample_index": 283,
+      "template_kind": "solve.cpp",
+      "original_first_user_line": "Write the function body in solve.cpp based on the function definition and docstring below:",
+      "original_prompt_sha1": "cc5a4fe6fe2f3551566ece7244ce4a77b35b8cd5",
+      "original_prompt_char_length": 1060,
+      "dataset": "codecontests",
+      "split_local_id": 283,
+      "original_source_id": "144_A. Arrival of the General",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00029-of-00039-2b6615897d038115.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 10024,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_cpp_283.txt",
+      "assigned_candidate": "author",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "author",
+      "assigned_tool_call_prob": 0.00768148573115468,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7835328578948975,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.10603964328765869,
+      "assigned_top1_top2_prob_gap": 0.6774932146072388,
+      "assigned_rendered_first_user_line": "Author the function body in solve.cpp based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "d1f29fe8292b11d78b43906d0794d00c602717c9",
+      "corrupt_candidate": "author",
+      "corrupt_candidate_type": "verb",
+      "clean_candidate": "create",
+      "clean_candidate_type": "verb",
+      "clean_candidate_slug": "create",
+      "clean_rendered_first_user_line": "Create the function body in solve.cpp based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.8927785754203796,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 242,
+      "clean_prompt_token_length": 242,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.8927785754203796,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.08304134011268616,
+      "clean_top1_top2_prob_gap": 0.8097372353076935,
+      "clean_tool_call_prob": 0.8927785754203796,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true
+    },
+    "corrupt_manifest": {
+      "global_row_id": 354,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_cpp_283.txt",
+      "source_filename": "codecontests_cpp_283.txt",
+      "dataset_name": "codecontests",
+      "language": "cpp",
+      "sample_index": 283,
+      "template_kind": "solve.cpp",
+      "original_first_user_line": "Write the function body in solve.cpp based on the function definition and docstring below:",
+      "original_prompt_sha1": "cc5a4fe6fe2f3551566ece7244ce4a77b35b8cd5",
+      "original_prompt_char_length": 1060,
+      "dataset": "codecontests",
+      "split_local_id": 283,
+      "original_source_id": "144_A. Arrival of the General",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00029-of-00039-2b6615897d038115.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 10024,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_cpp_283.txt",
+      "assigned_candidate": "author",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "author",
+      "assigned_tool_call_prob": 0.00768148573115468,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7835328578948975,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.10603964328765869,
+      "assigned_top1_top2_prob_gap": 0.6774932146072388,
+      "assigned_rendered_first_user_line": "Author the function body in solve.cpp based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "d1f29fe8292b11d78b43906d0794d00c602717c9"
+    }
+  },
+  "top_node_scores": [
+    {
+      "name": "MLP16",
+      "score": 3.0,
+      "ct": 3.0,
+      "ap": 0.0
+    },
+    {
+      "name": "L21H12",
+      "score": 2.8460936546325684,
+      "ct": 2.375,
+      "ap": 3.421875
+    },
+    {
+      "name": "MLP27",
+      "score": 2.75,
+      "ct": 2.75,
+      "ap": 0.0
+    },
+    {
+      "name": "L21H1",
+      "score": 1.8234374523162842,
+      "ct": 1.5,
+      "ap": 2.21875
+    },
+    {
+      "name": "L24H6",
+      "score": 1.69140625,
+      "ct": 1.375,
+      "ap": 2.078125
+    },
+    {
+      "name": "MLP15",
+      "score": 1.375,
+      "ct": 1.375,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP19",
+      "score": 1.375,
+      "ct": 1.375,
+      "ap": 0.0
+    },
+    {
+      "name": "L23H6",
+      "score": 1.177343726158142,
+      "ct": 0.875,
+      "ap": 1.546875
+    },
+    {
+      "name": "MLP11",
+      "score": 1.125,
+      "ct": 1.125,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP18",
+      "score": 1.125,
+      "ct": 1.125,
+      "ap": 0.0
+    },
+    {
+      "name": "L17H8",
+      "score": 0.591015636920929,
+      "ct": 0.25,
+      "ap": 1.0078125
+    },
+    {
+      "name": "L23H5",
+      "score": 0.591015636920929,
+      "ct": 0.25,
+      "ap": 1.0078125
+    },
+    {
+      "name": "L16H8",
+      "score": 0.5259765386581421,
+      "ct": 0.25,
+      "ap": 0.86328125
+    },
+    {
+      "name": "L19H6",
+      "score": 0.4501952826976776,
+      "ct": 0.125,
+      "ap": 0.84765625
+    },
+    {
+      "name": "L9H8",
+      "score": 0.33203125,
+      "ct": 0.33203125,
+      "ap": 0.33203125
+    },
+    {
+      "name": "L13H3",
+      "score": 0.31640625,
+      "ct": 0.31640625,
+      "ap": 0.31640625
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_283/ap_head_heatmap.png",
+    "ct_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_283/ct_head_heatmap.png",
+    "probe": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_283/L21H12_probe.png",
+    "final_circuit_detailed": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_283/final_circuit_detailed.png",
+    "final_circuit": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/codecontests_cpp_283/final_circuit.png"
+  }
+}

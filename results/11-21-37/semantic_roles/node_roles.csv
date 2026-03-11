@@ -1,0 +1,11 @@
+node,role,full_ratio_median,target_logit_delta_median
+MLP11,Support Suppressor MLP,0.2318840579710145,1.0
+MLP16,Primary Writer MLP,0.32941176470588235,1.25
+MLP17,Primary Writer MLP,0.3409090909090909,1.375
+L17H8,Format Router / Weak Writer,0.14666666666666667,0.625
+MLP19,Primary Writer MLP,0.32727272727272727,1.25
+L21H1,Format Router / Target+Suppressor,0.2894736842105263,1.125
+L21H12,Format Router / Target+Suppressor,0.42201834862385323,1.75
+L23H6,Format Router / Target+Suppressor,0.3055555555555556,1.25
+L24H6,Tool-Tag Reader / Target+Suppressor,0.3548387096774194,1.0
+MLP27,Primary Writer MLP,0.5465116279069767,2.0

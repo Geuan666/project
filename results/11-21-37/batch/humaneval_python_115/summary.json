@@ -1,0 +1,696 @@
+{
+  "sample_id": "humaneval_python_115",
+  "sample_rank": 289,
+  "filename": "humaneval_python_115.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "clean_prompt": "/root/autodl-tmp/project/datasets/clean/humaneval_python_115.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/datasets/corrupt/humaneval_python_115.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 223,
+  "corrupt_prompt_token_length": 223,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 151657,
+  "target_token_str": "<tool_call>",
+  "distractor_token_id": 40,
+  "distractor_token_str": "I",
+  "ap_mode": "full",
+  "ct_mode": "ap_pruned_exact_ct",
+  "ct_candidate_ap_top_per_layer": 2,
+  "ct_candidate_ap_top_global": 24,
+  "ct_candidate_head_count": 61,
+  "clean_obj": 2.75,
+  "corrupt_obj": -5.25,
+  "gap": 8.0,
+  "detailed_obj": 2.125,
+  "detailed_ratio_vs_gap": 0.921875,
+  "rough_obj": 1.5,
+  "rough_ratio_vs_gap": 0.84375,
+  "clean_with_detailed_corrupted": -4.875,
+  "necessity_drop": 7.625,
+  "necessity_ratio_vs_gap": 0.953125,
+  "clean_with_rough_corrupted": -3.375,
+  "rough_necessity_drop": 6.125,
+  "rough_necessity_ratio_vs_gap": 0.765625,
+  "probe_head": "L21H1",
+  "probe_corrupt_with_head": -1.25,
+  "probe_clean_with_head_corrupt": 1.5,
+  "detailed_nodes": [
+    "MLP4",
+    "L9H2",
+    "L9H5",
+    "MLP11",
+    "L16H4",
+    "L16H8",
+    "L17H8",
+    "MLP18",
+    "MLP19",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "Input Embed",
+      "L9H2"
+    ],
+    [
+      "MLP4",
+      "L9H2"
+    ],
+    [
+      "MLP4",
+      "L9H5"
+    ],
+    [
+      "L9H2",
+      "MLP11"
+    ],
+    [
+      "L9H5",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "L16H4"
+    ],
+    [
+      "MLP4",
+      "L16H4"
+    ],
+    [
+      "MLP11",
+      "L16H8"
+    ],
+    [
+      "MLP4",
+      "L16H8"
+    ],
+    [
+      "L16H8",
+      "L17H8"
+    ],
+    [
+      "MLP11",
+      "L17H8"
+    ],
+    [
+      "L17H8",
+      "MLP18"
+    ],
+    [
+      "L16H8",
+      "MLP18"
+    ],
+    [
+      "MLP18",
+      "MLP19"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "MLP18",
+      "L20H5"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "L20H5",
+      "MLP21"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP18",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP18",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L16H4",
+      "L21H1"
+    ],
+    [
+      "MLP21",
+      "MLP27"
+    ]
+  ],
+  "rough_nodes": [
+    "MLP4",
+    "L9H2",
+    "MLP11",
+    "MLP18",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "Input Embed",
+      "L9H2"
+    ],
+    [
+      "MLP4",
+      "L9H2"
+    ],
+    [
+      "L9H2",
+      "MLP11"
+    ],
+    [
+      "MLP4",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "MLP18"
+    ],
+    [
+      "L9H2",
+      "MLP18"
+    ],
+    [
+      "MLP18",
+      "L21H1"
+    ],
+    [
+      "MLP11",
+      "L21H1"
+    ],
+    [
+      "MLP18",
+      "L21H12"
+    ],
+    [
+      "MLP11",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H1",
+      "Residual Output: <tool_call>"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Paste",
+      "corrupt_token": "Author"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214
+  ],
+  "sample_catalog_record": {
+    "sample_id": "humaneval_python_115",
+    "sample_rank": 289,
+    "filename": "humaneval_python_115.txt",
+    "clean_path": "/root/autodl-tmp/project/datasets/clean/humaneval_python_115.txt",
+    "corrupt_path": "/root/autodl-tmp/project/datasets/corrupt/humaneval_python_115.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "paste",
+    "clean_candidate_type": "verb",
+    "corrupt_candidate": "author",
+    "corrupt_candidate_type": "verb",
+    "dataset_name": "humaneval",
+    "language": "python",
+    "global_row_id": 1427,
+    "clean_prompt_token_length": 223,
+    "corrupt_prompt_token_length": 223,
+    "clean_manifest": {
+      "global_row_id": 1427,
+      "source_path": "/root/autodl-tmp/datasets/humaneval_python_115.txt",
+      "source_filename": "humaneval_python_115.txt",
+      "dataset_name": "humaneval",
+      "language": "python",
+      "sample_index": 115,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "5fd6415b552a708bf5ee8ad47e67b69935711d0a",
+      "original_prompt_char_length": 974,
+      "dataset": "humaneval",
+      "split_local_id": 115,
+      "original_source_id": "HumanEval/114",
+      "original_source_path": "/root/autodl-tmp/data/HumanEval/test",
+      "original_source_split": "test",
+      "original_source_row_index": 114,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "humaneval_python_115.txt",
+      "assigned_candidate": "author",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "author",
+      "assigned_tool_call_prob": 0.0016573261236771941,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.8585162162780762,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.07985444366931915,
+      "assigned_top1_top2_prob_gap": 0.778661772608757,
+      "assigned_rendered_first_user_line": "Author the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "c93b29056bda6925ca1d48e2d8dd7c5f1db342fe",
+      "corrupt_candidate": "author",
+      "corrupt_candidate_type": "verb",
+      "clean_candidate": "paste",
+      "clean_candidate_type": "verb",
+      "clean_candidate_slug": "paste",
+      "clean_rendered_first_user_line": "Paste the function body in solve.py based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.9399937987327576,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 223,
+      "clean_prompt_token_length": 223,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.9399937987327576,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.053030822426080704,
+      "clean_top1_top2_prob_gap": 0.8869629763066769,
+      "clean_tool_call_prob": 0.9399937987327576,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true
+    },
+    "corrupt_manifest": {
+      "global_row_id": 1427,
+      "source_path": "/root/autodl-tmp/datasets/humaneval_python_115.txt",
+      "source_filename": "humaneval_python_115.txt",
+      "dataset_name": "humaneval",
+      "language": "python",
+      "sample_index": 115,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "5fd6415b552a708bf5ee8ad47e67b69935711d0a",
+      "original_prompt_char_length": 974,
+      "dataset": "humaneval",
+      "split_local_id": 115,
+      "original_source_id": "HumanEval/114",
+      "original_source_path": "/root/autodl-tmp/data/HumanEval/test",
+      "original_source_split": "test",
+      "original_source_row_index": 114,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "humaneval_python_115.txt",
+      "assigned_candidate": "author",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "author",
+      "assigned_tool_call_prob": 0.0016573261236771941,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.8585162162780762,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.07985444366931915,
+      "assigned_top1_top2_prob_gap": 0.778661772608757,
+      "assigned_rendered_first_user_line": "Author the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "c93b29056bda6925ca1d48e2d8dd7c5f1db342fe"
+    }
+  },
+  "top_node_scores": [
+    {
+      "name": "L21H1",
+      "score": 4.985937595367432,
+      "ct": 3.875,
+      "ap": 6.34375
+    },
+    {
+      "name": "L21H12",
+      "score": 3.96875,
+      "ct": 3.125,
+      "ap": 5.0
+    },
+    {
+      "name": "MLP27",
+      "score": 3.75,
+      "ct": 3.75,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP11",
+      "score": 3.25,
+      "ct": 3.25,
+      "ap": 0.0
+    },
+    {
+      "name": "L23H6",
+      "score": 2.805468797683716,
+      "ct": 2.25,
+      "ap": 3.484375
+    },
+    {
+      "name": "MLP18",
+      "score": 2.625,
+      "ct": 2.625,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP19",
+      "score": 2.625,
+      "ct": 2.625,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 2.5101561546325684,
+      "ct": 2.25,
+      "ap": 2.828125
+    },
+    {
+      "name": "MLP21",
+      "score": 2.0,
+      "ct": 2.0,
+      "ap": 0.0
+    },
+    {
+      "name": "L16H8",
+      "score": 1.9593749046325684,
+      "ct": 1.875,
+      "ap": 2.0625
+    },
+    {
+      "name": "L17H8",
+      "score": 1.865625023841858,
+      "ct": 1.5,
+      "ap": 2.3125
+    },
+    {
+      "name": "L20H5",
+      "score": 1.7800781726837158,
+      "ct": 1.875,
+      "ap": 1.6640625
+    },
+    {
+      "name": "L16H4",
+      "score": 1.517578125,
+      "ct": 1.5,
+      "ap": 1.5390625
+    },
+    {
+      "name": "L9H2",
+      "score": 0.478515625,
+      "ct": 0.478515625,
+      "ap": 0.478515625
+    },
+    {
+      "name": "L9H5",
+      "score": 0.4765625,
+      "ct": 0.4765625,
+      "ap": 0.4765625
+    },
+    {
+      "name": "MLP4",
+      "score": 0.125,
+      "ct": 0.125,
+      "ap": 0.0
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/humaneval_python_115/ap_head_heatmap.png",
+    "ct_head_heatmap": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/humaneval_python_115/ct_head_heatmap.png",
+    "probe": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/humaneval_python_115/L21H1_probe.png",
+    "final_circuit_detailed": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/humaneval_python_115/final_circuit_detailed.png",
+    "final_circuit": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189/humaneval_python_115/final_circuit.png"
+  }
+}

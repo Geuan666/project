@@ -1,0 +1,20 @@
+{
+  "source": {
+    "legacy_root": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results",
+    "batch": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189",
+    "aggregate": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_aggregate",
+    "semantic_roles": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_semantic_roles",
+    "refined_consistent": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_refined_consistent",
+    "consistency_eval": "/root/autodl-tmp/project/Automatic-Circuit-Discovery/experiments/results/toolcall_project_1189_consistency_eval.json"
+  },
+  "snapshot": {
+    "run_root": "/root/autodl-tmp/project/results/11-21-37",
+    "batch": "/root/autodl-tmp/project/results/11-21-37/batch",
+    "aggregate": "/root/autodl-tmp/project/results/11-21-37/aggregate",
+    "semantic_roles": "/root/autodl-tmp/project/results/11-21-37/semantic_roles",
+    "refined_consistent": "/root/autodl-tmp/project/results/11-21-37/refined_consistent",
+    "consistency_eval": "/root/autodl-tmp/project/results/11-21-37/consistency_eval.json",
+    "figs": "/root/autodl-tmp/project/results/11-21-37/figs",
+    "tables": "/root/autodl-tmp/project/results/11-21-37/tables"
+  }
+}

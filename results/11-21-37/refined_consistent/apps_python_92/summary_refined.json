@@ -1,0 +1,164 @@
+{
+  "sample_id": "apps_python_92",
+  "sample_rank": 224,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "MLP9",
+    "L13H10",
+    "L13H6",
+    "MLP15",
+    "L15H5",
+    "MLP17",
+    "L17H2",
+    "MLP18",
+    "L18H11",
+    "L18H3",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "L15H5",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "L15H5"
+    ],
+    [
+      "MLP11",
+      "L15H5"
+    ],
+    [
+      "L15H5",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "L15H5",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L15H5",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "L15H5",
+      "MLP19"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "MLP19",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ]
+  ],
+  "k_local": 1,
+  "local_nodes": [
+    "L15H5"
+  ],
+  "refined_suff_ratio_vs_gap": 1.0606060606060606,
+  "refined_necessity_ratio_vs_gap": 1.0606060606060606,
+  "orig_suff_ratio_vs_gap": 1.0909090909090908,
+  "orig_necessity_ratio_vs_gap": 1.0606060606060606,
+  "gap": 4.125,
+  "ap_mode": "full"
+}

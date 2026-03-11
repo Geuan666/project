@@ -1,0 +1,170 @@
+{
+  "sample_id": "apps_python_132",
+  "sample_rank": 341,
+  "q_index": null,
+  "backbone_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "orig_nodes": [
+    "MLP5",
+    "L6H15",
+    "L6H7",
+    "L12H6",
+    "MLP13",
+    "L13H9",
+    "MLP16",
+    "L16H9",
+    "MLP17",
+    "MLP19",
+    "L20H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_nodes": [
+    "MLP11",
+    "MLP16",
+    "L16H9",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L20H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "refined_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "L16H9"
+    ],
+    [
+      "L16H9",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "L16H9",
+      "L17H8"
+    ],
+    [
+      "L16H9",
+      "MLP19"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H14"
+    ],
+    [
+      "MLP16",
+      "L20H14"
+    ],
+    [
+      "L20H14",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L20H14",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "L17H8",
+      "L21H1"
+    ]
+  ],
+  "k_local": 2,
+  "local_nodes": [
+    "L16H9",
+    "L20H14"
+  ],
+  "refined_suff_ratio_vs_gap": 1.0579710144927537,
+  "refined_necessity_ratio_vs_gap": 1.0289855072463767,
+  "orig_suff_ratio_vs_gap": 1.0289855072463767,
+  "orig_necessity_ratio_vs_gap": 0.9855072463768116,
+  "gap": 8.625,
+  "ap_mode": "full"
+}
