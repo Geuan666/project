@@ -1,0 +1,729 @@
+{
+  "forward_core_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "forward_core_edges": [
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ]
+  ],
+  "checkpoints": [
+    {
+      "n_reverse_samples": 25,
+      "core_node_count": 10,
+      "core_edge_count": 25,
+      "node_jaccard_vs_forward": 0.8181818181818182,
+      "edge_jaccard_vs_forward": 0.4375,
+      "node_jaccard_vs_prev": null,
+      "edge_jaccard_vs_prev": null,
+      "core_nodes": [
+        "MLP16",
+        "L16H8",
+        "MLP17",
+        "L17H8",
+        "MLP19",
+        "L21H1",
+        "L21H12",
+        "L23H6",
+        "L24H6",
+        "MLP27"
+      ],
+      "core_edges": [
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L24H6",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L24H6"
+        ],
+        [
+          "L23H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP16",
+          "MLP17"
+        ],
+        [
+          "MLP27",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L24H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L21H1",
+          "MLP27"
+        ],
+        [
+          "MLP17",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "L24H6"
+        ],
+        [
+          "MLP16",
+          "L17H8"
+        ],
+        [
+          "MLP16",
+          "MLP19"
+        ],
+        [
+          "MLP16",
+          "L21H12"
+        ],
+        [
+          "L21H12",
+          "MLP27"
+        ],
+        [
+          "L23H6",
+          "MLP27"
+        ],
+        [
+          "MLP19",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "MLP19"
+        ],
+        [
+          "MLP19",
+          "L21H12"
+        ],
+        [
+          "MLP17",
+          "L21H12"
+        ],
+        [
+          "MLP19",
+          "L23H6"
+        ],
+        [
+          "MLP19",
+          "L24H6"
+        ],
+        [
+          "Input Embed",
+          "MLP16"
+        ],
+        [
+          "Input Embed",
+          "L16H8"
+        ],
+        [
+          "L17H8",
+          "MLP27"
+        ]
+      ]
+    },
+    {
+      "n_reverse_samples": 50,
+      "core_node_count": 11,
+      "core_edge_count": 26,
+      "node_jaccard_vs_forward": 0.75,
+      "edge_jaccard_vs_forward": 0.42424242424242425,
+      "node_jaccard_vs_prev": 0.9090909090909091,
+      "edge_jaccard_vs_prev": 0.8214285714285714,
+      "core_nodes": [
+        "MLP16",
+        "L16H4",
+        "L16H8",
+        "MLP17",
+        "L17H8",
+        "MLP19",
+        "L21H1",
+        "L21H12",
+        "L23H6",
+        "L24H6",
+        "MLP27"
+      ],
+      "core_edges": [
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L24H6",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L24H6"
+        ],
+        [
+          "L23H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP16",
+          "MLP17"
+        ],
+        [
+          "MLP27",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L24H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L21H1",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "L24H6"
+        ],
+        [
+          "MLP16",
+          "L17H8"
+        ],
+        [
+          "MLP16",
+          "MLP19"
+        ],
+        [
+          "L21H12",
+          "MLP27"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "MLP19",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "MLP19"
+        ],
+        [
+          "MLP19",
+          "L21H12"
+        ],
+        [
+          "MLP17",
+          "L21H12"
+        ],
+        [
+          "MLP19",
+          "L23H6"
+        ],
+        [
+          "MLP19",
+          "L24H6"
+        ],
+        [
+          "Input Embed",
+          "MLP16"
+        ],
+        [
+          "Input Embed",
+          "L16H8"
+        ],
+        [
+          "MLP16",
+          "L16H4"
+        ],
+        [
+          "L17H8",
+          "MLP27"
+        ]
+      ]
+    },
+    {
+      "n_reverse_samples": 75,
+      "core_node_count": 11,
+      "core_edge_count": 26,
+      "node_jaccard_vs_forward": 0.75,
+      "edge_jaccard_vs_forward": 0.42424242424242425,
+      "node_jaccard_vs_prev": 1.0,
+      "edge_jaccard_vs_prev": 1.0,
+      "core_nodes": [
+        "MLP16",
+        "L16H4",
+        "L16H8",
+        "MLP17",
+        "L17H8",
+        "MLP19",
+        "L21H1",
+        "L21H12",
+        "L23H6",
+        "L24H6",
+        "MLP27"
+      ],
+      "core_edges": [
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L24H6",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L24H6"
+        ],
+        [
+          "L23H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP16",
+          "MLP17"
+        ],
+        [
+          "MLP27",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L24H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L21H1",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "L24H6"
+        ],
+        [
+          "MLP16",
+          "L17H8"
+        ],
+        [
+          "MLP16",
+          "MLP19"
+        ],
+        [
+          "L21H12",
+          "MLP27"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "MLP19",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "MLP19"
+        ],
+        [
+          "MLP19",
+          "L21H12"
+        ],
+        [
+          "MLP17",
+          "L21H12"
+        ],
+        [
+          "MLP19",
+          "L23H6"
+        ],
+        [
+          "MLP19",
+          "L24H6"
+        ],
+        [
+          "Input Embed",
+          "MLP16"
+        ],
+        [
+          "Input Embed",
+          "L16H8"
+        ],
+        [
+          "MLP16",
+          "L16H4"
+        ],
+        [
+          "L17H8",
+          "MLP27"
+        ]
+      ]
+    },
+    {
+      "n_reverse_samples": 100,
+      "core_node_count": 11,
+      "core_edge_count": 25,
+      "node_jaccard_vs_forward": 0.75,
+      "edge_jaccard_vs_forward": 0.3939393939393939,
+      "node_jaccard_vs_prev": 1.0,
+      "edge_jaccard_vs_prev": 0.8888888888888888,
+      "core_nodes": [
+        "MLP16",
+        "L16H4",
+        "L16H8",
+        "MLP17",
+        "L17H8",
+        "MLP19",
+        "L21H1",
+        "L21H12",
+        "L23H6",
+        "L24H6",
+        "MLP27"
+      ],
+      "core_edges": [
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L24H6",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L24H6"
+        ],
+        [
+          "L23H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP16",
+          "MLP17"
+        ],
+        [
+          "MLP27",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L24H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L21H1",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "L24H6"
+        ],
+        [
+          "MLP16",
+          "L17H8"
+        ],
+        [
+          "MLP16",
+          "MLP19"
+        ],
+        [
+          "MLP16",
+          "L21H12"
+        ],
+        [
+          "L21H12",
+          "MLP27"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "MLP17",
+          "MLP19"
+        ],
+        [
+          "MLP19",
+          "L21H12"
+        ],
+        [
+          "MLP17",
+          "L21H12"
+        ],
+        [
+          "MLP19",
+          "L23H6"
+        ],
+        [
+          "Input Embed",
+          "MLP16"
+        ],
+        [
+          "Input Embed",
+          "L16H8"
+        ],
+        [
+          "MLP16",
+          "L16H4"
+        ],
+        [
+          "L17H8",
+          "MLP27"
+        ]
+      ]
+    },
+    {
+      "n_reverse_samples": 117,
+      "core_node_count": 11,
+      "core_edge_count": 25,
+      "node_jaccard_vs_forward": 0.75,
+      "edge_jaccard_vs_forward": 0.3939393939393939,
+      "node_jaccard_vs_prev": 1.0,
+      "edge_jaccard_vs_prev": 0.9230769230769231,
+      "core_nodes": [
+        "MLP16",
+        "L16H4",
+        "L16H8",
+        "MLP17",
+        "L17H8",
+        "MLP19",
+        "L21H1",
+        "L21H12",
+        "L23H6",
+        "L24H6",
+        "MLP27"
+      ],
+      "core_edges": [
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L24H6",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L24H6"
+        ],
+        [
+          "L23H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP16",
+          "MLP17"
+        ],
+        [
+          "MLP27",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L24H6",
+          "Residual Output: no_tool"
+        ],
+        [
+          "L21H1",
+          "MLP27"
+        ],
+        [
+          "MLP16",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "L21H1"
+        ],
+        [
+          "MLP17",
+          "L24H6"
+        ],
+        [
+          "MLP16",
+          "L17H8"
+        ],
+        [
+          "MLP16",
+          "MLP19"
+        ],
+        [
+          "L21H12",
+          "MLP27"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "MLP17",
+          "MLP19"
+        ],
+        [
+          "MLP19",
+          "L21H12"
+        ],
+        [
+          "MLP17",
+          "L21H12"
+        ],
+        [
+          "MLP19",
+          "L23H6"
+        ],
+        [
+          "MLP19",
+          "L24H6"
+        ],
+        [
+          "Input Embed",
+          "MLP16"
+        ],
+        [
+          "Input Embed",
+          "L16H8"
+        ],
+        [
+          "MLP16",
+          "L16H4"
+        ],
+        [
+          "L17H8",
+          "MLP27"
+        ]
+      ]
+    }
+  ]
+}

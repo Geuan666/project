@@ -1,0 +1,188 @@
+{
+  "n_samples": 1189,
+  "groups": {
+    "forward_only_core": [
+      "L21H1",
+      "MLP11"
+    ],
+    "reverse_only_core": [
+      "L16H4",
+      "L16H8"
+    ],
+    "shared_core": [
+      "L17H8",
+      "L21H12",
+      "L23H6",
+      "L24H6",
+      "MLP16",
+      "MLP17",
+      "MLP19",
+      "MLP27"
+    ],
+    "forward_selective": [
+      "L19H6",
+      "L21H1",
+      "L21H12",
+      "L23H5",
+      "L2H14",
+      "MLP11",
+      "MLP18",
+      "MLP21"
+    ],
+    "reverse_selective": [
+      "L16H4",
+      "L16H8",
+      "L16H9",
+      "L17H2",
+      "L20H5",
+      "MLP12",
+      "MLP16",
+      "MLP17"
+    ],
+    "shared_backbone": [
+      "L12H6",
+      "L13H9",
+      "L16H4",
+      "L16H8",
+      "L17H8",
+      "L20H5",
+      "L21H1",
+      "L21H12",
+      "L23H6",
+      "L24H6",
+      "MLP11",
+      "MLP12",
+      "MLP16",
+      "MLP17",
+      "MLP19",
+      "MLP27"
+    ]
+  },
+  "matrix": "full",
+  "metrics": {
+    "promote__forward_only_core__ratio": {
+      "n": 1189,
+      "median": 0.47058823529411764,
+      "mean": 0.45997725983843596,
+      "bootstrap_median": {
+        "mean": 0.47003566883445275,
+        "lo": 0.4578313253012048,
+        "hi": 0.4807017543859649
+      }
+    },
+    "promote__forward_selective__ratio": {
+      "n": 1189,
+      "median": 0.8201058201058201,
+      "mean": 0.8061124159681261,
+      "bootstrap_median": {
+        "mean": 0.8205308360086951,
+        "lo": 0.8148148148148148,
+        "hi": 0.8260869565217391
+      }
+    },
+    "promote__reverse_only_core__ratio": {
+      "n": 1189,
+      "median": 0.3090909090909091,
+      "mean": 0.3149387223913337,
+      "bootstrap_median": {
+        "mean": 0.3083784483487692,
+        "lo": 0.3,
+        "hi": 0.3157894736842105
+      }
+    },
+    "promote__reverse_selective__ratio": {
+      "n": 1189,
+      "median": 0.7428571428571429,
+      "mean": 0.7406184558901185,
+      "bootstrap_median": {
+        "mean": 0.7430256234036524,
+        "lo": 0.7391304347826086,
+        "hi": 0.7472527472527473
+      }
+    },
+    "promote__shared_backbone__ratio": {
+      "n": 1189,
+      "median": 0.9672131147540983,
+      "mean": 0.9760657023762493,
+      "bootstrap_median": {
+        "mean": 0.9675855340188814,
+        "lo": 0.9642857142857143,
+        "hi": 0.9722222222222222
+      }
+    },
+    "promote__shared_core__ratio": {
+      "n": 1189,
+      "median": 0.9538461538461539,
+      "mean": 0.9564004868992363,
+      "bootstrap_median": {
+        "mean": 0.9541020182456884,
+        "lo": 0.950207468879668,
+        "hi": 0.9583333333333334
+      }
+    },
+    "suppress__forward_only_core__ratio": {
+      "n": 1189,
+      "median": -0.1590909090909091,
+      "mean": -0.17119936583082113,
+      "bootstrap_median": {
+        "mean": -0.15944191248484765,
+        "lo": -0.16666666666666666,
+        "hi": -0.15019762845849802
+      }
+    },
+    "suppress__forward_selective__ratio": {
+      "n": 1189,
+      "median": -0.6190476190476191,
+      "mean": -0.6127233803365323,
+      "bootstrap_median": {
+        "mean": -0.6182788160963076,
+        "lo": -0.6267281105990783,
+        "hi": -0.6122448979591837
+      }
+    },
+    "suppress__reverse_only_core__ratio": {
+      "n": 1189,
+      "median": -0.16981132075471697,
+      "mean": -0.17794788997039934,
+      "bootstrap_median": {
+        "mean": -0.16971141436460668,
+        "lo": -0.1735159817351598,
+        "hi": -0.16666666666666666
+      }
+    },
+    "suppress__reverse_selective__ratio": {
+      "n": 1189,
+      "median": -0.5531914893617021,
+      "mean": -0.5621190918683752,
+      "bootstrap_median": {
+        "mean": -0.5530965500351958,
+        "lo": -0.56,
+        "hi": -0.5454545454545454
+      }
+    },
+    "suppress__shared_backbone__ratio": {
+      "n": 1189,
+      "median": -0.9701492537313433,
+      "mean": -0.971608659683488,
+      "bootstrap_median": {
+        "mean": -0.9703039229066924,
+        "lo": -0.9791666666666666,
+        "hi": -0.963855421686747
+      }
+    },
+    "suppress__shared_core__ratio": {
+      "n": 1189,
+      "median": -0.9469964664310954,
+      "mean": -0.9472543421999835,
+      "bootstrap_median": {
+        "mean": -0.9470920682107387,
+        "lo": -0.952,
+        "hi": -0.9411764705882353
+      }
+    }
+  },
+  "artifacts": {
+    "per_sample_json": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/causal_eval_full_matrix/per_sample_cross_eval.json",
+    "summary_json": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/causal_eval_full_matrix/cross_eval_summary.json"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "n_samples": 60,
+  "groups": {
+    "reverse_only_core_heads": [
+      "L16H4",
+      "L16H8"
+    ],
+    "shared_core_heads": [
+      "L17H8",
+      "L21H1",
+      "L21H12",
+      "L23H6",
+      "L24H6"
+    ],
+    "forward_selective_heads": [
+      "L13H6",
+      "L19H6",
+      "L21H1",
+      "L21H12",
+      "L23H5",
+      "L2H14"
+    ],
+    "reverse_selective_heads": [
+      "L11H1",
+      "L16H4",
+      "L16H8",
+      "L17H2",
+      "L17H8"
+    ]
+  },
+  "set_names": [
+    "contrast",
+    "tool_call_tags",
+    "tools_block",
+    "user_block",
+    "prefix_16",
+    "recent_32"
+  ],
+  "artifacts": {
+    "per_head_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/_partial_head_reads_60/per_head_read_mass.csv",
+    "per_group_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/_partial_head_reads_60/per_group_read_mass.csv",
+    "heatmap_png": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/_partial_head_reads_60/head_read_delta_heatmap.png"
+  }
+}

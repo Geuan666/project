@@ -1,0 +1,41 @@
+{
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "strict_pruned": true,
+  "pre_prune_rows": 1789,
+  "dropped_rows": 67,
+  "total_rows": 1722,
+  "language_counts_final": {
+    "cpp": 583,
+    "java": 584,
+    "python": 555
+  },
+  "dataset_counts_final": {
+    "apps": 422,
+    "codecontests": 1167,
+    "humaneval": 40,
+    "mbpp": 93
+  },
+  "candidate_counts_final": {
+    "author": 118,
+    "build": 114,
+    "build out": 115,
+    "carefully implement": 116,
+    "compose": 115,
+    "craft": 112,
+    "design": 112,
+    "develop": 119,
+    "devise": 115,
+    "formulate": 111,
+    "implement": 119,
+    "independently develop": 119,
+    "manually develop": 115,
+    "properly develop": 114,
+    "supply": 108
+  },
+  "independent_single_generate_verification": {
+    "n_rows": 1722,
+    "n_pass": 1722,
+    "all_pass": true,
+    "max_tool_call_prob": 0.04993437975645065
+  }
+}

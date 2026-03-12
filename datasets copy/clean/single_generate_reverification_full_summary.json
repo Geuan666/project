@@ -1,0 +1,10 @@
+{
+  "n_rows": 1789,
+  "n_pass": 1788,
+  "pass_rate": 0.9994410285075461,
+  "n_fail": 1,
+  "n_top1_tool_call": 1788,
+  "top1_tool_call_rate": 0.9994410285075461,
+  "min_tool_call_prob": 0.4158780574798584,
+  "max_tool_call_prob": 0.9993098378181458
+}

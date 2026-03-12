@@ -1,0 +1,349 @@
+{
+  "n_samples": 200,
+  "families": [
+    {
+      "family": "symmetric_backbone->symmetric_backbone (tool_bias)",
+      "source_group": "symmetric_backbone",
+      "target_group": "symmetric_backbone",
+      "sign": "tool_bias",
+      "source_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ],
+      "target_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ]
+    },
+    {
+      "family": "tool_bias_backbone->symmetric_backbone (tool_bias)",
+      "source_group": "tool_bias_backbone",
+      "target_group": "symmetric_backbone",
+      "sign": "tool_bias",
+      "source_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ],
+      "target_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (no_tool_bias)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "tool_bias_backbone",
+      "sign": "no_tool_bias",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ]
+    },
+    {
+      "family": "symmetric_backbone->tool_bias_backbone (tool_bias)",
+      "source_group": "symmetric_backbone",
+      "target_group": "tool_bias_backbone",
+      "sign": "tool_bias",
+      "source_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ],
+      "target_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (shared)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "tool_bias_backbone",
+      "sign": "shared",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ]
+    },
+    {
+      "family": "symmetric_backbone->symmetric_backbone (no_tool_bias)",
+      "source_group": "symmetric_backbone",
+      "target_group": "symmetric_backbone",
+      "sign": "no_tool_bias",
+      "source_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ],
+      "target_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->no_tool_bias_backbone (no_tool_bias)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "no_tool_bias_backbone",
+      "sign": "no_tool_bias",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->symmetric_backbone (no_tool_bias)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "symmetric_backbone",
+      "sign": "no_tool_bias",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L12H6",
+        "L13H9",
+        "L17H8",
+        "L23H6",
+        "L24H6",
+        "MLP19",
+        "MLP27"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (tool_bias)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "tool_bias_backbone",
+      "sign": "tool_bias",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ]
+    },
+    {
+      "family": "no_tool_bias_backbone->no_tool_tail (no_tool_bias)",
+      "source_group": "no_tool_bias_backbone",
+      "target_group": "no_tool_tail",
+      "sign": "no_tool_bias",
+      "source_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ],
+      "target_nodes": [
+        "L16H9",
+        "L17H2"
+      ]
+    },
+    {
+      "family": "tool_bias_backbone->no_tool_bias_backbone (shared)",
+      "source_group": "tool_bias_backbone",
+      "target_group": "no_tool_bias_backbone",
+      "sign": "shared",
+      "source_nodes": [
+        "L21H1",
+        "L21H12",
+        "MLP11"
+      ],
+      "target_nodes": [
+        "L16H4",
+        "L16H8",
+        "L20H5",
+        "MLP12",
+        "MLP16",
+        "MLP17"
+      ]
+    }
+  ],
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_family_mediation_200/signed_family_mediation_per_sample.csv",
+    "summary_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_family_mediation_200/signed_family_mediation_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_family_mediation_200/signed_family_mediation_report.json"
+  },
+  "summary_rows": [
+    {
+      "family": "symmetric_backbone->symmetric_backbone (tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.8373971797884842,
+      "promote_blocked_ratio_median": 0.0,
+      "promote_mediated_ratio_median": 0.8373971797884842,
+      "suppress_source_ratio_median": -0.7607680722891565,
+      "suppress_blocked_ratio_median": 0.0,
+      "suppress_mediated_ratio_median": -0.7607680722891565
+    },
+    {
+      "family": "symmetric_backbone->symmetric_backbone (no_tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.8373971797884842,
+      "promote_blocked_ratio_median": 0.0,
+      "promote_mediated_ratio_median": 0.8373971797884842,
+      "suppress_source_ratio_median": -0.7607680722891565,
+      "suppress_blocked_ratio_median": 0.0,
+      "suppress_mediated_ratio_median": -0.7607680722891565
+    },
+    {
+      "family": "no_tool_bias_backbone->no_tool_bias_backbone (no_tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.0,
+      "promote_mediated_ratio_median": 0.7029138513513513,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": 0.0,
+      "suppress_mediated_ratio_median": -0.5047951730708161
+    },
+    {
+      "family": "no_tool_bias_backbone->symmetric_backbone (no_tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.2054794520547945,
+      "promote_mediated_ratio_median": 0.51141670991178,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": -0.1448321891685736,
+      "suppress_mediated_ratio_median": -0.35529738165423963
+    },
+    {
+      "family": "tool_bias_backbone->symmetric_backbone (tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.6575342465753424,
+      "promote_blocked_ratio_median": 0.20890648193963385,
+      "promote_mediated_ratio_median": 0.4542464114832536,
+      "suppress_source_ratio_median": -0.39652590595986825,
+      "suppress_blocked_ratio_median": -0.10683127572016461,
+      "suppress_mediated_ratio_median": -0.2868900646678424
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (no_tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.40545808966861596,
+      "promote_mediated_ratio_median": 0.2996062992125984,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": -0.23606811145510836,
+      "suppress_mediated_ratio_median": -0.2394029850746269
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (shared)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.40545808966861596,
+      "promote_mediated_ratio_median": 0.2996062992125984,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": -0.23606811145510836,
+      "suppress_mediated_ratio_median": -0.2394029850746269
+    },
+    {
+      "family": "no_tool_bias_backbone->tool_bias_backbone (tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.40545808966861596,
+      "promote_mediated_ratio_median": 0.2996062992125984,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": -0.23606811145510836,
+      "suppress_mediated_ratio_median": -0.2394029850746269
+    },
+    {
+      "family": "no_tool_bias_backbone->no_tool_tail (no_tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.7029138513513513,
+      "promote_blocked_ratio_median": 0.6453654552878726,
+      "promote_mediated_ratio_median": 0.05805527468823729,
+      "suppress_source_ratio_median": -0.5047951730708161,
+      "suppress_blocked_ratio_median": -0.43704018109790604,
+      "suppress_mediated_ratio_median": -0.06594202898550725
+    },
+    {
+      "family": "tool_bias_backbone->no_tool_bias_backbone (shared)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.6575342465753424,
+      "promote_blocked_ratio_median": 0.6168439716312057,
+      "promote_mediated_ratio_median": 0.05128579777907652,
+      "suppress_source_ratio_median": -0.39652590595986825,
+      "suppress_blocked_ratio_median": -0.33824750830564787,
+      "suppress_mediated_ratio_median": -0.055555555555555525
+    },
+    {
+      "family": "symmetric_backbone->tool_bias_backbone (tool_bias)",
+      "n_samples": 200,
+      "promote_source_ratio_median": 0.8373971797884842,
+      "promote_blocked_ratio_median": 0.8031015037593985,
+      "promote_mediated_ratio_median": 0.03773584905660382,
+      "suppress_source_ratio_median": -0.7607680722891565,
+      "suppress_blocked_ratio_median": -0.7058823529411765,
+      "suppress_mediated_ratio_median": -0.05765273820829381
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "groups": {
+    "symmetric_backbone": [
+      "L12H6",
+      "L13H9",
+      "L17H8",
+      "MLP19",
+      "L23H6",
+      "L24H6",
+      "MLP27"
+    ],
+    "tool_bias_backbone": [
+      "MLP11",
+      "L21H1",
+      "L21H12"
+    ],
+    "no_tool_bias_backbone": [
+      "MLP12",
+      "L16H4",
+      "L16H8",
+      "MLP16",
+      "MLP17",
+      "L20H5"
+    ],
+    "tool_tail": [
+      "L2H14",
+      "MLP18",
+      "L19H6",
+      "MLP21",
+      "L23H5"
+    ],
+    "no_tool_tail": [
+      "L16H9",
+      "L17H2"
+    ]
+  },
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_validate_full/signed_group_per_sample.csv",
+    "summary_csv": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_validate_full/signed_group_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_validate_full/signed_group_report.json",
+    "heatmap_png": "/root/autodl-tmp/project/results/11-22-45-bidirectional_approxy/signed_validate_full/signed_group_validation_heatmap.png"
+  },
+  "summary_rows": [
+    {
+      "group": "full_signed_circuit",
+      "group_label": "full_signed_circuit",
+      "n_samples": 1189,
+      "n_nodes": 23,
+      "promote_suff_ratio_median": 0.979381443298969,
+      "suppress_suff_ratio_median": -0.9671361502347418,
+      "promote_tool_top1_rate": 0.9966358284272497,
+      "suppress_no_tool_top1_rate": 0.9966358284272497,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": 0.0,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "symmetric_backbone",
+      "group_label": "Symmetric Backbone",
+      "n_samples": 1189,
+      "n_nodes": 7,
+      "promote_suff_ratio_median": 0.8333333333333334,
+      "suppress_suff_ratio_median": -0.75,
+      "promote_tool_top1_rate": 0.9722455845248108,
+      "suppress_no_tool_top1_rate": 0.9688814129520605,
+      "promote_nec_drop_median": 0.06172839506172845,
+      "suppress_nec_drop_median": 0.11538461538461531,
+      "promote_nec_top1_drop_mean": 0.007569386038687973,
+      "suppress_nec_top1_drop_mean": 0.00672834314550042
+    },
+    {
+      "group": "tool_bias_backbone",
+      "group_label": "Tool-Bias Backbone",
+      "n_samples": 1189,
+      "n_nodes": 3,
+      "promote_suff_ratio_median": 0.6991150442477876,
+      "suppress_suff_ratio_median": -0.40789473684210525,
+      "promote_tool_top1_rate": 0.7207737594617325,
+      "suppress_no_tool_top1_rate": 0.5121951219512195,
+      "promote_nec_drop_median": 0.02752293577981657,
+      "suppress_nec_drop_median": 0.048309178743961345,
+      "promote_nec_top1_drop_mean": 0.0008410428931875525,
+      "suppress_nec_top1_drop_mean": 0.002523128679562658
+    },
+    {
+      "group": "no_tool_bias_backbone",
+      "group_label": "No-Tool-Bias Backbone",
+      "n_samples": 1189,
+      "n_nodes": 6,
+      "promote_suff_ratio_median": 0.7102473498233216,
+      "suppress_suff_ratio_median": -0.5108695652173914,
+      "promote_tool_top1_rate": 0.7249789739276703,
+      "suppress_no_tool_top1_rate": 0.7468460891505467,
+      "promote_nec_drop_median": 0.03809523809523807,
+      "suppress_nec_drop_median": 0.04761904761904767,
+      "promote_nec_top1_drop_mean": 0.001682085786375105,
+      "suppress_nec_top1_drop_mean": 0.0008410428931875525
+    },
+    {
+      "group": "tool_tail",
+      "group_label": "Tool Tail",
+      "n_samples": 1189,
+      "n_nodes": 5,
+      "promote_suff_ratio_median": 0.5,
+      "suppress_suff_ratio_median": -0.2391304347826087,
+      "promote_tool_top1_rate": 0.20857863751051303,
+      "suppress_no_tool_top1_rate": 0.17325483599663583,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": -0.010101010101009944,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.00336417157275021
+    },
+    {
+      "group": "no_tool_tail",
+      "group_label": "No-Tool Tail",
+      "n_samples": 1189,
+      "n_nodes": 2,
+      "promote_suff_ratio_median": 0.2,
+      "suppress_suff_ratio_median": -0.0851063829787234,
+      "promote_tool_top1_rate": 0.002523128679562658,
+      "suppress_no_tool_top1_rate": 0.01345668629100084,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": 0.0037453183520599342,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0008410428931875525
+    }
+  ]
+}

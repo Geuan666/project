@@ -1,0 +1,734 @@
+{
+  "sample_id": "codecontests_java_291",
+  "sample_rank": 634,
+  "filename": "codecontests_java_291.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "direction": "reverse_no_tool",
+  "decision_label": "no_tool_vs_tool_call",
+  "output_node_label": "Residual Output: no_tool",
+  "clean_role": "no_tool",
+  "corrupt_role": "tool_call",
+  "canonical_tool_prompt": "/root/autodl-tmp/project/datasets/clean/codecontests_java_291.txt",
+  "canonical_no_tool_prompt": "/root/autodl-tmp/project/datasets/corrupt/codecontests_java_291.txt",
+  "clean_prompt": "/root/autodl-tmp/project/datasets/corrupt/codecontests_java_291.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/datasets/clean/codecontests_java_291.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 229,
+  "corrupt_prompt_token_length": 229,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "I",
+    "token_ids": [
+      40
+    ],
+    "tokens": [
+      "I"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 40,
+  "target_token_str": "I",
+  "distractor_token_id": 151657,
+  "distractor_token_str": "<tool_call>",
+  "tool_call_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "ap_mode": "full",
+  "ct_mode": "ap_proxy",
+  "ct_head_mode_requested": "ap_proxy",
+  "skip_plots": true,
+  "ct_candidate_ap_top_per_layer": 0,
+  "ct_candidate_ap_top_global": 0,
+  "ct_candidate_head_count": 0,
+  "clean_obj": 7.125,
+  "corrupt_obj": -3.75,
+  "gap": 10.875,
+  "detailed_obj": 8.375,
+  "detailed_ratio_vs_gap": 1.1149425287356323,
+  "rough_obj": 8.75,
+  "rough_ratio_vs_gap": 1.1494252873563218,
+  "clean_with_detailed_corrupted": -4.625,
+  "necessity_drop": 11.75,
+  "necessity_ratio_vs_gap": 1.0804597701149425,
+  "clean_with_rough_corrupted": -5.0,
+  "rough_necessity_drop": 12.125,
+  "rough_necessity_ratio_vs_gap": 1.1149425287356323,
+  "probe_head": "L24H6",
+  "probe_corrupt_with_head": NaN,
+  "probe_clean_with_head_corrupt": NaN,
+  "detailed_nodes": [
+    "L4H15",
+    "MLP6",
+    "L6H0",
+    "L10H5",
+    "MLP11",
+    "MLP12",
+    "L12H6",
+    "MLP16",
+    "L16H4",
+    "L16H9",
+    "MLP17",
+    "L20H5",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "L4H15"
+    ],
+    [
+      "Input Embed",
+      "MLP6"
+    ],
+    [
+      "L4H15",
+      "MLP6"
+    ],
+    [
+      "L4H15",
+      "L6H0"
+    ],
+    [
+      "MLP6",
+      "L10H5"
+    ],
+    [
+      "L6H0",
+      "L10H5"
+    ],
+    [
+      "L10H5",
+      "MLP11"
+    ],
+    [
+      "L6H0",
+      "MLP11"
+    ],
+    [
+      "MLP11",
+      "MLP12"
+    ],
+    [
+      "L10H5",
+      "MLP12"
+    ],
+    [
+      "MLP11",
+      "L12H6"
+    ],
+    [
+      "L10H5",
+      "L12H6"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP12",
+      "L16H4"
+    ],
+    [
+      "MLP11",
+      "L16H4"
+    ],
+    [
+      "MLP12",
+      "L16H9"
+    ],
+    [
+      "MLP11",
+      "L16H9"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L16H9",
+      "MLP17"
+    ],
+    [
+      "MLP17",
+      "L20H5"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L23H6"
+    ],
+    [
+      "MLP16",
+      "L23H6"
+    ],
+    [
+      "MLP17",
+      "L24H6"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L23H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L12H6",
+      "MLP27"
+    ],
+    [
+      "L16H4",
+      "MLP27"
+    ],
+    [
+      "L20H5",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ]
+  ],
+  "rough_nodes": [
+    "L4H15",
+    "MLP6",
+    "MLP12",
+    "MLP16",
+    "L16H9",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "L4H15"
+    ],
+    [
+      "Input Embed",
+      "MLP6"
+    ],
+    [
+      "L4H15",
+      "MLP6"
+    ],
+    [
+      "L4H15",
+      "MLP12"
+    ],
+    [
+      "MLP6",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "L4H15",
+      "MLP16"
+    ],
+    [
+      "MLP12",
+      "L16H9"
+    ],
+    [
+      "MLP6",
+      "L16H9"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP12",
+      "L21H12"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "MLP12",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L21H12",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L16H9",
+      "MLP27"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Compose",
+      "corrupt_token": "Edit"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220
+  ],
+  "sample_catalog_record": {
+    "sample_id": "codecontests_java_291",
+    "sample_rank": 634,
+    "filename": "codecontests_java_291.txt",
+    "clean_path": "/root/autodl-tmp/project/datasets/clean/codecontests_java_291.txt",
+    "corrupt_path": "/root/autodl-tmp/project/datasets/corrupt/codecontests_java_291.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "edit",
+    "clean_candidate_type": "verb",
+    "corrupt_candidate": "compose",
+    "corrupt_candidate_type": "verb",
+    "dataset_name": "codecontests",
+    "language": "java",
+    "global_row_id": 993,
+    "clean_prompt_token_length": 229,
+    "corrupt_prompt_token_length": 229,
+    "clean_manifest": {
+      "global_row_id": 993,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_java_291.txt",
+      "source_filename": "codecontests_java_291.txt",
+      "dataset_name": "codecontests",
+      "language": "java",
+      "sample_index": 291,
+      "template_kind": "solve.java",
+      "original_first_user_line": "Write the function body in solve.java based on the function definition and docstring below:",
+      "original_prompt_sha1": "9abeae6f1b798bdd2cff5a75e8c9aaec7def214f",
+      "original_prompt_char_length": 1034,
+      "dataset": "codecontests",
+      "split_local_id": 291,
+      "original_source_id": "378_A. Playing with Dice",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00029-of-00039-2b6615897d038115.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 10142,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_java_291.txt",
+      "assigned_candidate": "compose",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "compose",
+      "assigned_tool_call_prob": 0.0009303018450737,
+      "assigned_tool_call_rank": 7,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7945324778556824,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.1564527153968811,
+      "assigned_top1_top2_prob_gap": 0.6380797624588013,
+      "assigned_rendered_first_user_line": "Compose the function body in solve.java based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "84e33bb939596bca4a4dff383477bb310e3af6a5",
+      "corrupt_candidate": "compose",
+      "corrupt_candidate_type": "verb",
+      "clean_candidate": "edit",
+      "clean_candidate_type": "verb",
+      "clean_candidate_slug": "edit",
+      "clean_rendered_first_user_line": "Edit the function body in solve.java based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.9617529511451721,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 229,
+      "clean_prompt_token_length": 229,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.9617529511451721,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.022618263959884644,
+      "clean_top1_top2_prob_gap": 0.9391346871852875,
+      "clean_tool_call_prob": 0.9617529511451721,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true
+    },
+    "corrupt_manifest": {
+      "global_row_id": 993,
+      "source_path": "/root/autodl-tmp/datasets/codecontests_java_291.txt",
+      "source_filename": "codecontests_java_291.txt",
+      "dataset_name": "codecontests",
+      "language": "java",
+      "sample_index": 291,
+      "template_kind": "solve.java",
+      "original_first_user_line": "Write the function body in solve.java based on the function definition and docstring below:",
+      "original_prompt_sha1": "9abeae6f1b798bdd2cff5a75e8c9aaec7def214f",
+      "original_prompt_char_length": 1034,
+      "dataset": "codecontests",
+      "split_local_id": 291,
+      "original_source_id": "378_A. Playing with Dice",
+      "original_source_path": "/root/autodl-tmp/data/CodeContests/data/train-00029-of-00039-2b6615897d038115.parquet",
+      "original_source_split": "train",
+      "original_source_row_index": 10142,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "codecontests_java_291.txt",
+      "assigned_candidate": "compose",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "compose",
+      "assigned_tool_call_prob": 0.0009303018450737,
+      "assigned_tool_call_rank": 7,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7945324778556824,
+      "assigned_top2_token_id": 785,
+      "assigned_top2_token_str": "The",
+      "assigned_top2_prob": 0.1564527153968811,
+      "assigned_top1_top2_prob_gap": 0.6380797624588013,
+      "assigned_rendered_first_user_line": "Compose the function body in solve.java based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "84e33bb939596bca4a4dff383477bb310e3af6a5"
+    }
+  },
+  "top_node_scores": [
+    {
+      "name": "MLP27",
+      "score": 5.75,
+      "ct": 5.75,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP16",
+      "score": 2.625,
+      "ct": 2.625,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP12",
+      "score": 2.5,
+      "ct": 2.5,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP17",
+      "score": 2.5,
+      "ct": 2.5,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP11",
+      "score": 2.0,
+      "ct": 2.0,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 1.7578125,
+      "ct": 1.7578125,
+      "ap": 1.7578125
+    },
+    {
+      "name": "L21H12",
+      "score": 1.1953125,
+      "ct": 1.1953125,
+      "ap": 1.1953125
+    },
+    {
+      "name": "L16H9",
+      "score": 0.98828125,
+      "ct": 0.98828125,
+      "ap": 0.98828125
+    },
+    {
+      "name": "L23H6",
+      "score": 0.953125,
+      "ct": 0.953125,
+      "ap": 0.953125
+    },
+    {
+      "name": "L16H4",
+      "score": 0.8984375,
+      "ct": 0.8984375,
+      "ap": 0.8984375
+    },
+    {
+      "name": "L20H5",
+      "score": 0.8359375,
+      "ct": 0.8359375,
+      "ap": 0.8359375
+    },
+    {
+      "name": "L12H6",
+      "score": 0.578125,
+      "ct": 0.578125,
+      "ap": 0.578125
+    },
+    {
+      "name": "L10H5",
+      "score": 0.51171875,
+      "ct": 0.51171875,
+      "ap": 0.51171875
+    },
+    {
+      "name": "MLP6",
+      "score": 0.375,
+      "ct": 0.375,
+      "ap": 0.0
+    },
+    {
+      "name": "L4H15",
+      "score": 0.185546875,
+      "ct": 0.185546875,
+      "ap": 0.185546875
+    },
+    {
+      "name": "L6H0",
+      "score": 0.171875,
+      "ct": 0.171875,
+      "ap": 0.171875
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "",
+    "ct_head_heatmap": "",
+    "probe": "",
+    "final_circuit_detailed": "",
+    "final_circuit": ""
+  }
+}

@@ -1,0 +1,3 @@
+sample_id,sample_rank,q_index,filename,weight,gap,detailed_ratio_vs_gap,necessity_ratio_vs_gap,ap_mode
+apps_python_1,1,,apps_python_1.txt,1.0,6.625,1.0188679245283019,1.0,full
+codecontests_cpp_1,2,,codecontests_cpp_1.txt,0.9045368620037807,11.5,0.9565217391304348,0.9456521739130435,full

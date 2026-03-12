@@ -1,3 +1,0 @@
-sample_id,sample_rank,q_index,filename,weight,gap,detailed_ratio_vs_gap,necessity_ratio_vs_gap,ap_mode
-codecontests_cpp_186,456,,codecontests_cpp_186.txt,0.9521331945889698,7.75,0.967741935483871,0.9838709677419355,full
-codecontests_cpp_284,621,,codecontests_cpp_284.txt,0.8951479289940829,16.25,0.9538461538461539,0.9384615384615385,full

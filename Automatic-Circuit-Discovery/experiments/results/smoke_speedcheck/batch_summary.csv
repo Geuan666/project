@@ -1,2 +1,0 @@
-sample_id,sample_rank,q_index,filename,status,clean_obj,corrupt_obj,gap,detailed_ratio_vs_gap,necessity_ratio_vs_gap,rough_ratio_vs_gap,rough_necessity_ratio_vs_gap,probe_head,target_token_str,distractor_token_str,ap_mode,error
-codecontests_cpp_284,621,,codecontests_cpp_284.txt,ok,5.875,-10.375,16.25,0.9615384615384616,0.9384615384615385,0.9230769230769231,0.8461538461538461,L21H12,<tool_call>,I,full,

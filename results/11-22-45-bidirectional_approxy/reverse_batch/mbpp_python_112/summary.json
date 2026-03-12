@@ -1,0 +1,704 @@
+{
+  "sample_id": "mbpp_python_112",
+  "sample_rank": 280,
+  "filename": "mbpp_python_112.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "direction": "reverse_no_tool",
+  "decision_label": "no_tool_vs_tool_call",
+  "output_node_label": "Residual Output: no_tool",
+  "clean_role": "no_tool",
+  "corrupt_role": "tool_call",
+  "canonical_tool_prompt": "/root/autodl-tmp/project/datasets/clean/mbpp_python_112.txt",
+  "canonical_no_tool_prompt": "/root/autodl-tmp/project/datasets/corrupt/mbpp_python_112.txt",
+  "clean_prompt": "/root/autodl-tmp/project/datasets/corrupt/mbpp_python_112.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/datasets/clean/mbpp_python_112.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 211,
+  "corrupt_prompt_token_length": 211,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "I",
+    "token_ids": [
+      40
+    ],
+    "tokens": [
+      "I"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 40,
+  "target_token_str": "I",
+  "distractor_token_id": 151657,
+  "distractor_token_str": "<tool_call>",
+  "tool_call_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "ap_mode": "full",
+  "ct_mode": "ap_proxy",
+  "ct_head_mode_requested": "ap_proxy",
+  "skip_plots": true,
+  "ct_candidate_ap_top_per_layer": 0,
+  "ct_candidate_ap_top_global": 0,
+  "ct_candidate_head_count": 0,
+  "clean_obj": 4.0,
+  "corrupt_obj": -2.25,
+  "gap": 6.25,
+  "detailed_obj": 4.5,
+  "detailed_ratio_vs_gap": 1.08,
+  "rough_obj": 4.125,
+  "rough_ratio_vs_gap": 1.02,
+  "clean_with_detailed_corrupted": -2.625,
+  "necessity_drop": 6.625,
+  "necessity_ratio_vs_gap": 1.06,
+  "clean_with_rough_corrupted": -2.5,
+  "rough_necessity_drop": 6.5,
+  "rough_necessity_ratio_vs_gap": 1.04,
+  "probe_head": "L24H6",
+  "probe_corrupt_with_head": NaN,
+  "probe_clean_with_head_corrupt": NaN,
+  "detailed_nodes": [
+    "MLP11",
+    "L11H5",
+    "L13H13",
+    "MLP14",
+    "MLP16",
+    "L16H4",
+    "L17H12",
+    "L17H2",
+    "MLP19",
+    "MLP20",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "L11H5"
+    ],
+    [
+      "MLP11",
+      "L13H13"
+    ],
+    [
+      "L11H5",
+      "L13H13"
+    ],
+    [
+      "MLP11",
+      "MLP14"
+    ],
+    [
+      "L13H13",
+      "MLP14"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "MLP14",
+      "MLP16"
+    ],
+    [
+      "MLP11",
+      "L16H4"
+    ],
+    [
+      "MLP14",
+      "L16H4"
+    ],
+    [
+      "MLP16",
+      "L17H12"
+    ],
+    [
+      "MLP11",
+      "L17H12"
+    ],
+    [
+      "MLP16",
+      "L17H2"
+    ],
+    [
+      "MLP11",
+      "L17H2"
+    ],
+    [
+      "L17H2",
+      "MLP19"
+    ],
+    [
+      "L17H12",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "MLP20"
+    ],
+    [
+      "L17H2",
+      "MLP20"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP20",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP20",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "MLP20",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L23H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L16H4",
+      "MLP27"
+    ],
+    [
+      "L20H5",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ]
+  ],
+  "rough_nodes": [
+    "MLP11",
+    "L11H5",
+    "MLP16",
+    "MLP19",
+    "L20H5",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "MLP11"
+    ],
+    [
+      "Input Embed",
+      "L11H5"
+    ],
+    [
+      "MLP11",
+      "MLP16"
+    ],
+    [
+      "L11H5",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP11",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L20H5",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L24H6"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L21H12",
+      "Residual Output: no_tool"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Supply",
+      "corrupt_token": "Prepare"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202
+  ],
+  "sample_catalog_record": {
+    "sample_id": "mbpp_python_112",
+    "sample_rank": 280,
+    "filename": "mbpp_python_112.txt",
+    "clean_path": "/root/autodl-tmp/project/datasets/clean/mbpp_python_112.txt",
+    "corrupt_path": "/root/autodl-tmp/project/datasets/corrupt/mbpp_python_112.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "prepare",
+    "clean_candidate_type": "verb",
+    "corrupt_candidate": "supply",
+    "corrupt_candidate_type": "verb",
+    "dataset_name": "mbpp",
+    "language": "python",
+    "global_row_id": 1588,
+    "clean_prompt_token_length": 211,
+    "corrupt_prompt_token_length": 211,
+    "clean_manifest": {
+      "global_row_id": 1588,
+      "source_path": "/root/autodl-tmp/datasets/mbpp_python_112.txt",
+      "source_filename": "mbpp_python_112.txt",
+      "dataset_name": "mbpp",
+      "language": "python",
+      "sample_index": 112,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "b8ae40475b63c649179ca2ba00048efee9837b47",
+      "original_prompt_char_length": 929,
+      "dataset": "mbpp",
+      "split_local_id": 112,
+      "original_source_id": "119",
+      "original_source_path": "/root/autodl-tmp/data/MBPP/test",
+      "original_source_split": "test",
+      "original_source_row_index": 108,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": false,
+      "mbpp_sanitization_source": "derived_rule_v1",
+      "output_filename": "mbpp_python_112.txt",
+      "assigned_candidate": "supply",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "supply",
+      "assigned_tool_call_prob": 0.0277562215924263,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7158423662185669,
+      "assigned_top2_token_id": 8420,
+      "assigned_top2_token_str": "Here",
+      "assigned_top2_prob": 0.15972603857517242,
+      "assigned_top1_top2_prob_gap": 0.5561163276433945,
+      "assigned_rendered_first_user_line": "Supply the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "39d2c7c289986599066d7a45aa77bbc88405a623",
+      "corrupt_candidate": "supply",
+      "corrupt_candidate_type": "verb",
+      "clean_candidate": "prepare",
+      "clean_candidate_type": "verb",
+      "clean_candidate_slug": "prepare",
+      "clean_rendered_first_user_line": "Prepare the function body in solve.py based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.9304434657096863,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 211,
+      "clean_prompt_token_length": 211,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.9304434657096863,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.05948125943541527,
+      "clean_top1_top2_prob_gap": 0.870962206274271,
+      "clean_tool_call_prob": 0.9304434657096863,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true
+    },
+    "corrupt_manifest": {
+      "global_row_id": 1588,
+      "source_path": "/root/autodl-tmp/datasets/mbpp_python_112.txt",
+      "source_filename": "mbpp_python_112.txt",
+      "dataset_name": "mbpp",
+      "language": "python",
+      "sample_index": 112,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "b8ae40475b63c649179ca2ba00048efee9837b47",
+      "original_prompt_char_length": 929,
+      "dataset": "mbpp",
+      "split_local_id": 112,
+      "original_source_id": "119",
+      "original_source_path": "/root/autodl-tmp/data/MBPP/test",
+      "original_source_split": "test",
+      "original_source_row_index": 108,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": false,
+      "mbpp_sanitization_source": "derived_rule_v1",
+      "output_filename": "mbpp_python_112.txt",
+      "assigned_candidate": "supply",
+      "assigned_candidate_type": "verb",
+      "assigned_candidate_slug": "supply",
+      "assigned_tool_call_prob": 0.0277562215924263,
+      "assigned_tool_call_rank": 4,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.7158423662185669,
+      "assigned_top2_token_id": 8420,
+      "assigned_top2_token_str": "Here",
+      "assigned_top2_prob": 0.15972603857517242,
+      "assigned_top1_top2_prob_gap": 0.5561163276433945,
+      "assigned_rendered_first_user_line": "Supply the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "39d2c7c289986599066d7a45aa77bbc88405a623"
+    }
+  },
+  "top_node_scores": [
+    {
+      "name": "MLP27",
+      "score": 3.625,
+      "ct": 3.625,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP19",
+      "score": 1.5,
+      "ct": 1.5,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP11",
+      "score": 1.375,
+      "ct": 1.375,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP16",
+      "score": 1.125,
+      "ct": 1.125,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 1.109375,
+      "ct": 1.109375,
+      "ap": 1.109375
+    },
+    {
+      "name": "L21H12",
+      "score": 0.96484375,
+      "ct": 0.96484375,
+      "ap": 0.96484375
+    },
+    {
+      "name": "L20H5",
+      "score": 0.91015625,
+      "ct": 0.91015625,
+      "ap": 0.91015625
+    },
+    {
+      "name": "MLP20",
+      "score": 0.875,
+      "ct": 0.875,
+      "ap": 0.0
+    },
+    {
+      "name": "L17H2",
+      "score": 0.81640625,
+      "ct": 0.81640625,
+      "ap": 0.81640625
+    },
+    {
+      "name": "L23H6",
+      "score": 0.74609375,
+      "ct": 0.74609375,
+      "ap": 0.74609375
+    },
+    {
+      "name": "L16H4",
+      "score": 0.68359375,
+      "ct": 0.68359375,
+      "ap": 0.68359375
+    },
+    {
+      "name": "L17H12",
+      "score": 0.640625,
+      "ct": 0.640625,
+      "ap": 0.640625
+    },
+    {
+      "name": "MLP14",
+      "score": 0.625,
+      "ct": 0.625,
+      "ap": 0.0
+    },
+    {
+      "name": "L21H1",
+      "score": 0.609375,
+      "ct": 0.609375,
+      "ap": 0.609375
+    },
+    {
+      "name": "L13H13",
+      "score": 0.333984375,
+      "ct": 0.333984375,
+      "ap": 0.333984375
+    },
+    {
+      "name": "L11H5",
+      "score": 0.314453125,
+      "ct": 0.314453125,
+      "ap": 0.314453125
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "",
+    "ct_head_heatmap": "",
+    "probe": "",
+    "final_circuit_detailed": "",
+    "final_circuit": ""
+  }
+}

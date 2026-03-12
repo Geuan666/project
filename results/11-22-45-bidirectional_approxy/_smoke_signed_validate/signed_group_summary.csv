@@ -1,0 +1,7 @@
+group,group_label,n_samples,n_nodes,promote_suff_ratio_median,suppress_suff_ratio_median,promote_tool_top1_rate,suppress_no_tool_top1_rate,promote_nec_drop_median,suppress_nec_drop_median,promote_nec_top1_drop_mean,suppress_nec_top1_drop_mean
+full_signed_circuit,full_signed_circuit,5,23,0.993421052631579,-0.9506578947368421,1.0,1.0,0.0,0.0,0.0,0.0
+symmetric_backbone,Symmetric Backbone,5,7,0.8085106382978723,-0.6732673267326733,1.0,1.0,0.052631578947368474,0.11956521739130443,0.0,0.0
+tool_bias_backbone,Tool-Bias Backbone,5,3,0.6195652173913043,-0.3617021276595745,0.6,0.2,0.02127659574468077,0.05434782608695654,0.0,0.0
+no_tool_bias_backbone,No-Tool-Bias Backbone,5,6,0.717391304347826,-0.574468085106383,1.0,0.6,0.06521739130434778,0.13043478260869568,0.0,0.0
+tool_tail,Tool Tail,5,5,0.5148514851485149,-0.16831683168316833,0.4,0.0,0.0,0.02127659574468077,0.0,0.0
+no_tool_tail,No-Tool Tail,5,2,0.24342105263157895,-0.07608695652173914,0.0,0.0,0.0,0.010869565217391353,0.0,0.0
