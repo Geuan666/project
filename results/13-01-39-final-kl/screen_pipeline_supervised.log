@@ -1,0 +1,61 @@
+[launch] forward_batch attempt=1
+[launch] forward_batch attempt=1
+[exit] forward_batch attempt=1 exit_code=0
+[done] forward_batch: /root/autodl-tmp/project/results/13-01-39-final-kl/forward_batch/batch_summary.json
+[launch] forward_aggregate attempt=1
+[exit] forward_aggregate attempt=1 exit_code=0
+[done] forward_aggregate: /root/autodl-tmp/project/results/13-01-39-final-kl/forward_aggregate/global_core_summary.json
+[launch] reverse_batch attempt=1
+[exit] reverse_batch attempt=1 exit_code=0
+[done] reverse_batch: /root/autodl-tmp/project/results/13-01-39-final-kl/reverse_batch/batch_summary.json
+[launch] reverse_aggregate attempt=1
+[exit] reverse_aggregate attempt=1 exit_code=0
+[done] reverse_aggregate: /root/autodl-tmp/project/results/13-01-39-final-kl/reverse_aggregate/global_core_summary.json
+[launch] bidirectional attempt=1
+[exit] bidirectional attempt=1 exit_code=0
+[done] bidirectional: /root/autodl-tmp/project/results/13-01-39-final-kl/bidirectional/bidirectional_summary.json
+[launch] causal_aligned attempt=1
+[exit] causal_aligned attempt=1 exit_code=0
+[done] causal_aligned: /root/autodl-tmp/project/results/13-01-39-final-kl/causal_aligned/cross_eval_summary.json
+[launch] causal_full attempt=1
+[exit] causal_full attempt=1 exit_code=0
+[done] causal_full: /root/autodl-tmp/project/results/13-01-39-final-kl/causal_full/cross_eval_summary.json
+[launch] head_reads attempt=1
+[exit] head_reads attempt=1 exit_code=0
+[done] head_reads: /root/autodl-tmp/project/results/13-01-39-final-kl/head_reads/head_read_report.json
+[launch] signed_circuit attempt=1
+[exit] signed_circuit attempt=1 exit_code=0
+[done] signed_circuit: /root/autodl-tmp/project/results/13-01-39-final-kl/final_signed_circuit/final_signed_circuit_summary.json
+[launch] signed_validate attempt=1
+[exit] signed_validate attempt=1 exit_code=0
+[done] signed_validate: /root/autodl-tmp/project/results/13-01-39-final-kl/signed_validate/signed_group_report.json
+[launch] token_flip attempt=1
+[exit] token_flip attempt=1 exit_code=0
+[done] token_flip: /root/autodl-tmp/project/results/13-01-39-final-kl/token_flip/group_token_flip_summary.json
+[launch] signed_families attempt=1
+[exit] signed_families attempt=1 exit_code=0
+[done] signed_families: /root/autodl-tmp/project/results/13-01-39-final-kl/final_signed_families/signed_family_summary.json
+[launch] signed_family_mediation attempt=1
+[exit] signed_family_mediation attempt=1 exit_code=0
+[done] signed_family_mediation: /root/autodl-tmp/project/results/13-01-39-final-kl/signed_family_mediation/signed_family_mediation_report.json
+[launch] signed_composition attempt=1
+[exit] signed_composition attempt=1 exit_code=0
+[done] signed_composition: /root/autodl-tmp/project/results/13-01-39-final-kl/signed_composition/signed_composition_report.json
+[launch] node_importance attempt=1
+[exit] node_importance attempt=1 exit_code=0
+[done] node_importance: /root/autodl-tmp/project/results/13-01-39-final-kl/node_importance/signed_node_importance_report.json
+[launch] edge_importance attempt=1
+[exit] edge_importance attempt=1 exit_code=0
+[done] edge_importance: /root/autodl-tmp/project/results/13-01-39-final-kl/edge_importance/signed_edge_mediation_report.json
+[launch] signed_trajectory attempt=1
+[exit] signed_trajectory attempt=1 exit_code=0
+[done] signed_trajectory: /root/autodl-tmp/project/results/13-01-39-final-kl/signed_layer_trajectory/signed_layer_trajectory_report.json
+[launch] functional_groups attempt=1
+[exit] functional_groups attempt=1 exit_code=0
+[done] functional_groups: /root/autodl-tmp/project/results/13-01-39-final-kl/functional_groups/functional_group_summary.json
+[launch] functional_validate attempt=1
+[exit] functional_validate attempt=1 exit_code=0
+[done] functional_validate: /root/autodl-tmp/project/results/13-01-39-final-kl/functional_validate/functional_group_report.json
+[launch] final_report attempt=1
+[exit] final_report attempt=1 exit_code=0
+[done] final_report: /root/autodl-tmp/project/results/13-01-39-final-kl/FINAL_REPORT.md

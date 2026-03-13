@@ -1,0 +1,262 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$PROJECT_ROOT"
+
+export PYTHONPATH="$PROJECT_ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+if [[ -f /etc/network_turbo ]]; then
+  # Optional proxy/bootstrap hook requested by the user for any later downloads.
+  # This script does not require network by default, but sourcing is harmless.
+  source /etc/network_turbo || true
+fi
+
+DATASET_ROOT="${DATASET_ROOT:-$PROJECT_ROOT/datasets}"
+MODEL_PATH="${MODEL_PATH:-/root/autodl-tmp/Qwen/Qwen3-1.7B}"
+DEVICE="${DEVICE:-cuda}"
+RUN_TAG="${RUN_TAG:-$(date +%d-%H-%M)-final-kl}"
+RUN_ROOT="${RUN_ROOT:-$PROJECT_ROOT/results/$RUN_TAG}"
+SAMPLE_IDS="${SAMPLE_IDS:-}"
+MAX_SAMPLES="${MAX_SAMPLES:-0}"
+DISCOVERY_CT_HEAD_MODE="${DISCOVERY_CT_HEAD_MODE:-ap_proxy}"
+SKIP_PLOTS="${SKIP_PLOTS:-1}"
+RESUME_DISCOVERY="${RESUME_DISCOVERY:-1}"
+FAMILY_MEDIATION_MAX_SAMPLES="${FAMILY_MEDIATION_MAX_SAMPLES:-0}"
+NODE_IMPORTANCE_MAX_SAMPLES="${NODE_IMPORTANCE_MAX_SAMPLES:-0}"
+EDGE_IMPORTANCE_MAX_SAMPLES="${EDGE_IMPORTANCE_MAX_SAMPLES:-0}"
+EDGE_IMPORTANCE_MAX_EDGES="${EDGE_IMPORTANCE_MAX_EDGES:-0}"
+TRAJECTORY_MAX_SAMPLES="${TRAJECTORY_MAX_SAMPLES:-0}"
+CAUSAL_EVAL_MAX_SAMPLES="${CAUSAL_EVAL_MAX_SAMPLES:-0}"
+FUNCTIONAL_VALIDATE_MAX_SAMPLES="${FUNCTIONAL_VALIDATE_MAX_SAMPLES:-0}"
+
+mkdir -p "$RUN_ROOT"
+
+FORWARD_BATCH="$RUN_ROOT/forward_batch"
+FORWARD_AGG="$RUN_ROOT/forward_aggregate"
+REVERSE_BATCH="$RUN_ROOT/reverse_batch"
+REVERSE_AGG="$RUN_ROOT/reverse_aggregate"
+BIDIRECTIONAL="$RUN_ROOT/bidirectional"
+CAUSAL_ALIGNED="$RUN_ROOT/causal_aligned"
+CAUSAL_FULL="$RUN_ROOT/causal_full"
+HEAD_READS="$RUN_ROOT/head_reads"
+SIGNED_CIRCUIT="$RUN_ROOT/final_signed_circuit"
+SIGNED_VALIDATE="$RUN_ROOT/signed_validate"
+TOKEN_FLIP="$RUN_ROOT/token_flip"
+SIGNED_FAMILIES="$RUN_ROOT/final_signed_families"
+SIGNED_FAMILY_MEDIATION="$RUN_ROOT/signed_family_mediation"
+SIGNED_COMPOSITION="$RUN_ROOT/signed_composition"
+NODE_IMPORTANCE="$RUN_ROOT/node_importance"
+EDGE_IMPORTANCE="$RUN_ROOT/edge_importance"
+SIGNED_TRAJECTORY="$RUN_ROOT/signed_layer_trajectory"
+FUNCTIONAL_GROUPS="$RUN_ROOT/functional_groups"
+FUNCTIONAL_VALIDATE="$RUN_ROOT/functional_validate"
+METHOD_BENCHMARK="$RUN_ROOT/method_benchmark"
+FINAL_REPORT="$RUN_ROOT/FINAL_REPORT.md"
+
+RELP_ROOT="${RELP_ROOT:-}"
+EAP_ROOT="${EAP_ROOT:-}"
+FEATURE_ROOT="${FEATURE_ROOT:-}"
+
+common_batch_args=(
+  --source dataset
+  --dataset-root "$DATASET_ROOT"
+  --model-path "$MODEL_PATH"
+  --device "$DEVICE"
+)
+
+if [[ "$MAX_SAMPLES" != "0" ]]; then
+  common_batch_args+=(--max-samples "$MAX_SAMPLES")
+fi
+
+if [[ -n "$SAMPLE_IDS" ]]; then
+  common_batch_args+=(--sample-ids "$SAMPLE_IDS")
+fi
+
+if [[ "$SKIP_PLOTS" != "0" ]]; then
+  common_batch_args+=(--skip-plots)
+fi
+
+if [[ "$RESUME_DISCOVERY" != "0" ]]; then
+  common_batch_args+=(--resume)
+fi
+
+python scripts/mine_toolcall_batch.py \
+  "${common_batch_args[@]}" \
+  --out-root "$FORWARD_BATCH" \
+  --ct-head-mode "$DISCOVERY_CT_HEAD_MODE"
+
+python scripts/aggregate_toolcall_behavior.py \
+  --input-root "$FORWARD_BATCH" \
+  --output-root "$FORWARD_AGG" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --summary-label "forward_kl" \
+  --skip-replay
+
+python scripts/mine_toolcall_reverse_batch.py \
+  "${common_batch_args[@]}" \
+  --out-root "$REVERSE_BATCH" \
+  --ct-head-mode "$DISCOVERY_CT_HEAD_MODE"
+
+python scripts/aggregate_toolcall_behavior.py \
+  --input-root "$REVERSE_BATCH" \
+  --output-root "$REVERSE_AGG" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --output-node-label "Residual Output: no_tool" \
+  --summary-label "reverse_kl" \
+  --skip-replay
+
+python scripts/analyze_toolcall_bidirectional.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-batch-root "$REVERSE_BATCH" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --output-root "$BIDIRECTIONAL"
+
+python scripts/evaluate_toolcall_bidirectional_causal.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$CAUSAL_EVAL_MAX_SAMPLES" \
+  --matrix aligned \
+  --output-root "$CAUSAL_ALIGNED"
+
+python scripts/evaluate_toolcall_bidirectional_causal.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$CAUSAL_EVAL_MAX_SAMPLES" \
+  --matrix full \
+  --output-root "$CAUSAL_FULL"
+
+python scripts/analyze_toolcall_bidirectional_head_reads.py \
+  --dataset-root "$DATASET_ROOT" \
+  --reverse-batch-root "$REVERSE_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --output-root "$HEAD_READS"
+
+python scripts/build_toolcall_signed_circuit.py \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --node-support-csv "$BIDIRECTIONAL/node_bidirectional_support.csv" \
+  --edge-support-csv "$BIDIRECTIONAL/edge_bidirectional_support.csv" \
+  --head-read-csv "$HEAD_READS/per_head_read_mass.csv" \
+  --output-root "$SIGNED_CIRCUIT"
+
+python scripts/validate_toolcall_signed_circuit.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "${MAX_SAMPLES:-0}" \
+  --output-root "$SIGNED_VALIDATE"
+
+python scripts/evaluate_toolcall_bidirectional_token_flip.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --forward-aggregate-summary "$FORWARD_AGG/global_core_summary.json" \
+  --reverse-aggregate-summary "$REVERSE_AGG/global_core_summary.json" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "${MAX_SAMPLES:-0}" \
+  --output-root "$TOKEN_FLIP"
+
+python scripts/analyze_toolcall_signed_families.py \
+  --signed-edges-csv "$SIGNED_CIRCUIT/final_signed_edges.csv" \
+  --output-root "$SIGNED_FAMILIES"
+
+python scripts/evaluate_toolcall_signed_family_mediation.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --signed-family-summary-csv "$SIGNED_FAMILIES/signed_family_summary.csv" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$FAMILY_MEDIATION_MAX_SAMPLES" \
+  --output-root "$SIGNED_FAMILY_MEDIATION"
+
+python scripts/evaluate_toolcall_signed_composition.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "${MAX_SAMPLES:-0}" \
+  --output-root "$SIGNED_COMPOSITION"
+
+python scripts/evaluate_toolcall_signed_node_importance.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --signed-nodes-csv "$SIGNED_CIRCUIT/final_signed_nodes.csv" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$NODE_IMPORTANCE_MAX_SAMPLES" \
+  --output-root "$NODE_IMPORTANCE"
+
+python scripts/evaluate_toolcall_signed_edge_importance.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --signed-edges-csv "$SIGNED_CIRCUIT/final_signed_edges.csv" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$EDGE_IMPORTANCE_MAX_SAMPLES" \
+  --max-edges "$EDGE_IMPORTANCE_MAX_EDGES" \
+  --output-root "$EDGE_IMPORTANCE"
+
+python scripts/analyze_toolcall_signed_layer_trajectory.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --bidirectional-summary "$BIDIRECTIONAL/bidirectional_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$TRAJECTORY_MAX_SAMPLES" \
+  --output-root "$SIGNED_TRAJECTORY"
+
+python scripts/analyze_toolcall_functional_groups.py \
+  --signed-nodes-csv "$SIGNED_CIRCUIT/final_signed_nodes.csv" \
+  --signed-edges-csv "$SIGNED_CIRCUIT/final_signed_edges.csv" \
+  --head-read-csv "$HEAD_READS/per_head_read_mass.csv" \
+  --node-importance-csv "$NODE_IMPORTANCE/signed_node_importance_summary.csv" \
+  --output-root "$FUNCTIONAL_GROUPS"
+
+python scripts/evaluate_toolcall_functional_groups.py \
+  --forward-batch-root "$FORWARD_BATCH" \
+  --functional-group-json "$FUNCTIONAL_GROUPS/functional_group_summary.json" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$FUNCTIONAL_VALIDATE_MAX_SAMPLES" \
+  --output-root "$FUNCTIONAL_VALIDATE"
+
+if [[ -n "$RELP_ROOT" || -n "$EAP_ROOT" || -n "$FEATURE_ROOT" ]]; then
+  benchmark_args=(
+    --baseline-root "$RUN_ROOT"
+    --output-root "$METHOD_BENCHMARK"
+  )
+  if [[ -n "$RELP_ROOT" ]]; then
+    benchmark_args+=(--relp-root "$RELP_ROOT")
+  fi
+  if [[ -n "$EAP_ROOT" ]]; then
+    benchmark_args+=(--eap-root "$EAP_ROOT")
+  fi
+  if [[ -n "$FEATURE_ROOT" ]]; then
+    benchmark_args+=(--feature-root "$FEATURE_ROOT")
+  fi
+  python scripts/collect_toolcall_method_benchmark.py "${benchmark_args[@]}"
+fi
+
+python scripts/build_toolcall_final_report.py \
+  --run-root "$RUN_ROOT" \
+  --output "$FINAL_REPORT"
+
+echo "[done] final pipeline outputs: $RUN_ROOT"
+echo "[done] final report: $FINAL_REPORT"

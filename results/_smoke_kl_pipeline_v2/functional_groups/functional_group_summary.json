@@ -1,0 +1,504 @@
+{
+  "group_meta": {
+    "tool_schema_readers": {
+      "label": "Tool-Schema Readers",
+      "color": "#8c510a",
+      "description": "heads that read tool schema or tool-call tag structure and favor the tool endpoint"
+    },
+    "user_query_readers": {
+      "label": "User-Query Readers",
+      "color": "#4d9221",
+      "description": "heads that read user content while still promoting tool-use execution"
+    },
+    "suppression_readers": {
+      "label": "Suppression Readers",
+      "color": "#2166ac",
+      "description": "heads that read user/prefix evidence and tilt the system toward no-tool mode"
+    },
+    "promotion_routers_mediators": {
+      "label": "Promotion Routers",
+      "color": "#d6604d",
+      "description": "routing or mediation heads that transmit tool-promoting state without being primary readers"
+    },
+    "suppression_routers_mediators": {
+      "label": "Suppression Routers",
+      "color": "#4393c3",
+      "description": "routing or mediation heads that transmit no-tool state without being primary readers"
+    },
+    "tool_call_writers": {
+      "label": "Tool-Call Writers",
+      "color": "#b2182b",
+      "description": "writer nodes whose causal profile is strongest for the tool-call endpoint"
+    },
+    "no_tool_writers": {
+      "label": "No-Tool Writers",
+      "color": "#053061",
+      "description": "writer nodes whose causal profile is strongest for the no-tool endpoint"
+    },
+    "arbitration_integrators": {
+      "label": "Arbitration Integrators",
+      "color": "#7f7f7f",
+      "description": "shared late-stage nodes that integrate competing evidence and stabilize the decision boundary"
+    }
+  },
+  "groups": {
+    "tool_schema_readers": [
+      "L16H8",
+      "L17H12",
+      "L17H8",
+      "L21H1",
+      "L21H12"
+    ],
+    "user_query_readers": [
+      "L2H14",
+      "L5H5",
+      "L11H5"
+    ],
+    "suppression_readers": [
+      "L12H0",
+      "L15H5",
+      "L16H4",
+      "L20H14",
+      "L23H6"
+    ],
+    "promotion_routers_mediators": [
+      "L4H4",
+      "L12H6",
+      "L16H9"
+    ],
+    "tool_call_writers": [
+      "MLP1",
+      "MLP6",
+      "MLP10",
+      "MLP13",
+      "MLP17",
+      "MLP19",
+      "MLP21"
+    ],
+    "no_tool_writers": [
+      "MLP4",
+      "MLP5"
+    ],
+    "arbitration_integrators": [
+      "L13H9",
+      "MLP16",
+      "L18H14",
+      "MLP18",
+      "L24H6",
+      "MLP27"
+    ]
+  },
+  "artifacts": {
+    "node_table_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_groups/functional_node_table.csv",
+    "group_summary_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_groups/functional_group_summary.csv",
+    "group_edges_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_groups/functional_group_edges.csv",
+    "graph_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_groups/functional_group_graph.png",
+    "summary_json": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_groups/functional_group_summary.json"
+  },
+  "summary_rows": [
+    {
+      "functional_group": "tool_schema_readers",
+      "functional_label": "Tool-Schema Readers",
+      "description": "heads that read tool schema or tool-call tag structure and favor the tool endpoint",
+      "n_nodes": 5,
+      "n_heads": 5,
+      "n_mlps": 0,
+      "nodes": "L16H8,L17H12,L17H8,L21H1,L21H12",
+      "representatives": "L16H8,L17H12,L17H8,L21H1,L21H12",
+      "promote_strength_median": 0.43069666182873734,
+      "suppress_strength_median": 0.1726126722110215,
+      "direction_balance_median": 0.27898567424304405,
+      "structural_mix": "{\"no_tool_bias_backbone\": 1, \"no_tool_tail\": 2, \"symmetric_backbone\": 1, \"tool_bias_backbone\": 1}"
+    },
+    {
+      "functional_group": "user_query_readers",
+      "functional_label": "User-Query Readers",
+      "description": "heads that read user content while still promoting tool-use execution",
+      "n_nodes": 3,
+      "n_heads": 3,
+      "n_mlps": 0,
+      "nodes": "L2H14,L5H5,L11H5",
+      "representatives": "L2H14,L5H5,L11H5",
+      "promote_strength_median": 0.15235208742422948,
+      "suppress_strength_median": 0.0,
+      "direction_balance_median": -1.0,
+      "structural_mix": "{\"symmetric_backbone\": 1, \"tool_tail\": 2}"
+    },
+    {
+      "functional_group": "suppression_readers",
+      "functional_label": "Suppression Readers",
+      "description": "heads that read user/prefix evidence and tilt the system toward no-tool mode",
+      "n_nodes": 5,
+      "n_heads": 5,
+      "n_mlps": 0,
+      "nodes": "L12H0,L15H5,L16H4,L20H14,L23H6",
+      "representatives": "L12H0,L15H5,L16H4,L20H14,L23H6",
+      "promote_strength_median": 0.2315269358832067,
+      "suppress_strength_median": 0.1229227761485826,
+      "direction_balance_median": 1.0,
+      "structural_mix": "{\"no_tool_bias_backbone\": 1, \"no_tool_tail\": 3, \"symmetric_backbone\": 1}"
+    },
+    {
+      "functional_group": "promotion_routers_mediators",
+      "functional_label": "Promotion Routers",
+      "description": "routing or mediation heads that transmit tool-promoting state without being primary readers",
+      "n_nodes": 3,
+      "n_heads": 3,
+      "n_mlps": 0,
+      "nodes": "L4H4,L12H6,L16H9",
+      "representatives": "L4H4,L12H6,L16H9",
+      "promote_strength_median": 0.1188423119610689,
+      "suppress_strength_median": 0.0,
+      "direction_balance_median": -1.0,
+      "structural_mix": "{\"tool_tail\": 3}"
+    },
+    {
+      "functional_group": "tool_call_writers",
+      "functional_label": "Tool-Call Writers",
+      "description": "writer nodes whose causal profile is strongest for the tool-call endpoint",
+      "n_nodes": 7,
+      "n_heads": 0,
+      "n_mlps": 7,
+      "nodes": "MLP1,MLP6,MLP10,MLP13,MLP17,MLP19,MLP21",
+      "representatives": "MLP1,MLP6,MLP10,MLP13,MLP17",
+      "promote_strength_median": 0.22448317408001944,
+      "suppress_strength_median": 0.04902942765609723,
+      "direction_balance_median": -0.04055005690118125,
+      "structural_mix": "{\"no_tool_bias_backbone\": 1, \"symmetric_backbone\": 3, \"tool_tail\": 3}"
+    },
+    {
+      "functional_group": "no_tool_writers",
+      "functional_label": "No-Tool Writers",
+      "description": "writer nodes whose causal profile is strongest for the no-tool endpoint",
+      "n_nodes": 2,
+      "n_heads": 0,
+      "n_mlps": 2,
+      "nodes": "MLP4,MLP5",
+      "representatives": "MLP4,MLP5",
+      "promote_strength_median": 0.13323870912661145,
+      "suppress_strength_median": 0.03903068972550605,
+      "direction_balance_median": 1.0,
+      "structural_mix": "{\"no_tool_tail\": 2}"
+    },
+    {
+      "functional_group": "arbitration_integrators",
+      "functional_label": "Arbitration Integrators",
+      "description": "shared late-stage nodes that integrate competing evidence and stabilize the decision boundary",
+      "n_nodes": 6,
+      "n_heads": 3,
+      "n_mlps": 3,
+      "nodes": "L13H9,MLP16,L18H14,MLP18,L24H6,MLP27",
+      "representatives": "L13H9,MLP16,L18H14,MLP18,L24H6",
+      "promote_strength_median": 0.562674904830387,
+      "suppress_strength_median": 0.3296325822807205,
+      "direction_balance_median": 0.0,
+      "structural_mix": "{\"symmetric_backbone\": 6}"
+    }
+  ],
+  "edge_rows": [
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "shared",
+      "n_edges": 2,
+      "support_median": 1.0,
+      "top_edges": "L21H1->MLP27 (1.000) | L21H12->MLP27 (0.480)"
+    },
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "suppression_readers",
+      "sign": "tool_bias",
+      "n_edges": 2,
+      "support_median": 1.0,
+      "top_edges": "L21H1->L23H6 (1.000) | L21H12->L23H6 (1.000)"
+    },
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "tool_bias",
+      "n_edges": 2,
+      "support_median": 1.0,
+      "top_edges": "L21H1->L24H6 (1.000) | L21H12->L24H6 (0.436)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "arbitration_integrators",
+      "sign": "no_tool_bias",
+      "n_edges": 2,
+      "support_median": 1.0,
+      "top_edges": "L24H6->MLP27 (1.000) | MLP16->L24H6 (1.000)"
+    },
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "tool_call_writers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 1.0,
+      "top_edges": "L16H8->MLP17 (1.000)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "tool_call_writers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 1.0,
+      "top_edges": "MLP16->MLP17 (1.000)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "tool_schema_readers",
+      "sign": "shared",
+      "n_edges": 4,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP10->L16H8 (0.564) | MLP17->L21H1 (0.564) | MLP19->L21H1 (0.480) | MLP19->L21H12 (0.480)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "arbitration_integrators",
+      "sign": "shared",
+      "n_edges": 3,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP16->L18H14 (0.564) | MLP16->MLP18 (0.564) | L13H9->MLP16 (0.480)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "arbitration_integrators",
+      "sign": "shared",
+      "n_edges": 3,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP17->L18H14 (0.564) | MLP17->MLP18 (0.564) | MLP13->MLP16 (0.480)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "tool_schema_readers",
+      "sign": "tool_bias",
+      "n_edges": 3,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L18H14->L21H1 (0.564) | MLP18->L21H1 (0.564) | MLP18->L21H12 (0.564)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "tool_call_writers",
+      "sign": "tool_bias",
+      "n_edges": 3,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L2H14->MLP10 (0.564) | L2H14->MLP6 (0.564) | L5H5->MLP6 (0.564)"
+    },
+    {
+      "source_group": "suppression_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "tool_bias",
+      "n_edges": 2,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L23H6->L24H6 (0.564) | L23H6->MLP27 (0.564)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "tool_schema_readers",
+      "sign": "tool_bias",
+      "n_edges": 2,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L11H5->L16H8 (0.564) | L5H5->L21H1 (0.436)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "suppression_readers",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L11H5->L12H0 (0.564)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L11H5->MLP16 (0.564)"
+    },
+    {
+      "source_group": "suppression_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L12H0->MLP16 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "user_query_readers",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP10->L11H5 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "suppression_readers",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP10->L12H0 (0.564)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "user_query_readers",
+      "sign": "tool_bias",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "L2H14->L5H5 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "arbitration_integrators",
+      "sign": "tool_bias",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP10->MLP16 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "tool_schema_readers",
+      "sign": "tool_bias",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP17->L21H12 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "user_query_readers",
+      "sign": "tool_bias",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP6->L11H5 (0.564)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "tool_call_writers",
+      "sign": "tool_bias",
+      "n_edges": 1,
+      "support_median": 0.5637391725936897,
+      "top_edges": "MLP6->MLP10 (0.564)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "tool_schema_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 4,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP16->L21H1 (1.000) | MLP16->L17H8 (0.520) | L13H9->L16H8 (0.480) | MLP16->L21H12 (0.480)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "suppression_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 4,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP16->L23H6 (1.000) | L18H14->L20H14 (0.520) | MLP16->L20H14 (0.520) | MLP18->L20H14 (0.520)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "suppression_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 4,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP10->L15H5 (0.520) | MLP17->L20H14 (0.520) | MLP17->L23H6 (0.520) | MLP19->L23H6 (0.480)"
+    },
+    {
+      "source_group": "suppression_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "no_tool_bias",
+      "n_edges": 3,
+      "support_median": 0.519801535236432,
+      "top_edges": "L15H5->MLP16 (0.520) | L20H14->MLP27 (0.520) | L12H0->L13H9 (0.480)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "arbitration_integrators",
+      "sign": "no_tool_bias",
+      "n_edges": 2,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP17->L24H6 (0.520) | MLP17->MLP27 (0.520)"
+    },
+    {
+      "source_group": "user_query_readers",
+      "target_group": "suppression_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "L11H5->L15H5 (0.520)"
+    },
+    {
+      "source_group": "suppression_readers",
+      "target_group": "tool_schema_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "L15H5->L16H8 (0.520)"
+    },
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "tool_schema_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "L16H8->L17H8 (0.520)"
+    },
+    {
+      "source_group": "tool_schema_readers",
+      "target_group": "arbitration_integrators",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "L17H8->MLP18 (0.520)"
+    },
+    {
+      "source_group": "no_tool_writers",
+      "target_group": "user_query_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP5->L11H5 (0.520)"
+    },
+    {
+      "source_group": "no_tool_writers",
+      "target_group": "tool_call_writers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.519801535236432,
+      "top_edges": "MLP5->MLP10 (0.520)"
+    },
+    {
+      "source_group": "arbitration_integrators",
+      "target_group": "tool_call_writers",
+      "sign": "shared",
+      "n_edges": 1,
+      "support_median": 0.48019846476356787,
+      "top_edges": "MLP16->MLP19 (0.480)"
+    },
+    {
+      "source_group": "suppression_readers",
+      "target_group": "tool_call_writers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.48019846476356787,
+      "top_edges": "L12H0->MLP13 (0.480)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "tool_schema_readers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.48019846476356787,
+      "top_edges": "MLP13->L16H8 (0.480)"
+    },
+    {
+      "source_group": "tool_call_writers",
+      "target_group": "tool_call_writers",
+      "sign": "no_tool_bias",
+      "n_edges": 1,
+      "support_median": 0.48019846476356787,
+      "top_edges": "MLP17->MLP19 (0.480)"
+    }
+  ]
+}

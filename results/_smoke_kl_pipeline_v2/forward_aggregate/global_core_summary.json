@@ -1,0 +1,506 @@
+{
+  "input_root": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_batch",
+  "summary_label": "smoke_forward_kl",
+  "output_node_label": "Residual Output: <tool_call>",
+  "n_samples": 2,
+  "total_weight": 1.7728509921926534,
+  "weight_params": {
+    "gap_min": 0.5,
+    "ap_discount": 0.7
+  },
+  "core_thresholds": {
+    "node": 0.5,
+    "edge": 0.35
+  },
+  "relaxed_thresholds": {
+    "node": 0.25,
+    "edge": 0.15
+  },
+  "core_nodes": [
+    "L2H14",
+    "L5H5",
+    "MLP6",
+    "MLP10",
+    "L11H5",
+    "L12H0",
+    "MLP16",
+    "L16H8",
+    "MLP17",
+    "MLP18",
+    "L18H14",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "core_edges": [
+    [
+      "L16H8",
+      "MLP17"
+    ],
+    [
+      "Input Embed",
+      "L2H14"
+    ],
+    [
+      "MLP17",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP6",
+      "L11H5"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP10",
+      "L12H0"
+    ],
+    [
+      "MLP10",
+      "MLP16"
+    ],
+    [
+      "MLP6",
+      "MLP10"
+    ],
+    [
+      "MLP10",
+      "L16H8"
+    ],
+    [
+      "L2H14",
+      "MLP10"
+    ],
+    [
+      "MLP18",
+      "L21H12"
+    ],
+    [
+      "MLP18",
+      "L21H1"
+    ],
+    [
+      "L2H14",
+      "L5H5"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L11H5",
+      "L12H0"
+    ],
+    [
+      "L11H5",
+      "MLP16"
+    ],
+    [
+      "L11H5",
+      "L16H8"
+    ],
+    [
+      "Input Embed",
+      "L5H5"
+    ],
+    [
+      "L5H5",
+      "MLP6"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "L18H14",
+      "L21H1"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP10",
+      "L11H5"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L2H14",
+      "MLP6"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "L12H0",
+      "MLP16"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L5H5",
+      "L21H1"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ]
+  ],
+  "relaxed_nodes": [
+    "MLP1",
+    "L2H14",
+    "L4H4",
+    "L5H5",
+    "MLP6",
+    "MLP10",
+    "L11H5",
+    "L12H0",
+    "L12H6",
+    "MLP13",
+    "L13H9",
+    "MLP16",
+    "L16H8",
+    "L16H9",
+    "MLP17",
+    "MLP18",
+    "L18H14",
+    "MLP19",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "relaxed_edges": [
+    [
+      "L16H8",
+      "MLP17"
+    ],
+    [
+      "Input Embed",
+      "L2H14"
+    ],
+    [
+      "MLP17",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP6",
+      "L11H5"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "MLP10",
+      "L12H0"
+    ],
+    [
+      "MLP10",
+      "MLP16"
+    ],
+    [
+      "MLP6",
+      "MLP10"
+    ],
+    [
+      "MLP10",
+      "L16H8"
+    ],
+    [
+      "L2H14",
+      "MLP10"
+    ],
+    [
+      "MLP18",
+      "L21H12"
+    ],
+    [
+      "MLP18",
+      "L21H1"
+    ],
+    [
+      "L2H14",
+      "L5H5"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L11H5",
+      "L12H0"
+    ],
+    [
+      "L11H5",
+      "MLP16"
+    ],
+    [
+      "L11H5",
+      "L16H8"
+    ],
+    [
+      "Input Embed",
+      "L5H5"
+    ],
+    [
+      "L5H5",
+      "MLP6"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "L18H14",
+      "L21H1"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP10",
+      "L11H5"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L2H14",
+      "MLP6"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "L12H0",
+      "MLP16"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L13H9",
+      "MLP16"
+    ],
+    [
+      "MLP21",
+      "L23H6"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "L5H5",
+      "L21H1"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "L20H5",
+      "MLP21"
+    ],
+    [
+      "Input Embed",
+      "L4H4"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "Input Embed",
+      "MLP1"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "MLP1",
+      "MLP13"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "MLP13",
+      "L16H9"
+    ],
+    [
+      "L20H5",
+      "L21H12"
+    ],
+    [
+      "L4H4",
+      "L5H5"
+    ],
+    [
+      "MLP1",
+      "L4H4"
+    ],
+    [
+      "L20H5",
+      "L21H1"
+    ],
+    [
+      "MLP1",
+      "L13H9"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L4H4",
+      "L12H6"
+    ],
+    [
+      "L12H6",
+      "MLP13"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L13H9",
+      "L16H9"
+    ],
+    [
+      "MLP1",
+      "L5H5"
+    ],
+    [
+      "MLP13",
+      "MLP16"
+    ],
+    [
+      "MLP1",
+      "L12H6"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "L12H6",
+      "L13H9"
+    ],
+    [
+      "L16H9",
+      "MLP19"
+    ]
+  ],
+  "n_clusters": 2,
+  "cluster_sizes": {
+    "0": 1,
+    "1": 1
+  },
+  "cluster_summaries": [],
+  "replay_summary": {
+    "ran_samples": 0,
+    "global_suff_ratio_median": null,
+    "global_nec_ratio_median": null,
+    "random_suff_ratio_mean_median": null,
+    "global_minus_random_median": null
+  },
+  "artifacts": {
+    "node_support_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/node_support.csv",
+    "edge_support_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/edge_support.csv",
+    "sample_weights_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/sample_weights.csv",
+    "cluster_assignments_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/cluster_assignments.csv",
+    "global_core_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/final_circuit_global_core.png",
+    "global_relaxed_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/final_circuit_global_relaxed.png",
+    "global_replay_json": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/forward_aggregate/global_core_replay.json"
+  }
+}

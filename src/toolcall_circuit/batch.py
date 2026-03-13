@@ -104,6 +104,8 @@ def main() -> None:
     parser.add_argument("--max-samples", type=int, default=0, help="0 means run all selected samples.")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--stop-on-error", action="store_true")
+    parser.add_argument("--ct-head-mode", choices=["exact", "ap_proxy"], default="exact")
+    parser.add_argument("--skip-plots", action="store_true")
     args = parser.parse_args()
 
     out_root = Path(args.out_root).resolve()
@@ -172,6 +174,8 @@ def main() -> None:
                 model=model,
                 tokenizer=tokenizer,
                 model_path=args.model_path,
+                ct_head_mode=args.ct_head_mode,
+                skip_plots=args.skip_plots,
             )
             row = make_row_from_summary(summary, status="ok")
             rows.append(row)

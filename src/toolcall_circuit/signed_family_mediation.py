@@ -26,6 +26,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from toolcall_circuit.bidirectional_causal_eval import collect_cache_cpu_for_nodes, load_sample_paths
+from toolcall_circuit.objective import build_bidirectional_endpoint_objectives
 from toolcall_circuit.single_sample import load_hooked_qwen3, objective_from_logits, parse_head
 
 
@@ -204,10 +205,23 @@ def main() -> None:
         with torch.no_grad():
             tool_logits = model(tool_tokens)
             no_tool_logits = model(no_tool_tokens)
-        m_tool_tool = float(objective_from_logits(tool_logits, sp.target_tool_call, sp.distractor).item())
-        m_tool_no = float(objective_from_logits(no_tool_logits, sp.target_tool_call, sp.distractor).item())
-        gap = m_tool_tool - m_tool_no
-        if not math.isfinite(gap) or abs(gap) < 1e-8:
+        tool_objective, no_tool_objective = build_bidirectional_endpoint_objectives(
+            tool_logits,
+            no_tool_logits,
+            tokenizer=tokenizer,
+        )
+        m_tool_tool = float(objective_from_logits(tool_logits, tool_objective).item())
+        m_tool_no = float(objective_from_logits(no_tool_logits, tool_objective).item())
+        gap_tool = m_tool_tool - m_tool_no
+        m_no_tool_tool = float(objective_from_logits(tool_logits, no_tool_objective).item())
+        m_no_tool_no = float(objective_from_logits(no_tool_logits, no_tool_objective).item())
+        gap_no_tool = m_no_tool_no - m_no_tool_tool
+        if (
+            not math.isfinite(gap_tool)
+            or abs(gap_tool) < 1e-8
+            or not math.isfinite(gap_no_tool)
+            or abs(gap_no_tool) < 1e-8
+        ):
             continue
 
         tool_cache = collect_cache_cpu_for_nodes(model, tool_tokens, all_nodes)
@@ -220,30 +234,26 @@ def main() -> None:
             promote_src_logits = run_logits_with_assignments(
                 model, no_tool_tokens, tool_cache, no_tool_cache, src_nodes, []
             )
-            promote_src_margin = float(objective_from_logits(promote_src_logits, sp.target_tool_call, sp.distractor).item())
-            promote_src_ratio = (promote_src_margin - m_tool_no) / gap
+            promote_src_margin = float(objective_from_logits(promote_src_logits, tool_objective).item())
+            promote_src_ratio = (promote_src_margin - m_tool_no) / gap_tool
 
             promote_blocked_logits = run_logits_with_assignments(
                 model, no_tool_tokens, tool_cache, no_tool_cache, src_nodes, tgt_nodes
             )
-            promote_blocked_margin = float(
-                objective_from_logits(promote_blocked_logits, sp.target_tool_call, sp.distractor).item()
-            )
-            promote_blocked_ratio = (promote_blocked_margin - m_tool_no) / gap
+            promote_blocked_margin = float(objective_from_logits(promote_blocked_logits, tool_objective).item())
+            promote_blocked_ratio = (promote_blocked_margin - m_tool_no) / gap_tool
 
             suppress_src_logits = run_logits_with_assignments(
                 model, tool_tokens, no_tool_cache, tool_cache, src_nodes, []
             )
-            suppress_src_margin = float(objective_from_logits(suppress_src_logits, sp.target_tool_call, sp.distractor).item())
-            suppress_src_ratio = (suppress_src_margin - m_tool_tool) / gap
+            suppress_src_margin = float(objective_from_logits(suppress_src_logits, no_tool_objective).item())
+            suppress_src_ratio = (suppress_src_margin - m_no_tool_tool) / gap_no_tool
 
             suppress_blocked_logits = run_logits_with_assignments(
                 model, tool_tokens, no_tool_cache, tool_cache, src_nodes, tgt_nodes
             )
-            suppress_blocked_margin = float(
-                objective_from_logits(suppress_blocked_logits, sp.target_tool_call, sp.distractor).item()
-            )
-            suppress_blocked_ratio = (suppress_blocked_margin - m_tool_tool) / gap
+            suppress_blocked_margin = float(objective_from_logits(suppress_blocked_logits, no_tool_objective).item())
+            suppress_blocked_ratio = (suppress_blocked_margin - m_no_tool_tool) / gap_no_tool
 
             per_sample_rows.append(
                 {

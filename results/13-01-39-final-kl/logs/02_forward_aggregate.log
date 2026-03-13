@@ -1,0 +1,6 @@
+
+[2026-03-13 10:28:45] launch: /root/miniconda3/bin/python /root/autodl-tmp/project/scripts/aggregate_toolcall_behavior.py --input-root /root/autodl-tmp/project/results/13-01-39-final-kl/forward_batch --output-root /root/autodl-tmp/project/results/13-01-39-final-kl/forward_aggregate --model-path /root/autodl-tmp/Qwen/Qwen3-1.7B --device cuda --summary-label forward_kl --skip-replay
+[done] aggregate outputs: /root/autodl-tmp/project/results/13-01-39-final-kl/forward_aggregate
+[done] core nodes=9 edges=20
+[done] replay samples=0
+[2026-03-13 10:28:59] exit_code=0

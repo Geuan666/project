@@ -1,228 +1,44 @@
 {
   "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
-  "strict_tool_call_prob_threshold": 0.5,
-  "selected_verbs": [
-    "append",
-    "save",
-    "insert",
-    "paste",
-    "write",
-    "create",
-    "prepare",
-    "edit",
-    "finalize",
-    "prefill"
-  ],
-  "selected_phrases": [
-    "write out",
-    "directly build",
-    "directly implement",
-    "manually build",
-    "properly add"
-  ],
-  "n_selected_samples": 1189,
-  "language_counts": {
-    "cpp": 402,
+  "strict_pruned": true,
+  "pre_prune_rows": 1789,
+  "dropped_rows": 67,
+  "total_rows": 1722,
+  "language_counts_final": {
+    "cpp": 583,
     "java": 584,
-    "python": 203
+    "python": 555
   },
-  "dataset_counts": {
-    "apps": 102,
-    "codecontests": 986,
+  "dataset_counts_final": {
+    "apps": 422,
+    "codecontests": 1167,
     "humaneval": 40,
-    "mbpp": 61
+    "mbpp": 93
   },
-  "clean_candidate_counts": {
-    "append": 81,
-    "create": 80,
-    "directly build": 78,
-    "directly implement": 78,
-    "edit": 81,
-    "finalize": 77,
-    "insert": 81,
-    "manually build": 78,
-    "paste": 81,
-    "prefill": 77,
-    "prepare": 81,
-    "properly add": 78,
-    "save": 81,
-    "write": 80,
-    "write out": 77
+  "candidate_counts_final": {
+    "append": 119,
+    "create": 107,
+    "directly build": 119,
+    "directly implement": 116,
+    "edit": 115,
+    "finalize": 109,
+    "insert": 117,
+    "manually build": 115,
+    "paste": 115,
+    "prefill": 117,
+    "prepare": 112,
+    "properly add": 114,
+    "save": 119,
+    "write": 113,
+    "write out": 115
   },
-  "clean_candidate_type_counts": {
-    "phrase": 389,
-    "verb": 800
+  "token_length_alignment": {
+    "all_aligned": true
   },
-  "strict_assignment_coverage": 1189,
-  "clean_top1_tool_call_count": 1189,
-  "clean_top1_tool_call_rate": 1.0,
-  "clean_pass_p50_count": 1189,
-  "clean_pass_p50_rate": 1.0,
-  "mean_clean_tool_call_prob": 0.946956159940179,
-  "median_clean_tool_call_prob": 0.9621658325195312,
-  "min_clean_tool_call_prob": 0.5000274181365967,
-  "max_clean_tool_call_prob": 0.9993098378181458,
-  "all_token_lengths_aligned": true,
-  "filesystem_report": {
-    "n_txt_files": 1189,
-    "all_end_with_pair_style_newlines": true,
-    "all_first_user_lines_match_manifest": true
-  },
-  "sample_generate_sanity_check": {
-    "n_cases": 24,
-    "n_mismatches": 0,
-    "mismatches": []
-  },
-  "candidate_summary": [
-    {
-      "clean_candidate": "directly build",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9097903378498859,
-      "median_tool_call_prob": 0.9362733066082001,
-      "min_tool_call_prob": 0.6698167324066162
-    },
-    {
-      "clean_candidate": "directly implement",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9448030720918607,
-      "median_tool_call_prob": 0.9599093198776245,
-      "min_tool_call_prob": 0.5838447213172913
-    },
-    {
-      "clean_candidate": "manually build",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.935815672079722,
-      "median_tool_call_prob": 0.9499519467353821,
-      "min_tool_call_prob": 0.7680160999298096
-    },
-    {
-      "clean_candidate": "properly add",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9438008016500717,
-      "median_tool_call_prob": 0.9631693065166473,
-      "min_tool_call_prob": 0.7107595205307007
-    },
-    {
-      "clean_candidate": "write out",
-      "clean_candidate_type": "phrase",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9673844521695917,
-      "median_tool_call_prob": 0.9782744646072388,
-      "min_tool_call_prob": 0.8288378715515137
-    },
-    {
-      "clean_candidate": "append",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9942969289826759,
-      "median_tool_call_prob": 0.9960558414459229,
-      "min_tool_call_prob": 0.9665914177894592
-    },
-    {
-      "clean_candidate": "create",
-      "clean_candidate_type": "verb",
-      "n_rows": 80,
-      "tool_call_top1_count": 80,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9223445028066635,
-      "median_tool_call_prob": 0.9278582036495209,
-      "min_tool_call_prob": 0.7439849972724915
-    },
-    {
-      "clean_candidate": "edit",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.95296080392084,
-      "median_tool_call_prob": 0.958785891532898,
-      "min_tool_call_prob": 0.8926610946655273
-    },
-    {
-      "clean_candidate": "finalize",
-      "clean_candidate_type": "verb",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9354162262631701,
-      "median_tool_call_prob": 0.9615933895111084,
-      "min_tool_call_prob": 0.5000274181365967
-    },
-    {
-      "clean_candidate": "insert",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9685369111873485,
-      "median_tool_call_prob": 0.9720639586448669,
-      "min_tool_call_prob": 0.891534686088562
-    },
-    {
-      "clean_candidate": "paste",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9578667967407791,
-      "median_tool_call_prob": 0.9630287289619446,
-      "min_tool_call_prob": 0.8265471458435059
-    },
-    {
-      "clean_candidate": "prefill",
-      "clean_candidate_type": "verb",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9046396837606059,
-      "median_tool_call_prob": 0.9484347701072693,
-      "min_tool_call_prob": 0.5034745931625366
-    },
-    {
-      "clean_candidate": "prepare",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9290605202133273,
-      "median_tool_call_prob": 0.9390602111816406,
-      "min_tool_call_prob": 0.803977906703949
-    },
-    {
-      "clean_candidate": "save",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9960675754664857,
-      "median_tool_call_prob": 0.9965574145317078,
-      "min_tool_call_prob": 0.980136513710022
-    },
-    {
-      "clean_candidate": "write",
-      "clean_candidate_type": "verb",
-      "n_rows": 80,
-      "tool_call_top1_count": 80,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9375010333955288,
-      "median_tool_call_prob": 0.9474349617958069,
-      "min_tool_call_prob": 0.7872494459152222
-    }
-  ]
+  "independent_single_generate_verification": {
+    "n_rows": 1722,
+    "n_pass": 1722,
+    "all_pass": true,
+    "min_tool_call_prob": 0.5000274181365967
+  }
 }

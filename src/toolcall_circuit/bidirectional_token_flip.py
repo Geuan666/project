@@ -32,11 +32,10 @@ if __package__ in {None, ""}:
 
 from toolcall_circuit.bidirectional_causal_eval import (
     collect_cache_cpu_for_nodes,
-    compute_margin,
     filter_valid_nodes,
     load_sample_paths,
-    node_to_hook_name,
 )
+from toolcall_circuit.objective import build_bidirectional_endpoint_objectives
 from toolcall_circuit.single_sample import load_hooked_qwen3, objective_from_logits, parse_head
 
 
@@ -191,10 +190,23 @@ def main() -> None:
         with torch.no_grad():
             tool_logits = model(tool_tokens)
             no_tool_logits = model(no_tool_tokens)
-        m_tool_tool = float(objective_from_logits(tool_logits, sp.target_tool_call, sp.distractor).item())
-        m_tool_no = float(objective_from_logits(no_tool_logits, sp.target_tool_call, sp.distractor).item())
-        gap = m_tool_tool - m_tool_no
-        if not math.isfinite(gap) or abs(gap) < 1e-8:
+        tool_objective, no_tool_objective = build_bidirectional_endpoint_objectives(
+            tool_logits,
+            no_tool_logits,
+            tokenizer=tokenizer,
+        )
+        m_tool_tool = float(objective_from_logits(tool_logits, tool_objective).item())
+        m_tool_no = float(objective_from_logits(no_tool_logits, tool_objective).item())
+        gap_tool = m_tool_tool - m_tool_no
+        m_no_tool_tool = float(objective_from_logits(tool_logits, no_tool_objective).item())
+        m_no_tool_no = float(objective_from_logits(no_tool_logits, no_tool_objective).item())
+        gap_no_tool = m_no_tool_no - m_no_tool_tool
+        if (
+            not math.isfinite(gap_tool)
+            or abs(gap_tool) < 1e-8
+            or not math.isfinite(gap_no_tool)
+            or abs(gap_no_tool) < 1e-8
+        ):
             continue
 
         tool_cache = collect_cache_cpu_for_nodes(model, tool_tokens, nodes_tool_source)
@@ -209,9 +221,12 @@ def main() -> None:
             "target_tool_call_str": tokenizer.decode([sp.target_tool_call]),
             "target_no_tool_id": sp.distractor,
             "target_no_tool_str": tokenizer.decode([sp.distractor]),
-            "m_tool_toolcall": m_tool_tool,
-            "m_tool_no_tool": m_tool_no,
-            "gap": gap,
+            "tool_endpoint_tool_score": m_tool_tool,
+            "tool_endpoint_no_tool_score": m_tool_no,
+            "tool_endpoint_gap": gap_tool,
+            "no_tool_endpoint_tool_score": m_no_tool_tool,
+            "no_tool_endpoint_no_tool_score": m_no_tool_no,
+            "no_tool_endpoint_gap": gap_no_tool,
             "tool_base_top1_id": base_tool_top1,
             "tool_base_top1_str": tokenizer.decode([base_tool_top1]),
             "no_tool_base_top1_id": base_no_tool_top1,
@@ -220,24 +235,28 @@ def main() -> None:
 
         for group_name, nodes in groups.items():
             promote_logits = run_logits_on_base_with_source(model, no_tool_tokens, tool_cache, nodes)
-            promote_margin = float(objective_from_logits(promote_logits, sp.target_tool_call, sp.distractor).item())
+            promote_tool_score = float(objective_from_logits(promote_logits, tool_objective).item())
+            promote_no_tool_score = float(objective_from_logits(promote_logits, no_tool_objective).item())
             promote_top1 = int(promote_logits[0, -1].argmax().item())
-            row[f"promote__{group_name}__ratio"] = (promote_margin - m_tool_no) / gap
-            row[f"promote__{group_name}__margin"] = promote_margin
+            row[f"promote__{group_name}__ratio"] = (promote_tool_score - m_tool_no) / gap_tool
+            row[f"promote__{group_name}__tool_score"] = promote_tool_score
+            row[f"promote__{group_name}__no_tool_score"] = promote_no_tool_score
             row[f"promote__{group_name}__top1_id"] = promote_top1
             row[f"promote__{group_name}__top1_str"] = tokenizer.decode([promote_top1])
             row[f"promote__{group_name}__top1_is_tool"] = promote_top1 == sp.target_tool_call
-            row[f"promote__{group_name}__boundary_flip"] = promote_margin > 0.0
+            row[f"promote__{group_name}__boundary_flip"] = promote_tool_score > promote_no_tool_score
 
             suppress_logits = run_logits_on_base_with_source(model, tool_tokens, no_tool_cache, nodes)
-            suppress_margin = float(objective_from_logits(suppress_logits, sp.target_tool_call, sp.distractor).item())
+            suppress_tool_score = float(objective_from_logits(suppress_logits, tool_objective).item())
+            suppress_no_tool_score = float(objective_from_logits(suppress_logits, no_tool_objective).item())
             suppress_top1 = int(suppress_logits[0, -1].argmax().item())
-            row[f"suppress__{group_name}__ratio"] = (suppress_margin - m_tool_tool) / gap
-            row[f"suppress__{group_name}__margin"] = suppress_margin
+            row[f"suppress__{group_name}__ratio"] = (suppress_no_tool_score - m_no_tool_tool) / gap_no_tool
+            row[f"suppress__{group_name}__tool_score"] = suppress_tool_score
+            row[f"suppress__{group_name}__no_tool_score"] = suppress_no_tool_score
             row[f"suppress__{group_name}__top1_id"] = suppress_top1
             row[f"suppress__{group_name}__top1_str"] = tokenizer.decode([suppress_top1])
             row[f"suppress__{group_name}__top1_is_no_tool"] = suppress_top1 == sp.distractor
-            row[f"suppress__{group_name}__boundary_flip"] = suppress_margin < 0.0
+            row[f"suppress__{group_name}__boundary_flip"] = suppress_no_tool_score > suppress_tool_score
 
         per_sample_rows.append(row)
         pbar.set_postfix(sample=sp.sample_id)

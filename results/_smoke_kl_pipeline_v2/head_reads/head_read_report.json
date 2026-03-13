@@ -1,0 +1,54 @@
+{
+  "n_samples": 2,
+  "groups": {
+    "forward_only_core_heads": [
+      "L21H12",
+      "L2H14",
+      "L5H5"
+    ],
+    "reverse_only_core_heads": [
+      "L15H5",
+      "L17H8",
+      "L20H14"
+    ],
+    "shared_core_heads": [
+      "L11H5",
+      "L12H0",
+      "L16H8",
+      "L18H14",
+      "L21H1",
+      "L23H6",
+      "L24H6"
+    ],
+    "forward_selective_heads": [
+      "L12H6",
+      "L16H9",
+      "L21H12",
+      "L2H14",
+      "L4H4",
+      "L5H5"
+    ],
+    "reverse_selective_heads": [
+      "L12H0",
+      "L15H5",
+      "L16H4",
+      "L16H8",
+      "L17H12",
+      "L17H8",
+      "L20H14"
+    ]
+  },
+  "set_names": [
+    "contrast",
+    "tool_call_tags",
+    "tools_block",
+    "user_block",
+    "prefix_16",
+    "recent_32"
+  ],
+  "artifacts": {
+    "per_head_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/head_reads/per_head_read_mass.csv",
+    "per_group_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/head_reads/per_group_read_mass.csv",
+    "heatmap_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/head_reads/head_read_delta_heatmap.png"
+  }
+}

@@ -1,228 +1,346 @@
 {
   "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "dtype": "bfloat16",
+  "model_meta": {
+    "model_class": "Qwen3ForCausalLM",
+    "attn_implementation": "sdpa",
+    "supports_logits_to_keep": true
+  },
   "strict_tool_call_prob_threshold": 0.5,
-  "selected_verbs": [
-    "append",
-    "save",
-    "insert",
-    "paste",
-    "write",
-    "create",
-    "prepare",
-    "edit",
-    "finalize",
-    "prefill"
-  ],
-  "selected_phrases": [
-    "write out",
-    "directly build",
-    "directly implement",
-    "manually build",
-    "properly add"
-  ],
-  "n_selected_samples": 1189,
-  "language_counts": {
-    "cpp": 402,
+  "base_rows": 1189,
+  "added_rows": 600,
+  "total_rows": 1789,
+  "desired_candidate_counts_final": {
+    "append": 120,
+    "save": 120,
+    "insert": 120,
+    "paste": 119,
+    "write": 119,
+    "create": 119,
+    "prepare": 119,
+    "edit": 119,
+    "finalize": 119,
+    "prefill": 119,
+    "write out": 119,
+    "directly build": 120,
+    "directly implement": 120,
+    "manually build": 120,
+    "properly add": 117
+  },
+  "realized_added_candidate_counts": {
+    "append": 39,
+    "create": 39,
+    "directly build": 42,
+    "directly implement": 42,
+    "edit": 38,
+    "finalize": 42,
+    "insert": 39,
+    "manually build": 42,
+    "paste": 38,
+    "prefill": 42,
+    "prepare": 38,
+    "properly add": 39,
+    "save": 39,
+    "write": 39,
+    "write out": 42
+  },
+  "candidate_counts_final": {
+    "append": 120,
+    "create": 119,
+    "directly build": 120,
+    "directly implement": 120,
+    "edit": 119,
+    "finalize": 119,
+    "insert": 120,
+    "manually build": 120,
+    "paste": 119,
+    "prefill": 119,
+    "prepare": 119,
+    "properly add": 117,
+    "save": 120,
+    "write": 119,
+    "write out": 119
+  },
+  "language_counts_final": {
+    "cpp": 602,
     "java": 584,
-    "python": 203
+    "python": 603
   },
-  "dataset_counts": {
-    "apps": 102,
-    "codecontests": 986,
+  "dataset_counts_final": {
+    "apps": 460,
+    "codecontests": 1186,
     "humaneval": 40,
-    "mbpp": 61
+    "mbpp": 103
   },
-  "clean_candidate_counts": {
-    "append": 81,
-    "create": 80,
-    "directly build": 78,
-    "directly implement": 78,
-    "edit": 81,
-    "finalize": 77,
-    "insert": 81,
-    "manually build": 78,
-    "paste": 81,
-    "prefill": 77,
-    "prepare": 81,
-    "properly add": 78,
-    "save": 81,
-    "write": 80,
-    "write out": 77
+  "added_language_counts": {
+    "cpp": 200,
+    "python": 400
   },
-  "clean_candidate_type_counts": {
-    "phrase": 389,
-    "verb": 800
+  "added_dataset_counts": {
+    "apps": 358,
+    "codecontests": 200,
+    "mbpp": 42
   },
-  "strict_assignment_coverage": 1189,
-  "clean_top1_tool_call_count": 1189,
-  "clean_top1_tool_call_rate": 1.0,
-  "clean_pass_p50_count": 1189,
-  "clean_pass_p50_rate": 1.0,
-  "mean_clean_tool_call_prob": 0.946956159940179,
-  "median_clean_tool_call_prob": 0.9621658325195312,
-  "min_clean_tool_call_prob": 0.5000274181365967,
-  "max_clean_tool_call_prob": 0.9993098378181458,
-  "all_token_lengths_aligned": true,
+  "flow_cost": 54268863,
+  "verification": {
+    "n_rows": 1789,
+    "n_pass_top1": 1789,
+    "n_pass_p50": 1789,
+    "all_pass_top1": true,
+    "all_pass_p50": true,
+    "min_tool_call_prob": 0.5000274181365967
+  },
+  "token_length_alignment": {
+    "all_aligned": true
+  },
   "filesystem_report": {
-    "n_txt_files": 1189,
+    "n_txt_files": 1789,
     "all_end_with_pair_style_newlines": true,
     "all_first_user_lines_match_manifest": true
   },
   "sample_generate_sanity_check": {
     "n_cases": 24,
-    "n_mismatches": 0,
-    "mismatches": []
+    "n_mismatches": 9,
+    "mismatches": [
+      {
+        "global_row_id": 2085,
+        "candidate": "directly implement",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.8309858441352844,
+        "manifest_tool_call_prob": 0.831138014793396
+      },
+      {
+        "global_row_id": 2126,
+        "candidate": "finalize",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.9842485785484314,
+        "manifest_tool_call_prob": 0.9825210571289062
+      },
+      {
+        "global_row_id": 2186,
+        "candidate": "paste",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.933661162853241,
+        "manifest_tool_call_prob": 0.9584549069404602
+      },
+      {
+        "global_row_id": 2293,
+        "candidate": "save",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.9883741140365601,
+        "manifest_tool_call_prob": 0.9949506521224976
+      },
+      {
+        "global_row_id": 2394,
+        "candidate": "save",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.9948937892913818,
+        "manifest_tool_call_prob": 0.9961071014404297
+      },
+      {
+        "global_row_id": 2431,
+        "candidate": "create",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.7940113544464111,
+        "manifest_tool_call_prob": 0.8299261927604675
+      },
+      {
+        "global_row_id": 2488,
+        "candidate": "append",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.9977138042449951,
+        "manifest_tool_call_prob": 0.997837483882904
+      },
+      {
+        "global_row_id": 2537,
+        "candidate": "write",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.7530607581138611,
+        "manifest_tool_call_prob": 0.8362360000610352
+      },
+      {
+        "global_row_id": 2557,
+        "candidate": "write out",
+        "generated_top1": 151657,
+        "manifest_top1": 151657,
+        "generated_tool_call_prob": 0.9568767547607422,
+        "manifest_tool_call_prob": 0.9666909575462341
+      }
+    ]
   },
   "candidate_summary": [
     {
-      "clean_candidate": "directly build",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9097903378498859,
-      "median_tool_call_prob": 0.9362733066082001,
-      "min_tool_call_prob": 0.6698167324066162
+      "candidate": "directly build",
+      "candidate_type": "phrase",
+      "n_rows": 600,
+      "n_valid": 561,
+      "tool_call_top1_rate": 0.935,
+      "mean_tool_call_prob": 0.8412651261563102,
+      "median_tool_call_prob": 0.9088923633098602,
+      "min_tool_call_prob": 0.04671864211559296,
+      "max_tool_call_prob": 0.9925339818000793
     },
     {
-      "clean_candidate": "directly implement",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9448030720918607,
-      "median_tool_call_prob": 0.9599093198776245,
-      "min_tool_call_prob": 0.5838447213172913
+      "candidate": "directly implement",
+      "candidate_type": "phrase",
+      "n_rows": 600,
+      "n_valid": 418,
+      "tool_call_top1_rate": 0.6983333333333334,
+      "mean_tool_call_prob": 0.6199618755589472,
+      "median_tool_call_prob": 0.6865077912807465,
+      "min_tool_call_prob": 0.0012782638659700751,
+      "max_tool_call_prob": 0.9865999221801758
     },
     {
-      "clean_candidate": "manually build",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.935815672079722,
-      "median_tool_call_prob": 0.9499519467353821,
-      "min_tool_call_prob": 0.7680160999298096
+      "candidate": "manually build",
+      "candidate_type": "phrase",
+      "n_rows": 600,
+      "n_valid": 446,
+      "tool_call_top1_rate": 0.76,
+      "mean_tool_call_prob": 0.6397172479250003,
+      "median_tool_call_prob": 0.7024219930171967,
+      "min_tool_call_prob": 0.0024908946361392736,
+      "max_tool_call_prob": 0.9846616983413696
     },
     {
-      "clean_candidate": "properly add",
-      "clean_candidate_type": "phrase",
-      "n_rows": 78,
-      "tool_call_top1_count": 78,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9438008016500717,
-      "median_tool_call_prob": 0.9631693065166473,
-      "min_tool_call_prob": 0.7107595205307007
+      "candidate": "properly add",
+      "candidate_type": "phrase",
+      "n_rows": 600,
+      "n_valid": 564,
+      "tool_call_top1_rate": 0.945,
+      "mean_tool_call_prob": 0.8523036739975214,
+      "median_tool_call_prob": 0.9108717143535614,
+      "min_tool_call_prob": 0.09965664148330688,
+      "max_tool_call_prob": 0.9965536594390869
     },
     {
-      "clean_candidate": "write out",
-      "clean_candidate_type": "phrase",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9673844521695917,
-      "median_tool_call_prob": 0.9782744646072388,
-      "min_tool_call_prob": 0.8288378715515137
+      "candidate": "write out",
+      "candidate_type": "phrase",
+      "n_rows": 600,
+      "n_valid": 598,
+      "tool_call_top1_rate": 0.9966666666666667,
+      "mean_tool_call_prob": 0.968636528501908,
+      "median_tool_call_prob": 0.9828960001468658,
+      "min_tool_call_prob": 0.2983141839504242,
+      "max_tool_call_prob": 0.9985324740409851
     },
     {
-      "clean_candidate": "append",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
+      "candidate": "append",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 600,
       "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9942969289826759,
-      "median_tool_call_prob": 0.9960558414459229,
-      "min_tool_call_prob": 0.9665914177894592
+      "mean_tool_call_prob": 0.9968040752410888,
+      "median_tool_call_prob": 0.9979507625102997,
+      "min_tool_call_prob": 0.8472010493278503,
+      "max_tool_call_prob": 0.9995461702346802
     },
     {
-      "clean_candidate": "create",
-      "clean_candidate_type": "verb",
-      "n_rows": 80,
-      "tool_call_top1_count": 80,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9223445028066635,
-      "median_tool_call_prob": 0.9278582036495209,
-      "min_tool_call_prob": 0.7439849972724915
+      "candidate": "create",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 434,
+      "tool_call_top1_rate": 0.735,
+      "mean_tool_call_prob": 0.6297148930643258,
+      "median_tool_call_prob": 0.708977997303009,
+      "min_tool_call_prob": 0.0009443015442229807,
+      "max_tool_call_prob": 0.9760565757751465
     },
     {
-      "clean_candidate": "edit",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.95296080392084,
-      "median_tool_call_prob": 0.958785891532898,
-      "min_tool_call_prob": 0.8926610946655273
+      "candidate": "edit",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 488,
+      "tool_call_top1_rate": 0.8566666666666667,
+      "mean_tool_call_prob": 0.7359616123277045,
+      "median_tool_call_prob": 0.8438319861888885,
+      "min_tool_call_prob": 1.7138729901944316e-07,
+      "max_tool_call_prob": 0.99396812915802
     },
     {
-      "clean_candidate": "finalize",
-      "clean_candidate_type": "verb",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9354162262631701,
-      "median_tool_call_prob": 0.9615933895111084,
-      "min_tool_call_prob": 0.5000274181365967
+      "candidate": "finalize",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 564,
+      "tool_call_top1_rate": 0.9583333333333334,
+      "mean_tool_call_prob": 0.8711144785024225,
+      "median_tool_call_prob": 0.947922945022583,
+      "min_tool_call_prob": 0.0005493928911164403,
+      "max_tool_call_prob": 0.9970289468765259
     },
     {
-      "clean_candidate": "insert",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9685369111873485,
-      "median_tool_call_prob": 0.9720639586448669,
-      "min_tool_call_prob": 0.891534686088562
+      "candidate": "insert",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 598,
+      "tool_call_top1_rate": 0.9983333333333333,
+      "mean_tool_call_prob": 0.966996718198061,
+      "median_tool_call_prob": 0.9847349524497986,
+      "min_tool_call_prob": 0.33953920006752014,
+      "max_tool_call_prob": 0.9985247850418091
     },
     {
-      "clean_candidate": "paste",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9578667967407791,
-      "median_tool_call_prob": 0.9630287289619446,
-      "min_tool_call_prob": 0.8265471458435059
+      "candidate": "paste",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 567,
+      "tool_call_top1_rate": 0.955,
+      "mean_tool_call_prob": 0.8903381268763527,
+      "median_tool_call_prob": 0.9587803781032562,
+      "min_tool_call_prob": 0.0014096027007326484,
+      "max_tool_call_prob": 0.9966866970062256
     },
     {
-      "clean_candidate": "prefill",
-      "clean_candidate_type": "verb",
-      "n_rows": 77,
-      "tool_call_top1_count": 77,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9046396837606059,
-      "median_tool_call_prob": 0.9484347701072693,
-      "min_tool_call_prob": 0.5034745931625366
+      "candidate": "prefill",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 592,
+      "tool_call_top1_rate": 0.99,
+      "mean_tool_call_prob": 0.9492233797969918,
+      "median_tool_call_prob": 0.9810005724430084,
+      "min_tool_call_prob": 0.05607028678059578,
+      "max_tool_call_prob": 0.9982734322547913
     },
     {
-      "clean_candidate": "prepare",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9290605202133273,
-      "median_tool_call_prob": 0.9390602111816406,
-      "min_tool_call_prob": 0.803977906703949
+      "candidate": "prepare",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 491,
+      "tool_call_top1_rate": 0.845,
+      "mean_tool_call_prob": 0.7195019077141448,
+      "median_tool_call_prob": 0.8179341554641724,
+      "min_tool_call_prob": 1.3229027899797074e-05,
+      "max_tool_call_prob": 0.9911681413650513
     },
     {
-      "clean_candidate": "save",
-      "clean_candidate_type": "verb",
-      "n_rows": 81,
-      "tool_call_top1_count": 81,
+      "candidate": "save",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 600,
       "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9960675754664857,
-      "median_tool_call_prob": 0.9965574145317078,
-      "min_tool_call_prob": 0.980136513710022
+      "mean_tool_call_prob": 0.9925579765439033,
+      "median_tool_call_prob": 0.9975454211235046,
+      "min_tool_call_prob": 0.5286885499954224,
+      "max_tool_call_prob": 0.9995595812797546
     },
     {
-      "clean_candidate": "write",
-      "clean_candidate_type": "verb",
-      "n_rows": 80,
-      "tool_call_top1_count": 80,
-      "tool_call_top1_rate": 1.0,
-      "mean_tool_call_prob": 0.9375010333955288,
-      "median_tool_call_prob": 0.9474349617958069,
-      "min_tool_call_prob": 0.7872494459152222
+      "candidate": "write",
+      "candidate_type": "verb",
+      "n_rows": 600,
+      "n_valid": 382,
+      "tool_call_top1_rate": 0.6483333333333333,
+      "mean_tool_call_prob": 0.5628669435859774,
+      "median_tool_call_prob": 0.6261141896247864,
+      "min_tool_call_prob": 0.0004554332117550075,
+      "max_tool_call_prob": 0.96871018409729
     }
   ]
 }

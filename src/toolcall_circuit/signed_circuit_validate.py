@@ -34,6 +34,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from toolcall_circuit.bidirectional_causal_eval import collect_cache_cpu_for_nodes, load_sample_paths
+from toolcall_circuit.objective import build_bidirectional_endpoint_objectives
 from toolcall_circuit.signed_circuit import GROUP_META, derive_signed_groups
 from toolcall_circuit.single_sample import load_hooked_qwen3, objective_from_logits
 from toolcall_circuit.bidirectional_token_flip import run_logits_on_base_with_source
@@ -146,23 +147,36 @@ def main() -> None:
         with torch.no_grad():
             tool_logits = model(tool_tokens)
             no_tool_logits = model(no_tool_tokens)
-        m_tool_tool = float(objective_from_logits(tool_logits, sp.target_tool_call, sp.distractor).item())
-        m_tool_no = float(objective_from_logits(no_tool_logits, sp.target_tool_call, sp.distractor).item())
-        gap = m_tool_tool - m_tool_no
-        if not math.isfinite(gap) or abs(gap) < 1e-8:
+        tool_objective, no_tool_objective = build_bidirectional_endpoint_objectives(
+            tool_logits,
+            no_tool_logits,
+            tokenizer=tokenizer,
+        )
+        m_tool_tool = float(objective_from_logits(tool_logits, tool_objective).item())
+        m_tool_no = float(objective_from_logits(no_tool_logits, tool_objective).item())
+        gap_tool = m_tool_tool - m_tool_no
+        m_no_tool_tool = float(objective_from_logits(tool_logits, no_tool_objective).item())
+        m_no_tool_no = float(objective_from_logits(no_tool_logits, no_tool_objective).item())
+        gap_no_tool = m_no_tool_no - m_no_tool_tool
+        if (
+            not math.isfinite(gap_tool)
+            or abs(gap_tool) < 1e-8
+            or not math.isfinite(gap_no_tool)
+            or abs(gap_no_tool) < 1e-8
+        ):
             continue
 
         tool_cache = collect_cache_cpu_for_nodes(model, tool_tokens, tool_nodes)
         no_tool_cache = collect_cache_cpu_for_nodes(model, no_tool_tokens, no_tool_nodes)
 
         full_promote_logits = run_logits_on_base_with_source(model, no_tool_tokens, tool_cache, final_nodes)
-        full_promote_margin = float(objective_from_logits(full_promote_logits, sp.target_tool_call, sp.distractor).item())
-        full_promote_ratio = (full_promote_margin - m_tool_no) / gap
+        full_promote_margin = float(objective_from_logits(full_promote_logits, tool_objective).item())
+        full_promote_ratio = (full_promote_margin - m_tool_no) / gap_tool
         full_promote_top1 = int(full_promote_logits[0, -1].argmax().item()) == sp.target_tool_call
 
         full_suppress_logits = run_logits_on_base_with_source(model, tool_tokens, no_tool_cache, final_nodes)
-        full_suppress_margin = float(objective_from_logits(full_suppress_logits, sp.target_tool_call, sp.distractor).item())
-        full_suppress_ratio = (full_suppress_margin - m_tool_tool) / gap
+        full_suppress_margin = float(objective_from_logits(full_suppress_logits, no_tool_objective).item())
+        full_suppress_ratio = (full_suppress_margin - m_no_tool_tool) / gap_no_tool
         full_suppress_top1 = int(full_suppress_logits[0, -1].argmax().item()) == sp.distractor
 
         base_row = {
@@ -184,29 +198,25 @@ def main() -> None:
 
         for group_name, members in groups.items():
             promote_logits = run_logits_on_base_with_source(model, no_tool_tokens, tool_cache, members)
-            promote_margin = float(objective_from_logits(promote_logits, sp.target_tool_call, sp.distractor).item())
-            promote_ratio = (promote_margin - m_tool_no) / gap
+            promote_margin = float(objective_from_logits(promote_logits, tool_objective).item())
+            promote_ratio = (promote_margin - m_tool_no) / gap_tool
             promote_top1 = int(promote_logits[0, -1].argmax().item()) == sp.target_tool_call
 
             suppress_logits = run_logits_on_base_with_source(model, tool_tokens, no_tool_cache, members)
-            suppress_margin = float(objective_from_logits(suppress_logits, sp.target_tool_call, sp.distractor).item())
-            suppress_ratio = (suppress_margin - m_tool_tool) / gap
+            suppress_margin = float(objective_from_logits(suppress_logits, no_tool_objective).item())
+            suppress_ratio = (suppress_margin - m_no_tool_tool) / gap_no_tool
             suppress_top1 = int(suppress_logits[0, -1].argmax().item()) == sp.distractor
 
             minus_nodes = [n for n in final_nodes if n not in set(members)]
             if minus_nodes:
                 minus_promote_logits = run_logits_on_base_with_source(model, no_tool_tokens, tool_cache, minus_nodes)
-                minus_promote_margin = float(
-                    objective_from_logits(minus_promote_logits, sp.target_tool_call, sp.distractor).item()
-                )
-                minus_promote_ratio = (minus_promote_margin - m_tool_no) / gap
+                minus_promote_margin = float(objective_from_logits(minus_promote_logits, tool_objective).item())
+                minus_promote_ratio = (minus_promote_margin - m_tool_no) / gap_tool
                 minus_promote_top1 = int(minus_promote_logits[0, -1].argmax().item()) == sp.target_tool_call
 
                 minus_suppress_logits = run_logits_on_base_with_source(model, tool_tokens, no_tool_cache, minus_nodes)
-                minus_suppress_margin = float(
-                    objective_from_logits(minus_suppress_logits, sp.target_tool_call, sp.distractor).item()
-                )
-                minus_suppress_ratio = (minus_suppress_margin - m_tool_tool) / gap
+                minus_suppress_margin = float(objective_from_logits(minus_suppress_logits, no_tool_objective).item())
+                minus_suppress_ratio = (minus_suppress_margin - m_no_tool_tool) / gap_no_tool
                 minus_suppress_top1 = int(minus_suppress_logits[0, -1].argmax().item()) == sp.distractor
             else:
                 minus_promote_ratio = float("nan")

@@ -1,0 +1,537 @@
+{
+  "input_root": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_batch",
+  "summary_label": "smoke_reverse_kl",
+  "output_node_label": "Residual Output: no_tool",
+  "n_samples": 2,
+  "total_weight": 1.9220132540273211,
+  "weight_params": {
+    "gap_min": 0.5,
+    "ap_discount": 0.7
+  },
+  "core_thresholds": {
+    "node": 0.5,
+    "edge": 0.35
+  },
+  "relaxed_thresholds": {
+    "node": 0.25,
+    "edge": 0.15
+  },
+  "core_nodes": [
+    "MLP5",
+    "MLP10",
+    "L11H5",
+    "L12H0",
+    "L15H5",
+    "MLP16",
+    "L16H8",
+    "MLP17",
+    "L17H8",
+    "MLP18",
+    "L18H14",
+    "L20H14",
+    "L21H1",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "core_edges": [
+    [
+      "MLP16",
+      "L21H1"
+    ],
+    [
+      "MLP5",
+      "L11H5"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "MLP10",
+      "L16H8"
+    ],
+    [
+      "L15H5",
+      "L16H8"
+    ],
+    [
+      "MLP17",
+      "L23H6"
+    ],
+    [
+      "L11H5",
+      "L15H5"
+    ],
+    [
+      "L18H14",
+      "L20H14"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L12H0",
+      "MLP16"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "MLP17",
+      "MLP18"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP17",
+      "MLP27"
+    ],
+    [
+      "MLP17",
+      "L20H14"
+    ],
+    [
+      "L16H8",
+      "L17H8"
+    ],
+    [
+      "L16H8",
+      "MLP17"
+    ],
+    [
+      "L23H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "MLP10",
+      "L15H5"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L11H5",
+      "L12H0"
+    ],
+    [
+      "L11H5",
+      "MLP16"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L24H6"
+    ],
+    [
+      "MLP10",
+      "L11H5"
+    ],
+    [
+      "Input Embed",
+      "MLP5"
+    ],
+    [
+      "MLP18",
+      "L20H14"
+    ],
+    [
+      "MLP5",
+      "MLP10"
+    ],
+    [
+      "MLP16",
+      "L23H6"
+    ],
+    [
+      "MLP10",
+      "L12H0"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L15H5",
+      "MLP16"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "Input Embed",
+      "MLP10"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "L20H14"
+    ],
+    [
+      "L17H8",
+      "MLP18"
+    ],
+    [
+      "L20H14",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "Input Embed",
+      "L12H0"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ]
+  ],
+  "relaxed_nodes": [
+    "MLP4",
+    "MLP5",
+    "MLP10",
+    "L11H5",
+    "L12H0",
+    "MLP13",
+    "L13H9",
+    "L15H5",
+    "MLP16",
+    "L16H4",
+    "L16H8",
+    "MLP17",
+    "L17H12",
+    "L17H8",
+    "MLP18",
+    "L18H14",
+    "MLP19",
+    "L20H14",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "relaxed_edges": [
+    [
+      "MLP16",
+      "L21H1"
+    ],
+    [
+      "MLP5",
+      "L11H5"
+    ],
+    [
+      "MLP16",
+      "L24H6"
+    ],
+    [
+      "MLP10",
+      "L16H8"
+    ],
+    [
+      "L15H5",
+      "L16H8"
+    ],
+    [
+      "MLP17",
+      "L23H6"
+    ],
+    [
+      "L11H5",
+      "L15H5"
+    ],
+    [
+      "L18H14",
+      "L20H14"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L12H0",
+      "MLP16"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "MLP17",
+      "MLP18"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP17",
+      "MLP27"
+    ],
+    [
+      "MLP17",
+      "L20H14"
+    ],
+    [
+      "L16H8",
+      "L17H8"
+    ],
+    [
+      "L16H8",
+      "MLP17"
+    ],
+    [
+      "L23H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "MLP10",
+      "L15H5"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "L11H5",
+      "L12H0"
+    ],
+    [
+      "L11H5",
+      "MLP16"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L24H6"
+    ],
+    [
+      "MLP10",
+      "L11H5"
+    ],
+    [
+      "Input Embed",
+      "MLP5"
+    ],
+    [
+      "MLP18",
+      "L20H14"
+    ],
+    [
+      "MLP5",
+      "MLP10"
+    ],
+    [
+      "MLP16",
+      "L23H6"
+    ],
+    [
+      "MLP10",
+      "L12H0"
+    ],
+    [
+      "L24H6",
+      "Residual Output: no_tool"
+    ],
+    [
+      "L15H5",
+      "MLP16"
+    ],
+    [
+      "MLP27",
+      "Residual Output: no_tool"
+    ],
+    [
+      "Input Embed",
+      "MLP10"
+    ],
+    [
+      "MLP16",
+      "MLP18"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "L20H14"
+    ],
+    [
+      "L17H8",
+      "MLP18"
+    ],
+    [
+      "L20H14",
+      "MLP27"
+    ],
+    [
+      "MLP4",
+      "L12H0"
+    ],
+    [
+      "L20H5",
+      "MLP27"
+    ],
+    [
+      "MLP4",
+      "MLP13"
+    ],
+    [
+      "MLP13",
+      "L16H4"
+    ],
+    [
+      "L13H9",
+      "L16H8"
+    ],
+    [
+      "MLP16",
+      "L17H12"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L12H0",
+      "L13H9"
+    ],
+    [
+      "L12H0",
+      "MLP13"
+    ],
+    [
+      "MLP13",
+      "L17H12"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP13",
+      "L16H8"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "Input Embed",
+      "L12H0"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "L13H9",
+      "MLP16"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "L16H4",
+      "MLP27"
+    ],
+    [
+      "L17H12",
+      "MLP27"
+    ],
+    [
+      "L23H6",
+      "MLP27"
+    ],
+    [
+      "MLP13",
+      "MLP16"
+    ],
+    [
+      "L13H9",
+      "L16H4"
+    ],
+    [
+      "MLP19",
+      "L23H6"
+    ],
+    [
+      "MLP4",
+      "L13H9"
+    ]
+  ],
+  "n_clusters": 2,
+  "cluster_sizes": {
+    "0": 1,
+    "1": 1
+  },
+  "cluster_summaries": [],
+  "replay_summary": {
+    "ran_samples": 0,
+    "global_suff_ratio_median": null,
+    "global_nec_ratio_median": null,
+    "random_suff_ratio_mean_median": null,
+    "global_minus_random_median": null
+  },
+  "artifacts": {
+    "node_support_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/node_support.csv",
+    "edge_support_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/edge_support.csv",
+    "sample_weights_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/sample_weights.csv",
+    "cluster_assignments_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/cluster_assignments.csv",
+    "global_core_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/final_circuit_global_core.png",
+    "global_relaxed_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/final_circuit_global_relaxed.png",
+    "global_replay_json": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/reverse_aggregate/global_core_replay.json"
+  }
+}

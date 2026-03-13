@@ -1,0 +1,674 @@
+Batch samples:   0%|          | 0/1722 [00:00<?, ?it/s]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.11it/s][A
+                                                       [ABatch samples:   0%|          | 0/1722 [00:01<?, ?it/s, det=1.000, nec=1.131, sample=apps_python_23]Batch samples:   3%|▎         | 54/1722 [00:01<00:46, 35.86it/s, det=1.000, nec=1.131, sample=apps_python_23]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.87it/s][A
+                                                       [ABatch samples:   3%|▎         | 54/1722 [00:02<00:46, 35.86it/s, det=1.000, nec=0.972, sample=codecontests_cpp_23]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.01it/s][A
+                                                       [ABatch samples:   3%|▎         | 54/1722 [00:03<00:46, 35.86it/s, det=1.000, nec=0.758, sample=codecontests_java_23]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 69.20it/s][A
+                                                       [ABatch samples:   3%|▎         | 54/1722 [00:04<00:46, 35.86it/s, det=1.000, nec=0.951, sample=codecontests_cpp_24] 
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.50it/s][A
+                                                       [ABatch samples:   3%|▎         | 54/1722 [00:05<00:46, 35.86it/s, det=0.999, nec=0.805, sample=codecontests_java_24]Batch samples:   3%|▎         | 58/1722 [00:05<03:39,  7.59it/s, det=0.999, nec=0.805, sample=codecontests_java_24]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.94it/s][A
+                                                        [ABatch samples:   3%|▎         | 58/1722 [00:06<03:39,  7.59it/s, det=0.998, nec=1.179, sample=apps_python_25]      
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.35it/s][A
+                                                       [ABatch samples:   3%|▎         | 58/1722 [00:07<03:39,  7.59it/s, det=0.996, nec=1.500, sample=codecontests_java_25]Batch samples:   3%|▎         | 60/1722 [00:08<05:17,  5.24it/s, det=0.996, nec=1.500, sample=codecontests_java_25]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.93it/s][A
+                                                       [ABatch samples:   3%|▎         | 60/1722 [00:09<05:17,  5.24it/s, det=0.999, nec=1.033, sample=codecontests_cpp_26] Batch samples:   4%|▎         | 61/1722 [00:09<06:23,  4.34it/s, det=0.999, nec=1.033, sample=codecontests_cpp_26]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.80it/s][A
+                                                       [ABatch samples:   4%|▎         | 61/1722 [00:10<06:23,  4.34it/s, det=1.000, nec=1.084, sample=codecontests_java_26]Batch samples:   4%|▎         | 62/1722 [00:10<07:44,  3.57it/s, det=1.000, nec=1.084, sample=codecontests_java_26]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.73it/s][A
+                                                        [ABatch samples:   4%|▎         | 62/1722 [00:11<07:44,  3.57it/s, det=1.000, nec=0.942, sample=humaneval_python_26] Batch samples:   4%|▎         | 63/1722 [00:11<09:21,  2.95it/s, det=1.000, nec=0.942, sample=humaneval_python_26]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.84it/s][A
+                                                       [ABatch samples:   4%|▎         | 63/1722 [00:12<09:21,  2.95it/s, det=0.996, nec=0.768, sample=codecontests_cpp_27]Batch samples:   4%|▎         | 64/1722 [00:12<11:32,  2.39it/s, det=0.996, nec=0.768, sample=codecontests_cpp_27]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 73.18it/s][A
+                                                       [ABatch samples:   4%|▎         | 64/1722 [00:13<11:32,  2.39it/s, det=0.998, nec=0.877, sample=codecontests_java_27]Batch samples:   4%|▍         | 65/1722 [00:13<13:58,  1.98it/s, det=0.998, nec=0.877, sample=codecontests_java_27]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.79it/s][A
+                                                       [ABatch samples:   4%|▍         | 65/1722 [00:14<13:58,  1.98it/s, det=1.000, nec=0.949, sample=codecontests_cpp_28] Batch samples:   4%|▍         | 66/1722 [00:14<16:24,  1.68it/s, det=1.000, nec=0.949, sample=codecontests_cpp_28]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.49it/s][A
+                                                       [ABatch samples:   4%|▍         | 66/1722 [00:15<16:24,  1.68it/s, det=1.000, nec=0.856, sample=codecontests_java_28]Batch samples:   4%|▍         | 67/1722 [00:15<18:54,  1.46it/s, det=1.000, nec=0.856, sample=codecontests_java_28]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.85it/s][A
+                                                       [ABatch samples:   4%|▍         | 67/1722 [00:16<18:54,  1.46it/s, det=0.998, nec=1.166, sample=apps_python_29]      Batch samples:   4%|▍         | 68/1722 [00:16<21:40,  1.27it/s, det=0.998, nec=1.166, sample=apps_python_29]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.46it/s][A
+                                                       [ABatch samples:   4%|▍         | 68/1722 [00:17<21:40,  1.27it/s, det=1.000, nec=0.867, sample=codecontests_cpp_29]Batch samples:   4%|▍         | 69/1722 [00:17<23:17,  1.18it/s, det=1.000, nec=0.867, sample=codecontests_cpp_29]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.83it/s][A
+                                                       [ABatch samples:   4%|▍         | 69/1722 [00:18<23:17,  1.18it/s, det=0.999, nec=0.960, sample=codecontests_java_29]Batch samples:   4%|▍         | 70/1722 [00:18<24:28,  1.12it/s, det=0.999, nec=0.960, sample=codecontests_java_29]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 105.19it/s][A
+                                                        [ABatch samples:   4%|▍         | 70/1722 [00:19<24:28,  1.12it/s, det=0.999, nec=1.009, sample=apps_python_30]      Batch samples:   4%|▍         | 71/1722 [00:19<25:16,  1.09it/s, det=0.999, nec=1.009, sample=apps_python_30]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.82it/s][A
+                                                       [ABatch samples:   4%|▍         | 71/1722 [00:20<25:16,  1.09it/s, det=1.000, nec=1.005, sample=codecontests_cpp_30]Batch samples:   4%|▍         | 72/1722 [00:21<26:38,  1.03it/s, det=1.000, nec=1.005, sample=codecontests_cpp_30]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.05it/s][A
+                                                       [ABatch samples:   4%|▍         | 72/1722 [00:22<26:38,  1.03it/s, det=0.998, nec=1.240, sample=codecontests_java_30]Batch samples:   4%|▍         | 73/1722 [00:22<27:29,  1.00s/it, det=0.998, nec=1.240, sample=codecontests_java_30]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 68.07it/s][A
+                                                       [ABatch samples:   4%|▍         | 73/1722 [00:23<27:29,  1.00s/it, det=1.000, nec=1.084, sample=codecontests_cpp_32] Batch samples:   4%|▍         | 74/1722 [00:23<28:37,  1.04s/it, det=1.000, nec=1.084, sample=codecontests_cpp_32]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.16it/s][A
+                                                       [ABatch samples:   4%|▍         | 74/1722 [00:24<28:37,  1.04s/it, det=1.000, nec=0.961, sample=codecontests_java_32]Batch samples:   4%|▍         | 75/1722 [00:24<28:52,  1.05s/it, det=1.000, nec=0.961, sample=codecontests_java_32]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.46it/s][A
+                                                        [ABatch samples:   4%|▍         | 75/1722 [00:25<28:52,  1.05s/it, det=0.999, nec=1.102, sample=mbpp_python_32]      Batch samples:   4%|▍         | 76/1722 [00:25<28:38,  1.04s/it, det=0.999, nec=1.102, sample=mbpp_python_32]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 74.97it/s][A
+                                                       [ABatch samples:   4%|▍         | 76/1722 [00:26<28:38,  1.04s/it, det=0.987, nec=1.106, sample=codecontests_cpp_33]Batch samples:   4%|▍         | 77/1722 [00:26<29:51,  1.09s/it, det=0.987, nec=1.106, sample=codecontests_cpp_33]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 80.43it/s][A
+                                                       [ABatch samples:   4%|▍         | 77/1722 [00:27<29:51,  1.09s/it, det=0.997, nec=0.902, sample=codecontests_java_33]Batch samples:   5%|▍         | 78/1722 [00:27<30:23,  1.11s/it, det=0.997, nec=0.902, sample=codecontests_java_33]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.01it/s][A
+                                                       [ABatch samples:   5%|▍         | 78/1722 [00:28<30:23,  1.11s/it, det=1.000, nec=0.907, sample=humaneval_python_33] Batch samples:   5%|▍         | 79/1722 [00:28<30:14,  1.10s/it, det=1.000, nec=0.907, sample=humaneval_python_33]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.91it/s][A
+                                                       [ABatch samples:   5%|▍         | 79/1722 [00:29<30:14,  1.10s/it, det=1.000, nec=1.105, sample=apps_python_34]     Batch samples:   5%|▍         | 80/1722 [00:29<30:10,  1.10s/it, det=1.000, nec=1.105, sample=apps_python_34]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 100.88it/s][A
+                                                        [ABatch samples:   5%|▍         | 80/1722 [00:30<30:10,  1.10s/it, det=0.999, nec=1.039, sample=apps_python_35]Batch samples:   5%|▍         | 81/1722 [00:31<29:37,  1.08s/it, det=0.999, nec=1.039, sample=apps_python_35]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.13it/s][A
+                                                       [ABatch samples:   5%|▍         | 81/1722 [00:31<29:37,  1.08s/it, det=0.999, nec=1.105, sample=codecontests_cpp_35]Batch samples:   5%|▍         | 82/1722 [00:32<29:26,  1.08s/it, det=0.999, nec=1.105, sample=codecontests_cpp_35]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.14it/s][A
+                                                       [ABatch samples:   5%|▍         | 82/1722 [00:33<29:26,  1.08s/it, det=1.000, nec=0.908, sample=codecontests_java_35]Batch samples:   5%|▍         | 83/1722 [00:33<29:28,  1.08s/it, det=1.000, nec=0.908, sample=codecontests_java_35]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.76it/s][A
+                                                        [ABatch samples:   5%|▍         | 83/1722 [00:34<29:28,  1.08s/it, det=0.990, nec=1.345, sample=mbpp_python_35]      Batch samples:   5%|▍         | 84/1722 [00:34<29:10,  1.07s/it, det=0.990, nec=1.345, sample=mbpp_python_35]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.16it/s][A
+                                                       [ABatch samples:   5%|▍         | 84/1722 [00:35<29:10,  1.07s/it, det=1.000, nec=0.960, sample=apps_python_36]Batch samples:   5%|▍         | 85/1722 [00:35<29:07,  1.07s/it, det=1.000, nec=0.960, sample=apps_python_36]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.60it/s][A
+                                                       [ABatch samples:   5%|▍         | 85/1722 [00:36<29:07,  1.07s/it, det=1.000, nec=0.930, sample=codecontests_java_36]Batch samples:   5%|▍         | 86/1722 [00:36<29:13,  1.07s/it, det=1.000, nec=0.930, sample=codecontests_java_36]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 72.25it/s][A
+                                                       [ABatch samples:   5%|▍         | 86/1722 [00:37<29:13,  1.07s/it, det=0.999, nec=0.967, sample=mbpp_python_36]      Batch samples:   5%|▌         | 87/1722 [00:37<29:38,  1.09s/it, det=0.999, nec=0.967, sample=mbpp_python_36]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.50it/s][A
+                                                       [ABatch samples:   5%|▌         | 87/1722 [00:38<29:38,  1.09s/it, det=1.000, nec=1.057, sample=apps_python_37]Batch samples:   5%|▌         | 88/1722 [00:38<30:01,  1.10s/it, det=1.000, nec=1.057, sample=apps_python_37]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 50.82it/s][A
+                                                       [ABatch samples:   5%|▌         | 88/1722 [00:39<30:01,  1.10s/it, det=1.000, nec=0.985, sample=codecontests_java_37]Batch samples:   5%|▌         | 89/1722 [00:39<32:13,  1.18s/it, det=1.000, nec=0.985, sample=codecontests_java_37]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 41.22it/s][A
+                                                       [ABatch samples:   5%|▌         | 89/1722 [00:41<32:13,  1.18s/it, det=0.992, nec=0.845, sample=codecontests_java_38]Batch samples:   5%|▌         | 90/1722 [00:41<35:18,  1.30s/it, det=0.992, nec=0.845, sample=codecontests_java_38]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP:  50%|█████     | 14/28 [00:00<00:00, 16.19it/s][A
+CT MLP:  75%|███████▌  | 21/28 [00:01<00:00, 15.32it/s][A
+CT MLP: 100%|██████████| 28/28 [00:01<00:00, 20.61it/s][A
+                                                       [ABatch samples:   5%|▌         | 90/1722 [00:43<35:18,  1.30s/it, det=0.999, nec=1.115, sample=codecontests_cpp_39] Batch samples:   5%|▌         | 91/1722 [00:43<44:10,  1.62s/it, det=0.999, nec=1.115, sample=codecontests_cpp_39]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.89it/s][A
+                                                       [ABatch samples:   5%|▌         | 91/1722 [00:44<44:10,  1.62s/it, det=1.000, nec=0.889, sample=codecontests_java_39]Batch samples:   5%|▌         | 92/1722 [00:45<40:17,  1.48s/it, det=1.000, nec=0.889, sample=codecontests_java_39]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 108.97it/s][A
+                                                        [ABatch samples:   5%|▌         | 92/1722 [00:45<40:17,  1.48s/it, det=0.999, nec=1.242, sample=humaneval_python_39] Batch samples:   5%|▌         | 93/1722 [00:46<36:33,  1.35s/it, det=0.999, nec=1.242, sample=humaneval_python_39]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 100.84it/s][A
+                                                        [ABatch samples:   5%|▌         | 93/1722 [00:47<36:33,  1.35s/it, det=0.999, nec=1.022, sample=apps_python_40]     Batch samples:   5%|▌         | 94/1722 [00:47<34:02,  1.25s/it, det=0.999, nec=1.022, sample=apps_python_40]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.71it/s][A
+                                                       [ABatch samples:   5%|▌         | 94/1722 [00:48<34:02,  1.25s/it, det=1.000, nec=1.051, sample=codecontests_cpp_40]Batch samples:   6%|▌         | 95/1722 [00:48<32:42,  1.21s/it, det=1.000, nec=1.051, sample=codecontests_cpp_40]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.00it/s][A
+                                                       [ABatch samples:   6%|▌         | 95/1722 [00:49<32:42,  1.21s/it, det=0.999, nec=0.840, sample=codecontests_java_40]Batch samples:   6%|▌         | 96/1722 [00:49<31:31,  1.16s/it, det=0.999, nec=0.840, sample=codecontests_java_40]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.18it/s][A
+                                                       [ABatch samples:   6%|▌         | 96/1722 [00:50<31:31,  1.16s/it, det=1.000, nec=1.000, sample=codecontests_cpp_41] Batch samples:   6%|▌         | 97/1722 [00:50<30:55,  1.14s/it, det=1.000, nec=1.000, sample=codecontests_cpp_41]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.22it/s][A
+                                                       [ABatch samples:   6%|▌         | 97/1722 [00:51<30:55,  1.14s/it, det=0.999, nec=0.862, sample=codecontests_java_41]Batch samples:   6%|▌         | 98/1722 [00:51<30:30,  1.13s/it, det=0.999, nec=0.862, sample=codecontests_java_41]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.50it/s][A
+                                                        [ABatch samples:   6%|▌         | 98/1722 [00:52<30:30,  1.13s/it, det=1.000, nec=0.972, sample=humaneval_python_41] Batch samples:   6%|▌         | 99/1722 [00:52<29:45,  1.10s/it, det=1.000, nec=0.972, sample=humaneval_python_41]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 82.80it/s][A
+                                                       [ABatch samples:   6%|▌         | 99/1722 [00:53<29:45,  1.10s/it, det=1.000, nec=0.965, sample=codecontests_cpp_42]Batch samples:   6%|▌         | 100/1722 [00:53<30:01,  1.11s/it, det=1.000, nec=0.965, sample=codecontests_cpp_42]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.56it/s][A
+                                                       [ABatch samples:   6%|▌         | 100/1722 [00:54<30:01,  1.11s/it, det=1.000, nec=1.036, sample=codecontests_java_42]Batch samples:   6%|▌         | 101/1722 [00:54<29:35,  1.10s/it, det=1.000, nec=1.036, sample=codecontests_java_42]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.67it/s][A
+                                                       [ABatch samples:   6%|▌         | 101/1722 [00:55<29:35,  1.10s/it, det=1.000, nec=1.000, sample=humaneval_python_42] Batch samples:   6%|▌         | 102/1722 [00:55<29:22,  1.09s/it, det=1.000, nec=1.000, sample=humaneval_python_42]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 105.95it/s][A
+                                                        [ABatch samples:   6%|▌         | 102/1722 [00:56<29:22,  1.09s/it, det=0.998, nec=1.191, sample=mbpp_python_42]     Batch samples:   6%|▌         | 103/1722 [00:56<29:20,  1.09s/it, det=0.998, nec=1.191, sample=mbpp_python_42]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.79it/s][A
+                                                       [ABatch samples:   6%|▌         | 103/1722 [00:57<29:20,  1.09s/it, det=1.000, nec=1.018, sample=apps_python_43]Batch samples:   6%|▌         | 104/1722 [00:57<29:08,  1.08s/it, det=1.000, nec=1.018, sample=apps_python_43]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 54.82it/s][A
+                                                       [ABatch samples:   6%|▌         | 104/1722 [00:59<29:08,  1.08s/it, det=0.999, nec=0.897, sample=codecontests_cpp_43]Batch samples:   6%|▌         | 105/1722 [00:59<30:55,  1.15s/it, det=0.999, nec=0.897, sample=codecontests_cpp_43]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 55.96it/s][A
+                                                       [ABatch samples:   6%|▌         | 105/1722 [01:00<30:55,  1.15s/it, det=1.000, nec=1.185, sample=codecontests_java_43]Batch samples:   6%|▌         | 106/1722 [01:00<31:55,  1.19s/it, det=1.000, nec=1.185, sample=codecontests_java_43]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 78.10it/s][A
+                                                       [ABatch samples:   6%|▌         | 106/1722 [01:01<31:55,  1.19s/it, det=0.992, nec=0.982, sample=apps_python_44]      Batch samples:   6%|▌         | 107/1722 [01:01<32:55,  1.22s/it, det=0.992, nec=0.982, sample=apps_python_44]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 68.78it/s][A
+                                                       [ABatch samples:   6%|▌         | 107/1722 [01:03<32:55,  1.22s/it, det=1.000, nec=1.045, sample=codecontests_cpp_44]Batch samples:   6%|▋         | 108/1722 [01:03<34:34,  1.29s/it, det=1.000, nec=1.045, sample=codecontests_cpp_44]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 70.45it/s][A
+                                                       [ABatch samples:   6%|▋         | 108/1722 [01:04<34:34,  1.29s/it, det=0.996, nec=0.883, sample=codecontests_java_44]Batch samples:   6%|▋         | 109/1722 [01:04<35:24,  1.32s/it, det=0.996, nec=0.883, sample=codecontests_java_44]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.99it/s][A
+                                                        [ABatch samples:   6%|▋         | 109/1722 [01:05<35:24,  1.32s/it, det=1.000, nec=0.991, sample=humaneval_python_44] Batch samples:   6%|▋         | 110/1722 [01:05<33:04,  1.23s/it, det=1.000, nec=0.991, sample=humaneval_python_44]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.68it/s][A
+                                                       [ABatch samples:   6%|▋         | 110/1722 [01:06<33:04,  1.23s/it, det=1.000, nec=0.987, sample=codecontests_cpp_45]Batch samples:   6%|▋         | 111/1722 [01:06<32:48,  1.22s/it, det=1.000, nec=0.987, sample=codecontests_cpp_45]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.87it/s][A
+                                                       [ABatch samples:   6%|▋         | 111/1722 [01:07<32:48,  1.22s/it, det=1.000, nec=0.987, sample=codecontests_java_45]Batch samples:   7%|▋         | 112/1722 [01:07<31:43,  1.18s/it, det=1.000, nec=0.987, sample=codecontests_java_45]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.30it/s][A
+                                                       [ABatch samples:   7%|▋         | 112/1722 [01:08<31:43,  1.18s/it, det=1.000, nec=1.017, sample=apps_python_46]      Batch samples:   7%|▋         | 113/1722 [01:09<31:07,  1.16s/it, det=1.000, nec=1.017, sample=apps_python_46]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.36it/s][A
+                                                       [ABatch samples:   7%|▋         | 113/1722 [01:10<31:07,  1.16s/it, det=0.999, nec=0.811, sample=codecontests_cpp_46]Batch samples:   7%|▋         | 114/1722 [01:10<31:11,  1.16s/it, det=0.999, nec=0.811, sample=codecontests_cpp_46]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.31it/s][A
+                                                       [ABatch samples:   7%|▋         | 114/1722 [01:11<31:11,  1.16s/it, det=1.000, nec=0.933, sample=codecontests_java_46]Batch samples:   7%|▋         | 115/1722 [01:11<31:02,  1.16s/it, det=1.000, nec=0.933, sample=codecontests_java_46]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 96.05it/s][A
+                                                       [ABatch samples:   7%|▋         | 115/1722 [01:12<31:02,  1.16s/it, det=1.000, nec=1.098, sample=apps_python_47]      Batch samples:   7%|▋         | 116/1722 [01:12<30:39,  1.15s/it, det=1.000, nec=1.098, sample=apps_python_47]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.39it/s][A
+                                                       [ABatch samples:   7%|▋         | 116/1722 [01:13<30:39,  1.15s/it, det=1.000, nec=1.089, sample=codecontests_cpp_47]Batch samples:   7%|▋         | 117/1722 [01:13<30:20,  1.13s/it, det=1.000, nec=1.089, sample=codecontests_cpp_47]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.12it/s][A
+                                                       [ABatch samples:   7%|▋         | 117/1722 [01:14<30:20,  1.13s/it, det=0.998, nec=0.924, sample=codecontests_java_47]Batch samples:   7%|▋         | 118/1722 [01:14<30:15,  1.13s/it, det=0.998, nec=0.924, sample=codecontests_java_47]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.67it/s][A
+                                                       [ABatch samples:   7%|▋         | 118/1722 [01:15<30:15,  1.13s/it, det=1.000, nec=1.022, sample=humaneval_python_47] Batch samples:   7%|▋         | 119/1722 [01:15<29:48,  1.12s/it, det=1.000, nec=1.022, sample=humaneval_python_47]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.12it/s][A
+                                                        [ABatch samples:   7%|▋         | 119/1722 [01:16<29:48,  1.12s/it, det=0.998, nec=1.144, sample=apps_python_48]     Batch samples:   7%|▋         | 120/1722 [01:16<29:11,  1.09s/it, det=0.998, nec=1.144, sample=apps_python_48]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 84.23it/s][A
+                                                       [ABatch samples:   7%|▋         | 120/1722 [01:17<29:11,  1.09s/it, det=0.996, nec=0.956, sample=codecontests_cpp_48]Batch samples:   7%|▋         | 121/1722 [01:18<29:20,  1.10s/it, det=0.996, nec=0.956, sample=codecontests_cpp_48]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.10it/s][A
+                                                       [ABatch samples:   7%|▋         | 121/1722 [01:18<29:20,  1.10s/it, det=1.000, nec=0.927, sample=codecontests_java_48]Batch samples:   7%|▋         | 122/1722 [01:19<29:06,  1.09s/it, det=1.000, nec=0.927, sample=codecontests_java_48]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.48it/s][A
+                                                       [ABatch samples:   7%|▋         | 122/1722 [01:20<29:06,  1.09s/it, det=0.998, nec=1.096, sample=apps_python_49]      Batch samples:   7%|▋         | 123/1722 [01:20<29:02,  1.09s/it, det=0.998, nec=1.096, sample=apps_python_49]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 74.50it/s][A
+                                                       [ABatch samples:   7%|▋         | 123/1722 [01:21<29:02,  1.09s/it, det=1.000, nec=1.032, sample=codecontests_cpp_49]Batch samples:   7%|▋         | 124/1722 [01:21<29:26,  1.11s/it, det=1.000, nec=1.032, sample=codecontests_cpp_49]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 76.39it/s][A
+                                                       [ABatch samples:   7%|▋         | 124/1722 [01:22<29:26,  1.11s/it, det=0.999, nec=0.846, sample=codecontests_java_49]Batch samples:   7%|▋         | 125/1722 [01:22<29:16,  1.10s/it, det=0.999, nec=0.846, sample=codecontests_java_49]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.80it/s][A
+                                                       [ABatch samples:   7%|▋         | 125/1722 [01:23<29:16,  1.10s/it, det=0.999, nec=0.974, sample=codecontests_cpp_50] Batch samples:   7%|▋         | 126/1722 [01:23<29:11,  1.10s/it, det=0.999, nec=0.974, sample=codecontests_cpp_50]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.39it/s][A
+                                                       [ABatch samples:   7%|▋         | 126/1722 [01:24<29:11,  1.10s/it, det=1.000, nec=1.033, sample=codecontests_java_50]Batch samples:   7%|▋         | 127/1722 [01:24<29:00,  1.09s/it, det=1.000, nec=1.033, sample=codecontests_java_50]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.80it/s][A
+                                                       [ABatch samples:   7%|▋         | 127/1722 [01:25<29:00,  1.09s/it, det=0.999, nec=1.047, sample=apps_python_51]      Batch samples:   7%|▋         | 128/1722 [01:25<28:37,  1.08s/it, det=0.999, nec=1.047, sample=apps_python_51]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.15it/s][A
+                                                       [ABatch samples:   7%|▋         | 128/1722 [01:26<28:37,  1.08s/it, det=1.000, nec=0.909, sample=codecontests_java_51]Batch samples:   7%|▋         | 129/1722 [01:26<29:16,  1.10s/it, det=1.000, nec=0.909, sample=codecontests_java_51]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.77it/s][A
+                                                       [ABatch samples:   7%|▋         | 129/1722 [01:27<29:16,  1.10s/it, det=0.996, nec=1.039, sample=codecontests_cpp_52] Batch samples:   8%|▊         | 130/1722 [01:27<29:06,  1.10s/it, det=0.996, nec=1.039, sample=codecontests_cpp_52]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.88it/s][A
+                                                       [ABatch samples:   8%|▊         | 130/1722 [01:28<29:06,  1.10s/it, det=1.000, nec=0.985, sample=codecontests_java_52]Batch samples:   8%|▊         | 131/1722 [01:28<28:57,  1.09s/it, det=1.000, nec=0.985, sample=codecontests_java_52]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.35it/s][A
+                                                       [ABatch samples:   8%|▊         | 131/1722 [01:29<28:57,  1.09s/it, det=1.000, nec=1.057, sample=apps_python_53]      Batch samples:   8%|▊         | 132/1722 [01:29<28:38,  1.08s/it, det=1.000, nec=1.057, sample=apps_python_53]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.13it/s][A
+                                                       [ABatch samples:   8%|▊         | 132/1722 [01:30<28:38,  1.08s/it, det=0.997, nec=0.673, sample=codecontests_cpp_53]Batch samples:   8%|▊         | 133/1722 [01:31<28:49,  1.09s/it, det=0.997, nec=0.673, sample=codecontests_cpp_53]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 96.22it/s][A
+                                                       [ABatch samples:   8%|▊         | 133/1722 [01:32<28:49,  1.09s/it, det=0.997, nec=0.757, sample=codecontests_java_53]Batch samples:   8%|▊         | 134/1722 [01:32<28:48,  1.09s/it, det=0.997, nec=0.757, sample=codecontests_java_53]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.67it/s][A
+                                                       [ABatch samples:   8%|▊         | 134/1722 [01:33<28:48,  1.09s/it, det=0.996, nec=1.159, sample=apps_python_54]      Batch samples:   8%|▊         | 135/1722 [01:33<28:42,  1.09s/it, det=0.996, nec=1.159, sample=apps_python_54]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.26it/s][A
+                                                       [ABatch samples:   8%|▊         | 135/1722 [01:34<28:42,  1.09s/it, det=1.000, nec=0.549, sample=codecontests_java_54]Batch samples:   8%|▊         | 136/1722 [01:34<28:54,  1.09s/it, det=1.000, nec=0.549, sample=codecontests_java_54]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.90it/s][A
+                                                       [ABatch samples:   8%|▊         | 136/1722 [01:35<28:54,  1.09s/it, det=0.998, nec=1.191, sample=mbpp_python_54]      Batch samples:   8%|▊         | 137/1722 [01:35<28:59,  1.10s/it, det=0.998, nec=1.191, sample=mbpp_python_54]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.79it/s][A
+                                                       [ABatch samples:   8%|▊         | 137/1722 [01:36<28:59,  1.10s/it, det=1.000, nec=1.142, sample=codecontests_java_55]Batch samples:   8%|▊         | 138/1722 [01:36<30:33,  1.16s/it, det=1.000, nec=1.142, sample=codecontests_java_55]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.26it/s][A
+                                                        [ABatch samples:   8%|▊         | 138/1722 [01:37<30:33,  1.16s/it, det=0.998, nec=1.240, sample=mbpp_python_55]      Batch samples:   8%|▊         | 139/1722 [01:37<29:33,  1.12s/it, det=0.998, nec=1.240, sample=mbpp_python_55]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.70it/s][A
+                                                       [ABatch samples:   8%|▊         | 139/1722 [01:38<29:33,  1.12s/it, det=1.000, nec=1.017, sample=codecontests_cpp_56]Batch samples:   8%|▊         | 140/1722 [01:38<29:28,  1.12s/it, det=1.000, nec=1.017, sample=codecontests_cpp_56]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.04it/s][A
+                                                       [ABatch samples:   8%|▊         | 140/1722 [01:39<29:28,  1.12s/it, det=1.000, nec=1.129, sample=codecontests_java_56]Batch samples:   8%|▊         | 141/1722 [01:40<29:11,  1.11s/it, det=1.000, nec=1.129, sample=codecontests_java_56]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.80it/s][A
+                                                       [ABatch samples:   8%|▊         | 141/1722 [01:40<29:11,  1.11s/it, det=0.999, nec=0.922, sample=codecontests_cpp_57] Batch samples:   8%|▊         | 142/1722 [01:41<29:18,  1.11s/it, det=0.999, nec=0.922, sample=codecontests_cpp_57]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 75.46it/s][A
+                                                       [ABatch samples:   8%|▊         | 142/1722 [01:42<29:18,  1.11s/it, det=1.000, nec=0.935, sample=codecontests_java_57]Batch samples:   8%|▊         | 143/1722 [01:42<29:18,  1.11s/it, det=1.000, nec=0.935, sample=codecontests_java_57]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.42it/s][A
+                                                       [ABatch samples:   8%|▊         | 143/1722 [01:43<29:18,  1.11s/it, det=0.994, nec=1.218, sample=apps_python_58]      Batch samples:   8%|▊         | 144/1722 [01:43<29:19,  1.12s/it, det=0.994, nec=1.218, sample=apps_python_58]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 78.77it/s][A
+                                                       [ABatch samples:   8%|▊         | 144/1722 [01:44<29:19,  1.12s/it, det=0.998, nec=1.159, sample=codecontests_java_58]Batch samples:   8%|▊         | 145/1722 [01:44<29:14,  1.11s/it, det=0.998, nec=1.159, sample=codecontests_java_58]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.86it/s][A
+                                                       [ABatch samples:   8%|▊         | 145/1722 [01:45<29:14,  1.11s/it, det=0.999, nec=1.106, sample=apps_python_59]      Batch samples:   8%|▊         | 146/1722 [01:45<29:10,  1.11s/it, det=0.999, nec=1.106, sample=apps_python_59]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 84.86it/s][A
+                                                       [ABatch samples:   8%|▊         | 146/1722 [01:46<29:10,  1.11s/it, det=1.000, nec=1.132, sample=apps_python_60]Batch samples:   9%|▊         | 147/1722 [01:46<29:39,  1.13s/it, det=1.000, nec=1.132, sample=apps_python_60]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 80.74it/s][A
+                                                       [ABatch samples:   9%|▊         | 147/1722 [01:47<29:39,  1.13s/it, det=0.995, nec=1.370, sample=codecontests_java_60]Batch samples:   9%|▊         | 148/1722 [01:47<29:10,  1.11s/it, det=0.995, nec=1.370, sample=codecontests_java_60]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.30it/s][A
+                                                        [ABatch samples:   9%|▊         | 148/1722 [01:48<29:10,  1.11s/it, det=1.000, nec=0.969, sample=humaneval_python_60] Batch samples:   9%|▊         | 149/1722 [01:48<28:22,  1.08s/it, det=1.000, nec=0.969, sample=humaneval_python_60]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.04it/s][A
+                                                       [ABatch samples:   9%|▊         | 149/1722 [01:49<28:22,  1.08s/it, det=1.000, nec=0.697, sample=codecontests_java_61]Batch samples:   9%|▊         | 150/1722 [01:49<27:56,  1.07s/it, det=1.000, nec=0.697, sample=codecontests_java_61]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 111.88it/s][A
+                                                        [ABatch samples:   9%|▊         | 150/1722 [01:50<27:56,  1.07s/it, det=0.999, nec=0.865, sample=mbpp_python_61]      Batch samples:   9%|▉         | 151/1722 [01:50<27:53,  1.07s/it, det=0.999, nec=0.865, sample=mbpp_python_61]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 84.63it/s][A
+                                                       [ABatch samples:   9%|▉         | 151/1722 [01:51<27:53,  1.07s/it, det=0.998, nec=0.669, sample=codecontests_cpp_62]Batch samples:   9%|▉         | 152/1722 [01:52<28:01,  1.07s/it, det=0.998, nec=0.669, sample=codecontests_cpp_62]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.34it/s][A
+                                                       [ABatch samples:   9%|▉         | 152/1722 [01:52<28:01,  1.07s/it, det=1.000, nec=1.067, sample=codecontests_java_62]Batch samples:   9%|▉         | 153/1722 [01:53<28:09,  1.08s/it, det=1.000, nec=1.067, sample=codecontests_java_62]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 64.75it/s][A
+                                                       [ABatch samples:   9%|▉         | 153/1722 [01:54<28:09,  1.08s/it, det=1.000, nec=0.907, sample=codecontests_cpp_63] Batch samples:   9%|▉         | 154/1722 [01:54<28:49,  1.10s/it, det=1.000, nec=0.907, sample=codecontests_cpp_63]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.91it/s][A
+                                                       [ABatch samples:   9%|▉         | 154/1722 [01:55<28:49,  1.10s/it, det=1.000, nec=0.872, sample=codecontests_java_63]Batch samples:   9%|▉         | 155/1722 [01:55<28:50,  1.10s/it, det=1.000, nec=0.872, sample=codecontests_java_63]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.92it/s][A
+                                                        [ABatch samples:   9%|▉         | 155/1722 [01:56<28:50,  1.10s/it, det=0.999, nec=0.935, sample=apps_python_64]      Batch samples:   9%|▉         | 156/1722 [01:56<28:16,  1.08s/it, det=0.999, nec=0.935, sample=apps_python_64]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.60it/s][A
+                                                       [ABatch samples:   9%|▉         | 156/1722 [01:57<28:16,  1.08s/it, det=1.000, nec=1.126, sample=codecontests_cpp_64]Batch samples:   9%|▉         | 157/1722 [01:57<28:16,  1.08s/it, det=1.000, nec=1.126, sample=codecontests_cpp_64]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.34it/s][A
+                                                       [ABatch samples:   9%|▉         | 157/1722 [01:58<28:16,  1.08s/it, det=1.000, nec=0.782, sample=codecontests_java_64]Batch samples:   9%|▉         | 158/1722 [01:58<28:17,  1.09s/it, det=1.000, nec=0.782, sample=codecontests_java_64]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 74.59it/s][A
+                                                       [ABatch samples:   9%|▉         | 158/1722 [01:59<28:17,  1.09s/it, det=1.000, nec=0.889, sample=humaneval_python_64] Batch samples:   9%|▉         | 159/1722 [01:59<28:16,  1.09s/it, det=1.000, nec=0.889, sample=humaneval_python_64]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.46it/s][A
+                                                       [ABatch samples:   9%|▉         | 159/1722 [02:00<28:16,  1.09s/it, det=1.000, nec=1.118, sample=codecontests_cpp_65]Batch samples:   9%|▉         | 160/1722 [02:00<28:15,  1.09s/it, det=1.000, nec=1.118, sample=codecontests_cpp_65]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.42it/s][A
+                                                       [ABatch samples:   9%|▉         | 160/1722 [02:01<28:15,  1.09s/it, det=0.999, nec=0.848, sample=codecontests_java_65]Batch samples:   9%|▉         | 161/1722 [02:01<28:50,  1.11s/it, det=0.999, nec=0.848, sample=codecontests_java_65]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.94it/s][A
+                                                       [ABatch samples:   9%|▉         | 161/1722 [02:02<28:50,  1.11s/it, det=0.999, nec=0.882, sample=codecontests_cpp_66] Batch samples:   9%|▉         | 162/1722 [02:02<28:28,  1.10s/it, det=0.999, nec=0.882, sample=codecontests_cpp_66]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.68it/s][A
+                                                       [ABatch samples:   9%|▉         | 162/1722 [02:03<28:28,  1.10s/it, det=0.999, nec=0.748, sample=codecontests_java_66]Batch samples:   9%|▉         | 163/1722 [02:04<28:07,  1.08s/it, det=0.999, nec=0.748, sample=codecontests_java_66]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.59it/s][A
+                                                       [ABatch samples:   9%|▉         | 163/1722 [02:04<28:07,  1.08s/it, det=0.996, nec=0.882, sample=codecontests_java_67]Batch samples:  10%|▉         | 164/1722 [02:05<27:47,  1.07s/it, det=0.996, nec=0.882, sample=codecontests_java_67]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.40it/s][A
+                                                       [ABatch samples:  10%|▉         | 164/1722 [02:06<27:47,  1.07s/it, det=1.000, nec=1.075, sample=codecontests_cpp_68] Batch samples:  10%|▉         | 165/1722 [02:06<29:40,  1.14s/it, det=1.000, nec=1.075, sample=codecontests_cpp_68]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.80it/s][A
+                                                       [ABatch samples:  10%|▉         | 165/1722 [02:07<29:40,  1.14s/it, det=0.998, nec=1.262, sample=apps_python_69]     Batch samples:  10%|▉         | 166/1722 [02:07<29:01,  1.12s/it, det=0.998, nec=1.262, sample=apps_python_69]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 82.79it/s][A
+                                                       [ABatch samples:  10%|▉         | 166/1722 [02:08<29:01,  1.12s/it, det=0.999, nec=0.975, sample=codecontests_cpp_69]Batch samples:  10%|▉         | 167/1722 [02:08<28:58,  1.12s/it, det=0.999, nec=0.975, sample=codecontests_cpp_69]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.55it/s][A
+                                                       [ABatch samples:  10%|▉         | 167/1722 [02:09<28:58,  1.12s/it, det=1.000, nec=0.954, sample=codecontests_java_69]Batch samples:  10%|▉         | 168/1722 [02:09<28:39,  1.11s/it, det=1.000, nec=0.954, sample=codecontests_java_69]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.65it/s][A
+                                                       [ABatch samples:  10%|▉         | 168/1722 [02:10<28:39,  1.11s/it, det=0.993, nec=1.379, sample=codecontests_cpp_70] Batch samples:  10%|▉         | 169/1722 [02:10<28:20,  1.10s/it, det=0.993, nec=1.379, sample=codecontests_cpp_70]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.19it/s][A
+                                                       [ABatch samples:  10%|▉         | 169/1722 [02:11<28:20,  1.10s/it, det=1.000, nec=0.964, sample=codecontests_java_70]Batch samples:  10%|▉         | 170/1722 [02:11<28:56,  1.12s/it, det=1.000, nec=0.964, sample=codecontests_java_70]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 96.69it/s][A
+                                                       [ABatch samples:  10%|▉         | 170/1722 [02:12<28:56,  1.12s/it, det=0.998, nec=0.852, sample=codecontests_cpp_72] Batch samples:  10%|▉         | 171/1722 [02:12<28:20,  1.10s/it, det=0.998, nec=0.852, sample=codecontests_cpp_72]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.89it/s][A
+                                                       [ABatch samples:  10%|▉         | 171/1722 [02:13<28:20,  1.10s/it, det=0.999, nec=0.988, sample=codecontests_java_72]Batch samples:  10%|▉         | 172/1722 [02:13<27:41,  1.07s/it, det=0.999, nec=0.988, sample=codecontests_java_72]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.93it/s][A
+                                                       [ABatch samples:  10%|▉         | 172/1722 [02:14<27:41,  1.07s/it, det=1.000, nec=1.118, sample=codecontests_cpp_73] Batch samples:  10%|█         | 173/1722 [02:15<27:46,  1.08s/it, det=1.000, nec=1.118, sample=codecontests_cpp_73]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.37it/s][A
+                                                       [ABatch samples:  10%|█         | 173/1722 [02:16<27:46,  1.08s/it, det=0.992, nec=0.878, sample=codecontests_java_73]Batch samples:  10%|█         | 174/1722 [02:16<28:42,  1.11s/it, det=0.992, nec=0.878, sample=codecontests_java_73]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.58it/s][A
+                                                        [ABatch samples:  10%|█         | 174/1722 [02:17<28:42,  1.11s/it, det=1.000, nec=1.021, sample=apps_python_74]      Batch samples:  10%|█         | 175/1722 [02:17<28:22,  1.10s/it, det=1.000, nec=1.021, sample=apps_python_74]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 73.32it/s][A
+                                                       [ABatch samples:  10%|█         | 175/1722 [02:18<28:22,  1.10s/it, det=0.999, nec=0.945, sample=codecontests_cpp_74]Batch samples:  10%|█         | 176/1722 [02:18<28:38,  1.11s/it, det=0.999, nec=0.945, sample=codecontests_cpp_74]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 74.89it/s][A
+                                                       [ABatch samples:  10%|█         | 176/1722 [02:19<28:38,  1.11s/it, det=1.000, nec=0.966, sample=codecontests_java_74]Batch samples:  10%|█         | 177/1722 [02:19<28:47,  1.12s/it, det=1.000, nec=0.966, sample=codecontests_java_74]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.39it/s][A
+                                                       [ABatch samples:  10%|█         | 177/1722 [02:20<28:47,  1.12s/it, det=1.000, nec=1.032, sample=humaneval_python_74] Batch samples:  10%|█         | 178/1722 [02:20<28:18,  1.10s/it, det=1.000, nec=1.032, sample=humaneval_python_74]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.58it/s][A
+                                                       [ABatch samples:  10%|█         | 178/1722 [02:21<28:18,  1.10s/it, det=0.998, nec=1.064, sample=apps_python_75]     Batch samples:  10%|█         | 179/1722 [02:21<28:36,  1.11s/it, det=0.998, nec=1.064, sample=apps_python_75]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.23it/s][A
+                                                       [ABatch samples:  10%|█         | 179/1722 [02:22<28:36,  1.11s/it, det=0.999, nec=0.953, sample=codecontests_cpp_75]Batch samples:  10%|█         | 180/1722 [02:22<28:59,  1.13s/it, det=0.999, nec=0.953, sample=codecontests_cpp_75]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.38it/s][A
+                                                       [ABatch samples:  10%|█         | 180/1722 [02:23<28:59,  1.13s/it, det=1.000, nec=0.918, sample=codecontests_java_75]Batch samples:  11%|█         | 181/1722 [02:24<28:39,  1.12s/it, det=1.000, nec=0.918, sample=codecontests_java_75]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 84.92it/s][A
+                                                       [ABatch samples:  11%|█         | 181/1722 [02:24<28:39,  1.12s/it, det=1.000, nec=1.108, sample=apps_python_76]      Batch samples:  11%|█         | 182/1722 [02:25<28:22,  1.11s/it, det=1.000, nec=1.108, sample=apps_python_76]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.87it/s][A
+                                                        [ABatch samples:  11%|█         | 182/1722 [02:26<28:22,  1.11s/it, det=0.999, nec=0.918, sample=codecontests_java_76]Batch samples:  11%|█         | 183/1722 [02:26<28:40,  1.12s/it, det=0.999, nec=0.918, sample=codecontests_java_76]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.30it/s][A
+                                                        [ABatch samples:  11%|█         | 183/1722 [02:27<28:40,  1.12s/it, det=1.000, nec=1.254, sample=humaneval_python_76] Batch samples:  11%|█         | 184/1722 [02:27<27:45,  1.08s/it, det=1.000, nec=1.254, sample=humaneval_python_76]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.86it/s][A
+                                                       [ABatch samples:  11%|█         | 184/1722 [02:28<27:45,  1.08s/it, det=0.999, nec=0.955, sample=apps_python_77]     Batch samples:  11%|█         | 185/1722 [02:28<27:53,  1.09s/it, det=0.999, nec=0.955, sample=apps_python_77]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.11it/s][A
+                                                       [ABatch samples:  11%|█         | 185/1722 [02:29<27:53,  1.09s/it, det=0.994, nec=0.860, sample=codecontests_cpp_77]Batch samples:  11%|█         | 186/1722 [02:29<27:36,  1.08s/it, det=0.994, nec=0.860, sample=codecontests_cpp_77]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 57.54it/s][A
+                                                       [ABatch samples:  11%|█         | 186/1722 [02:30<27:36,  1.08s/it, det=0.999, nec=1.059, sample=codecontests_java_77]Batch samples:  11%|█         | 187/1722 [02:30<28:47,  1.13s/it, det=0.999, nec=1.059, sample=codecontests_java_77]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 115.63it/s][A
+                                                        [ABatch samples:  11%|█         | 187/1722 [02:31<28:47,  1.13s/it, det=0.998, nec=1.052, sample=humaneval_python_78] Batch samples:  11%|█         | 188/1722 [02:31<28:07,  1.10s/it, det=0.998, nec=1.052, sample=humaneval_python_78]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.81it/s][A
+                                                       [ABatch samples:  11%|█         | 188/1722 [02:32<28:07,  1.10s/it, det=0.999, nec=1.067, sample=apps_python_79]     Batch samples:  11%|█         | 189/1722 [02:32<27:47,  1.09s/it, det=0.999, nec=1.067, sample=apps_python_79]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.83it/s][A
+                                                       [ABatch samples:  11%|█         | 189/1722 [02:33<27:47,  1.09s/it, det=0.999, nec=0.978, sample=codecontests_cpp_79]Batch samples:  11%|█         | 190/1722 [02:33<27:54,  1.09s/it, det=0.999, nec=0.978, sample=codecontests_cpp_79]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.37it/s][A
+                                                       [ABatch samples:  11%|█         | 190/1722 [02:34<27:54,  1.09s/it, det=1.000, nec=1.054, sample=codecontests_java_79]Batch samples:  11%|█         | 191/1722 [02:34<27:48,  1.09s/it, det=1.000, nec=1.054, sample=codecontests_java_79]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 111.37it/s][A
+                                                        [ABatch samples:  11%|█         | 191/1722 [02:35<27:48,  1.09s/it, det=1.000, nec=1.056, sample=mbpp_python_79]      Batch samples:  11%|█         | 192/1722 [02:35<27:02,  1.06s/it, det=1.000, nec=1.056, sample=mbpp_python_79]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.32it/s][A
+                                                       [ABatch samples:  11%|█         | 192/1722 [02:36<27:02,  1.06s/it, det=0.999, nec=0.982, sample=apps_python_80]Batch samples:  11%|█         | 193/1722 [02:37<27:23,  1.08s/it, det=0.999, nec=0.982, sample=apps_python_80]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 69.32it/s][A
+                                                       [ABatch samples:  11%|█         | 193/1722 [02:38<27:23,  1.08s/it, det=1.000, nec=0.901, sample=codecontests_cpp_80]Batch samples:  11%|█▏        | 194/1722 [02:38<27:44,  1.09s/it, det=1.000, nec=0.901, sample=codecontests_cpp_80]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.51it/s][A
+                                                       [ABatch samples:  11%|█▏        | 194/1722 [02:39<27:44,  1.09s/it, det=1.000, nec=1.019, sample=codecontests_java_80]Batch samples:  11%|█▏        | 195/1722 [02:39<28:05,  1.10s/it, det=1.000, nec=1.019, sample=codecontests_java_80]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 81.74it/s][A
+                                                       [ABatch samples:  11%|█▏        | 195/1722 [02:40<28:05,  1.10s/it, det=1.000, nec=0.923, sample=apps_python_81]      Batch samples:  11%|█▏        | 196/1722 [02:40<28:30,  1.12s/it, det=1.000, nec=0.923, sample=apps_python_81]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.15it/s][A
+                                                       [ABatch samples:  11%|█▏        | 196/1722 [02:41<28:30,  1.12s/it, det=0.999, nec=0.752, sample=codecontests_java_81]Batch samples:  11%|█▏        | 197/1722 [02:41<28:01,  1.10s/it, det=0.999, nec=0.752, sample=codecontests_java_81]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.56it/s][A
+                                                       [ABatch samples:  11%|█▏        | 197/1722 [02:42<28:01,  1.10s/it, det=0.999, nec=0.994, sample=mbpp_python_81]      Batch samples:  11%|█▏        | 198/1722 [02:42<28:03,  1.10s/it, det=0.999, nec=0.994, sample=mbpp_python_81]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 101.65it/s][A
+                                                        [ABatch samples:  11%|█▏        | 198/1722 [02:43<28:03,  1.10s/it, det=0.994, nec=0.852, sample=apps_python_82]Batch samples:  12%|█▏        | 199/1722 [02:43<27:34,  1.09s/it, det=0.994, nec=0.852, sample=apps_python_82]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.80it/s][A
+                                                       [ABatch samples:  12%|█▏        | 199/1722 [02:44<27:34,  1.09s/it, det=0.998, nec=0.813, sample=codecontests_java_82]Batch samples:  12%|█▏        | 200/1722 [02:44<27:04,  1.07s/it, det=0.998, nec=0.813, sample=codecontests_java_82]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.00it/s][A
+                                                       [ABatch samples:  12%|█▏        | 200/1722 [02:45<27:04,  1.07s/it, det=0.996, nec=1.059, sample=apps_python_83]      Batch samples:  12%|█▏        | 201/1722 [02:45<27:21,  1.08s/it, det=0.996, nec=1.059, sample=apps_python_83]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 81.89it/s][A
+                                                       [ABatch samples:  12%|█▏        | 201/1722 [02:46<27:21,  1.08s/it, det=1.000, nec=1.025, sample=codecontests_cpp_83]Batch samples:  12%|█▏        | 202/1722 [02:46<28:03,  1.11s/it, det=1.000, nec=1.025, sample=codecontests_cpp_83]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 84.21it/s][A
+                                                       [ABatch samples:  12%|█▏        | 202/1722 [02:47<28:03,  1.11s/it, det=1.000, nec=0.827, sample=codecontests_java_83]Batch samples:  12%|█▏        | 203/1722 [02:48<28:08,  1.11s/it, det=1.000, nec=0.827, sample=codecontests_java_83]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.42it/s][A
+                                                       [ABatch samples:  12%|█▏        | 203/1722 [02:49<28:08,  1.11s/it, det=1.000, nec=0.942, sample=apps_python_84]      Batch samples:  12%|█▏        | 204/1722 [02:49<28:36,  1.13s/it, det=1.000, nec=0.942, sample=apps_python_84]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 77.58it/s][A
+                                                       [ABatch samples:  12%|█▏        | 204/1722 [02:50<28:36,  1.13s/it, det=0.997, nec=1.287, sample=codecontests_java_84]Batch samples:  12%|█▏        | 205/1722 [02:50<31:29,  1.25s/it, det=0.997, nec=1.287, sample=codecontests_java_84]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 100.96it/s][A
+                                                        [ABatch samples:  12%|█▏        | 205/1722 [02:51<31:29,  1.25s/it, det=0.998, nec=0.910, sample=humaneval_python_84] Batch samples:  12%|█▏        | 206/1722 [02:52<31:55,  1.26s/it, det=0.998, nec=0.910, sample=humaneval_python_84]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 94.36it/s][A
+                                                       [ABatch samples:  12%|█▏        | 206/1722 [02:53<31:55,  1.26s/it, det=1.000, nec=1.144, sample=apps_python_85]     Batch samples:  12%|█▏        | 207/1722 [02:53<31:25,  1.24s/it, det=1.000, nec=1.144, sample=apps_python_85]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 67.65it/s][A
+                                                       [ABatch samples:  12%|█▏        | 207/1722 [02:54<31:25,  1.24s/it, det=0.999, nec=0.784, sample=codecontests_cpp_85]Batch samples:  12%|█▏        | 208/1722 [02:54<31:10,  1.24s/it, det=0.999, nec=0.784, sample=codecontests_cpp_85]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 63.99it/s][A
+                                                       [ABatch samples:  12%|█▏        | 208/1722 [02:55<31:10,  1.24s/it, det=0.994, nec=1.411, sample=codecontests_java_85]Batch samples:  12%|█▏        | 209/1722 [02:55<31:52,  1.26s/it, det=0.994, nec=1.411, sample=codecontests_java_85]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 73.50it/s][A
+                                                       [ABatch samples:  12%|█▏        | 209/1722 [02:56<31:52,  1.26s/it, det=0.999, nec=1.066, sample=humaneval_python_85] Batch samples:  12%|█▏        | 210/1722 [02:57<32:05,  1.27s/it, det=0.999, nec=1.066, sample=humaneval_python_85]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 56.74it/s][A
+                                                       [ABatch samples:  12%|█▏        | 210/1722 [02:58<32:05,  1.27s/it, det=1.000, nec=1.026, sample=apps_python_86]     Batch samples:  12%|█▏        | 211/1722 [02:58<32:55,  1.31s/it, det=1.000, nec=1.026, sample=apps_python_86]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 65.62it/s][A
+                                                       [ABatch samples:  12%|█▏        | 211/1722 [02:59<32:55,  1.31s/it, det=0.994, nec=1.364, sample=codecontests_java_86]Batch samples:  12%|█▏        | 212/1722 [02:59<32:55,  1.31s/it, det=0.994, nec=1.364, sample=codecontests_java_86]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.14it/s][A
+                                                       [ABatch samples:  12%|█▏        | 212/1722 [03:01<32:55,  1.31s/it, det=0.998, nec=1.203, sample=apps_python_87]      Batch samples:  12%|█▏        | 213/1722 [03:01<33:57,  1.35s/it, det=0.998, nec=1.203, sample=apps_python_87]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 57.36it/s][A
+                                                       [ABatch samples:  12%|█▏        | 213/1722 [03:02<33:57,  1.35s/it, det=1.000, nec=1.031, sample=codecontests_cpp_87]Batch samples:  12%|█▏        | 214/1722 [03:02<34:17,  1.36s/it, det=1.000, nec=1.031, sample=codecontests_cpp_87]
+AP lowmem:   0%|          | 0/28 [00:00<?, ?it/s][A
+                                                 [A
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 56.73it/s][A
+                                                       [ABatch samples:  12%|█▏        | 214/1722 [03:04<34:17,  1.36s/it, det=0.999, nec=0.559, sample=codecontests_java_87]Batch samples:  12%|█▏        | 215/1722 [03:04<39:36,  1.58s/it, det=0.999, nec=0.559, sample=codecontests_java_87]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 49.77it/s][A
+                                                       [ABatch samples:  12%|█▏        | 215/1722 [03:06<39:36,  1.58s/it, det=1.000, nec=1.027, sample=apps_python_88]      Batch samples:  13%|█▎        | 216/1722 [03:06<39:11,  1.56s/it, det=1.000, nec=1.027, sample=apps_python_88]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 49.90it/s][A
+                                                       [ABatch samples:  13%|█▎        | 216/1722 [03:07<39:11,  1.56s/it, det=1.000, nec=0.911, sample=codecontests_java_88]Batch samples:  13%|█▎        | 217/1722 [03:07<38:20,  1.53s/it, det=1.000, nec=0.911, sample=codecontests_java_88]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.87it/s][A
+                                                       [ABatch samples:  13%|█▎        | 217/1722 [03:08<38:20,  1.53s/it, det=0.999, nec=0.955, sample=codecontests_cpp_89] Batch samples:  13%|█▎        | 218/1722 [03:08<35:06,  1.40s/it, det=0.999, nec=0.955, sample=codecontests_cpp_89]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.42it/s][A
+                                                       [ABatch samples:  13%|█▎        | 218/1722 [03:09<35:06,  1.40s/it, det=1.000, nec=0.912, sample=codecontests_java_89]Batch samples:  13%|█▎        | 219/1722 [03:09<32:40,  1.30s/it, det=1.000, nec=0.912, sample=codecontests_java_89]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 78.97it/s][A
+                                                       [ABatch samples:  13%|█▎        | 219/1722 [03:10<32:40,  1.30s/it, det=1.000, nec=0.777, sample=codecontests_java_90]Batch samples:  13%|█▎        | 220/1722 [03:10<30:59,  1.24s/it, det=1.000, nec=0.777, sample=codecontests_java_90]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.29it/s][A
+                                                       [ABatch samples:  13%|█▎        | 220/1722 [03:11<30:59,  1.24s/it, det=0.999, nec=1.085, sample=apps_python_91]      Batch samples:  13%|█▎        | 221/1722 [03:12<29:28,  1.18s/it, det=0.999, nec=1.085, sample=apps_python_91]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.08it/s][A
+                                                       [ABatch samples:  13%|█▎        | 221/1722 [03:12<29:28,  1.18s/it, det=0.996, nec=0.787, sample=codecontests_cpp_91]Batch samples:  13%|█▎        | 222/1722 [03:13<28:46,  1.15s/it, det=0.996, nec=0.787, sample=codecontests_cpp_91]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.19it/s][A
+                                                       [ABatch samples:  13%|█▎        | 222/1722 [03:14<28:46,  1.15s/it, det=1.000, nec=0.985, sample=codecontests_java_91]Batch samples:  13%|█▎        | 223/1722 [03:14<28:39,  1.15s/it, det=1.000, nec=0.985, sample=codecontests_java_91]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.15it/s][A
+                                                       [ABatch samples:  13%|█▎        | 223/1722 [03:15<28:39,  1.15s/it, det=0.994, nec=1.176, sample=apps_python_92]      Batch samples:  13%|█▎        | 224/1722 [03:15<27:51,  1.12s/it, det=0.994, nec=1.176, sample=apps_python_92]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.75it/s][A
+                                                       [ABatch samples:  13%|█▎        | 224/1722 [03:16<27:51,  1.12s/it, det=0.999, nec=0.971, sample=codecontests_java_92]Batch samples:  13%|█▎        | 225/1722 [03:16<27:21,  1.10s/it, det=0.999, nec=0.971, sample=codecontests_java_92]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.42it/s][A
+                                                       [ABatch samples:  13%|█▎        | 225/1722 [03:17<27:21,  1.10s/it, det=0.998, nec=1.050, sample=apps_python_93]      Batch samples:  13%|█▎        | 226/1722 [03:17<27:04,  1.09s/it, det=0.998, nec=1.050, sample=apps_python_93]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.35it/s][A
+                                                       [ABatch samples:  13%|█▎        | 226/1722 [03:18<27:04,  1.09s/it, det=0.997, nec=0.922, sample=codecontests_cpp_93]Batch samples:  13%|█▎        | 227/1722 [03:18<26:57,  1.08s/it, det=0.997, nec=0.922, sample=codecontests_cpp_93]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.76it/s][A
+                                                       [ABatch samples:  13%|█▎        | 227/1722 [03:19<26:57,  1.08s/it, det=1.000, nec=0.874, sample=codecontests_java_93]Batch samples:  13%|█▎        | 228/1722 [03:19<26:55,  1.08s/it, det=1.000, nec=0.874, sample=codecontests_java_93]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.52it/s][A
+                                                       [ABatch samples:  13%|█▎        | 228/1722 [03:20<26:55,  1.08s/it, det=1.000, nec=0.991, sample=apps_python_94]      Batch samples:  13%|█▎        | 229/1722 [03:20<26:51,  1.08s/it, det=1.000, nec=0.991, sample=apps_python_94]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.09it/s][A
+                                                       [ABatch samples:  13%|█▎        | 229/1722 [03:21<26:51,  1.08s/it, det=0.995, nec=1.197, sample=codecontests_cpp_94]Batch samples:  13%|█▎        | 230/1722 [03:21<27:20,  1.10s/it, det=0.995, nec=1.197, sample=codecontests_cpp_94]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.23it/s][A
+                                                       [ABatch samples:  13%|█▎        | 230/1722 [03:22<27:20,  1.10s/it, det=1.000, nec=0.936, sample=codecontests_java_94]Batch samples:  13%|█▎        | 231/1722 [03:22<27:18,  1.10s/it, det=1.000, nec=0.936, sample=codecontests_java_94]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.96it/s][A
+                                                       [ABatch samples:  13%|█▎        | 231/1722 [03:23<27:18,  1.10s/it, det=0.997, nec=1.160, sample=apps_python_95]      Batch samples:  13%|█▎        | 232/1722 [03:23<27:04,  1.09s/it, det=0.997, nec=1.160, sample=apps_python_95]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.32it/s][A
+                                                       [ABatch samples:  13%|█▎        | 232/1722 [03:24<27:04,  1.09s/it, det=0.999, nec=1.026, sample=codecontests_cpp_95]Batch samples:  14%|█▎        | 233/1722 [03:25<27:05,  1.09s/it, det=0.999, nec=1.026, sample=codecontests_cpp_95]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.19it/s][A
+                                                       [ABatch samples:  14%|█▎        | 233/1722 [03:25<27:05,  1.09s/it, det=1.000, nec=1.000, sample=codecontests_java_95]Batch samples:  14%|█▎        | 234/1722 [03:26<26:52,  1.08s/it, det=1.000, nec=1.000, sample=codecontests_java_95]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 68.31it/s][A
+                                                       [ABatch samples:  14%|█▎        | 234/1722 [03:27<26:52,  1.08s/it, det=1.000, nec=1.075, sample=humaneval_python_95] Batch samples:  14%|█▎        | 235/1722 [03:27<27:15,  1.10s/it, det=1.000, nec=1.075, sample=humaneval_python_95]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.62it/s][A
+                                                       [ABatch samples:  14%|█▎        | 235/1722 [03:28<27:15,  1.10s/it, det=1.000, nec=1.068, sample=apps_python_96]     Batch samples:  14%|█▎        | 236/1722 [03:28<27:01,  1.09s/it, det=1.000, nec=1.068, sample=apps_python_96]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.52it/s][A
+                                                       [ABatch samples:  14%|█▎        | 236/1722 [03:29<27:01,  1.09s/it, det=1.000, nec=0.923, sample=codecontests_java_96]Batch samples:  14%|█▍        | 237/1722 [03:29<26:52,  1.09s/it, det=1.000, nec=0.923, sample=codecontests_java_96]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 109.44it/s][A
+                                                        [ABatch samples:  14%|█▍        | 237/1722 [03:30<26:52,  1.09s/it, det=0.999, nec=1.065, sample=mbpp_python_96]      Batch samples:  14%|█▍        | 238/1722 [03:30<26:10,  1.06s/it, det=0.999, nec=1.065, sample=mbpp_python_96]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.08it/s][A
+                                                       [ABatch samples:  14%|█▍        | 238/1722 [03:31<26:10,  1.06s/it, det=1.000, nec=1.126, sample=apps_python_97]Batch samples:  14%|█▍        | 239/1722 [03:31<26:15,  1.06s/it, det=1.000, nec=1.126, sample=apps_python_97]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 103.64it/s][A
+                                                        [ABatch samples:  14%|█▍        | 239/1722 [03:32<26:15,  1.06s/it, det=1.000, nec=1.022, sample=humaneval_python_97]Batch samples:  14%|█▍        | 240/1722 [03:32<26:16,  1.06s/it, det=1.000, nec=1.022, sample=humaneval_python_97]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.40it/s][A
+                                                       [ABatch samples:  14%|█▍        | 240/1722 [03:33<26:16,  1.06s/it, det=0.999, nec=0.922, sample=apps_python_98]     Batch samples:  14%|█▍        | 241/1722 [03:33<26:10,  1.06s/it, det=0.999, nec=0.922, sample=apps_python_98]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.10it/s][A
+                                                       [ABatch samples:  14%|█▍        | 241/1722 [03:34<26:10,  1.06s/it, det=1.000, nec=1.007, sample=codecontests_cpp_98]Batch samples:  14%|█▍        | 242/1722 [03:34<26:29,  1.07s/it, det=1.000, nec=1.007, sample=codecontests_cpp_98]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.36it/s][A
+                                                       [ABatch samples:  14%|█▍        | 242/1722 [03:35<26:29,  1.07s/it, det=0.999, nec=0.728, sample=codecontests_java_98]Batch samples:  14%|█▍        | 243/1722 [03:35<26:59,  1.10s/it, det=0.999, nec=0.728, sample=codecontests_java_98]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 89.72it/s][A
+                                                       [ABatch samples:  14%|█▍        | 243/1722 [03:36<26:59,  1.10s/it, det=1.000, nec=1.000, sample=apps_python_99]      Batch samples:  14%|█▍        | 244/1722 [03:37<27:34,  1.12s/it, det=1.000, nec=1.000, sample=apps_python_99]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.99it/s][A
+                                                       [ABatch samples:  14%|█▍        | 244/1722 [03:37<27:34,  1.12s/it, det=1.000, nec=0.916, sample=codecontests_cpp_99]Batch samples:  14%|█▍        | 245/1722 [03:38<27:27,  1.12s/it, det=1.000, nec=0.916, sample=codecontests_cpp_99]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 92.32it/s][A
+                                                       [ABatch samples:  14%|█▍        | 245/1722 [03:39<27:27,  1.12s/it, det=1.000, nec=0.954, sample=codecontests_java_99]Batch samples:  14%|█▍        | 246/1722 [03:39<27:04,  1.10s/it, det=1.000, nec=0.954, sample=codecontests_java_99]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 96.03it/s][A
+                                                       [ABatch samples:  14%|█▍        | 246/1722 [03:40<27:04,  1.10s/it, det=1.000, nec=1.123, sample=apps_python_100]     Batch samples:  14%|█▍        | 247/1722 [03:40<26:29,  1.08s/it, det=1.000, nec=1.123, sample=apps_python_100]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 85.84it/s][A
+                                                       [ABatch samples:  14%|█▍        | 247/1722 [03:41<26:29,  1.08s/it, det=1.000, nec=0.944, sample=codecontests_cpp_100]Batch samples:  14%|█▍        | 248/1722 [03:41<26:43,  1.09s/it, det=1.000, nec=0.944, sample=codecontests_cpp_100]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.78it/s][A
+                                                       [ABatch samples:  14%|█▍        | 248/1722 [03:42<26:43,  1.09s/it, det=0.998, nec=0.885, sample=codecontests_java_100]Batch samples:  14%|█▍        | 249/1722 [03:42<26:50,  1.09s/it, det=0.998, nec=0.885, sample=codecontests_java_100]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 102.60it/s][A
+                                                        [ABatch samples:  14%|█▍        | 249/1722 [03:43<26:50,  1.09s/it, det=0.999, nec=0.952, sample=humaneval_python_100] Batch samples:  15%|█▍        | 250/1722 [03:43<26:22,  1.08s/it, det=0.999, nec=0.952, sample=humaneval_python_100]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 71.09it/s][A
+                                                       [ABatch samples:  15%|█▍        | 250/1722 [03:44<26:22,  1.08s/it, det=1.000, nec=1.017, sample=apps_python_101]     Batch samples:  15%|█▍        | 251/1722 [03:44<26:55,  1.10s/it, det=1.000, nec=1.017, sample=apps_python_101]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.05it/s][A
+                                                       [ABatch samples:  15%|█▍        | 251/1722 [03:45<26:55,  1.10s/it, det=0.999, nec=0.822, sample=codecontests_java_101]Batch samples:  15%|█▍        | 252/1722 [03:45<26:48,  1.09s/it, det=0.999, nec=0.822, sample=codecontests_java_101]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 70.66it/s][A
+                                                       [ABatch samples:  15%|█▍        | 252/1722 [03:46<26:48,  1.09s/it, det=0.998, nec=1.074, sample=apps_python_102]      Batch samples:  15%|█▍        | 253/1722 [03:46<27:27,  1.12s/it, det=0.998, nec=1.074, sample=apps_python_102]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.61it/s][A
+                                                       [ABatch samples:  15%|█▍        | 253/1722 [03:47<27:27,  1.12s/it, det=1.000, nec=0.991, sample=apps_python_103]Batch samples:  15%|█▍        | 254/1722 [03:47<27:07,  1.11s/it, det=1.000, nec=0.991, sample=apps_python_103]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 69.58it/s][A
+                                                       [ABatch samples:  15%|█▍        | 254/1722 [03:48<27:07,  1.11s/it, det=0.999, nec=1.037, sample=mbpp_python_103]Batch samples:  15%|█▍        | 255/1722 [03:49<27:16,  1.12s/it, det=0.999, nec=1.037, sample=mbpp_python_103]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 86.12it/s][A
+                                                       [ABatch samples:  15%|█▍        | 255/1722 [03:50<27:16,  1.12s/it, det=1.000, nec=1.024, sample=apps_python_104]Batch samples:  15%|█▍        | 256/1722 [03:50<27:13,  1.11s/it, det=1.000, nec=1.024, sample=apps_python_104]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.38it/s][A
+                                                       [ABatch samples:  15%|█▍        | 256/1722 [03:51<27:13,  1.11s/it, det=0.998, nec=0.912, sample=apps_python_105]Batch samples:  15%|█▍        | 257/1722 [03:51<27:20,  1.12s/it, det=0.998, nec=0.912, sample=apps_python_105]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 81.68it/s][A
+                                                       [ABatch samples:  15%|█▍        | 257/1722 [03:52<27:20,  1.12s/it, det=1.000, nec=0.844, sample=codecontests_java_105]Batch samples:  15%|█▍        | 258/1722 [03:52<27:21,  1.12s/it, det=1.000, nec=0.844, sample=codecontests_java_105]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 88.32it/s][A
+                                                       [ABatch samples:  15%|█▍        | 258/1722 [03:53<27:21,  1.12s/it, det=1.000, nec=1.091, sample=apps_python_106]      Batch samples:  15%|█▌        | 259/1722 [03:53<27:03,  1.11s/it, det=1.000, nec=1.091, sample=apps_python_106]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 65.60it/s][A
+                                                       [ABatch samples:  15%|█▌        | 259/1722 [03:54<27:03,  1.11s/it, det=1.000, nec=1.000, sample=codecontests_cpp_106]Batch samples:  15%|█▌        | 260/1722 [03:54<27:28,  1.13s/it, det=1.000, nec=1.000, sample=codecontests_cpp_106]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 68.01it/s][A
+                                                       [ABatch samples:  15%|█▌        | 260/1722 [03:55<27:28,  1.13s/it, det=0.998, nec=0.890, sample=codecontests_java_106]Batch samples:  15%|█▌        | 261/1722 [03:55<27:28,  1.13s/it, det=0.998, nec=0.890, sample=codecontests_java_106]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.53it/s][A
+                                                       [ABatch samples:  15%|█▌        | 261/1722 [03:56<27:28,  1.13s/it, det=1.000, nec=1.055, sample=apps_python_107]      Batch samples:  15%|█▌        | 262/1722 [03:56<27:32,  1.13s/it, det=1.000, nec=1.055, sample=apps_python_107]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.47it/s][A
+                                                       [ABatch samples:  15%|█▌        | 262/1722 [03:57<27:32,  1.13s/it, det=0.999, nec=0.893, sample=codecontests_java_107]Batch samples:  15%|█▌        | 263/1722 [03:58<26:58,  1.11s/it, det=0.999, nec=0.893, sample=codecontests_java_107]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 79.01it/s][A
+                                                       [ABatch samples:  15%|█▌        | 263/1722 [03:58<26:58,  1.11s/it, det=0.995, nec=1.043, sample=apps_python_108]      Batch samples:  15%|█▌        | 264/1722 [03:59<26:39,  1.10s/it, det=0.995, nec=1.043, sample=apps_python_108]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.44it/s][A
+                                                       [ABatch samples:  15%|█▌        | 264/1722 [04:00<26:39,  1.10s/it, det=1.000, nec=1.114, sample=codecontests_cpp_108]Batch samples:  15%|█▌        | 265/1722 [04:00<26:29,  1.09s/it, det=1.000, nec=1.114, sample=codecontests_cpp_108]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.04it/s][A
+                                                       [ABatch samples:  15%|█▌        | 265/1722 [04:01<26:29,  1.09s/it, det=0.999, nec=0.939, sample=codecontests_java_108]Batch samples:  15%|█▌        | 266/1722 [04:01<26:43,  1.10s/it, det=0.999, nec=0.939, sample=codecontests_java_108]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.59it/s][A
+                                                       [ABatch samples:  15%|█▌        | 266/1722 [04:02<26:43,  1.10s/it, det=1.000, nec=1.023, sample=humaneval_python_108] Batch samples:  16%|█▌        | 267/1722 [04:02<26:37,  1.10s/it, det=1.000, nec=1.023, sample=humaneval_python_108]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 73.52it/s][A
+                                                       [ABatch samples:  16%|█▌        | 267/1722 [04:03<26:37,  1.10s/it, det=0.998, nec=1.107, sample=apps_python_109]     Batch samples:  16%|█▌        | 268/1722 [04:03<26:48,  1.11s/it, det=0.998, nec=1.107, sample=apps_python_109]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.59it/s][A
+                                                       [ABatch samples:  16%|█▌        | 268/1722 [04:04<26:48,  1.11s/it, det=0.997, nec=0.692, sample=codecontests_cpp_109]Batch samples:  16%|█▌        | 269/1722 [04:04<26:29,  1.09s/it, det=0.997, nec=0.692, sample=codecontests_cpp_109]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 93.75it/s][A
+                                                       [ABatch samples:  16%|█▌        | 269/1722 [04:05<26:29,  1.09s/it, det=0.999, nec=0.897, sample=codecontests_java_109]Batch samples:  16%|█▌        | 270/1722 [04:05<26:24,  1.09s/it, det=0.999, nec=0.897, sample=codecontests_java_109]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 91.63it/s][A
+                                                       [ABatch samples:  16%|█▌        | 270/1722 [04:06<26:24,  1.09s/it, det=1.000, nec=1.080, sample=humaneval_python_109] Batch samples:  16%|█▌        | 271/1722 [04:06<26:32,  1.10s/it, det=1.000, nec=1.080, sample=humaneval_python_109]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 97.69it/s][A
+                                                       [ABatch samples:  16%|█▌        | 271/1722 [04:07<26:32,  1.10s/it, det=0.999, nec=1.034, sample=apps_python_110]     Batch samples:  16%|█▌        | 272/1722 [04:07<26:24,  1.09s/it, det=0.999, nec=1.034, sample=apps_python_110]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 87.96it/s][A
+                                                       [ABatch samples:  16%|█▌        | 272/1722 [04:08<26:24,  1.09s/it, det=1.000, nec=0.975, sample=codecontests_cpp_110]Batch samples:  16%|█▌        | 273/1722 [04:08<26:14,  1.09s/it, det=1.000, nec=0.975, sample=codecontests_cpp_110]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 90.12it/s][A
+                                                       [ABatch samples:  16%|█▌        | 273/1722 [04:09<26:14,  1.09s/it, det=1.000, nec=0.954, sample=codecontests_java_110]Batch samples:  16%|█▌        | 274/1722 [04:10<26:17,  1.09s/it, det=1.000, nec=0.954, sample=codecontests_java_110]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 98.48it/s][A
+                                                       [ABatch samples:  16%|█▌        | 274/1722 [04:10<26:17,  1.09s/it, det=0.999, nec=1.047, sample=apps_python_111]      Batch samples:  16%|█▌        | 275/1722 [04:11<26:01,  1.08s/it, det=0.999, nec=1.047, sample=apps_python_111]
+CT MLP:   0%|          | 0/28 [00:00<?, ?it/s][A
+CT MLP: 100%|██████████| 28/28 [00:00<00:00, 95.66it/s][A
+                                                       [A

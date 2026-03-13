@@ -11,8 +11,8 @@ For the reverse experiment we swap roles at runtime:
 - reverse corrupt prompt: canonical tool-call prompt
 
 The reverse target token is the top non-`<tool_call>` token on the no-tool prompt.
-This makes the objective symmetric with the forward run:
-  reverse objective = logit(no_tool_top1) - logit(<tool_call>)
+This now uses the same distributional objective as the forward run:
+  reverse objective = -KL(p_no_tool_endpoint || q_current)
 """
 
 from __future__ import annotations
@@ -50,6 +50,7 @@ from toolcall_circuit.graph_utils import (
     draw_circuit_with_output,
     remap_output_node,
 )
+from toolcall_circuit.objective import build_distribution_objective, summarize_endpoint_pair
 from toolcall_circuit.paths import DATASETS_ROOT, MODEL_PATH_DEFAULT, RESULTS_ROOT
 from toolcall_circuit.single_sample import (
     assert_no_dead_ends,
@@ -216,8 +217,26 @@ def run_one_sample_reverse(
     tool_token = tool_spec.primary_token_id
     reverse_target_token = resolve_distractor_token(clean_logits[0, -1, :], tool_token)
 
-    clean_obj = float(objective_from_logits(clean_logits, reverse_target_token, tool_token).item())
-    corrupt_obj = float(objective_from_logits(corrupt_logits, reverse_target_token, tool_token).item())
+    endpoint_temperature = 1.0
+    endpoint_masked_token_ids: tuple[int, ...] = ()
+    endpoint_objective = build_distribution_objective(
+        clean_logits,
+        endpoint_label="no_tool",
+        tokenizer=tokenizer,
+        temperature=endpoint_temperature,
+        masked_token_ids=endpoint_masked_token_ids,
+    )
+    endpoint_summary = summarize_endpoint_pair(
+        tool_logits=corrupt_logits,
+        no_tool_logits=clean_logits,
+        tokenizer=tokenizer,
+        temperature=endpoint_temperature,
+        masked_token_ids=endpoint_masked_token_ids,
+        topk=12,
+    )
+
+    clean_obj = float(objective_from_logits(clean_logits, endpoint_objective).item())
+    corrupt_obj = float(objective_from_logits(corrupt_logits, endpoint_objective).item())
     gap = clean_obj - corrupt_obj
     if not math.isfinite(gap) or abs(gap) <= 1e-8:
         raise ValueError(f"Reverse gap is degenerate for {sample.sample_id}: {gap}")
@@ -230,8 +249,8 @@ def run_one_sample_reverse(
             model=model,
             corrupt_tokens=corrupt_tokens,
             clean_cache_cpu=clean_cache_cpu,
-            target_token=reverse_target_token,
-            distractor_token=tool_token,
+            target_token=endpoint_objective,
+            distractor_token=None,
         )
     except torch.OutOfMemoryError:
         gc.collect()
@@ -242,8 +261,8 @@ def run_one_sample_reverse(
                 model=model,
                 corrupt_tokens=corrupt_tokens,
                 clean_cache_cpu=clean_cache_cpu,
-                target_token=reverse_target_token,
-                distractor_token=tool_token,
+                target_token=endpoint_objective,
+                distractor_token=None,
             )
         except torch.OutOfMemoryError:
             gc.collect()
@@ -278,8 +297,8 @@ def run_one_sample_reverse(
             model=model,
             corrupt_tokens=corrupt_tokens,
             clean_cache_cpu=clean_cache_cpu,
-            target_token=reverse_target_token,
-            distractor_token=tool_token,
+            target_token=endpoint_objective,
+            distractor_token=None,
             corrupt_obj=corrupt_obj,
             candidate_heads_by_layer=ct_candidate_heads,
             fallback_scores=ap_head if ct_candidate_heads else None,
@@ -289,8 +308,8 @@ def run_one_sample_reverse(
         model=model,
         corrupt_tokens=corrupt_tokens,
         clean_cache_cpu=clean_cache_cpu,
-        target_token=reverse_target_token,
-        distractor_token=tool_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
         corrupt_obj=corrupt_obj,
     )
 
@@ -306,8 +325,8 @@ def run_one_sample_reverse(
         base_tokens=corrupt_tokens,
         source_cache_cpu=clean_cache_cpu,
         patch_nodes=detailed_nodes,
-        target_token=reverse_target_token,
-        distractor_token=tool_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     detailed_ratio = (detailed_obj - corrupt_obj) / gap
 
@@ -316,8 +335,8 @@ def run_one_sample_reverse(
         base_tokens=corrupt_tokens,
         source_cache_cpu=clean_cache_cpu,
         patch_nodes=rough_nodes,
-        target_token=reverse_target_token,
-        distractor_token=tool_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     rough_ratio = (rough_obj - corrupt_obj) / gap
 
@@ -327,8 +346,8 @@ def run_one_sample_reverse(
         base_tokens=clean_tokens,
         source_cache_cpu=corrupt_cache_cpu,
         patch_nodes=detailed_nodes,
-        target_token=reverse_target_token,
-        distractor_token=tool_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     necessity_drop = clean_obj - clean_with_detailed_corrupted
     necessity_ratio = necessity_drop / gap
@@ -338,8 +357,8 @@ def run_one_sample_reverse(
         base_tokens=clean_tokens,
         source_cache_cpu=corrupt_cache_cpu,
         patch_nodes=rough_nodes,
-        target_token=reverse_target_token,
-        distractor_token=tool_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     rough_necessity_drop = clean_obj - clean_with_rough_corrupted
     rough_necessity_ratio = rough_necessity_drop / gap
@@ -355,16 +374,16 @@ def run_one_sample_reverse(
             base_tokens=corrupt_tokens,
             source_cache_cpu=clean_cache_cpu,
             patch_nodes=[probe_head],
-            target_token=reverse_target_token,
-            distractor_token=tool_token,
+            target_token=endpoint_objective,
+            distractor_token=None,
         )
         clean_with_probe_corrupt = evaluate_on_base_with_source(
             model=model,
             base_tokens=clean_tokens,
             source_cache_cpu=corrupt_cache_cpu,
             patch_nodes=[probe_head],
-            target_token=reverse_target_token,
-            distractor_token=tool_token,
+            target_token=endpoint_objective,
+            distractor_token=None,
         )
 
     detailed_edges = remap_output_node(detailed_edges_raw, target_output=REVERSE_OUTPUT_NODE)
@@ -373,15 +392,15 @@ def run_one_sample_reverse(
     if not skip_plots:
         plot_head_heatmap_generic(
             ap_head.numpy(),
-            "Reverse Attribution Patching Head Heatmap (No-tool > Tool-call)",
+            "Reverse Attribution Patching Head Heatmap (No-tool Endpoint)",
             out_dir / "ap_head_heatmap.png",
-            cbar_label="Contribution (positive = supports no_tool over <tool_call>)",
+            cbar_label="Contribution (positive = supports the no-tool endpoint)",
         )
         plot_head_heatmap_generic(
             ct_head.numpy(),
-            "Reverse Causal Tracing Head Heatmap (No-tool > Tool-call)",
+            "Reverse Causal Tracing Head Heatmap (No-tool Endpoint)",
             out_dir / "ct_head_heatmap.png",
-            cbar_label="Contribution (positive = supports no_tool over <tool_call>)",
+            cbar_label="Contribution (positive = supports the no-tool endpoint)",
         )
         plot_probe_generic(
             out_path=out_dir / f"{probe_head}_probe.png",
@@ -391,7 +410,7 @@ def run_one_sample_reverse(
             clean_obj=clean_obj,
             clean_with_component_corrupt=clean_with_probe_corrupt,
             title=f"Reverse Component Probe: {probe_head}",
-            ylabel="No-tool vs tool-call logit difference",
+            ylabel="Endpoint score",
         )
         draw_circuit_with_output(
             nodes=detailed_nodes,
@@ -448,22 +467,33 @@ def run_one_sample_reverse(
         "ct_mode": ct_mode,
         "ct_head_mode_requested": ct_head_mode,
         "skip_plots": skip_plots,
+        "objective_mode": "negative_kl_to_clean_endpoint",
+        "objective_endpoint": "no_tool",
+        "objective_temperature": endpoint_temperature,
+        "objective_masked_token_ids": list(endpoint_masked_token_ids),
         "ct_candidate_ap_top_per_layer": ct_ap_top_per_layer,
         "ct_candidate_ap_top_global": ct_ap_top_global,
         "ct_candidate_head_count": sum(len(v) for v in ct_candidate_heads.values()) if ct_candidate_heads else 0,
         "clean_obj": clean_obj,
         "corrupt_obj": corrupt_obj,
         "gap": gap,
+        "clean_kl_to_endpoint": -clean_obj,
+        "corrupt_kl_to_endpoint": -corrupt_obj,
+        "endpoint_js_divergence": endpoint_summary["endpoint_js_divergence"],
         "detailed_obj": detailed_obj,
         "detailed_ratio_vs_gap": detailed_ratio,
+        "detailed_kl_recovery_ratio": detailed_ratio,
         "rough_obj": rough_obj,
         "rough_ratio_vs_gap": rough_ratio,
+        "rough_kl_recovery_ratio": rough_ratio,
         "clean_with_detailed_corrupted": clean_with_detailed_corrupted,
         "necessity_drop": necessity_drop,
         "necessity_ratio_vs_gap": necessity_ratio,
+        "necessity_kl_drop_ratio": necessity_ratio,
         "clean_with_rough_corrupted": clean_with_rough_corrupted,
         "rough_necessity_drop": rough_necessity_drop,
         "rough_necessity_ratio_vs_gap": rough_necessity_ratio,
+        "rough_necessity_kl_drop_ratio": rough_necessity_ratio,
         "probe_head": probe_head,
         "probe_corrupt_with_head": corrupt_with_probe,
         "probe_clean_with_head_corrupt": clean_with_probe_corrupt,
@@ -480,6 +510,7 @@ def run_one_sample_reverse(
         "tools_block_positions": list(pos_sets["tools_block"]),
         "user_block_positions": list(pos_sets["user_block"]),
         "sample_catalog_record": sample.catalog_record(),
+        "endpoint_distribution_summary": endpoint_summary,
         "top_node_scores": [
             {"name": s.name, "score": s.score, "ct": s.ct, "ap": s.ap}
             for s in score_table

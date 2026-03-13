@@ -1,0 +1,32 @@
+node,layer,group_key,group_label,group_description,semantic_hint,forward_support,reverse_support,shared_support_min,direction_balance
+MLP1,1,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail writer MLP,0.43626082740631034,0.0,0.0,-1.0
+L2H14,2,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail router,0.5637391725936897,0.0,0.0,-1.0
+L4H4,4,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail router,0.43626082740631034,0.0,0.0,-1.0
+MLP4,4,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail writer MLP,0.0,0.48019846476356787,0.0,1.0
+L5H5,5,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail router,1.0,0.0,0.0,-1.0
+MLP5,5,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail writer MLP,0.0,0.519801535236432,0.0,1.0
+MLP6,6,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail writer MLP,0.5637391725936897,0.0,0.0,-1.0
+MLP10,10,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,0.5637391725936897,0.519801535236432,0.519801535236432,-0.04055005690118125
+L11H5,11,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared router,0.5637391725936897,0.519801535236432,0.519801535236432,-0.04055005690118125
+L12H0,12,no_tool_bias_backbone,No-Tool-Bias Backbone,shared backbone nodes tilted toward the no-tool endpoint,no-tool-biased router,0.5637391725936897,1.0,0.5637391725936897,0.27898567424304405
+L12H6,12,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail router,0.43626082740631034,0.0,0.0,-1.0
+L13H9,13,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared router,0.43626082740631034,0.48019846476356787,0.43626082740631034,0.04794281397183225
+MLP13,13,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,0.43626082740631034,0.48019846476356787,0.43626082740631034,0.04794281397183225
+L15H5,15,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail router,0.0,0.519801535236432,0.0,1.0
+L16H4,16,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail router,0.0,0.48019846476356787,0.0,1.0
+L16H8,16,no_tool_bias_backbone,No-Tool-Bias Backbone,shared backbone nodes tilted toward the no-tool endpoint,no-tool-biased router,0.5637391725936897,1.0,0.5637391725936897,0.27898567424304405
+L16H9,16,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail router,0.43626082740631034,0.0,0.0,-1.0
+MLP16,16,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,1.0,1.0,1.0,0.0
+L17H12,17,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail router,0.0,0.48019846476356787,0.0,1.0
+L17H8,17,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,no-tool-tail router,0.0,0.519801535236432,0.0,1.0
+MLP17,17,no_tool_bias_backbone,No-Tool-Bias Backbone,shared backbone nodes tilted toward the no-tool endpoint,no-tool-biased writer MLP,0.5637391725936897,1.0,0.5637391725936897,0.27898567424304405
+L18H14,18,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared router,0.5637391725936897,0.519801535236432,0.519801535236432,-0.04055005690118125
+MLP18,18,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,0.5637391725936897,0.519801535236432,0.519801535236432,-0.04055005690118125
+MLP19,19,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,0.43626082740631034,0.48019846476356787,0.43626082740631034,0.04794281397183225
+L20H14,20,no_tool_tail,No-Tool Tail,no-tool auxiliary tail outside the shared backbone,format/prefix router,0.0,0.519801535236432,0.0,1.0
+L21H1,21,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,format/prefix router,1.0,1.0,1.0,0.0
+L21H12,21,tool_bias_backbone,Tool-Bias Backbone,shared backbone nodes tilted toward the tool-call endpoint,format/prefix router,1.0,0.48019846476356787,0.48019846476356787,-0.35117016238728505
+MLP21,21,tool_tail,Tool Tail,tool-mode auxiliary tail outside the shared backbone,tool-tail writer MLP,0.43626082740631034,0.0,0.0,-1.0
+L23H6,23,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,format/prefix router,1.0,1.0,1.0,0.0
+L24H6,24,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,format/prefix router,1.0,1.0,1.0,0.0
+MLP27,27,symmetric_backbone,Symmetric Backbone,shared reversible backbone and output-integrating writers,shared writer MLP,1.0,1.0,1.0,0.0

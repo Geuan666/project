@@ -1,0 +1,4 @@
+
+[2026-03-13 20:35:37] launch: /root/miniconda3/bin/python /root/autodl-tmp/project/scripts/build_toolcall_final_report.py --run-root /root/autodl-tmp/project/results/13-01-39-final-kl --output /root/autodl-tmp/project/results/13-01-39-final-kl/FINAL_REPORT.md
+/root/autodl-tmp/project/results/13-01-39-final-kl/FINAL_REPORT.md
+[2026-03-13 20:35:37] exit_code=0

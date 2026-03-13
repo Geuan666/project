@@ -22,8 +22,9 @@ if __package__ in {None, ""}:
     sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from toolcall_circuit.bidirectional_causal_eval import collect_cache_cpu_for_nodes, load_sample_paths
+from toolcall_circuit.objective import DistributionObjective, build_bidirectional_endpoint_objectives
 from toolcall_circuit.signed_circuit import derive_signed_groups
-from toolcall_circuit.single_sample import load_hooked_qwen3, parse_head
+from toolcall_circuit.single_sample import load_hooked_qwen3, objective_from_logits, parse_head
 
 
 def finite(values: Iterable[float]) -> List[float]:
@@ -86,8 +87,8 @@ def build_patch_hooks(
 def run_layer_margins(
     model,
     tokens: torch.Tensor,
-    target: int,
-    distractor: int,
+    tool_objective: DistributionObjective,
+    no_tool_objective: DistributionObjective,
     patch_nodes: Sequence[str] | None = None,
     source_cache_cpu: Dict[str, torch.Tensor] | None = None,
 ) -> tuple[List[str], np.ndarray]:
@@ -107,8 +108,14 @@ def run_layer_margins(
         stack = stack.permute(1, 0, 2).to(dtype=model.W_U.dtype)
         stack_final = model.ln_final(stack)
         stack_logits = model.unembed(stack_final)
-    margins = stack_logits[0, :, target] - stack_logits[0, :, distractor]
-    return labels, margins.detach().float().cpu().numpy()
+    stage_logits = stack_logits[0]
+    deltas: List[float] = []
+    for idx in range(stage_logits.shape[0]):
+        logits_one = stage_logits[idx].unsqueeze(0).unsqueeze(0)
+        tool_score = float(objective_from_logits(logits_one, tool_objective).item())
+        no_tool_score = float(objective_from_logits(logits_one, no_tool_objective).item())
+        deltas.append(tool_score - no_tool_score)
+    return labels, np.asarray(deltas, dtype=np.float32)
 
 
 def plot_curves(layers: Sequence[int], curves: Dict[str, Sequence[float]], out_path: Path) -> None:
@@ -127,7 +134,7 @@ def plot_curves(layers: Sequence[int], curves: Dict[str, Sequence[float]], out_p
         ax.plot(layers, vals, linewidth=2.0, color=color, label=label)
     ax.axhline(0.0, color="#444444", linewidth=1.0)
     ax.set_xlabel("Layer / residual stage")
-    ax.set_ylabel("Logit-lens margin: <tool_call> - no-tool target")
+    ax.set_ylabel("Endpoint score delta: tool_call - no_tool")
     ax.set_title("Signed Circuit Layer Trajectory")
     if len(layers) > 12:
         step = max(1, len(layers) // 8)
@@ -192,6 +199,15 @@ def main() -> None:
         if tool_tokens.shape != no_tool_tokens.shape:
             continue
 
+        with torch.no_grad():
+            tool_logits = model(tool_tokens)
+            no_tool_logits = model(no_tool_tokens)
+        tool_objective, no_tool_objective = build_bidirectional_endpoint_objectives(
+            tool_logits,
+            no_tool_logits,
+            tokenizer=tokenizer,
+        )
+
         tool_cache = collect_cache_cpu_for_nodes(model, tool_tokens, all_nodes)
         no_tool_cache = collect_cache_cpu_for_nodes(model, no_tool_tokens, all_nodes)
 
@@ -207,8 +223,8 @@ def main() -> None:
             labels, margins = run_layer_margins(
                 model,
                 tokens,
-                sp.target_tool_call,
-                sp.distractor,
+                tool_objective,
+                no_tool_objective,
                 patch_nodes=patch_nodes,
                 source_cache_cpu=source_cache,
             )

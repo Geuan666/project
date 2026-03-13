@@ -1,0 +1,80 @@
+{
+  "groups": {
+    "symmetric_backbone": [
+      "MLP10",
+      "L11H5",
+      "L13H9",
+      "MLP13",
+      "MLP16",
+      "L18H14",
+      "MLP18",
+      "MLP19",
+      "L21H1",
+      "L23H6",
+      "L24H6",
+      "MLP27"
+    ],
+    "tool_bias_backbone": [
+      "L21H12"
+    ],
+    "no_tool_bias_backbone": [
+      "L12H0",
+      "L16H8",
+      "MLP17"
+    ],
+    "tool_tail": [
+      "MLP1",
+      "L2H14",
+      "L4H4",
+      "L5H5",
+      "MLP6",
+      "L12H6",
+      "L16H9",
+      "MLP21"
+    ],
+    "no_tool_tail": [
+      "MLP4",
+      "MLP5",
+      "L15H5",
+      "L16H4",
+      "L17H12",
+      "L17H8",
+      "L20H14"
+    ]
+  },
+  "group_meta": {
+    "symmetric_backbone": {
+      "label": "Symmetric Backbone",
+      "color": "#d7d7d7",
+      "description": "shared reversible backbone and output-integrating writers"
+    },
+    "tool_bias_backbone": {
+      "label": "Tool-Bias Backbone",
+      "color": "#d88c4a",
+      "description": "shared backbone nodes tilted toward the tool-call endpoint"
+    },
+    "no_tool_bias_backbone": {
+      "label": "No-Tool-Bias Backbone",
+      "color": "#4e87b5",
+      "description": "shared backbone nodes tilted toward the no-tool endpoint"
+    },
+    "tool_tail": {
+      "label": "Tool Tail",
+      "color": "#e6b27a",
+      "description": "tool-mode auxiliary tail outside the shared backbone"
+    },
+    "no_tool_tail": {
+      "label": "No-Tool Tail",
+      "color": "#8ab6d6",
+      "description": "no-tool auxiliary tail outside the shared backbone"
+    }
+  },
+  "n_nodes": 31,
+  "n_edges": 70,
+  "artifacts": {
+    "nodes_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/final_signed_circuit/final_signed_nodes.csv",
+    "edges_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/final_signed_circuit/final_signed_edges.csv",
+    "summary_json": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/final_signed_circuit/final_signed_circuit_summary.json",
+    "figure_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/final_signed_circuit/final_signed_circuit.png"
+  }
+}

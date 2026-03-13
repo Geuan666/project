@@ -301,7 +301,7 @@ def main() -> None:
     parser.add_argument("--node-support-csv", type=str, required=True)
     parser.add_argument("--edge-support-csv", type=str, required=True)
     parser.add_argument("--head-read-csv", type=str, required=True)
-    parser.add_argument("--forward-node-roles-csv", type=str, required=True)
+    parser.add_argument("--forward-node-roles-csv", type=str, default="")
     parser.add_argument("--output-root", type=str, required=True)
     args = parser.parse_args()
 
@@ -318,7 +318,7 @@ def main() -> None:
             node_group[n] = g
 
     head_delta_lookup = load_head_delta_lookup(Path(args.head_read_csv).resolve())
-    forward_role_lookup = load_forward_role_lookup(Path(args.forward_node_roles_csv).resolve())
+    forward_role_lookup = load_forward_role_lookup(Path(args.forward_node_roles_csv).resolve()) if args.forward_node_roles_csv else {}
 
     node_rows_src = {str(r["node"]): r for r in read_csv_rows(Path(args.node_support_csv).resolve())}
     node_rows: List[Dict[str, object]] = []

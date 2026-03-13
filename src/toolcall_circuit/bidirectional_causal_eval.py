@@ -42,11 +42,8 @@ if __package__ in {None, ""}:
     sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from toolcall_circuit.dataset import load_summary_records
-from toolcall_circuit.single_sample import (
-    evaluate_on_base_with_source,
-    load_hooked_qwen3,
-    objective_from_logits,
-)
+from toolcall_circuit.objective import build_bidirectional_endpoint_objectives
+from toolcall_circuit.single_sample import evaluate_on_base_with_source, load_hooked_qwen3, objective_from_logits
 
 
 def finite(vals: Iterable[float]) -> List[float]:
@@ -153,7 +150,7 @@ def safe_read_text(path: Path) -> Optional[str]:
         return None
 
 
-def compute_margin(model, tokens: torch.Tensor, target: int, distractor: int) -> float:
+def compute_margin(model, tokens: torch.Tensor, target, distractor: int | None = None) -> float:
     with torch.no_grad():
         logits = model(tokens)
     return float(objective_from_logits(logits, target, distractor).item())
@@ -248,10 +245,26 @@ def main() -> None:
         if tool_tokens.shape != no_tool_tokens.shape:
             continue
 
-        m_tool_tool = compute_margin(model, tool_tokens, sp.target_tool_call, sp.distractor)
-        m_tool_no = compute_margin(model, no_tool_tokens, sp.target_tool_call, sp.distractor)
-        gap = m_tool_tool - m_tool_no
-        if not math.isfinite(gap) or abs(gap) < 1e-8:
+        with torch.no_grad():
+            tool_logits = model(tool_tokens)
+            no_tool_logits = model(no_tool_tokens)
+        tool_objective, no_tool_objective = build_bidirectional_endpoint_objectives(
+            tool_logits,
+            no_tool_logits,
+            tokenizer=tokenizer,
+        )
+        m_tool_tool = float(objective_from_logits(tool_logits, tool_objective).item())
+        m_tool_no = float(objective_from_logits(no_tool_logits, tool_objective).item())
+        gap_tool = m_tool_tool - m_tool_no
+        m_no_tool_tool = float(objective_from_logits(tool_logits, no_tool_objective).item())
+        m_no_tool_no = float(objective_from_logits(no_tool_logits, no_tool_objective).item())
+        gap_no_tool = m_no_tool_no - m_no_tool_tool
+        if (
+            not math.isfinite(gap_tool)
+            or abs(gap_tool) < 1e-8
+            or not math.isfinite(gap_no_tool)
+            or abs(gap_no_tool) < 1e-8
+        ):
             continue
 
         tool_cache = collect_cache_cpu_for_nodes(model, tool_tokens, nodes_tool_source)
@@ -259,9 +272,12 @@ def main() -> None:
 
         row: Dict[str, object] = {
             "sample_id": sp.sample_id,
-            "m_tool_toolcall": m_tool_tool,
-            "m_tool_no_tool": m_tool_no,
-            "gap": gap,
+            "tool_endpoint_tool_score": m_tool_tool,
+            "tool_endpoint_no_tool_score": m_tool_no,
+            "tool_endpoint_gap": gap_tool,
+            "no_tool_endpoint_tool_score": m_no_tool_tool,
+            "no_tool_endpoint_no_tool_score": m_no_tool_no,
+            "no_tool_endpoint_gap": gap_no_tool,
         }
 
         # Promotion: patch tool-call activations into no-tool base.
@@ -274,10 +290,11 @@ def main() -> None:
                 base_tokens=no_tool_tokens,
                 source_cache_cpu=tool_cache,
                 patch_nodes=nodes,
-                target_token=sp.target_tool_call,
-                distractor_token=sp.distractor,
+                target_token=tool_objective,
+                distractor_token=None,
             )
-            row[f"promote__{g}__ratio"] = (float(patched) - m_tool_no) / gap
+            row[f"promote__{g}__ratio"] = (float(patched) - m_tool_no) / gap_tool
+            row[f"promote__{g}__kl"] = -float(patched)
 
         # Suppression: patch no-tool activations into tool-call base.
         for g in suppress_groups:
@@ -289,13 +306,14 @@ def main() -> None:
                 base_tokens=tool_tokens,
                 source_cache_cpu=no_tool_cache,
                 patch_nodes=nodes,
-                target_token=sp.target_tool_call,
-                distractor_token=sp.distractor,
+                target_token=no_tool_objective,
+                distractor_token=None,
             )
-            row[f"suppress__{g}__ratio"] = (float(patched) - m_tool_tool) / gap
+            row[f"suppress__{g}__ratio"] = (float(patched) - m_no_tool_tool) / gap_no_tool
+            row[f"suppress__{g}__kl"] = -float(patched)
 
         per_sample.append(row)
-        pbar.set_postfix(gap=f"{gap:.2f}")
+        pbar.set_postfix(tool_gap=f"{gap_tool:.2f}", no_tool_gap=f"{gap_no_tool:.2f}")
 
         model.reset_hooks()
         torch.cuda.empty_cache()

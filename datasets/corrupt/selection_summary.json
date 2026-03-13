@@ -1,234 +1,41 @@
 {
-  "tool_call_prob_threshold": 0.05,
-  "selected_verbs": [
-    "develop",
-    "implement",
-    "author",
-    "build",
-    "craft",
-    "design",
-    "compose",
-    "devise",
-    "supply",
-    "formulate"
-  ],
-  "selected_phrases": [
-    "carefully implement",
-    "manually develop",
-    "independently develop",
-    "properly develop",
-    "build out"
-  ],
-  "n_selected_samples": 1189,
-  "language_counts": {
-    "cpp": 402,
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "strict_pruned": true,
+  "pre_prune_rows": 1789,
+  "dropped_rows": 67,
+  "total_rows": 1722,
+  "language_counts_final": {
+    "cpp": 583,
     "java": 584,
-    "python": 203
+    "python": 555
   },
-  "dataset_counts": {
-    "apps": 102,
-    "codecontests": 986,
+  "dataset_counts_final": {
+    "apps": 422,
+    "codecontests": 1167,
     "humaneval": 40,
-    "mbpp": 61
+    "mbpp": 93
   },
-  "candidate_counts": {
-    "author": 77,
-    "build": 77,
-    "build out": 77,
-    "carefully implement": 78,
-    "compose": 77,
-    "craft": 77,
-    "design": 77,
-    "develop": 106,
-    "devise": 77,
-    "formulate": 77,
-    "implement": 78,
-    "independently develop": 78,
-    "manually develop": 78,
-    "properly develop": 78,
-    "supply": 77
+  "candidate_counts_final": {
+    "author": 118,
+    "build": 114,
+    "build out": 115,
+    "carefully implement": 116,
+    "compose": 115,
+    "craft": 112,
+    "design": 112,
+    "develop": 119,
+    "devise": 115,
+    "formulate": 111,
+    "implement": 119,
+    "independently develop": 119,
+    "manually develop": 115,
+    "properly develop": 114,
+    "supply": 108
   },
-  "candidate_type_counts": {
-    "phrase": 389,
-    "verb": 800
-  },
-  "mean_assigned_tool_call_prob": 0.009173251184163438,
-  "median_assigned_tool_call_prob": 0.002561605302616954,
-  "max_assigned_tool_call_prob": 0.04993437975645065,
-  "min_assigned_top1_top2_prob_gap": 0.0,
-  "mean_assigned_top1_top2_prob_gap": 0.6970985889547607,
-  "assignment_meta": {
-    "flow_cost": 46924906995,
-    "max_slot_cap": 128,
-    "candidate_counts": {
-      "author": 77,
-      "build": 77,
-      "build out": 77,
-      "carefully implement": 78,
-      "compose": 77,
-      "craft": 77,
-      "design": 77,
-      "develop": 106,
-      "devise": 77,
-      "formulate": 77,
-      "implement": 78,
-      "independently develop": 78,
-      "manually develop": 78,
-      "properly develop": 78,
-      "supply": 77
-    }
-  },
-  "filesystem_report": {
-    "n_txt_files": 1189,
-    "all_end_with_pair_style_newlines": true,
-    "all_first_user_lines_match_manifest": true
-  },
-  "verification": {
-    "n_rows": 1189,
-    "n_pass": 1189,
+  "independent_single_generate_verification": {
+    "n_rows": 1722,
+    "n_pass": 1722,
     "all_pass": true,
-    "max_verified_tool_call_prob": 0.04993437975645065
-  },
-  "sample_generate_sanity_check": {
-    "n_cases": 24,
-    "n_mismatches": 0,
-    "mismatches": []
-  },
-  "candidate_summary": [
-    {
-      "candidate": "manually develop",
-      "candidate_type": "phrase",
-      "n_samples": 2000,
-      "n_valid": 923,
-      "tool_call_frequency": 0.2395,
-      "mean_tool_call_prob": 0.25507280539470073,
-      "max_tool_call_prob": 0.9972743391990662
-    },
-    {
-      "candidate": "carefully implement",
-      "candidate_type": "phrase",
-      "n_samples": 2000,
-      "n_valid": 920,
-      "tool_call_frequency": 0.311,
-      "mean_tool_call_prob": 0.3051634914336812,
-      "max_tool_call_prob": 0.9991896748542786
-    },
-    {
-      "candidate": "properly develop",
-      "candidate_type": "phrase",
-      "n_samples": 2000,
-      "n_valid": 797,
-      "tool_call_frequency": 0.3715,
-      "mean_tool_call_prob": 0.35849150582401196,
-      "max_tool_call_prob": 0.9985572099685669
-    },
-    {
-      "candidate": "independently develop",
-      "candidate_type": "phrase",
-      "n_samples": 2000,
-      "n_valid": 773,
-      "tool_call_frequency": 0.327,
-      "mean_tool_call_prob": 0.32786053478537236,
-      "max_tool_call_prob": 0.9975768327713013
-    },
-    {
-      "candidate": "build out",
-      "candidate_type": "phrase",
-      "n_samples": 2000,
-      "n_valid": 692,
-      "tool_call_frequency": 0.3765,
-      "mean_tool_call_prob": 0.361487406094011,
-      "max_tool_call_prob": 0.998730480670929
-    },
-    {
-      "candidate": "develop",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 1079,
-      "tool_call_frequency": 0.2655,
-      "mean_tool_call_prob": 0.2602306913192615,
-      "max_tool_call_prob": 0.9975405931472778
-    },
-    {
-      "candidate": "implement",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 856,
-      "tool_call_frequency": 0.35,
-      "mean_tool_call_prob": 0.3461391079762121,
-      "max_tool_call_prob": 0.9993059635162354
-    },
-    {
-      "candidate": "author",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 753,
-      "tool_call_frequency": 0.409,
-      "mean_tool_call_prob": 0.38373423963128894,
-      "max_tool_call_prob": 0.9985743761062622
-    },
-    {
-      "candidate": "craft",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 674,
-      "tool_call_frequency": 0.484,
-      "mean_tool_call_prob": 0.4613673242304509,
-      "max_tool_call_prob": 0.9994108080863953
-    },
-    {
-      "candidate": "design",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 639,
-      "tool_call_frequency": 0.4415,
-      "mean_tool_call_prob": 0.4185669487110381,
-      "max_tool_call_prob": 0.9991916418075562
-    },
-    {
-      "candidate": "devise",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 621,
-      "tool_call_frequency": 0.4975,
-      "mean_tool_call_prob": 0.46240051392096854,
-      "max_tool_call_prob": 0.9991973638534546
-    },
-    {
-      "candidate": "compose",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 613,
-      "tool_call_frequency": 0.538,
-      "mean_tool_call_prob": 0.5030822844706995,
-      "max_tool_call_prob": 0.9994050860404968
-    },
-    {
-      "candidate": "build",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 599,
-      "tool_call_frequency": 0.4665,
-      "mean_tool_call_prob": 0.4413740634090275,
-      "max_tool_call_prob": 0.9990410804748535
-    },
-    {
-      "candidate": "supply",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 580,
-      "tool_call_frequency": 0.4955,
-      "mean_tool_call_prob": 0.4646813532566968,
-      "max_tool_call_prob": 0.9993860125541687
-    },
-    {
-      "candidate": "formulate",
-      "candidate_type": "verb",
-      "n_samples": 2000,
-      "n_valid": 539,
-      "tool_call_frequency": 0.542,
-      "mean_tool_call_prob": 0.5060944943719599,
-      "max_tool_call_prob": 0.9993974566459656
-    }
-  ]
+    "max_tool_call_prob": 0.04993437975645065
+  }
 }

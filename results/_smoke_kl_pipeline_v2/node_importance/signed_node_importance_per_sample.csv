@@ -1,0 +1,63 @@
+sample_id,node,group,group_label,semantic_hint,promote_suff_ratio,suppress_suff_ratio,promote_suff_top1,suppress_suff_top1,promote_nec_drop,suppress_nec_drop,promote_nec_top1_drop,suppress_nec_top1_drop
+apps_python_1,L11H5,symmetric_backbone,Symmetric Backbone,shared router,0.36199095022624433,0.11290322580645161,False,False,4.529305712674958e-05,-7.875504032250902e-05,0.0,0.0
+apps_python_1,L12H0,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased router,0.2669683257918552,0.005376344086021506,False,False,-0.00014361213235292158,-8.006762432788417e-05,0.0,0.0
+apps_python_1,L12H6,tool_tail,Tool Tail,tool-tail router,0.06787330316742081,-0.08602150537634409,False,False,-3.09318438913575e-05,-9.056829637088537e-05,0.0,0.0
+apps_python_1,L13H9,symmetric_backbone,Symmetric Backbone,shared router,0.06787330316742081,0.0,False,False,-0.00018213884862838814,-1.8376176075252104e-05,0.0,0.0
+apps_python_1,L15H5,no_tool_tail,No-Tool Tail,no-tool-tail router,0.3257918552036199,0.3064516129032258,False,False,-0.00018034369697395025,-0.00032158308131713387,0.0,0.0
+apps_python_1,L16H4,no_tool_tail,No-Tool Tail,no-tool-tail router,0.20361990950226244,0.11827956989247312,False,False,-0.0001648777750282715,-0.00020870085685475992,0.0,0.0
+apps_python_1,L16H8,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased router,0.6538461538461539,0.34946236559139787,False,False,-0.00017095367293551433,-6.431661626338236e-05,0.0,0.0
+apps_python_1,L16H9,tool_tail,Tool Tail,tool-tail router,-0.058823529411764705,0.08064516129032258,False,False,-0.0001596304086538547,8.663054435487094e-05,0.0,0.0
+apps_python_1,L17H12,no_tool_tail,No-Tool Tail,no-tool-tail router,0.33031674208144796,0.16129032258064516,False,False,-0.00017316309035630972,-0.00028483072916662966,0.0,0.0
+apps_python_1,L17H8,no_tool_tail,No-Tool Tail,no-tool-tail router,0.19909502262443438,0.1935483870967742,False,False,-0.000171229850113086,-0.00034258442540313627,0.0,0.0
+apps_python_1,L18H14,symmetric_backbone,Symmetric Backbone,shared router,0.6809954751131222,0.3817204301075269,False,False,-0.00015355451074661186,-2.3626512096752705e-05,0.0,0.0
+apps_python_1,L20H14,no_tool_tail,No-Tool Tail,format/prefix router,0.39819004524886875,0.3790322580645161,False,False,-0.00018158649427313378,3.8721228158622445e-05,0.0,0.0
+apps_python_1,L21H1,symmetric_backbone,Symmetric Backbone,format/prefix router,0.6266968325791855,0.3763440860215054,False,False,-0.00014416448670806492,9.188088037737074e-06,0.0,0.0
+apps_python_1,L21H12,tool_bias_backbone,Tool-Bias Backbone,format/prefix router,0.45701357466063347,0.1935483870967742,False,False,-0.00017882472249708403,-1.5751008064501804e-05,0.0,0.0
+apps_python_1,L23H6,symmetric_backbone,Symmetric Backbone,format/prefix router,0.6787330316742082,0.3763440860215054,False,False,-0.00019677623904124086,0.0,0.0,0.0
+apps_python_1,L24H6,symmetric_backbone,Symmetric Backbone,format/prefix router,0.5475113122171946,0.45161290322580644,False,False,7.732960972894887e-06,-0.00010894447244613747,0.0,0.0
+apps_python_1,L2H14,tool_tail,Tool Tail,tool-tail router,0.3031674208144796,0.0,False,False,-0.0001753725077771051,-5.250336021500601e-06,0.0,0.0
+apps_python_1,L4H4,tool_tail,Tool Tail,tool-tail router,0.06787330316742081,-0.03763440860215054,False,False,-0.00014968803026016442,2.756426411298918e-05,0.0,0.0
+apps_python_1,L5H5,tool_tail,Tool Tail,tool-tail router,0.2669683257918552,-0.03763440860215054,False,False,-0.00016736336962663856,3.281460013448978e-05,0.0,0.0
+apps_python_1,MLP1,tool_tail,Tool Tail,tool-tail writer MLP,0.13574660633484162,0.043010752688172046,False,False,-0.00017371544471145306,7.875504032361924e-06,0.0,0.0
+apps_python_1,MLP10,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.4253393665158371,0.11290322580645161,False,False,4.308363970595419e-05,-1.8376176075252104e-05,0.0,0.0
+apps_python_1,MLP13,symmetric_backbone,Symmetric Backbone,shared writer MLP,-0.22171945701357465,-0.11827956989247312,False,False,1.1047087104087971e-05,1.0500672043112225e-05,0.0,0.0
+apps_python_1,MLP16,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.9680429864253394,0.8689516129032258,True,True,0.0002850148472851588,-0.00011025705645151263,0.0,0.0
+apps_python_1,MLP17,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased writer MLP,0.9473981900452488,0.7661290322580645,True,False,0.00029385251696834036,-9.581863239238597e-05,0.0,0.0
+apps_python_1,MLP18,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.7963800904977375,0.5295698924731183,False,False,2.5408300339369028e-05,-0.00019294984879025812,0.0,0.0
+apps_python_1,MLP19,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.7319004524886877,0.3978494623655914,False,False,5.854956165163294e-05,-0.000174573672715006,0.0,0.0
+apps_python_1,MLP21,tool_tail,Tool Tail,tool-tail writer MLP,0.579185520361991,0.17204301075268819,False,False,2.8722426470673135e-05,-0.00019820018481175872,0.0,0.0
+apps_python_1,MLP27,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.6583710407239819,0.5967741935483871,False,False,0.00034025028280548764,-0.005440660702284883,0.0,0.0
+apps_python_1,MLP4,no_tool_tail,No-Tool Tail,no-tool-tail writer MLP,0.167420814479638,0.03763440860215054,False,False,-0.00016653483809381253,-1.9688760080627254e-05,0.0,0.0
+apps_python_1,MLP5,no_tool_tail,No-Tool Tail,no-tool-tail writer MLP,0.36199095022624433,0.03763440860215054,False,False,-0.0001753725077771051,4.2658980174747896e-05,0.0,0.0
+apps_python_1,MLP6,tool_tail,Tool Tail,tool-tail writer MLP,0.09954751131221719,0.08064516129032258,False,False,-0.00016625866091624086,-0.00010369413642463687,0.0,0.0
+codecontests_cpp_1,L11H5,symmetric_backbone,Symmetric Backbone,shared router,-0.2028301886792453,-0.045454545454545456,False,False,1.6410395784260956e-05,-1.9728535353591425e-05,0.0,0.0
+codecontests_cpp_1,L12H0,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased router,0.04245283018867924,0.025252525252525252,False,False,-2.8790168038472785e-07,-9.864267676795713e-06,0.0,0.0
+codecontests_cpp_1,L12H6,tool_tail,Tool Tail,tool-tail router,0.16981132075471697,0.015151515151515152,False,False,-5.75803360880478e-07,-0.0014007260101011054,0.0,0.0
+codecontests_cpp_1,L13H9,symmetric_backbone,Symmetric Backbone,shared router,0.25,0.08585858585858586,False,False,-2.8790168038472785e-07,-0.0014401830808081773,0.0,0.0
+codecontests_cpp_1,L15H5,no_tool_tail,No-Tool Tail,no-tool-tail router,-0.2641509433962264,-0.06060606060606061,False,False,-7.197542010173308e-07,0.0,0.0,0.0
+codecontests_cpp_1,L16H4,no_tool_tail,No-Tool Tail,no-tool-tail router,0.25943396226415094,0.10606060606060606,False,False,8.637050412652059e-07,-0.0028014520202021,0.0,0.0
+codecontests_cpp_1,L16H8,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased router,0.20754716981132076,0.08585858585858586,False,False,-7.197542010173308e-07,-7.891414141414366e-05,0.0,0.0
+codecontests_cpp_1,L16H9,tool_tail,Tool Tail,tool-tail router,0.4009433962264151,0.05555555555555555,False,False,-7.197542010173308e-07,-0.00011837121212121549,0.0,0.0
+codecontests_cpp_1,L17H12,no_tool_tail,No-Tool Tail,no-tool-tail router,0.33490566037735847,0.1111111111111111,False,False,2.015311763026162e-06,-0.0012231691919192267,0.0,0.0
+codecontests_cpp_1,L17H8,no_tool_tail,No-Tool Tail,no-tool-tail router,0.24528301886792453,0.04040404040404041,False,False,-4.3185252063260293e-07,-0.0014401830808081773,0.0,0.0
+codecontests_cpp_1,L18H14,symmetric_backbone,Symmetric Backbone,shared router,0.25,0.005050505050505051,False,False,-1.115619011637925e-05,0.0006214488636363535,0.0,0.0
+codecontests_cpp_1,L20H14,no_tool_tail,No-Tool Tail,format/prefix router,0.13679245283018868,0.06565656565656566,False,False,1.6986199145030412e-05,-5.9185606060663254e-05,0.0,0.0
+codecontests_cpp_1,L21H1,symmetric_backbone,Symmetric Backbone,format/prefix router,0.8443396226415094,0.15151515151515152,False,False,2.3032134434108897e-06,0.00011837121212110446,0.0,0.0
+codecontests_cpp_1,L21H12,tool_bias_backbone,Tool-Bias Backbone,format/prefix router,0.8466981132075472,0.15151515151515152,False,False,-1.4395084013685278e-07,0.00017755681818176772,0.0,0.0
+codecontests_cpp_1,L23H6,symmetric_backbone,Symmetric Backbone,format/prefix router,0.6556603773584906,0.15151515151515152,False,False,1.8425707547176096e-05,-0.0014401830808081773,0.0,0.0
+codecontests_cpp_1,L24H6,symmetric_backbone,Symmetric Backbone,format/prefix router,0.5778301886792453,0.20707070707070707,False,False,5.75803360880478e-07,0.0006904987373737015,0.0,0.0
+codecontests_cpp_1,L2H14,tool_tail,Tool Tail,tool-tail router,0.0047169811320754715,-0.020202020202020204,False,False,-1.8713609227782868e-06,-0.0014401830808081773,0.0,0.0
+codecontests_cpp_1,L4H4,tool_tail,Tool Tail,tool-tail router,0.09905660377358491,0.0,False,False,7.197542011283531e-07,-0.00014796401515160262,0.0,0.0
+codecontests_cpp_1,L5H5,tool_tail,Tool Tail,tool-tail router,0.03773584905660377,-0.020202020202020204,False,False,2.8790168049575016e-07,-0.0008877840909091717,0.0,0.0
+codecontests_cpp_1,MLP1,tool_tail,Tool Tail,tool-tail writer MLP,0.21226415094339623,0.025252525252525252,False,False,-1.4395084013685278e-07,-0.0009272411616162435,0.0,0.0
+codecontests_cpp_1,MLP10,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.02358490566037736,-0.015151515151515152,False,False,-1.007655881513081e-06,0.0003255208333332593,0.0,0.0
+codecontests_cpp_1,MLP13,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.4386792452830189,0.15151515151515152,False,False,2.8790168049575016e-07,-0.0017952967171718237,0.0,0.0
+codecontests_cpp_1,MLP16,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.7794811320754716,0.29292929292929293,False,False,3.915462853776308e-05,-0.0014401830808081773,0.0,0.0
+codecontests_cpp_1,MLP17,no_tool_bias_backbone,No-Tool-Bias Backbone,no-tool-biased writer MLP,0.4740566037735849,0.23232323232323232,False,False,8.608260244691301e-05,0.0005228061868686185,0.0,0.0
+codecontests_cpp_1,MLP18,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.27358490566037735,0.03535353535353535,False,False,2.8790168049575016e-07,-8.877840909093937e-05,0.0,0.0
+codecontests_cpp_1,MLP19,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.6320754716981132,0.20707070707070707,False,False,4.318525206370438e-05,-0.0027028093434343647,0.0,0.0
+codecontests_cpp_1,MLP21,tool_tail,Tool Tail,tool-tail writer MLP,0.6297169811320755,0.08080808080808081,False,False,-5.75803360880478e-07,-0.0011245265151516026,0.0,0.0
+codecontests_cpp_1,MLP27,symmetric_backbone,Symmetric Backbone,shared writer MLP,0.8844339622641509,0.702020202020202,False,False,4.894328567206507e-06,0.0010702730429292817,0.0,0.0
+codecontests_cpp_1,MLP4,no_tool_tail,No-Tool Tail,no-tool-tail writer MLP,0.09905660377358491,0.025252525252525252,False,False,-7.197542010173308e-07,-3.945707070707183e-05,0.0,0.0
+codecontests_cpp_1,MLP5,no_tool_tail,No-Tool Tail,no-tool-tail writer MLP,-0.12735849056603774,0.04040404040404041,False,False,7.197542011283531e-07,-1.9728535353591425e-05,0.0,0.0
+codecontests_cpp_1,MLP6,tool_tail,Tool Tail,tool-tail writer MLP,-0.2028301886792453,-0.07575757575757576,False,False,-2.3032134434108897e-06,0.0,0.0,0.0

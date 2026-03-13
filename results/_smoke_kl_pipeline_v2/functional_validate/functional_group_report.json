@@ -1,0 +1,211 @@
+{
+  "groups": {
+    "tool_schema_readers": [
+      "L16H8",
+      "L17H12",
+      "L17H8",
+      "L21H1",
+      "L21H12"
+    ],
+    "user_query_readers": [
+      "L2H14",
+      "L5H5",
+      "L11H5"
+    ],
+    "suppression_readers": [
+      "L12H0",
+      "L15H5",
+      "L16H4",
+      "L20H14",
+      "L23H6"
+    ],
+    "promotion_routers_mediators": [
+      "L4H4",
+      "L12H6",
+      "L16H9"
+    ],
+    "tool_call_writers": [
+      "MLP1",
+      "MLP6",
+      "MLP10",
+      "MLP13",
+      "MLP17",
+      "MLP19",
+      "MLP21"
+    ],
+    "no_tool_writers": [
+      "MLP4",
+      "MLP5"
+    ],
+    "arbitration_integrators": [
+      "L13H9",
+      "MLP16",
+      "L18H14",
+      "MLP18",
+      "L24H6",
+      "MLP27"
+    ]
+  },
+  "group_meta": {
+    "tool_schema_readers": {
+      "label": "Tool-Schema Readers",
+      "color": "#8c510a",
+      "description": "heads that read tool schema or tool-call tag structure and favor the tool endpoint"
+    },
+    "user_query_readers": {
+      "label": "User-Query Readers",
+      "color": "#4d9221",
+      "description": "heads that read user content while still promoting tool-use execution"
+    },
+    "suppression_readers": {
+      "label": "Suppression Readers",
+      "color": "#2166ac",
+      "description": "heads that read user/prefix evidence and tilt the system toward no-tool mode"
+    },
+    "promotion_routers_mediators": {
+      "label": "Promotion Routers",
+      "color": "#d6604d",
+      "description": "routing or mediation heads that transmit tool-promoting state without being primary readers"
+    },
+    "suppression_routers_mediators": {
+      "label": "Suppression Routers",
+      "color": "#4393c3",
+      "description": "routing or mediation heads that transmit no-tool state without being primary readers"
+    },
+    "tool_call_writers": {
+      "label": "Tool-Call Writers",
+      "color": "#b2182b",
+      "description": "writer nodes whose causal profile is strongest for the tool-call endpoint"
+    },
+    "no_tool_writers": {
+      "label": "No-Tool Writers",
+      "color": "#053061",
+      "description": "writer nodes whose causal profile is strongest for the no-tool endpoint"
+    },
+    "arbitration_integrators": {
+      "label": "Arbitration Integrators",
+      "color": "#7f7f7f",
+      "description": "shared late-stage nodes that integrate competing evidence and stabilize the decision boundary"
+    }
+  },
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_validate/functional_group_per_sample.csv",
+    "summary_csv": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_validate/functional_group_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_validate/functional_group_report.json",
+    "heatmap_png": "/root/autodl-tmp/project/results/_smoke_kl_pipeline_v2/functional_validate/functional_group_validation_heatmap.png"
+  },
+  "summary_rows": [
+    {
+      "group": "full_functional_circuit",
+      "functional_label": "full_functional_circuit",
+      "n_samples": 2,
+      "n_nodes": 31,
+      "promote_suff_ratio_median": 0.9998825289494129,
+      "suppress_suff_ratio_median": 0.9988999949405852,
+      "promote_tool_top1_rate": 1.0,
+      "suppress_no_tool_top1_rate": 1.0,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": 0.0,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "tool_schema_readers",
+      "functional_label": "Tool-Schema Readers",
+      "n_samples": 2,
+      "n_nodes": 5,
+      "promote_suff_ratio_median": 0.9816111438679245,
+      "suppress_suff_ratio_median": 0.8908439231019876,
+      "promote_tool_top1_rate": 1.0,
+      "suppress_no_tool_top1_rate": 0.5,
+      "promote_nec_drop_median": 0.00010938505180713154,
+      "suppress_nec_drop_median": 0.0011914086365163445,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "user_query_readers",
+      "functional_label": "User-Query Readers",
+      "n_samples": 2,
+      "n_nodes": 3,
+      "promote_suff_ratio_median": 0.2307478869632033,
+      "suppress_suff_ratio_median": 0.07518735744542196,
+      "promote_tool_top1_rate": 0.0,
+      "suppress_no_tool_top1_rate": 0.0,
+      "promote_nec_drop_median": -8.934917920555563e-05,
+      "suppress_nec_drop_median": -0.00030809926380742647,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "suppression_readers",
+      "functional_label": "Suppression Readers",
+      "n_samples": 2,
+      "n_nodes": 5,
+      "promote_suff_ratio_median": 0.9089953470502861,
+      "suppress_suff_ratio_median": 0.5694037145650048,
+      "promote_tool_top1_rate": 0.5,
+      "suppress_no_tool_top1_rate": 0.5,
+      "promote_nec_drop_median": 4.9330845626638364e-05,
+      "suppress_nec_drop_median": 0.00132154338559487,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "promotion_routers_mediators",
+      "functional_label": "Promotion Routers",
+      "n_samples": 2,
+      "n_nodes": 3,
+      "promote_suff_ratio_median": 0.20517800734226926,
+      "suppress_suff_ratio_median": 0.07575757575757576,
+      "promote_tool_top1_rate": 0.0,
+      "suppress_no_tool_top1_rate": 0.0,
+      "promote_nec_drop_median": 4.730185527712649e-06,
+      "suppress_nec_drop_median": -0.00029634567066832984,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "tool_call_writers",
+      "functional_label": "Tool-Call Writers",
+      "n_samples": 2,
+      "n_nodes": 7,
+      "promote_suff_ratio_median": 0.9678078710620678,
+      "suppress_suff_ratio_median": 0.7835206907787553,
+      "promote_tool_top1_rate": 1.0,
+      "suppress_no_tool_top1_rate": 0.5,
+      "promote_nec_drop_median": -4.4807141620362145e-06,
+      "suppress_nec_drop_median": 0.0036799485848912905,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "no_tool_writers",
+      "functional_label": "No-Tool Writers",
+      "n_samples": 2,
+      "n_nodes": 2,
+      "promote_suff_ratio_median": 0.08631435157517288,
+      "suppress_suff_ratio_median": -0.06052460084718149,
+      "promote_tool_top1_rate": 0.0,
+      "suppress_no_tool_top1_rate": 0.0,
+      "promote_nec_drop_median": -7.98093420754653e-05,
+      "suppress_nec_drop_median": 3.647392524031012e-05,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "arbitration_integrators",
+      "functional_label": "Arbitration Integrators",
+      "n_samples": 2,
+      "n_nodes": 6,
+      "promote_suff_ratio_median": 0.9957478302687185,
+      "suppress_suff_ratio_median": 0.9803395599136526,
+      "promote_tool_top1_rate": 1.0,
+      "suppress_no_tool_top1_rate": 1.0,
+      "promote_nec_drop_median": 8.504758939226198e-05,
+      "suppress_nec_drop_median": 0.0011603441483891141,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    }
+  ]
+}

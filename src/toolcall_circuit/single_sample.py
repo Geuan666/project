@@ -14,6 +14,7 @@ import argparse
 import gc
 import inspect
 import json
+import math
 import re
 import sys
 from dataclasses import dataclass
@@ -43,6 +44,13 @@ from toolcall_circuit.dataset import (
     load_toolcall_samples,
     resolve_distractor_token,
     select_samples,
+)
+from toolcall_circuit.objective import (
+    DistributionObjective,
+    build_distribution_objective,
+    objective_from_logits,
+    objective_vector_from_logits,
+    summarize_endpoint_pair,
 )
 from toolcall_circuit.paths import DATASETS_ROOT, MODEL_PATH_DEFAULT, RESULTS_ROOT
 
@@ -136,9 +144,12 @@ def load_hooked_qwen3(model_path: str, device: str, dtype: torch.dtype) -> Tuple
             center_unembed=False,
             trust_remote_code=True,
         )
-    model.set_use_attn_result(True)
-    model.set_use_split_qkv_input(True)
-    model.set_use_hook_mlp_in(True)
+    # These workflows only read `hook_z` and `hook_mlp_out`; the heavier
+    # attention-result and split-qkv hooks materially increase activation
+    # memory for long prompts without improving the current analyses.
+    model.set_use_attn_result(False)
+    model.set_use_split_qkv_input(False)
+    model.set_use_hook_mlp_in(False)
     model.eval()
 
     # Free HF model copy ASAP.
@@ -147,10 +158,6 @@ def load_hooked_qwen3(model_path: str, device: str, dtype: torch.dtype) -> Tuple
     torch.cuda.empty_cache()
 
     return model, tokenizer
-
-
-def objective_from_logits(logits: torch.Tensor, target_token: int, distractor_token: int) -> torch.Tensor:
-    return (logits[:, -1, target_token] - logits[:, -1, distractor_token]).mean()
 
 
 def node_layer(node_name: str) -> int:
@@ -191,8 +198,8 @@ def evaluate_on_base_with_source(
     base_tokens: torch.Tensor,
     source_cache_cpu: Dict[str, torch.Tensor],
     patch_nodes: Sequence[str],
-    target_token: int,
-    distractor_token: int,
+    target_token: int | DistributionObjective,
+    distractor_token: int | None = None,
 ) -> float:
     heads_by_layer: Dict[int, List[int]] = {}
     mlp_layers: List[int] = []
@@ -246,8 +253,8 @@ def compute_ct_head_gain(
     model: HookedTransformer,
     corrupt_tokens: torch.Tensor,
     clean_cache_cpu: Dict[str, torch.Tensor],
-    target_token: int,
-    distractor_token: int,
+    target_token: int | DistributionObjective,
+    distractor_token: int | None,
     corrupt_obj: float,
     head_batch_size: int = 0,
     candidate_heads_by_layer: Optional[Dict[int, Sequence[int]]] = None,
@@ -293,7 +300,7 @@ def compute_ct_head_gain(
             try:
                 with torch.no_grad():
                     logits = model.run_with_hooks(batch_tokens, fwd_hooks=[(cache_name, make_head_hook(clean_act, batch_heads))])
-                obj = logits[:, -1, target_token] - logits[:, -1, distractor_token]
+                obj = objective_vector_from_logits(logits, target_token, distractor_token)
                 for batch_idx, head in enumerate(batch_heads):
                     scores[layer, head] = float(obj[batch_idx].item()) - corrupt_obj
                 start += len(batch_heads)
@@ -354,8 +361,8 @@ def compute_mlp_gain(
     model: HookedTransformer,
     corrupt_tokens: torch.Tensor,
     clean_cache_cpu: Dict[str, torch.Tensor],
-    target_token: int,
-    distractor_token: int,
+    target_token: int | DistributionObjective,
+    distractor_token: int | None,
     corrupt_obj: float,
     layer_batch_size: int = 0,
 ) -> torch.Tensor:
@@ -387,7 +394,7 @@ def compute_mlp_gain(
             try:
                 with torch.no_grad():
                     logits = model.run_with_hooks(batch_tokens, fwd_hooks=hooks)
-                obj = logits[:, -1, target_token] - logits[:, -1, distractor_token]
+                obj = objective_vector_from_logits(logits, target_token, distractor_token)
                 for batch_idx, layer in enumerate(batch_layers):
                     gains[layer] = float(obj[batch_idx].item()) - corrupt_obj
                 start += len(batch_layers)
@@ -406,8 +413,8 @@ def compute_ap_head_gain(
     model: HookedTransformer,
     corrupt_tokens: torch.Tensor,
     clean_cache_cpu: Dict[str, torch.Tensor],
-    target_token: int,
-    distractor_token: int,
+    target_token: int | DistributionObjective,
+    distractor_token: int | None,
 ) -> torch.Tensor:
     n_layers = model.cfg.n_layers
     n_heads = model.cfg.n_heads
@@ -449,8 +456,8 @@ def compute_ap_head_gain_lowmem(
     model: HookedTransformer,
     corrupt_tokens: torch.Tensor,
     clean_cache_cpu: Dict[str, torch.Tensor],
-    target_token: int,
-    distractor_token: int,
+    target_token: int | DistributionObjective,
+    distractor_token: int | None,
 ) -> torch.Tensor:
     """
     Low-memory fallback for AP.
@@ -794,7 +801,7 @@ def plot_head_heatmap(data: np.ndarray, title: str, out_path: Path) -> None:
     ax.set_xticks(np.arange(data.shape[1]))
     ax.set_yticks(np.arange(data.shape[0]))
     cbar = fig.colorbar(im, ax=ax, pad=0.02)
-    cbar.set_label("Contribution (positive = supports <tool_call>)")
+    cbar.set_label("Contribution (positive = supports the endpoint objective)")
     fig.savefig(out_path, dpi=260, bbox_inches="tight")
     plt.close(fig)
 
@@ -823,7 +830,7 @@ def plot_probe(
     bars = ax.bar(np.arange(len(vals)), vals, color=colors, edgecolor="black", linewidth=1.1)
     ax.axhline(0.0, color="black", linewidth=1.0)
     ax.set_title(f"Component Probe: {head_name}")
-    ax.set_ylabel("Tool-call logit difference")
+    ax.set_ylabel("Endpoint score")
     ax.set_xticks(np.arange(len(vals)))
     ax.set_xticklabels(labels, rotation=14, ha="right")
     for b, v in zip(bars, vals):
@@ -962,6 +969,8 @@ def run_one_sample(
     model: HookedTransformer,
     tokenizer,
     model_path: str,
+    ct_head_mode: str = "exact",
+    skip_plots: bool = False,
 ) -> Dict[str, object]:
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -988,10 +997,29 @@ def run_one_sample(
         )
     target_token = target_spec.primary_token_id
     distractor_token = resolve_distractor_token(corrupt_logits[0, -1, :], target_token)
+    endpoint_temperature = 1.0
+    endpoint_masked_token_ids: tuple[int, ...] = ()
+    endpoint_objective = build_distribution_objective(
+        clean_logits,
+        endpoint_label="tool_call",
+        tokenizer=tokenizer,
+        temperature=endpoint_temperature,
+        masked_token_ids=endpoint_masked_token_ids,
+    )
+    endpoint_summary = summarize_endpoint_pair(
+        tool_logits=clean_logits,
+        no_tool_logits=corrupt_logits,
+        tokenizer=tokenizer,
+        temperature=endpoint_temperature,
+        masked_token_ids=endpoint_masked_token_ids,
+        topk=12,
+    )
 
-    clean_obj = float(objective_from_logits(clean_logits, target_token, distractor_token).item())
-    corrupt_obj = float(objective_from_logits(corrupt_logits, target_token, distractor_token).item())
+    clean_obj = float(objective_from_logits(clean_logits, endpoint_objective).item())
+    corrupt_obj = float(objective_from_logits(corrupt_logits, endpoint_objective).item())
     gap = clean_obj - corrupt_obj
+    if not math.isfinite(gap) or abs(gap) <= 1e-8:
+        raise ValueError(f"Degenerate tool-call endpoint gap for {sample.sample_id}: {gap}")
 
     clean_cache_cpu = collect_clean_cache_cpu(model, clean_tokens)
 
@@ -1001,8 +1029,8 @@ def run_one_sample(
             model=model,
             corrupt_tokens=corrupt_tokens,
             clean_cache_cpu=clean_cache_cpu,
-            target_token=target_token,
-            distractor_token=distractor_token,
+            target_token=endpoint_objective,
+            distractor_token=None,
         )
     except torch.OutOfMemoryError:
         gc.collect()
@@ -1013,8 +1041,8 @@ def run_one_sample(
                 model=model,
                 corrupt_tokens=corrupt_tokens,
                 clean_cache_cpu=clean_cache_cpu,
-                target_token=target_token,
-                distractor_token=distractor_token,
+                target_token=endpoint_objective,
+                distractor_token=None,
             )
         except torch.OutOfMemoryError:
             gc.collect()
@@ -1042,23 +1070,27 @@ def run_one_sample(
         if ct_candidate_heads:
             ct_mode = "ap_pruned_exact_ct"
 
-    ct_head = compute_ct_head_gain(
-        model=model,
-        corrupt_tokens=corrupt_tokens,
-        clean_cache_cpu=clean_cache_cpu,
-        target_token=target_token,
-        distractor_token=distractor_token,
-        corrupt_obj=corrupt_obj,
-        candidate_heads_by_layer=ct_candidate_heads,
-        fallback_scores=ap_head if ct_candidate_heads else None,
-    )
+    if ct_head_mode == "ap_proxy":
+        ct_head = ap_head.detach().float().cpu().clone()
+        ct_mode = "ap_proxy"
+    else:
+        ct_head = compute_ct_head_gain(
+            model=model,
+            corrupt_tokens=corrupt_tokens,
+            clean_cache_cpu=clean_cache_cpu,
+            target_token=endpoint_objective,
+            distractor_token=None,
+            corrupt_obj=corrupt_obj,
+            candidate_heads_by_layer=ct_candidate_heads,
+            fallback_scores=ap_head if ct_candidate_heads else None,
+        )
 
     mlp_gain = compute_mlp_gain(
         model=model,
         corrupt_tokens=corrupt_tokens,
         clean_cache_cpu=clean_cache_cpu,
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
         corrupt_obj=corrupt_obj,
     )
 
@@ -1074,8 +1106,8 @@ def run_one_sample(
         base_tokens=corrupt_tokens,
         source_cache_cpu=clean_cache_cpu,
         patch_nodes=detailed_nodes,
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     detailed_ratio = (detailed_obj - corrupt_obj) / gap if abs(gap) > 1e-8 else float("nan")
 
@@ -1084,8 +1116,8 @@ def run_one_sample(
         base_tokens=corrupt_tokens,
         source_cache_cpu=clean_cache_cpu,
         patch_nodes=rough_nodes,
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     rough_ratio = (rough_obj - corrupt_obj) / gap if abs(gap) > 1e-8 else float("nan")
 
@@ -1095,8 +1127,8 @@ def run_one_sample(
         base_tokens=clean_tokens,
         source_cache_cpu=corrupt_cache_cpu,
         patch_nodes=detailed_nodes,
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     necessity_drop = clean_obj - clean_with_detailed_corrupted
     necessity_ratio = necessity_drop / gap if abs(gap) > 1e-8 else float("nan")
@@ -1106,8 +1138,8 @@ def run_one_sample(
         base_tokens=clean_tokens,
         source_cache_cpu=corrupt_cache_cpu,
         patch_nodes=rough_nodes,
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     rough_necessity_drop = clean_obj - clean_with_rough_corrupted
     rough_necessity_ratio = rough_necessity_drop / gap if abs(gap) > 1e-8 else float("nan")
@@ -1120,48 +1152,48 @@ def run_one_sample(
         base_tokens=corrupt_tokens,
         source_cache_cpu=clean_cache_cpu,
         patch_nodes=[probe_head],
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
     clean_with_probe_corrupt = evaluate_on_base_with_source(
         model=model,
         base_tokens=clean_tokens,
         source_cache_cpu=corrupt_cache_cpu,
         patch_nodes=[probe_head],
-        target_token=target_token,
-        distractor_token=distractor_token,
+        target_token=endpoint_objective,
+        distractor_token=None,
     )
-
-    plot_head_heatmap(
-        ap_head.numpy(),
-        "Attribution Patching Head Heatmap (AP)",
-        out_dir / "ap_head_heatmap.png",
-    )
-    plot_head_heatmap(
-        ct_head.numpy(),
-        "Causal Tracing Head Heatmap (CT)",
-        out_dir / "ct_head_heatmap.png",
-    )
-    plot_probe(
-        out_path=out_dir / f"{probe_head}_probe.png",
-        head_name=probe_head,
-        corrupt_obj=corrupt_obj,
-        corrupt_with_head=corrupt_with_probe,
-        clean_obj=clean_obj,
-        clean_with_head_corrupt=clean_with_probe_corrupt,
-    )
-    draw_circuit(
-        nodes=detailed_nodes,
-        edges=detailed_edges,
-        out_path=out_dir / "final_circuit_detailed.png",
-        title="Detailed Circuit (Tool-call Decision)",
-    )
-    draw_circuit(
-        nodes=rough_nodes,
-        edges=rough_edges,
-        out_path=out_dir / "final_circuit.png",
-        title="Simplified Circuit (Tool-call Decision)",
-    )
+    if not skip_plots:
+        plot_head_heatmap(
+            ap_head.numpy(),
+            "Attribution Patching Head Heatmap (AP)",
+            out_dir / "ap_head_heatmap.png",
+        )
+        plot_head_heatmap(
+            ct_head.numpy(),
+            "Causal Tracing Head Heatmap (CT)",
+            out_dir / "ct_head_heatmap.png",
+        )
+        plot_probe(
+            out_path=out_dir / f"{probe_head}_probe.png",
+            head_name=probe_head,
+            corrupt_obj=corrupt_obj,
+            corrupt_with_head=corrupt_with_probe,
+            clean_obj=clean_obj,
+            clean_with_head_corrupt=clean_with_probe_corrupt,
+        )
+        draw_circuit(
+            nodes=detailed_nodes,
+            edges=detailed_edges,
+            out_path=out_dir / "final_circuit_detailed.png",
+            title="Detailed Circuit (Tool-call Decision)",
+        )
+        draw_circuit(
+            nodes=rough_nodes,
+            edges=rough_edges,
+            out_path=out_dir / "final_circuit.png",
+            title="Simplified Circuit (Tool-call Decision)",
+        )
 
     contrast_token_details = [
         {
@@ -1191,22 +1223,33 @@ def run_one_sample(
         "distractor_token_str": tokenizer.decode([distractor_token]),
         "ap_mode": ap_mode,
         "ct_mode": ct_mode,
+        "objective_mode": "negative_kl_to_clean_endpoint",
+        "objective_endpoint": "tool_call",
+        "objective_temperature": endpoint_temperature,
+        "objective_masked_token_ids": list(endpoint_masked_token_ids),
         "ct_candidate_ap_top_per_layer": ct_ap_top_per_layer,
         "ct_candidate_ap_top_global": ct_ap_top_global,
         "ct_candidate_head_count": sum(len(v) for v in ct_candidate_heads.values()) if ct_candidate_heads else 0,
         "clean_obj": clean_obj,
         "corrupt_obj": corrupt_obj,
         "gap": gap,
+        "clean_kl_to_endpoint": -clean_obj,
+        "corrupt_kl_to_endpoint": -corrupt_obj,
+        "endpoint_js_divergence": endpoint_summary["endpoint_js_divergence"],
         "detailed_obj": detailed_obj,
         "detailed_ratio_vs_gap": detailed_ratio,
+        "detailed_kl_recovery_ratio": detailed_ratio,
         "rough_obj": rough_obj,
         "rough_ratio_vs_gap": rough_ratio,
+        "rough_kl_recovery_ratio": rough_ratio,
         "clean_with_detailed_corrupted": clean_with_detailed_corrupted,
         "necessity_drop": necessity_drop,
         "necessity_ratio_vs_gap": necessity_ratio,
+        "necessity_kl_drop_ratio": necessity_ratio,
         "clean_with_rough_corrupted": clean_with_rough_corrupted,
         "rough_necessity_drop": rough_necessity_drop,
         "rough_necessity_ratio_vs_gap": rough_necessity_ratio,
+        "rough_necessity_kl_drop_ratio": rough_necessity_ratio,
         "probe_head": probe_head,
         "probe_corrupt_with_head": corrupt_with_probe,
         "probe_clean_with_head_corrupt": clean_with_probe_corrupt,
@@ -1223,6 +1266,7 @@ def run_one_sample(
         "tools_block_positions": list(pos_sets["tools_block"]),
         "user_block_positions": list(pos_sets["user_block"]),
         "sample_catalog_record": sample.catalog_record(),
+        "endpoint_distribution_summary": endpoint_summary,
         "top_node_scores": [
             {"name": s.name, "score": s.score, "ct": s.ct, "ap": s.ap}
             for s in score_table
@@ -1254,6 +1298,8 @@ def main() -> None:
     parser.add_argument("--model-path", type=str, default=str(MODEL_PATH_DEFAULT))
     parser.add_argument("--out-dir", type=str, default=str(RESULTS_ROOT / "manual_run" / "single_sample"))
     parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--ct-head-mode", choices=["exact", "ap_proxy"], default="exact")
+    parser.add_argument("--skip-plots", action="store_true")
     args = parser.parse_args()
 
     out_dir = Path(args.out_dir).resolve()
@@ -1276,6 +1322,8 @@ def main() -> None:
         model=model,
         tokenizer=tokenizer,
         model_path=args.model_path,
+        ct_head_mode=args.ct_head_mode,
+        skip_plots=args.skip_plots,
     )
 
     print(f"[done] outputs written to: {out_dir}")
