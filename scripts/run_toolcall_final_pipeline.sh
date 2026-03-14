@@ -30,6 +30,12 @@ EDGE_IMPORTANCE_MAX_EDGES="${EDGE_IMPORTANCE_MAX_EDGES:-0}"
 TRAJECTORY_MAX_SAMPLES="${TRAJECTORY_MAX_SAMPLES:-0}"
 CAUSAL_EVAL_MAX_SAMPLES="${CAUSAL_EVAL_MAX_SAMPLES:-0}"
 FUNCTIONAL_VALIDATE_MAX_SAMPLES="${FUNCTIONAL_VALIDATE_MAX_SAMPLES:-0}"
+SEMANTIC_CHAIN_MAX_SAMPLES="${SEMANTIC_CHAIN_MAX_SAMPLES:-0}"
+SEMANTIC_FACTORIZED_MAX_SAMPLES="${SEMANTIC_FACTORIZED_MAX_SAMPLES:-0}"
+SCHEMA_STAGEWISE_MAX_SAMPLES="${SCHEMA_STAGEWISE_MAX_SAMPLES:-0}"
+MECHANISM_AUDIT_MAX_SAMPLES="${MECHANISM_AUDIT_MAX_SAMPLES:-0}"
+MLP27_STEERING_MAX_SAMPLES="${MLP27_STEERING_MAX_SAMPLES:-0}"
+LATE_WRITER_BACKUP_MAX_SAMPLES="${LATE_WRITER_BACKUP_MAX_SAMPLES:-0}"
 
 mkdir -p "$RUN_ROOT"
 
@@ -52,6 +58,12 @@ EDGE_IMPORTANCE="$RUN_ROOT/edge_importance"
 SIGNED_TRAJECTORY="$RUN_ROOT/signed_layer_trajectory"
 FUNCTIONAL_GROUPS="$RUN_ROOT/functional_groups"
 FUNCTIONAL_VALIDATE="$RUN_ROOT/functional_validate"
+SEMANTIC_CHAIN="$RUN_ROOT/semantic_chain"
+SEMANTIC_FACTORIZED="$RUN_ROOT/semantic_factorized"
+SCHEMA_STAGEWISE="$RUN_ROOT/schema_stagewise"
+MECHANISM_AUDIT="$RUN_ROOT/mechanism_audit"
+MLP27_STEERING="$RUN_ROOT/mlp27_steering"
+LATE_WRITER_BACKUP="$RUN_ROOT/late_writer_backup"
 METHOD_BENCHMARK="$RUN_ROOT/method_benchmark"
 FINAL_REPORT="$RUN_ROOT/FINAL_REPORT.md"
 
@@ -236,6 +248,48 @@ python scripts/evaluate_toolcall_functional_groups.py \
   --device "$DEVICE" \
   --max-samples "$FUNCTIONAL_VALIDATE_MAX_SAMPLES" \
   --output-root "$FUNCTIONAL_VALIDATE"
+
+python scripts/analyze_toolcall_semantic_causal_chain.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$SEMANTIC_CHAIN_MAX_SAMPLES" \
+  --output-root "$SEMANTIC_CHAIN"
+
+python scripts/analyze_toolcall_semantic_factorized_counterfactual.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$SEMANTIC_FACTORIZED_MAX_SAMPLES" \
+  --output-root "$SEMANTIC_FACTORIZED"
+
+python scripts/analyze_toolcall_semantic_schema_stagewise.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$SCHEMA_STAGEWISE_MAX_SAMPLES" \
+  --output-root "$SCHEMA_STAGEWISE"
+
+python scripts/build_toolcall_mechanism_component_audit.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$MECHANISM_AUDIT_MAX_SAMPLES" \
+  --output-root "$MECHANISM_AUDIT"
+
+python scripts/analyze_toolcall_mlp27_steering.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$MLP27_STEERING_MAX_SAMPLES" \
+  --output-root "$MLP27_STEERING"
+
+python scripts/analyze_toolcall_late_writer_backup_search.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$LATE_WRITER_BACKUP_MAX_SAMPLES" \
+  --output-root "$LATE_WRITER_BACKUP"
 
 if [[ -n "$RELP_ROOT" || -n "$EAP_ROOT" || -n "$FEATURE_ROOT" ]]; then
   benchmark_args=(

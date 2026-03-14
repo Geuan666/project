@@ -1,0 +1,6 @@
+variant,n_samples,tool_endpoint_score_median,no_tool_endpoint_score_median,tool_top1_rate,boundary_flip_rate
+clean_full,1722,0.0,-3.203125,1.0,1.0
+clean_no_protocol,1722,-13.0,-0.431640625,0.0,0.0
+clean_no_schema,1722,-3.1015625,-0.19580078125,0.09988385598141696,0.1173054587688734
+clean_schema_mismatch,1722,-4.96875,-0.17431640625,0.053426248548199766,0.05749128919860627
+corrupt_full,1722,-4.5625,0.0,0.0,0.0

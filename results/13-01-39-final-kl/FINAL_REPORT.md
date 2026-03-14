@@ -58,6 +58,35 @@ Functional artifacts:
 - `forward_selective`: top-1 `0.913/0.918`, boundary `0.972/0.930`.
 - `reverse_selective`: top-1 `0.740/0.706`, boundary `0.787/0.727`.
 
+## Mechanistic Chain
+
+- `Query-Conditioned Tool Branch`: `L2H14 -> MLP11 -> MLP16 -> L24H6 -> Residual Output: decision`, final cumulative `0.812`, top1 `0.322`.
+- `Schema-Conditioned Tool Branch`: `L21H12 -> MLP27 -> Residual Output: decision`, final cumulative `0.948`, top1 `0.733`.
+- `No-Tool Suppression Branch`: `L16H4 -> MLP17 -> L23H6 -> Residual Output: decision`, final cumulative `0.795`, top1 `0.516`.
+- Detailed chain report: `semantic_chain/semantic_chain_report.md`
+- Progression plot: `semantic_chain/semantic_chain_progression.png`
+
+## Factorized Counterfactuals
+
+- `clean_full`: tool `0.000`, no-tool `-3.203`, tool-top1 `1.000`.
+- `corrupt_full`: tool `-4.562`, no-tool `0.000`, tool-top1 `0.000`.
+- `clean_no_schema`: tool `-3.102`, no-tool `-0.196`, tool-top1 `0.100`.
+- `clean_schema_mismatch`: tool `-4.969`, no-tool `-0.174`, tool-top1 `0.053`.
+- `clean_no_protocol`: tool `-13.000`, no-tool `-0.432`, tool-top1 `0.000`.
+- rescue `no_tool_path` on `clean_full`: `0.795` with top1 `0.516`.
+- rescue `query_tool_path` on `corrupt_full`: `0.812` with top1 `0.322`.
+- rescue `schema_tool_path` on `clean_no_protocol`: `2.556` with top1 `0.469`.
+- rescue `schema_tool_path` on `clean_no_schema`: `0.594` with top1 `0.740`.
+- rescue `schema_tool_path` on `clean_schema_mismatch`: `1.008` with top1 `0.927`.
+- schema step `1` / `L21H12` on `clean_no_protocol`: rescue `1.745`, top1 `0.015`.
+- schema step `2` / `MLP27` on `clean_no_protocol`: rescue `2.556`, top1 `0.469`.
+- schema step `1` / `L21H12` on `clean_no_schema`: rescue `0.532`, top1 `0.544`.
+- schema step `2` / `MLP27` on `clean_no_schema`: rescue `0.594`, top1 `0.740`.
+- schema step `1` / `L21H12` on `clean_schema_mismatch`: rescue `0.835`, top1 `0.471`.
+- schema step `2` / `MLP27` on `clean_schema_mismatch`: rescue `1.008`, top1 `0.927`.
+- Detailed schema-stagewise report: `schema_stagewise/schema_stagewise_report.md`
+- Detailed factorized report: `semantic_factorized/semantic_factorized_report.md`
+
 ## Node / Edge Diagnostics
 
 - Top node diagnostics:
@@ -90,6 +119,9 @@ Functional artifacts:
 - Structural validation: `signed_validate/signed_group_validation_heatmap.png`
 - Functional graph: `functional_groups/functional_group_graph.png`
 - Functional validation: `functional_validate/functional_group_validation_heatmap.png`
+- Semantic chain: `semantic_chain/semantic_chain_report.md`
+- Factorized counterfactuals: `semantic_factorized/semantic_factorized_report.md`
+- Schema stagewise: `schema_stagewise/schema_stagewise_report.md`
 - Token flips: `token_flip/group_token_flip_summary.csv`
 - Node importance: `node_importance/signed_node_importance_heatmap.png`
 - Trajectory: `signed_layer_trajectory/signed_layer_trajectory.png`

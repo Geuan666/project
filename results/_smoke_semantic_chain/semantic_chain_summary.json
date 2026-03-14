@@ -1,0 +1,176 @@
+{
+  "n_samples": 8,
+  "paths": [
+    {
+      "key": "query_tool_path",
+      "label": "Query-Conditioned Tool Branch",
+      "direction": "tool",
+      "nodes": [
+        "L2H14",
+        "MLP11",
+        "MLP16",
+        "L24H6",
+        "Residual Output: decision"
+      ],
+      "score": -7.931128867954802
+    },
+    {
+      "key": "schema_tool_path",
+      "label": "Schema-Conditioned Tool Branch",
+      "direction": "tool",
+      "nodes": [
+        "L21H12",
+        "MLP27",
+        "Residual Output: decision"
+      ],
+      "score": -1.1140744696923084
+    },
+    {
+      "key": "no_tool_path",
+      "label": "No-Tool Suppression Branch",
+      "direction": "no_tool",
+      "nodes": [
+        "L16H4",
+        "MLP17",
+        "L23H6",
+        "Residual Output: decision"
+      ],
+      "score": -5.30167473664117
+    }
+  ],
+  "summary_rows": [
+    {
+      "path_key": "query_tool_path",
+      "path_label": "Query-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 1,
+      "node": "L2H14",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.0985985985985986,
+      "cumulative_ratio_mean": 0.08534379733926659,
+      "incremental_ratio_median": 0.0985985985985986,
+      "incremental_ratio_mean": 0.08534379733926659,
+      "top1_rate": 0.0,
+      "boundary_flip_rate": 0.0
+    },
+    {
+      "path_key": "query_tool_path",
+      "path_label": "Query-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 2,
+      "node": "MLP11",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.30335595776772245,
+      "cumulative_ratio_mean": 0.22190416538128385,
+      "incremental_ratio_median": 0.20079185520361992,
+      "incremental_ratio_mean": 0.13656036804201727,
+      "top1_rate": 0.0,
+      "boundary_flip_rate": 0.0
+    },
+    {
+      "path_key": "query_tool_path",
+      "path_label": "Query-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 3,
+      "node": "MLP16",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.691453371481596,
+      "cumulative_ratio_mean": 0.6685554608835643,
+      "incremental_ratio_median": 0.46598762455801995,
+      "incremental_ratio_mean": 0.44665129550228044,
+      "top1_rate": 0.125,
+      "boundary_flip_rate": 0.125
+    },
+    {
+      "path_key": "query_tool_path",
+      "path_label": "Query-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 4,
+      "node": "L24H6",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.8635023584905661,
+      "cumulative_ratio_mean": 0.846471151885255,
+      "incremental_ratio_median": 0.1605223476647077,
+      "incremental_ratio_mean": 0.17791569100169066,
+      "top1_rate": 0.25,
+      "boundary_flip_rate": 0.25
+    },
+    {
+      "path_key": "schema_tool_path",
+      "path_label": "Schema-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.7092731829573935,
+      "cumulative_ratio_mean": 0.6961081527696462,
+      "incremental_ratio_median": 0.7092731829573935,
+      "incremental_ratio_mean": 0.6961081527696462,
+      "top1_rate": 0.125,
+      "boundary_flip_rate": 0.125
+    },
+    {
+      "path_key": "schema_tool_path",
+      "path_label": "Schema-Conditioned Tool Branch",
+      "direction": "tool",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.9673141186299081,
+      "cumulative_ratio_mean": 0.927785937505475,
+      "incremental_ratio_median": 0.2517795513373598,
+      "incremental_ratio_mean": 0.23167778473582878,
+      "top1_rate": 0.75,
+      "boundary_flip_rate": 0.75
+    },
+    {
+      "path_key": "no_tool_path",
+      "path_label": "No-Tool Suppression Branch",
+      "direction": "no_tool",
+      "step_idx": 1,
+      "node": "L16H4",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.1360628618693135,
+      "cumulative_ratio_mean": 0.14072539884273086,
+      "incremental_ratio_median": 0.1360628618693135,
+      "incremental_ratio_mean": 0.14072539884273086,
+      "top1_rate": 0.0,
+      "boundary_flip_rate": 0.0
+    },
+    {
+      "path_key": "no_tool_path",
+      "path_label": "No-Tool Suppression Branch",
+      "direction": "no_tool",
+      "step_idx": 2,
+      "node": "MLP17",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.5216126656848306,
+      "cumulative_ratio_mean": 0.5510142420260177,
+      "incremental_ratio_median": 0.376904609475032,
+      "incremental_ratio_mean": 0.41028884318328684,
+      "top1_rate": 0.125,
+      "boundary_flip_rate": 0.0
+    },
+    {
+      "path_key": "no_tool_path",
+      "path_label": "No-Tool Suppression Branch",
+      "direction": "no_tool",
+      "step_idx": 3,
+      "node": "L23H6",
+      "n_samples": 8,
+      "cumulative_ratio_median": 0.7583333333333333,
+      "cumulative_ratio_mean": 0.7450820178597688,
+      "incremental_ratio_median": 0.20609217171717173,
+      "incremental_ratio_mean": 0.19406777583375107,
+      "top1_rate": 0.375,
+      "boundary_flip_rate": 0.375
+    }
+  ],
+  "artifacts": {
+    "summary_csv": "/root/autodl-tmp/project/results/_smoke_semantic_chain/semantic_chain_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/results/_smoke_semantic_chain/semantic_chain_summary.json",
+    "per_sample_csv": "/root/autodl-tmp/project/results/_smoke_semantic_chain/semantic_chain_per_sample.csv",
+    "plot": "/root/autodl-tmp/project/results/_smoke_semantic_chain/semantic_chain_progression.png",
+    "report": "/root/autodl-tmp/project/results/_smoke_semantic_chain/semantic_chain_report.md"
+  }
+}

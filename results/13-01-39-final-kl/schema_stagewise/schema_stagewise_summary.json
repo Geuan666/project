@@ -1,0 +1,67 @@
+{
+  "schema_nodes": [
+    "L21H12",
+    "MLP27"
+  ],
+  "summary_rows": [
+    {
+      "base_variant": "clean_no_protocol",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1722,
+      "rescue_ratio_median": 1.744576244732324,
+      "top1_rate": 0.015098722415795587,
+      "boundary_flip_rate": 0.03426248548199768
+    },
+    {
+      "base_variant": "clean_no_protocol",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1722,
+      "rescue_ratio_median": 2.5559571812596005,
+      "top1_rate": 0.4692218350754936,
+      "boundary_flip_rate": 0.5290360046457607
+    },
+    {
+      "base_variant": "clean_no_schema",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1722,
+      "rescue_ratio_median": 0.5315686628186628,
+      "top1_rate": 0.5435540069686411,
+      "boundary_flip_rate": 0.5981416957026713
+    },
+    {
+      "base_variant": "clean_no_schema",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1722,
+      "rescue_ratio_median": 0.5937380740115115,
+      "top1_rate": 0.7398373983739838,
+      "boundary_flip_rate": 0.8281068524970964
+    },
+    {
+      "base_variant": "clean_schema_mismatch",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1722,
+      "rescue_ratio_median": 0.8353630375529981,
+      "top1_rate": 0.4709639953542393,
+      "boundary_flip_rate": 0.5098722415795587
+    },
+    {
+      "base_variant": "clean_schema_mismatch",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1722,
+      "rescue_ratio_median": 1.007934045018206,
+      "top1_rate": 0.9274099883855982,
+      "boundary_flip_rate": 0.9668989547038328
+    }
+  ],
+  "artifacts": {
+    "summary_csv": "/root/autodl-tmp/project/results/13-01-39-final-kl/schema_stagewise/schema_stagewise_summary.csv",
+    "per_sample_csv": "/root/autodl-tmp/project/results/13-01-39-final-kl/schema_stagewise/schema_stagewise_per_sample.csv",
+    "plot": "/root/autodl-tmp/project/results/13-01-39-final-kl/schema_stagewise/schema_stagewise_plot.png"
+  }
+}

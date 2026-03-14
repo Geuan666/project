@@ -50,12 +50,38 @@ def main() -> None:
     functional = read_json(run_root / "functional_groups" / "functional_group_summary.json")
     functional_validate_path = run_root / "functional_validate" / "functional_group_report.json"
     functional_validate = read_json(functional_validate_path) if functional_validate_path.exists() else {"summary_rows": []}
+    semantic_chain_path = run_root / "semantic_chain" / "semantic_chain_summary.json"
+    semantic_chain = read_json(semantic_chain_path) if semantic_chain_path.exists() else {"paths": [], "summary_rows": []}
+    semantic_factorized_path = run_root / "semantic_factorized" / "semantic_factorized_summary.json"
+    semantic_factorized = read_json(semantic_factorized_path) if semantic_factorized_path.exists() else {
+        "variant_summary_rows": [],
+        "head_summary_rows": [],
+        "rescue_summary_rows": [],
+    }
+    schema_stagewise_path = run_root / "schema_stagewise" / "schema_stagewise_summary.json"
+    schema_stagewise = read_json(schema_stagewise_path) if schema_stagewise_path.exists() else {"summary_rows": []}
+    mechanism_audit_path = run_root / "mechanism_audit" / "mechanism_audit_summary.json"
+    mechanism_audit = read_json(mechanism_audit_path) if mechanism_audit_path.exists() else {
+        "component_rows": [],
+        "edge_rows": [],
+        "claim_tiers": {},
+    }
+    mlp27_steering_path = run_root / "mlp27_steering" / "mlp27_steering_summary.json"
+    mlp27_steering = read_json(mlp27_steering_path) if mlp27_steering_path.exists() else {"summary_rows": []}
+    late_writer_backup_path = run_root / "late_writer_backup" / "late_writer_backup_summary.json"
+    late_writer_backup = read_json(late_writer_backup_path) if late_writer_backup_path.exists() else {
+        "candidate_summary_rows": [],
+        "base_summary_rows": [],
+    }
 
     signed_rows = {str(r["group"]): r for r in signed_validate.get("summary_rows", [])}
     flip_rows = {str(r["group"]): r for r in token_flip.get("summary_rows", [])}
     node_rows = list(node_importance.get("summary_rows", []))
     func_rows = list(functional.get("summary_rows", []))
     func_validate_rows = {str(r["group"]): r for r in functional_validate.get("summary_rows", [])}
+    chain_rows_by_path = {}
+    for row in semantic_chain.get("summary_rows", []):
+        chain_rows_by_path.setdefault(str(row["path_key"]), []).append(row)
 
     lines: List[str] = []
     lines.append("# Tool-Call Signed Circuit Final Report")
@@ -133,6 +159,107 @@ def main() -> None:
             f"boundary `{fmt(row['promote_boundary_flip_rate'])}/{fmt(row['suppress_boundary_flip_rate'])}`."
         )
     lines.append("")
+    if semantic_chain.get("paths"):
+        lines.append("## Mechanistic Chain")
+        lines.append("")
+        for path in semantic_chain.get("paths", []):
+            rows = sorted(chain_rows_by_path.get(str(path["key"]), []), key=lambda r: int(r["step_idx"]))
+            final_row = rows[-1] if rows else {}
+            lines.append(
+                f"- `{path['label']}`: `{' -> '.join(path['nodes'])}`, "
+                f"final cumulative `{fmt(final_row.get('cumulative_ratio_median'))}`, "
+                f"top1 `{fmt(final_row.get('top1_rate'))}`."
+            )
+        lines.append("- Detailed chain report: `semantic_chain/semantic_chain_report.md`")
+        lines.append("- Progression plot: `semantic_chain/semantic_chain_progression.png`")
+        lines.append("")
+    if semantic_factorized.get("variant_summary_rows"):
+        variant_rows = {str(r["variant"]): r for r in semantic_factorized.get("variant_summary_rows", [])}
+        rescue_rows = semantic_factorized.get("rescue_summary_rows", [])
+        lines.append("## Factorized Counterfactuals")
+        lines.append("")
+        for key in ["clean_full", "corrupt_full", "clean_no_schema", "clean_schema_mismatch", "clean_no_protocol"]:
+            row = variant_rows.get(key)
+            if not row:
+                continue
+            lines.append(
+                f"- `{key}`: tool `{fmt(row.get('tool_endpoint_score_median'))}`, "
+                f"no-tool `{fmt(row.get('no_tool_endpoint_score_median'))}`, "
+                f"tool-top1 `{fmt(row.get('tool_top1_rate'))}`."
+            )
+        for row in rescue_rows:
+            lines.append(
+                f"- rescue `{row['path_key']}` on `{row['base_variant']}`: "
+                f"`{fmt(row.get('rescue_ratio_median'))}` with top1 `{fmt(row.get('top1_rate'))}`."
+            )
+        if schema_stagewise.get("summary_rows"):
+            for row in schema_stagewise.get("summary_rows", []):
+                lines.append(
+                    f"- schema step `{row['step_idx']}` / `{row['node']}` on `{row['base_variant']}`: "
+                    f"rescue `{fmt(row.get('rescue_ratio_median'))}`, top1 `{fmt(row.get('top1_rate'))}`."
+                )
+            lines.append("- Detailed schema-stagewise report: `schema_stagewise/schema_stagewise_report.md`")
+        lines.append("- Detailed factorized report: `semantic_factorized/semantic_factorized_report.md`")
+        lines.append("")
+    if mechanism_audit.get("component_rows") or mlp27_steering.get("summary_rows") or late_writer_backup.get("base_summary_rows"):
+        lines.append("## Mechanism Audit")
+        lines.append("")
+        claim_tiers = mechanism_audit.get("claim_tiers", {})
+        if claim_tiers:
+            lines.append(
+                f"- Claim tiers: A=`{len(claim_tiers.get('level_A', []))}`, "
+                f"B=`{len(claim_tiers.get('level_B', []))}`, C=`{len(claim_tiers.get('level_C', []))}`."
+            )
+        component_rows = list(mechanism_audit.get("component_rows", []))
+        edge_rows = list(mechanism_audit.get("edge_rows", []))
+        if component_rows:
+            lines.append("- Main component findings:")
+            for row in component_rows:
+                if str(row.get("tier")) not in {"A", "B"}:
+                    continue
+                lines.append(
+                    f"  - `{row['component']}` [{row['tier']}]: {row['object_language_function']} "
+                    f"(direct `{fmt(row['direct_write_strength'])}`, path `{fmt(row['path_mediation_strength'])}`)."
+                )
+        if edge_rows:
+            lines.append("- Main edge findings:")
+            for row in edge_rows:
+                if str(row.get("tier")) != "A":
+                    continue
+                lines.append(
+                    f"  - `{row['edge']}`: {row['object_language_function']} "
+                    f"(mediated `{fmt(row['best_mediated_ratio'])}` on `{row['best_base_variant']}`)."
+                )
+        if mlp27_steering.get("summary_rows"):
+            by_base = {}
+            for row in mlp27_steering.get("summary_rows", []):
+                base = str(row["base_variant"])
+                alpha = float(row["alpha"])
+                if alpha == 1.5:
+                    by_base[base] = row
+            if by_base:
+                lines.append("- MLP27 steering at alpha `1.5`:")
+                for base in ["corrupt_full", "clean_no_schema", "clean_schema_mismatch", "clean_no_protocol"]:
+                    row = by_base.get(base)
+                    if not row:
+                        continue
+                    lines.append(
+                        f"  - `{base}`: decision `{fmt(row['decision_score_median'])}`, "
+                        f"tool-top1 `{fmt(row['tool_top1_rate'])}`, boundary `{fmt(row['boundary_flip_rate'])}`."
+                    )
+        if late_writer_backup.get("base_summary_rows"):
+            lines.append("- Late writer backup search:")
+            for row in late_writer_backup.get("base_summary_rows", []):
+                lines.append(
+                    f"  - `{row['base_variant']}`: MLP27 direct `{fmt(row['mlp27_direct_rescue_median'])}`, "
+                    f"best alt direct `{row['best_alt_direct_candidate']}`=`{fmt(row['best_alt_direct_rescue_median'])}`, "
+                    f"best alt with MLP27 blocked `{row['best_alt_independent_candidate']}`=`{fmt(row['best_alt_independent_rescue_median'])}`."
+                )
+        lines.append("- Mechanism audit table: `mechanism_audit/component_evidence_table.csv`")
+        lines.append("- Writing boundary: `mechanism_audit/writing_boundary.md`")
+        lines.append("- MLP27 steering: `mlp27_steering/mlp27_steering_report.md`")
+        lines.append("- Late writer backup search: `late_writer_backup/late_writer_backup_report.md`")
+        lines.append("")
     lines.append("## Node / Edge Diagnostics")
     lines.append("")
     lines.append("- Top node diagnostics:")
@@ -170,6 +297,18 @@ def main() -> None:
     lines.append("- Structural validation: `signed_validate/signed_group_validation_heatmap.png`")
     lines.append("- Functional graph: `functional_groups/functional_group_graph.png`")
     lines.append("- Functional validation: `functional_validate/functional_group_validation_heatmap.png`")
+    if semantic_chain.get("paths"):
+        lines.append("- Semantic chain: `semantic_chain/semantic_chain_report.md`")
+    if semantic_factorized.get("variant_summary_rows"):
+        lines.append("- Factorized counterfactuals: `semantic_factorized/semantic_factorized_report.md`")
+    if schema_stagewise.get("summary_rows"):
+        lines.append("- Schema stagewise: `schema_stagewise/schema_stagewise_report.md`")
+    if mechanism_audit.get("component_rows"):
+        lines.append("- Mechanism audit: `mechanism_audit/mechanism_audit_summary.json`")
+    if mlp27_steering.get("summary_rows"):
+        lines.append("- MLP27 steering: `mlp27_steering/mlp27_steering_report.md`")
+    if late_writer_backup.get("base_summary_rows"):
+        lines.append("- Late writer backup: `late_writer_backup/late_writer_backup_report.md`")
     lines.append("- Token flips: `token_flip/group_token_flip_summary.csv`")
     lines.append("- Node importance: `node_importance/signed_node_importance_heatmap.png`")
     lines.append("- Trajectory: `signed_layer_trajectory/signed_layer_trajectory.png`")

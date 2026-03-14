@@ -10,6 +10,12 @@ from pathlib import Path
 from typing import List
 
 
+def ensure_symlink(link_path: Path, target: Path) -> None:
+    if link_path.exists() or link_path.is_symlink():
+        return
+    link_path.symlink_to(target, target_is_directory=True)
+
+
 def run_stage(
     stage_name: str,
     cmd: List[str],
@@ -50,13 +56,12 @@ def run_stage(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the final tool-call pipeline with stage-level supervision.")
+    parser = argparse.ArgumentParser(description="Post-process existing forward/reverse discovery roots with the local final pipeline.")
     parser.add_argument("--run-root", type=str, required=True)
-    parser.add_argument("--dataset-root", type=str, required=True)
+    parser.add_argument("--forward-batch-root", type=str, required=True)
+    parser.add_argument("--reverse-batch-root", type=str, required=True)
     parser.add_argument("--model-path", type=str, required=True)
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--skip-plots", action="store_true")
-    parser.add_argument("--ct-head-mode", default="ap_proxy")
     parser.add_argument("--causal-eval-max-samples", type=int, default=0)
     parser.add_argument("--functional-validate-max-samples", type=int, default=0)
     parser.add_argument("--family-mediation-max-samples", type=int, default=0)
@@ -67,27 +72,26 @@ def main() -> None:
     parser.add_argument("--semantic-chain-max-samples", type=int, default=0)
     parser.add_argument("--semantic-factorized-max-samples", type=int, default=0)
     parser.add_argument("--schema-stagewise-max-samples", type=int, default=0)
-    parser.add_argument("--mechanism-audit-max-samples", type=int, default=0)
-    parser.add_argument("--mlp27-steering-max-samples", type=int, default=0)
-    parser.add_argument("--late-writer-backup-max-samples", type=int, default=0)
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parents[1]
     run_root = Path(args.run_root).resolve()
     run_root.mkdir(parents=True, exist_ok=True)
 
+    forward_batch_target = Path(args.forward_batch_root).resolve()
+    reverse_batch_target = Path(args.reverse_batch_root).resolve()
+    ensure_symlink(run_root / "forward_batch", forward_batch_target)
+    ensure_symlink(run_root / "reverse_batch", reverse_batch_target)
+
     env = os.environ.copy()
     env["PYTHONPATH"] = f"{project_root / 'src'}:{env['PYTHONPATH']}" if env.get("PYTHONPATH") else str(project_root / "src")
     env["PYTORCH_CUDA_ALLOC_CONF"] = env.get("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
     py = sys.executable
-    dataset_root = str(Path(args.dataset_root).resolve())
     model_path = str(Path(args.model_path).resolve())
     device = args.device
 
-    forward_batch = run_root / "forward_batch"
     forward_agg = run_root / "forward_aggregate"
-    reverse_batch = run_root / "reverse_batch"
     reverse_agg = run_root / "reverse_aggregate"
     bidirectional = run_root / "bidirectional"
     causal_aligned = run_root / "causal_aligned"
@@ -107,68 +111,34 @@ def main() -> None:
     semantic_chain = run_root / "semantic_chain"
     semantic_factorized = run_root / "semantic_factorized"
     schema_stagewise = run_root / "schema_stagewise"
-    mechanism_audit = run_root / "mechanism_audit"
-    mlp27_steering = run_root / "mlp27_steering"
-    late_writer_backup = run_root / "late_writer_backup"
     final_report = run_root / "FINAL_REPORT.md"
 
-    common_batch = [
-        "--source", "dataset",
-        "--dataset-root", dataset_root,
-        "--model-path", model_path,
-        "--device", device,
-        "--ct-head-mode", args.ct_head_mode,
-        "--resume",
-    ]
-    if args.skip_plots:
-        common_batch.append("--skip-plots")
-
     stages = [
-        (
-            "forward_batch",
-            forward_batch / "batch_summary.json",
-            [
-                py, str(project_root / "scripts" / "mine_toolcall_batch.py"),
-                *common_batch,
-                "--out-root", str(forward_batch),
-            ],
-            run_root / "logs" / "01_forward_batch.log",
-        ),
         (
             "forward_aggregate",
             forward_agg / "global_core_summary.json",
             [
                 py, str(project_root / "scripts" / "aggregate_toolcall_behavior.py"),
-                "--input-root", str(forward_batch),
+                "--input-root", str(run_root / "forward_batch"),
                 "--output-root", str(forward_agg),
                 "--model-path", model_path,
                 "--device", device,
-                "--summary-label", "forward_kl",
+                "--summary-label", "external_forward_kl",
                 "--skip-replay",
             ],
             run_root / "logs" / "02_forward_aggregate.log",
-        ),
-        (
-            "reverse_batch",
-            reverse_batch / "batch_summary.json",
-            [
-                py, str(project_root / "scripts" / "mine_toolcall_reverse_batch.py"),
-                *common_batch,
-                "--out-root", str(reverse_batch),
-            ],
-            run_root / "logs" / "03_reverse_batch.log",
         ),
         (
             "reverse_aggregate",
             reverse_agg / "global_core_summary.json",
             [
                 py, str(project_root / "scripts" / "aggregate_toolcall_behavior.py"),
-                "--input-root", str(reverse_batch),
+                "--input-root", str(run_root / "reverse_batch"),
                 "--output-root", str(reverse_agg),
                 "--model-path", model_path,
                 "--device", device,
                 "--output-node-label", "Residual Output: no_tool",
-                "--summary-label", "reverse_kl",
+                "--summary-label", "external_reverse_kl",
                 "--skip-replay",
             ],
             run_root / "logs" / "04_reverse_aggregate.log",
@@ -178,9 +148,9 @@ def main() -> None:
             bidirectional / "bidirectional_summary.json",
             [
                 py, str(project_root / "scripts" / "analyze_toolcall_bidirectional.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
-                "--reverse-batch-root", str(reverse_batch),
+                "--reverse-batch-root", str(run_root / "reverse_batch"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--output-root", str(bidirectional),
             ],
@@ -191,7 +161,7 @@ def main() -> None:
             causal_aligned / "cross_eval_summary.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_bidirectional_causal.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
@@ -208,7 +178,7 @@ def main() -> None:
             causal_full / "cross_eval_summary.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_bidirectional_causal.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
@@ -225,8 +195,8 @@ def main() -> None:
             head_reads / "head_read_report.json",
             [
                 py, str(project_root / "scripts" / "analyze_toolcall_bidirectional_head_reads.py"),
-                "--dataset-root", dataset_root,
-                "--reverse-batch-root", str(reverse_batch),
+                "--dataset-root", str(project_root / "datasets"),
+                "--reverse-batch-root", str(run_root / "reverse_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
@@ -254,7 +224,7 @@ def main() -> None:
             signed_validate / "signed_group_report.json",
             [
                 py, str(project_root / "scripts" / "validate_toolcall_signed_circuit.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
@@ -269,7 +239,7 @@ def main() -> None:
             token_flip / "group_token_flip_summary.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_bidirectional_token_flip.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--forward-aggregate-summary", str(forward_agg / "global_core_summary.json"),
                 "--reverse-aggregate-summary", str(reverse_agg / "global_core_summary.json"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
@@ -294,7 +264,7 @@ def main() -> None:
             signed_family_mediation / "signed_family_mediation_report.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_signed_family_mediation.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
                 "--signed-family-summary-csv", str(signed_families / "signed_family_summary.csv"),
                 "--model-path", model_path,
@@ -309,7 +279,7 @@ def main() -> None:
             signed_composition / "signed_composition_report.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_signed_composition.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
                 "--model-path", model_path,
                 "--device", device,
@@ -322,7 +292,7 @@ def main() -> None:
             node_importance / "signed_node_importance_report.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_signed_node_importance.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
                 "--signed-nodes-csv", str(signed_circuit / "final_signed_nodes.csv"),
                 "--model-path", model_path,
@@ -337,7 +307,7 @@ def main() -> None:
             edge_importance / "signed_edge_mediation_report.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_signed_edge_importance.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--signed-edges-csv", str(signed_circuit / "final_signed_edges.csv"),
                 "--model-path", model_path,
                 "--device", device,
@@ -352,7 +322,7 @@ def main() -> None:
             signed_trajectory / "signed_layer_trajectory_report.json",
             [
                 py, str(project_root / "scripts" / "analyze_toolcall_signed_layer_trajectory.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--bidirectional-summary", str(bidirectional / "bidirectional_summary.json"),
                 "--model-path", model_path,
                 "--device", device,
@@ -379,7 +349,7 @@ def main() -> None:
             functional_validate / "functional_group_report.json",
             [
                 py, str(project_root / "scripts" / "evaluate_toolcall_functional_groups.py"),
-                "--forward-batch-root", str(forward_batch),
+                "--forward-batch-root", str(run_root / "forward_batch"),
                 "--functional-group-json", str(functional_groups / "functional_group_summary.json"),
                 "--model-path", model_path,
                 "--device", device,
@@ -428,45 +398,6 @@ def main() -> None:
             run_root / "logs" / "22_schema_stagewise.log",
         ),
         (
-            "mechanism_audit",
-            mechanism_audit / "mechanism_audit_summary.json",
-            [
-                py, str(project_root / "scripts" / "build_toolcall_mechanism_component_audit.py"),
-                "--run-root", str(run_root),
-                "--model-path", model_path,
-                "--device", device,
-                "--max-samples", str(args.mechanism_audit_max_samples),
-                "--output-root", str(mechanism_audit),
-            ],
-            run_root / "logs" / "23_mechanism_audit.log",
-        ),
-        (
-            "mlp27_steering",
-            mlp27_steering / "mlp27_steering_summary.json",
-            [
-                py, str(project_root / "scripts" / "analyze_toolcall_mlp27_steering.py"),
-                "--run-root", str(run_root),
-                "--model-path", model_path,
-                "--device", device,
-                "--max-samples", str(args.mlp27_steering_max_samples),
-                "--output-root", str(mlp27_steering),
-            ],
-            run_root / "logs" / "24_mlp27_steering.log",
-        ),
-        (
-            "late_writer_backup",
-            late_writer_backup / "late_writer_backup_summary.json",
-            [
-                py, str(project_root / "scripts" / "analyze_toolcall_late_writer_backup_search.py"),
-                "--run-root", str(run_root),
-                "--model-path", model_path,
-                "--device", device,
-                "--max-samples", str(args.late_writer_backup_max_samples),
-                "--output-root", str(late_writer_backup),
-            ],
-            run_root / "logs" / "25_late_writer_backup.log",
-        ),
-        (
             "final_report",
             final_report,
             [
@@ -474,7 +405,7 @@ def main() -> None:
                 "--run-root", str(run_root),
                 "--output", str(final_report),
             ],
-            run_root / "logs" / "26_final_report.log",
+            run_root / "logs" / "23_final_report.log",
         ),
     ]
 

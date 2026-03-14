@@ -1,0 +1,30 @@
+# MLP27 Steering Report
+
+- `clean_no_protocol` / alpha `0.0`: decision `-12.223`, tool-top1 `0.000`, boundary `0.000`
+- `clean_no_protocol` / alpha `0.25`: decision `-9.822`, tool-top1 `0.000`, boundary `0.000`
+- `clean_no_protocol` / alpha `0.5`: decision `-7.343`, tool-top1 `0.001`, boundary `0.001`
+- `clean_no_protocol` / alpha `0.75`: decision `-5.083`, tool-top1 `0.002`, boundary `0.003`
+- `clean_no_protocol` / alpha `1.0`: decision `-2.975`, tool-top1 `0.052`, boundary `0.062`
+- `clean_no_protocol` / alpha `1.25`: decision `-1.016`, tool-top1 `0.236`, boundary `0.283`
+- `clean_no_protocol` / alpha `1.5`: decision `0.752`, tool-top1 `0.593`, boundary `0.661`
+- `clean_no_schema` / alpha `0.0`: decision `-2.979`, tool-top1 `0.100`, boundary `0.117`
+- `clean_no_schema` / alpha `0.25`: decision `-2.240`, tool-top1 `0.119`, boundary `0.143`
+- `clean_no_schema` / alpha `0.5`: decision `-1.543`, tool-top1 `0.159`, boundary `0.190`
+- `clean_no_schema` / alpha `0.75`: decision `-0.875`, tool-top1 `0.246`, boundary `0.272`
+- `clean_no_schema` / alpha `1.0`: decision `-0.254`, tool-top1 `0.380`, boundary `0.418`
+- `clean_no_schema` / alpha `1.25`: decision `0.332`, tool-top1 `0.556`, boundary `0.612`
+- `clean_no_schema` / alpha `1.5`: decision `0.945`, tool-top1 `0.681`, boundary `0.761`
+- `clean_schema_mismatch` / alpha `0.0`: decision `-4.821`, tool-top1 `0.053`, boundary `0.057`
+- `clean_schema_mismatch` / alpha `0.25`: decision `-3.506`, tool-top1 `0.092`, boundary `0.098`
+- `clean_schema_mismatch` / alpha `0.5`: decision `-2.209`, tool-top1 `0.156`, boundary `0.163`
+- `clean_schema_mismatch` / alpha `0.75`: decision `-0.994`, tool-top1 `0.269`, boundary `0.283`
+- `clean_schema_mismatch` / alpha `1.0`: decision `0.153`, tool-top1 `0.509`, boundary `0.544`
+- `clean_schema_mismatch` / alpha `1.25`: decision `1.141`, tool-top1 `0.789`, boundary `0.840`
+- `clean_schema_mismatch` / alpha `1.5`: decision `2.038`, tool-top1 `0.957`, boundary `0.981`
+- `corrupt_full` / alpha `0.0`: decision `-4.562`, tool-top1 `0.000`, boundary `0.000`
+- `corrupt_full` / alpha `0.25`: decision `-3.478`, tool-top1 `0.000`, boundary `0.000`
+- `corrupt_full` / alpha `0.5`: decision `-2.411`, tool-top1 `0.004`, boundary `0.000`
+- `corrupt_full` / alpha `0.75`: decision `-1.444`, tool-top1 `0.069`, boundary `0.041`
+- `corrupt_full` / alpha `1.0`: decision `-0.512`, tool-top1 `0.289`, boundary `0.276`
+- `corrupt_full` / alpha `1.25`: decision `0.376`, tool-top1 `0.604`, boundary `0.660`
+- `corrupt_full` / alpha `1.5`: decision `1.201`, tool-top1 `0.833`, boundary `0.900`
