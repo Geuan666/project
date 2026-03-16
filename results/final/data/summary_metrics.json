@@ -1,0 +1,22 @@
+{
+  "dataset_n": 1722,
+  "circuit_nodes": 24,
+  "circuit_edges": 64,
+  "full_promote_sufficiency": 0.9996854096456291,
+  "full_suppress_sufficiency": 0.9979679017405432,
+  "full_promote_top1": 0.9988385598141696,
+  "full_suppress_top1": 0.997096399535424,
+  "tool_schema_promote": 0.31846462093242905,
+  "suppression_promote": 0.25883497612007134,
+  "integrator_promote": 0.5244617018205315,
+  "query_chain_top1": 0.9372822299651568,
+  "suppress_chain_top1": 0.516260162601626,
+  "instruction_flip_no_tool_top1": 0.9988385598141696,
+  "lead_flip_no_tool_top1": 0.9988385598141696,
+  "mlp27_corrupt_alpha_15_tool_top1": 0.8333333333333334,
+  "reverse_aligned_node_jaccard": 0.8888888888888888,
+  "reverse_aligned_edge_jaccard": 0.8235294117647058,
+  "claim_level_A": 5,
+  "claim_level_B": 3,
+  "claim_level_C": 3
+}

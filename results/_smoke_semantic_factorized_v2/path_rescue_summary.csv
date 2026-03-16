@@ -1,6 +1,0 @@
-path_key,base_variant,direction,n_samples,rescue_ratio_median,top1_rate,boundary_flip_rate
-no_tool_path,clean_full,no_tool,8,0.7583333333333333,0.375,0.375
-query_tool_path,corrupt_full,tool,8,0.8635023584905661,0.25,0.25
-schema_tool_path,clean_no_protocol,tool,8,2.8221703745600806,0.5,0.5
-schema_tool_path,clean_no_schema,tool,8,0.5072276543937806,1.0,1.0
-schema_tool_path,clean_schema_mismatch,tool,8,1.1200545317569155,1.0,1.0

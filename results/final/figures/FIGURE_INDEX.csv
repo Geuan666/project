@@ -1,0 +1,18 @@
+figure,filename,title,supports
+图01,figure_01_final_signed_circuit.png,最终 Signed Circuit 总览,这张图证明最终交付不是零散节点，而是一张稀疏但完整的 signed circuit。
+图02,figure_02_functional_group_graph.png,24 节点功能语义分组图,这张图把 24 个节点从结构图变成可叙述的功能图，是后续机制故事的桥梁。
+图03,figure_03_bidirectional_union_circuit.png,双向发现后的联合电路,它说明最终 signed circuit 来自双向发现，而不是单向启发式筛选。
+图04,figure_04_reverse_selective_circuit.png,Reverse-Selective 子电路,它直接支持“反向发现特别有利于暴露抑制节点和抑制支路”。
+图05,figure_05_structural_validation_heatmap.png,结构组保真验证热图,它证明完整电路和主要结构组在行为层面是 faithful 的，不是纯相关图。
+图06,figure_06_functional_validation_heatmap.png,功能组保真验证热图,它说明语义分组不是只看 attention 命名，而是有行为恢复支撑。
+图07,figure_07_query_decision_stepwise.png,固定 Schema 下的 Query 决策链逐步恢复,它证明在固定工具环境下，`L20H5 -> L21H1/L21H12 -> L24H6 -> MLP27` 会逐步把 corrupt 拉回 `<tool_call>`。
+图08,figure_08_instruction_commitment_flip.png,整句 Instruction Swap 的行为翻转,它证明第一句 instruction 本身就是强决定变量。
+图09,figure_09_lead_phrase_flip.png,最小 Lead Phrase Swap 的行为翻转,它把关键变量继续缩小到 instruction 开头的 commitment cue，而不是整段文本。
+图10,figure_10_mlp27_steering_curves.png,MLP27 局部写出干预曲线,这张图支持 `MLP27` 是主要晚层 writer，而不只是一个相关晚层节点。
+图11,figure_11_head_span_attention.png,关键 Attention Head 的 Span 读取密度,它帮助判断 head 更像在读 lead phrase、file target、function body scaffold 还是 task body。
+图12,figure_12_head_qkv_decomposition.png,关键 Attention Head 的 Q/K/V/Z 分解,它说明 tool 路上的关键 head 更像 late routing head，主要依赖 Q/Z，而不是纯 V-copy。
+图13,figure_13_reverse_overlap.png,No-Tool 语义线与 Reverse Discovery 的重合,它证明 no-tool 语义线与 reverse-selective 子电路高度重合。
+图14,figure_14_edge_mediation_heatmap.png,边级中介热图,它支持 `L21H12 -> MLP27` 和 `L16H4 -> MLP17 -> L23H6` 不是单纯共现边。
+图15,figure_15_semantic_chain_progression.png,早期语义链提取的渐进恢复,它展示了从早期 chain 候选到后来 fixed-schema 主链的演进关系。
+图16,figure_16_schema_stagewise_plot.png,Schema / Protocol 两步恢复图,它说明 `L21H12` 与 `MLP27` 分别承担 late routing 和 late writing 的不同角色。
+图17,figure_17_signed_layer_trajectory.png,跨层决策轨迹图,它说明最终决策是如何在中晚层逐渐成形，而不是单层瞬时出现。

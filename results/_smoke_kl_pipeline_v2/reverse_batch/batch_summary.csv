@@ -1,3 +1,0 @@
-sample_id,sample_rank,q_index,filename,direction,status,clean_obj,corrupt_obj,gap,detailed_ratio_vs_gap,necessity_ratio_vs_gap,rough_ratio_vs_gap,rough_necessity_ratio_vs_gap,probe_head,target_token_str,distractor_token_str,ap_mode,error
-apps_python_1,1,,apps_python_1.txt,reverse_no_tool,ok,0.0,-2.90625,2.90625,0.999065440188172,1.118279569892473,0.9979628696236559,1.075268817204301,L16H8,I,<tool_call>,full,
-codecontests_cpp_1,2,,codecontests_cpp_1.txt,reverse_no_tool,ok,0.0,-6.1875,6.1875,0.998599273989899,0.9242424242424242,0.9830334595959596,0.7525252525252525,L24H6,I,<tool_call>,full,

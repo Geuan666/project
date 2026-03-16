@@ -70,6 +70,9 @@ def main() -> None:
     parser.add_argument("--mechanism-audit-max-samples", type=int, default=0)
     parser.add_argument("--mlp27-steering-max-samples", type=int, default=0)
     parser.add_argument("--late-writer-backup-max-samples", type=int, default=0)
+    parser.add_argument("--query-decision-max-samples", type=int, default=0)
+    parser.add_argument("--instruction-commitment-max-samples", type=int, default=0)
+    parser.add_argument("--instruction-lead-max-samples", type=int, default=0)
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parents[1]
@@ -110,6 +113,11 @@ def main() -> None:
     mechanism_audit = run_root / "mechanism_audit"
     mlp27_steering = run_root / "mlp27_steering"
     late_writer_backup = run_root / "late_writer_backup"
+    query_decision = run_root / "query_decision_chain"
+    instruction_commitment = run_root / "instruction_commitment"
+    instruction_lead = run_root / "instruction_lead"
+    final_head_audit = run_root / "final_head_attention_audit"
+    final_mechanistic = run_root / "FINAL_MECHANISTIC_RESULT.md"
     final_report = run_root / "FINAL_REPORT.md"
 
     common_batch = [
@@ -467,6 +475,68 @@ def main() -> None:
             run_root / "logs" / "25_late_writer_backup.log",
         ),
         (
+            "query_decision_chain",
+            query_decision / "query_decision_summary.json",
+            [
+                py, str(project_root / "scripts" / "analyze_toolcall_query_decision_chain.py"),
+                "--run-root", str(run_root),
+                "--model-path", model_path,
+                "--device", device,
+                "--max-samples", str(args.query_decision_max_samples),
+                "--output-root", str(query_decision),
+            ],
+            run_root / "logs" / "26_query_decision_chain.log",
+        ),
+        (
+            "instruction_commitment",
+            instruction_commitment / "instruction_commitment_summary.json",
+            [
+                py, str(project_root / "scripts" / "analyze_toolcall_query_instruction_commitment.py"),
+                "--run-root", str(run_root),
+                "--model-path", model_path,
+                "--device", device,
+                "--max-samples", str(args.instruction_commitment_max_samples),
+                "--output-root", str(instruction_commitment),
+            ],
+            run_root / "logs" / "27_instruction_commitment.log",
+        ),
+        (
+            "instruction_lead",
+            instruction_lead / "instruction_lead_summary.json",
+            [
+                py, str(project_root / "scripts" / "analyze_toolcall_instruction_verb_phrase_audit.py"),
+                "--run-root", str(run_root),
+                "--model-path", model_path,
+                "--device", device,
+                "--max-samples", str(args.instruction_lead_max_samples),
+                "--output-root", str(instruction_lead),
+            ],
+            run_root / "logs" / "28_instruction_lead.log",
+        ),
+        (
+            "final_head_attention_audit",
+            final_head_audit / "head_final_audit_summary.json",
+            [
+                py, str(project_root / "scripts" / "analyze_toolcall_final_head_attention_audit.py"),
+                "--run-root", str(run_root),
+                "--model-path", model_path,
+                "--device", device,
+                "--max-samples", "0",
+                "--output-root", str(final_head_audit),
+            ],
+            run_root / "logs" / "29_final_head_attention_audit.log",
+        ),
+        (
+            "final_mechanistic",
+            final_mechanistic,
+            [
+                py, str(project_root / "scripts" / "build_toolcall_final_mechanistic_result.py"),
+                "--run-root", str(run_root),
+                "--output", str(final_mechanistic),
+            ],
+            run_root / "logs" / "30_final_mechanistic.log",
+        ),
+        (
             "final_report",
             final_report,
             [
@@ -474,7 +544,7 @@ def main() -> None:
                 "--run-root", str(run_root),
                 "--output", str(final_report),
             ],
-            run_root / "logs" / "26_final_report.log",
+            run_root / "logs" / "31_final_report.log",
         ),
     ]
 

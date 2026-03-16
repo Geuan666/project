@@ -73,6 +73,26 @@ def main() -> None:
         "candidate_summary_rows": [],
         "base_summary_rows": [],
     }
+    query_decision_path = run_root / "query_decision_chain" / "query_decision_summary.json"
+    query_decision = read_json(query_decision_path) if query_decision_path.exists() else {
+        "component_summary_rows": [],
+        "step_summary_rows": [],
+        "edge_summary_rows": [],
+        "key_findings": {},
+    }
+    instruction_commitment_path = run_root / "instruction_commitment" / "instruction_commitment_summary.json"
+    instruction_commitment = read_json(instruction_commitment_path) if instruction_commitment_path.exists() else {
+        "variant_summary_rows": [],
+        "query_summary_rows": [],
+        "no_tool_summary_rows": [],
+        "top_clean_instructions": [],
+        "top_corrupt_instructions": [],
+    }
+    instruction_lead_path = run_root / "instruction_lead" / "instruction_lead_summary.json"
+    instruction_lead = read_json(instruction_lead_path) if instruction_lead_path.exists() else {
+        "variant_summary_rows": [],
+        "query_summary_rows": [],
+    }
 
     signed_rows = {str(r["group"]): r for r in signed_validate.get("summary_rows", [])}
     flip_rows = {str(r["group"]): r for r in token_flip.get("summary_rows", [])}
@@ -160,8 +180,10 @@ def main() -> None:
         )
     lines.append("")
     if semantic_chain.get("paths"):
-        lines.append("## Mechanistic Chain")
+        lines.append("## Initial Extracted Chain Candidates")
         lines.append("")
+        if query_decision.get("step_summary_rows") or instruction_commitment.get("variant_summary_rows"):
+            lines.append("- These are discovery-time chain candidates. The refined fixed-schema and instruction-level analyses below supersede the early `L2H14`-anchored query interpretation.")
         for path in semantic_chain.get("paths", []):
             rows = sorted(chain_rows_by_path.get(str(path["key"]), []), key=lambda r: int(r["step_idx"]))
             final_row = rows[-1] if rows else {}
@@ -260,6 +282,90 @@ def main() -> None:
         lines.append("- MLP27 steering: `mlp27_steering/mlp27_steering_report.md`")
         lines.append("- Late writer backup search: `late_writer_backup/late_writer_backup_report.md`")
         lines.append("")
+    if query_decision.get("step_summary_rows"):
+        lines.append("## Fixed-Schema Query Decision")
+        lines.append("")
+        key_findings = query_decision.get("key_findings", {})
+        lines.append(
+            f"- `L20H5` clean->corrupt rescue `{fmt(key_findings.get('query_l20h5_rescue_median'))}`; "
+            f"`L21H1` `{fmt(key_findings.get('query_l21h1_rescue_median'))}`; "
+            f"`L21H12` `{fmt(key_findings.get('query_l21h12_rescue_median'))}`; "
+            f"`MLP27` `{fmt(key_findings.get('query_mlp27_rescue_median'))}`."
+        )
+        lines.append(
+            f"- Cumulative fixed-schema query chain tool-top1 `{fmt(key_findings.get('query_chain_final_top1_rate'))}`."
+        )
+        lines.append(
+            f"- Competing suppressive chain no-tool top1 `{fmt(key_findings.get('suppress_chain_final_top1_rate'))}`."
+        )
+        lines.append(
+            f"- Key edge mediation: `L20H5->L21H12` `{fmt(key_findings.get('edge_l20h5_l21h12_mediated'))}`, "
+            f"`L21H12->MLP27` `{fmt(key_findings.get('edge_l21h12_mlp27_mediated'))}`, "
+            f"`MLP17->L20H5` `{fmt(key_findings.get('edge_mlp17_l20h5_mediated'))}`."
+        )
+        lines.append("- Detailed report: `query_decision_chain/query_decision_report.md`")
+        lines.append("- Stepwise plot: `query_decision_chain/query_decision_stepwise.png`")
+        lines.append("")
+    if instruction_commitment.get("variant_summary_rows"):
+        lines.append("## Instruction-Level Commitment")
+        lines.append("")
+        variant_rows = {str(r["variant"]): r for r in instruction_commitment.get("variant_summary_rows", [])}
+        for key in ["clean_full", "clean_with_corrupt_instruction", "corrupt_with_clean_instruction", "corrupt_full"]:
+            row = variant_rows.get(key)
+            if not row:
+                continue
+            lines.append(
+                f"- `{key}`: decision `{fmt(row['decision_score_median'])}`, "
+                f"tool-top1 `{fmt(row['tool_top1_rate'])}`, no-tool-top1 `{fmt(row['no_tool_top1_rate'])}`."
+            )
+        q_rows = instruction_commitment.get("query_summary_rows", [])
+        n_rows = instruction_commitment.get("no_tool_summary_rows", [])
+        if q_rows:
+            row = q_rows[-1]
+            lines.append(
+                f"- Query chain on corrupt instruction swap: `{row['nodes']}` -> "
+                f"rescue `{fmt(row['rescue_ratio_median'])}`, tool-top1 `{fmt(row['tool_top1_rate'])}`."
+            )
+        if n_rows:
+            row = n_rows[-1]
+            lines.append(
+                f"- No-tool chain on clean instruction swap: `{row['nodes']}` -> "
+                f"rescue `{fmt(row['rescue_ratio_median'])}`, no-tool-top1 `{fmt(row['no_tool_top1_rate'])}`."
+            )
+        top_clean = instruction_commitment.get("top_clean_instructions", [])[:3]
+        top_corrupt = instruction_commitment.get("top_corrupt_instructions", [])[:3]
+        if top_clean:
+            lines.append("- Most common clean instruction lines:")
+            for text, count in top_clean:
+                lines.append(f"  - `{count}`x `{text}`")
+        if top_corrupt:
+            lines.append("- Most common corrupt instruction lines:")
+            for text, count in top_corrupt:
+                lines.append(f"  - `{count}`x `{text}`")
+        lines.append("- Detailed report: `instruction_commitment/instruction_commitment_report.md`")
+        lines.append("- Variant effect plot: `instruction_commitment/instruction_variant_effects.png`")
+        lines.append("")
+    if instruction_lead.get("variant_summary_rows"):
+        lines.append("## Minimal Lead Cue")
+        lines.append("")
+        variant_rows = {str(r["variant"]): r for r in instruction_lead.get("variant_summary_rows", [])}
+        for key in ["clean_full", "clean_with_corrupt_lead", "corrupt_with_clean_lead", "corrupt_full"]:
+            row = variant_rows.get(key)
+            if not row:
+                continue
+            lines.append(
+                f"- `{key}`: decision `{fmt(row['decision_score_median'])}`, "
+                f"tool-top1 `{fmt(row['tool_top1_rate'])}`, no-tool-top1 `{fmt(row['no_tool_top1_rate'])}`."
+            )
+        q_rows = instruction_lead.get("query_summary_rows", [])
+        if q_rows:
+            row = q_rows[-1]
+            lines.append(
+                f"- Query chain on corrupt lead swap: `{row['nodes']}` -> "
+                f"rescue `{fmt(row['rescue_ratio_median'])}`, tool-top1 `{fmt(row['tool_top1_rate'])}`."
+            )
+        lines.append("- Detailed report: `instruction_lead/instruction_lead_report.md`")
+        lines.append("")
     lines.append("## Node / Edge Diagnostics")
     lines.append("")
     lines.append("- Top node diagnostics:")
@@ -293,6 +399,8 @@ def main() -> None:
     lines.append("## Artifact Index")
     lines.append("")
     lines.append(f"- Run root: `{run_root}`")
+    if (run_root / "FINAL_MECHANISTIC_RESULT.md").exists():
+        lines.append("- Final mechanistic result: `FINAL_MECHANISTIC_RESULT.md`")
     lines.append("- Main figure: `final_signed_circuit/final_signed_circuit.png`")
     lines.append("- Structural validation: `signed_validate/signed_group_validation_heatmap.png`")
     lines.append("- Functional graph: `functional_groups/functional_group_graph.png`")
@@ -309,6 +417,16 @@ def main() -> None:
         lines.append("- MLP27 steering: `mlp27_steering/mlp27_steering_report.md`")
     if late_writer_backup.get("base_summary_rows"):
         lines.append("- Late writer backup: `late_writer_backup/late_writer_backup_report.md`")
+    if query_decision.get("step_summary_rows"):
+        lines.append("- Fixed-schema query decision: `query_decision_chain/query_decision_report.md`")
+    if instruction_commitment.get("variant_summary_rows"):
+        lines.append("- Instruction commitment: `instruction_commitment/instruction_commitment_report.md`")
+    if instruction_lead.get("variant_summary_rows"):
+        lines.append("- Instruction lead cue: `instruction_lead/instruction_lead_report.md`")
+    if (run_root / "final_head_attention_audit" / "head_final_audit_summary.json").exists():
+        lines.append("- Final head attention audit: `final_head_attention_audit/head_final_audit_report.md`")
+    if (run_root / "final_mechanism_evidence" / "final_mechanism_evidence_summary.json").exists():
+        lines.append("- Final mechanism evidence: `final_mechanism_evidence/final_mechanism_evidence_summary.json`")
     lines.append("- Token flips: `token_flip/group_token_flip_summary.csv`")
     lines.append("- Node importance: `node_importance/signed_node_importance_heatmap.png`")
     lines.append("- Trajectory: `signed_layer_trajectory/signed_layer_trajectory.png`")

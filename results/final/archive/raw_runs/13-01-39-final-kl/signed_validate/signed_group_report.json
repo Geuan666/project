@@ -1,0 +1,130 @@
+{
+  "groups": {
+    "symmetric_backbone": [
+      "L12H6",
+      "L13H9",
+      "MLP16",
+      "L17H8",
+      "MLP19",
+      "L20H5",
+      "L24H6",
+      "MLP27"
+    ],
+    "tool_bias_backbone": [
+      "MLP11",
+      "L21H1",
+      "L21H12",
+      "L23H6"
+    ],
+    "no_tool_bias_backbone": [
+      "MLP12",
+      "L16H4",
+      "L16H8",
+      "MLP17"
+    ],
+    "tool_tail": [
+      "L2H14",
+      "L18H14",
+      "MLP21",
+      "L23H5"
+    ],
+    "no_tool_tail": [
+      "L15H5",
+      "L16H13",
+      "L16H9",
+      "L17H2"
+    ]
+  },
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/results/13-01-39-final-kl/signed_validate/signed_group_per_sample.csv",
+    "summary_csv": "/root/autodl-tmp/project/results/13-01-39-final-kl/signed_validate/signed_group_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/results/13-01-39-final-kl/signed_validate/signed_group_report.json",
+    "heatmap_png": "/root/autodl-tmp/project/results/13-01-39-final-kl/signed_validate/signed_group_validation_heatmap.png"
+  },
+  "summary_rows": [
+    {
+      "group": "full_signed_circuit",
+      "group_label": "full_signed_circuit",
+      "n_samples": 1722,
+      "n_nodes": 24,
+      "promote_suff_ratio_median": 0.9996854096456291,
+      "suppress_suff_ratio_median": 0.9979679017405432,
+      "promote_tool_top1_rate": 0.9988385598141696,
+      "suppress_no_tool_top1_rate": 0.997096399535424,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": 0.0,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "symmetric_backbone",
+      "group_label": "Symmetric Backbone",
+      "n_samples": 1722,
+      "n_nodes": 8,
+      "promote_suff_ratio_median": 0.9941213922876249,
+      "suppress_suff_ratio_median": 0.9859110192746752,
+      "promote_tool_top1_rate": 0.9732868757259001,
+      "suppress_no_tool_top1_rate": 0.9866434378629501,
+      "promote_nec_drop_median": 0.0006003359553091725,
+      "suppress_nec_drop_median": -0.0033107885970861672,
+      "promote_nec_top1_drop_mean": 0.007549361207897794,
+      "suppress_nec_top1_drop_mean": 0.0029036004645760743
+    },
+    {
+      "group": "tool_bias_backbone",
+      "group_label": "Tool-Bias Backbone",
+      "n_samples": 1722,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.9647403236977156,
+      "suppress_suff_ratio_median": 0.8648441249400096,
+      "promote_tool_top1_rate": 0.7804878048780488,
+      "suppress_no_tool_top1_rate": 0.6596980255516841,
+      "promote_nec_drop_median": 0.0005779269873272264,
+      "suppress_nec_drop_median": -0.0011232672469375093,
+      "promote_nec_top1_drop_mean": 0.006387921022067364,
+      "suppress_nec_top1_drop_mean": 0.0017421602787456446
+    },
+    {
+      "group": "no_tool_bias_backbone",
+      "group_label": "No-Tool-Bias Backbone",
+      "n_samples": 1722,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.892266934714461,
+      "suppress_suff_ratio_median": 0.7993156015381798,
+      "promote_tool_top1_rate": 0.5296167247386759,
+      "suppress_no_tool_top1_rate": 0.537746806039489,
+      "promote_nec_drop_median": 0.0002534638319793836,
+      "suppress_nec_drop_median": -0.001598183828630917,
+      "promote_nec_top1_drop_mean": 0.0029036004645760743,
+      "suppress_nec_top1_drop_mean": 0.005807200929152149
+    },
+    {
+      "group": "tool_tail",
+      "group_label": "Tool Tail",
+      "n_samples": 1722,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.690495705199659,
+      "suppress_suff_ratio_median": 0.4066726587913029,
+      "promote_tool_top1_rate": 0.10685249709639953,
+      "suppress_no_tool_top1_rate": 0.0743321718931475,
+      "promote_nec_drop_median": 8.867588425104378e-05,
+      "suppress_nec_drop_median": -0.0015641533885214498,
+      "promote_nec_top1_drop_mean": 0.0011614401858304297,
+      "suppress_nec_top1_drop_mean": 0.0017421602787456446
+    },
+    {
+      "group": "no_tool_tail",
+      "group_label": "No-Tool Tail",
+      "n_samples": 1722,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.47851466877565624,
+      "suppress_suff_ratio_median": 0.3534664929801708,
+      "promote_tool_top1_rate": 0.0156794425087108,
+      "suppress_no_tool_top1_rate": 0.07665505226480836,
+      "promote_nec_drop_median": 8.037551933015585e-06,
+      "suppress_nec_drop_median": -0.00019570469377511168,
+      "promote_nec_top1_drop_mean": 0.0005807200929152149,
+      "suppress_nec_top1_drop_mean": 0.0
+    }
+  ]
+}

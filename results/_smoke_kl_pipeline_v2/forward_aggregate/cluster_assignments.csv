@@ -1,3 +1,0 @@
-sample_id,sample_rank,q_index,cluster_id,cluster_size,weight
-apps_python_1,1,,0,1,0.9994255514705882
-codecontests_cpp_1,2,,1,1,0.7734254407220652

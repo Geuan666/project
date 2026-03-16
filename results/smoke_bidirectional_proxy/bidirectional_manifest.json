@@ -1,7 +1,0 @@
-{
-  "run_root": "/root/autodl-tmp/project/results/smoke_bidirectional_proxy",
-  "forward_run_root": "/root/autodl-tmp/project/results/11-21-37",
-  "reverse_batch_root": "/root/autodl-tmp/project/results/smoke_bidirectional_proxy/reverse_batch",
-  "reverse_aggregate_root": "/root/autodl-tmp/project/results/smoke_bidirectional_proxy/reverse_aggregate",
-  "bidirectional_root": "/root/autodl-tmp/project/results/smoke_bidirectional_proxy/bidirectional"
-}

@@ -1,0 +1,470 @@
+{
+  "reverse_core_nodes": [
+    "L16H4",
+    "L16H8",
+    "L17H8",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP16",
+    "MLP17",
+    "MLP19",
+    "MLP27"
+  ],
+  "reverse_selective_nodes": [
+    "L15H5",
+    "L16H13",
+    "L16H4",
+    "L16H8",
+    "L16H9",
+    "L17H2",
+    "MLP12",
+    "MLP17"
+  ],
+  "rows": [
+    {
+      "name": "minimal_no_tool",
+      "nodes": [
+        "L16H4",
+        "L23H6",
+        "MLP17"
+      ],
+      "overlap_with_reverse_core": [
+        "L16H4",
+        "L23H6",
+        "MLP17"
+      ],
+      "reverse_core_recall": 1.0,
+      "reverse_core_jaccard": 0.25,
+      "overlap_with_reverse_selective": [
+        "L16H4",
+        "MLP17"
+      ],
+      "reverse_selective_recall": 0.6666666666666666,
+      "reverse_selective_precision": 0.25,
+      "reverse_selective_jaccard": 0.2222222222222222,
+      "overlap_with_shared_backbone": [
+        "L16H4",
+        "L23H6",
+        "MLP17"
+      ]
+    },
+    {
+      "name": "semantic_no_tool",
+      "nodes": [
+        "L15H5",
+        "L16H13",
+        "L16H4",
+        "L16H9",
+        "L18H14",
+        "L23H6",
+        "MLP12",
+        "MLP17"
+      ],
+      "overlap_with_reverse_core": [
+        "L16H4",
+        "L23H6",
+        "MLP17"
+      ],
+      "reverse_core_recall": 0.375,
+      "reverse_core_jaccard": 0.17647058823529413,
+      "overlap_with_reverse_selective": [
+        "L15H5",
+        "L16H13",
+        "L16H4",
+        "L16H9",
+        "MLP12",
+        "MLP17"
+      ],
+      "reverse_selective_recall": 0.75,
+      "reverse_selective_precision": 0.75,
+      "reverse_selective_jaccard": 0.6,
+      "overlap_with_shared_backbone": [
+        "L16H4",
+        "L23H6",
+        "MLP12",
+        "MLP17"
+      ]
+    },
+    {
+      "name": "reverse_aligned_no_tool",
+      "nodes": [
+        "L15H5",
+        "L16H13",
+        "L16H4",
+        "L16H8",
+        "L16H9",
+        "L17H2",
+        "L23H6",
+        "MLP12",
+        "MLP17"
+      ],
+      "overlap_with_reverse_core": [
+        "L16H4",
+        "L16H8",
+        "L23H6",
+        "MLP17"
+      ],
+      "reverse_core_recall": 0.4444444444444444,
+      "reverse_core_jaccard": 0.23529411764705882,
+      "overlap_with_reverse_selective": [
+        "L15H5",
+        "L16H13",
+        "L16H4",
+        "L16H8",
+        "L16H9",
+        "L17H2",
+        "MLP12",
+        "MLP17"
+      ],
+      "reverse_selective_recall": 0.8888888888888888,
+      "reverse_selective_precision": 1.0,
+      "reverse_selective_jaccard": 0.8888888888888888,
+      "overlap_with_shared_backbone": [
+        "L16H4",
+        "L16H8",
+        "L23H6",
+        "MLP12",
+        "MLP17"
+      ]
+    }
+  ],
+  "edge_rows": [
+    {
+      "name": "minimal_no_tool",
+      "edges": [
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L23H6",
+          "Residual Output: decision"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ]
+      ],
+      "overlap_with_reverse_core": [
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ]
+      ],
+      "reverse_core_recall": 0.6666666666666666,
+      "reverse_core_jaccard": 0.07692307692307693,
+      "overlap_with_reverse_selective": [
+        [
+          "L16H4",
+          "MLP17"
+        ]
+      ],
+      "reverse_selective_recall": 0.3333333333333333,
+      "reverse_selective_precision": 0.06666666666666667,
+      "reverse_selective_jaccard": 0.058823529411764705
+    },
+    {
+      "name": "semantic_no_tool",
+      "edges": [
+        [
+          "L15H5",
+          "L16H8"
+        ],
+        [
+          "L16H13",
+          "MLP17"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "L17H2"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "Residual Output: decision"
+        ],
+        [
+          "L16H9",
+          "MLP17"
+        ],
+        [
+          "L17H2",
+          "Residual Output: decision"
+        ],
+        [
+          "L23H6",
+          "Residual Output: decision"
+        ],
+        [
+          "MLP12",
+          "L15H5"
+        ],
+        [
+          "MLP12",
+          "L16H13"
+        ],
+        [
+          "MLP12",
+          "L16H4"
+        ],
+        [
+          "MLP12",
+          "L16H8"
+        ],
+        [
+          "MLP12",
+          "L16H9"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "Residual Output: decision"
+        ]
+      ],
+      "overlap_with_reverse_core": [
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ]
+      ],
+      "reverse_core_recall": 0.1875,
+      "reverse_core_jaccard": 0.07894736842105263,
+      "overlap_with_reverse_selective": [
+        [
+          "L15H5",
+          "L16H8"
+        ],
+        [
+          "L16H13",
+          "MLP17"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "L17H2"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "Residual Output: decision"
+        ],
+        [
+          "L16H9",
+          "MLP17"
+        ],
+        [
+          "L17H2",
+          "Residual Output: decision"
+        ],
+        [
+          "MLP12",
+          "L15H5"
+        ],
+        [
+          "MLP12",
+          "L16H13"
+        ],
+        [
+          "MLP12",
+          "L16H4"
+        ],
+        [
+          "MLP12",
+          "L16H8"
+        ],
+        [
+          "MLP12",
+          "L16H9"
+        ],
+        [
+          "MLP17",
+          "Residual Output: decision"
+        ]
+      ],
+      "reverse_selective_recall": 0.875,
+      "reverse_selective_precision": 0.9333333333333333,
+      "reverse_selective_jaccard": 0.8235294117647058
+    },
+    {
+      "name": "reverse_aligned_no_tool",
+      "edges": [
+        [
+          "L15H5",
+          "L16H8"
+        ],
+        [
+          "L16H13",
+          "MLP17"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "L17H2"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "Residual Output: decision"
+        ],
+        [
+          "L16H9",
+          "MLP17"
+        ],
+        [
+          "L17H2",
+          "Residual Output: decision"
+        ],
+        [
+          "L23H6",
+          "Residual Output: decision"
+        ],
+        [
+          "MLP12",
+          "L15H5"
+        ],
+        [
+          "MLP12",
+          "L16H13"
+        ],
+        [
+          "MLP12",
+          "L16H4"
+        ],
+        [
+          "MLP12",
+          "L16H8"
+        ],
+        [
+          "MLP12",
+          "L16H9"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ],
+        [
+          "MLP17",
+          "Residual Output: decision"
+        ]
+      ],
+      "overlap_with_reverse_core": [
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "MLP17",
+          "L23H6"
+        ]
+      ],
+      "reverse_core_recall": 0.1875,
+      "reverse_core_jaccard": 0.07894736842105263,
+      "overlap_with_reverse_selective": [
+        [
+          "L15H5",
+          "L16H8"
+        ],
+        [
+          "L16H13",
+          "MLP17"
+        ],
+        [
+          "L16H4",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "L17H2"
+        ],
+        [
+          "L16H8",
+          "MLP17"
+        ],
+        [
+          "L16H8",
+          "Residual Output: decision"
+        ],
+        [
+          "L16H9",
+          "MLP17"
+        ],
+        [
+          "L17H2",
+          "Residual Output: decision"
+        ],
+        [
+          "MLP12",
+          "L15H5"
+        ],
+        [
+          "MLP12",
+          "L16H13"
+        ],
+        [
+          "MLP12",
+          "L16H4"
+        ],
+        [
+          "MLP12",
+          "L16H8"
+        ],
+        [
+          "MLP12",
+          "L16H9"
+        ],
+        [
+          "MLP17",
+          "Residual Output: decision"
+        ]
+      ],
+      "reverse_selective_recall": 0.875,
+      "reverse_selective_precision": 0.9333333333333333,
+      "reverse_selective_jaccard": 0.8235294117647058
+    }
+  ],
+  "takeaway": {
+    "minimal_chain_vs_reverse_core": "The 3-node minimal no-tool chain is fully contained in the reverse core.",
+    "reverse_aligned_semantic_line_vs_reverse_selective": "The 9-node reverse-aligned no-tool semantic line overlaps 8/8 reverse-selective nodes and 14/15 reverse-selective edges; the only extra node is L23H6, which sits in the shared late output backbone."
+  }
+}

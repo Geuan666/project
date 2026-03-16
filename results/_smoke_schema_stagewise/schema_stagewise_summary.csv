@@ -1,7 +1,0 @@
-base_variant,step_idx,node,n_samples,rescue_ratio_median,top1_rate,boundary_flip_rate
-clean_no_protocol,1,L21H12,8,1.8980434053963466,0.0,0.125
-clean_no_protocol,2,MLP27,8,2.8221703745600806,0.5,0.5
-clean_no_schema,1,L21H12,8,0.4749273890635919,0.75,0.75
-clean_no_schema,2,MLP27,8,0.5072276543937806,1.0,1.0
-clean_schema_mismatch,1,L21H12,8,1.0004910783942225,0.625,0.625
-clean_schema_mismatch,2,MLP27,8,1.1200545317569155,1.0,1.0

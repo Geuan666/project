@@ -36,6 +36,9 @@ SCHEMA_STAGEWISE_MAX_SAMPLES="${SCHEMA_STAGEWISE_MAX_SAMPLES:-0}"
 MECHANISM_AUDIT_MAX_SAMPLES="${MECHANISM_AUDIT_MAX_SAMPLES:-0}"
 MLP27_STEERING_MAX_SAMPLES="${MLP27_STEERING_MAX_SAMPLES:-0}"
 LATE_WRITER_BACKUP_MAX_SAMPLES="${LATE_WRITER_BACKUP_MAX_SAMPLES:-0}"
+QUERY_DECISION_MAX_SAMPLES="${QUERY_DECISION_MAX_SAMPLES:-0}"
+INSTRUCTION_COMMITMENT_MAX_SAMPLES="${INSTRUCTION_COMMITMENT_MAX_SAMPLES:-0}"
+INSTRUCTION_LEAD_MAX_SAMPLES="${INSTRUCTION_LEAD_MAX_SAMPLES:-0}"
 
 mkdir -p "$RUN_ROOT"
 
@@ -64,7 +67,12 @@ SCHEMA_STAGEWISE="$RUN_ROOT/schema_stagewise"
 MECHANISM_AUDIT="$RUN_ROOT/mechanism_audit"
 MLP27_STEERING="$RUN_ROOT/mlp27_steering"
 LATE_WRITER_BACKUP="$RUN_ROOT/late_writer_backup"
+QUERY_DECISION="$RUN_ROOT/query_decision_chain"
+INSTRUCTION_COMMITMENT="$RUN_ROOT/instruction_commitment"
+INSTRUCTION_LEAD="$RUN_ROOT/instruction_lead"
+FINAL_HEAD_AUDIT="$RUN_ROOT/final_head_attention_audit"
 METHOD_BENCHMARK="$RUN_ROOT/method_benchmark"
+FINAL_MECHANISTIC="$RUN_ROOT/FINAL_MECHANISTIC_RESULT.md"
 FINAL_REPORT="$RUN_ROOT/FINAL_REPORT.md"
 
 RELP_ROOT="${RELP_ROOT:-}"
@@ -290,6 +298,38 @@ python scripts/analyze_toolcall_late_writer_backup_search.py \
   --device "$DEVICE" \
   --max-samples "$LATE_WRITER_BACKUP_MAX_SAMPLES" \
   --output-root "$LATE_WRITER_BACKUP"
+
+python scripts/analyze_toolcall_query_decision_chain.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$QUERY_DECISION_MAX_SAMPLES" \
+  --output-root "$QUERY_DECISION"
+
+python scripts/analyze_toolcall_query_instruction_commitment.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$INSTRUCTION_COMMITMENT_MAX_SAMPLES" \
+  --output-root "$INSTRUCTION_COMMITMENT"
+
+python scripts/analyze_toolcall_instruction_verb_phrase_audit.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples "$INSTRUCTION_LEAD_MAX_SAMPLES" \
+  --output-root "$INSTRUCTION_LEAD"
+
+python scripts/analyze_toolcall_final_head_attention_audit.py \
+  --run-root "$RUN_ROOT" \
+  --model-path "$MODEL_PATH" \
+  --device "$DEVICE" \
+  --max-samples 0 \
+  --output-root "$FINAL_HEAD_AUDIT"
+
+python scripts/build_toolcall_final_mechanistic_result.py \
+  --run-root "$RUN_ROOT" \
+  --output "$FINAL_MECHANISTIC"
 
 if [[ -n "$RELP_ROOT" || -n "$EAP_ROOT" || -n "$FEATURE_ROOT" ]]; then
   benchmark_args=(
