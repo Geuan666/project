@@ -1,0 +1,328 @@
+{
+  "variant_summary_rows": [
+    {
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "n_samples": 20,
+      "decision_score_median": 1.27734375,
+      "tool_top1_rate": 0.6,
+      "no_tool_top1_rate": 0.4,
+      "l2h14_opening_density_median": 0.029025024734437466,
+      "l2h14_object_density_median": 0.009222089312970638
+    },
+    {
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "n_samples": 20,
+      "decision_score_median": 0.18115234375,
+      "tool_top1_rate": 0.3,
+      "no_tool_top1_rate": 0.65,
+      "l2h14_opening_density_median": 0.02700247522443533,
+      "l2h14_object_density_median": 0.02893788367509842
+    },
+    {
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "n_samples": 20,
+      "decision_score_median": -2.6484375,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 1.0,
+      "l2h14_opening_density_median": 0.017706824466586113,
+      "l2h14_object_density_median": 0.011430342216044664
+    },
+    {
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "n_samples": 20,
+      "decision_score_median": -4.53125,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 0.95,
+      "l2h14_opening_density_median": 0.01592002436518669,
+      "l2h14_object_density_median": 0.0371271688491106
+    }
+  ],
+  "representation_summary_rows": [
+    {
+      "space": "l2h14_lead_k",
+      "same_object_cross_frame_cosine_median": 0.8966465592384338,
+      "same_frame_cross_object_cosine_median": 0.9999952614307404,
+      "object_minus_frame_cosine_median": -0.10334870219230652,
+      "object_wins_rate": 0.0
+    },
+    {
+      "space": "l2h14_lead_k_centered",
+      "same_object_cross_frame_cosine_median": -0.9999528527259827,
+      "same_frame_cross_object_cosine_median": 0.9999015033245087,
+      "object_minus_frame_cosine_median": -1.9998543560504913,
+      "object_wins_rate": 0.0
+    },
+    {
+      "space": "l2h14_z",
+      "same_object_cross_frame_cosine_median": 0.9525479823350906,
+      "same_frame_cross_object_cosine_median": 0.9601644724607468,
+      "object_minus_frame_cosine_median": -0.01110568642616272,
+      "object_wins_rate": 0.2
+    },
+    {
+      "space": "l2h14_z_centered",
+      "same_object_cross_frame_cosine_median": -0.24873265624046326,
+      "same_frame_cross_object_cosine_median": 0.23772688210010529,
+      "object_minus_frame_cosine_median": -0.48645953834056854,
+      "object_wins_rate": 0.05
+    },
+    {
+      "space": "mlp11_out",
+      "same_object_cross_frame_cosine_median": 0.9918341785669327,
+      "same_frame_cross_object_cosine_median": 0.9734617620706558,
+      "object_minus_frame_cosine_median": 0.018677935004234314,
+      "object_wins_rate": 1.0
+    },
+    {
+      "space": "mlp11_out_centered",
+      "same_object_cross_frame_cosine_median": 0.5320716947317123,
+      "same_frame_cross_object_cosine_median": -0.6055678576231003,
+      "object_minus_frame_cosine_median": 1.1363201290369034,
+      "object_wins_rate": 1.0
+    }
+  ],
+  "alignment_summary_rows": [
+    {
+      "space": "l2h14_lead_k",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.25
+    },
+    {
+      "space": "l2h14_lead_k",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.45
+    },
+    {
+      "space": "l2h14_lead_k",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.45
+    },
+    {
+      "space": "l2h14_lead_k",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.25
+    },
+    {
+      "space": "l2h14_lead_k_centered",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.3
+    },
+    {
+      "space": "l2h14_lead_k_centered",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.4
+    },
+    {
+      "space": "l2h14_lead_k_centered",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.4
+    },
+    {
+      "space": "l2h14_lead_k_centered",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 0.0,
+      "object_correct_rate": 0.3
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 0.037126898765563965,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 0.05180078744888306,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 0.03740876913070679,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 0.02496922016143799,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z_centered",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 1.118789255619049,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z_centered",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 1.4706116318702698,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z_centered",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 1.410649597644806,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z_centered",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 0.8524533212184906,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 0.019629210233688354,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 0.028369396924972534,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 0.03134050965309143,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 0.022278040647506714,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out_centered",
+      "variant": "develop_answer",
+      "frame": "develop",
+      "delivery_object": "answer",
+      "object_margin_median": 1.6413586139678955,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out_centered",
+      "variant": "develop_file",
+      "frame": "develop",
+      "delivery_object": "file",
+      "object_margin_median": 1.813911497592926,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out_centered",
+      "variant": "write_answer",
+      "frame": "write",
+      "delivery_object": "answer",
+      "object_margin_median": 1.828417181968689,
+      "object_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out_centered",
+      "variant": "write_file",
+      "frame": "write",
+      "delivery_object": "file",
+      "object_margin_median": 1.7090731859207153,
+      "object_correct_rate": 1.0
+    }
+  ],
+  "patch_summary_rows": [
+    {
+      "frame": "develop",
+      "node": "L2H14",
+      "file_rescue_ratio_median": -0.050076587722398966,
+      "object_decision_score_median": -0.07355880737304688,
+      "object_boundary_flip_rate": 0.0,
+      "tool_top1_rate": 0.0
+    },
+    {
+      "frame": "develop",
+      "node": "MLP11",
+      "file_rescue_ratio_median": -0.20533055390113164,
+      "object_decision_score_median": -0.010986328125,
+      "object_boundary_flip_rate": 0.4,
+      "tool_top1_rate": 0.0
+    },
+    {
+      "frame": "write",
+      "node": "L2H14",
+      "file_rescue_ratio_median": -0.03386454183266932,
+      "object_decision_score_median": -0.39263916015625,
+      "object_boundary_flip_rate": 0.0,
+      "tool_top1_rate": 0.3
+    },
+    {
+      "frame": "write",
+      "node": "MLP11",
+      "file_rescue_ratio_median": 0.11753565062388588,
+      "object_decision_score_median": 0.2266845703125,
+      "object_boundary_flip_rate": 0.55,
+      "tool_top1_rate": 0.8
+    }
+  ],
+  "artifacts": {
+    "variant_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_variant_per_sample.csv",
+    "representation_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_representation_per_sample.csv",
+    "alignment_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_alignment_per_sample.csv",
+    "patch_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_patch_per_sample.csv",
+    "top_tokens_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_top_tokens_per_sample.csv",
+    "report_md": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/delivery_object_2x2_stronger_smoke/delivery_object_2x2_report.md"
+  }
+}

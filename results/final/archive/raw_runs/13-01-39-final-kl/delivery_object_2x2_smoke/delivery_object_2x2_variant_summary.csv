@@ -1,0 +1,5 @@
+variant,frame,delivery_object,n_samples,decision_score_median,tool_top1_rate,no_tool_top1_rate,l2h14_opening_density_median,l2h14_object_density_median
+write_file,write,file,10,1.10546875,0.6,0.3,0.026991453021764755,0.008995738346129656
+write_below,write,below,10,0.2486572265625,0.4,0.6,0.025998033583164215,0.05246063694357872
+develop_file,develop,file,10,-1.86328125,0.0,1.0,0.017865026369690895,0.010480450466275215
+develop_below,develop,below,10,-2.20703125,0.0,0.9,0.01637505181133747,0.04451133497059345

@@ -1,0 +1,13 @@
+sample_id,variant,tool_score,no_tool_score,decision_score,tool_top1,no_tool_top1
+apps_python_1,clean_full,0.0,-2.90625,2.90625,True,False
+apps_python_1,clean_with_corrupt_lead,-3.453125,0.0,-3.453125,False,True
+apps_python_1,corrupt_with_clean_lead,0.0,-2.90625,2.90625,True,False
+apps_python_1,corrupt_full,-3.453125,0.0,-3.453125,False,True
+codecontests_cpp_1,clean_full,0.0,-6.1875,6.1875,True,False
+codecontests_cpp_1,clean_with_corrupt_lead,-6.625,0.0,-6.625,False,True
+codecontests_cpp_1,corrupt_with_clean_lead,0.0,-6.1875,6.1875,True,False
+codecontests_cpp_1,corrupt_full,-6.625,0.0,-6.625,False,True
+codecontests_java_1,clean_full,0.0,-6.875,6.875,True,False
+codecontests_java_1,clean_with_corrupt_lead,-12.6875,0.0,-12.6875,False,True
+codecontests_java_1,corrupt_with_clean_lead,0.0,-6.875,6.875,True,False
+codecontests_java_1,corrupt_full,-12.6875,0.0,-12.6875,False,True

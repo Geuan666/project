@@ -1,0 +1,381 @@
+{
+  "head_summary_rows": [
+    {
+      "head": "L2H14",
+      "layer": 2,
+      "clean_rank1_tokens": " query,  the, \\n\\n, assistant,  below,  how",
+      "corrupt_rank1_tokens": " the,  query, \\n\\n, assistant,  below,  how",
+      "clean_lead_phrase_density_median": 0.016067360527813435,
+      "corrupt_lead_phrase_density_median": 0.040197912603616714,
+      "clean_minus_corrupt_lead_phrase_density": -0.02413055207580328,
+      "clean_function_body_anchor_density_median": 0.005490257870405912,
+      "corrupt_function_body_anchor_density_median": 0.005032786633819342,
+      "clean_minus_corrupt_function_body_anchor_density": 0.00045747123658657074,
+      "clean_file_target_density_median": 0.00846822652965784,
+      "corrupt_file_target_density_median": 0.007921549957245588,
+      "clean_minus_corrupt_file_target_density": 0.0005466765724122524,
+      "clean_tail_suffix_density_median": 0.0069376933388412,
+      "corrupt_tail_suffix_density_median": 0.0067904130555689335,
+      "clean_minus_corrupt_tail_suffix_density": 0.0001472802832722664,
+      "clean_task_body_density_median": 0.0016134382458403707,
+      "corrupt_task_body_density_median": 0.0015225967508740723,
+      "clean_minus_corrupt_task_body_density": 9.084149496629834e-05,
+      "best_causal_span": "lead_phrase",
+      "best_causal_rescue_median": 0.025105042016806724,
+      "best_component": "k",
+      "z_rescue_median": 0.0415587219343696,
+      "q_rescue_median": 0.004210694277001631,
+      "v_rescue_median": 0.03766891891891892
+    },
+    {
+      "head": "L16H8",
+      "layer": 16,
+      "clean_rank1_tokens": "\\n,  based, }\\n,  function,  {\\n,  call",
+      "corrupt_rank1_tokens": "\\n,  function,  based,  body,  {\\n,  call",
+      "clean_lead_phrase_density_median": 0.0027057745028287172,
+      "corrupt_lead_phrase_density_median": 0.002796621061861515,
+      "clean_minus_corrupt_lead_phrase_density": -9.084655903279781e-05,
+      "clean_function_body_anchor_density_median": 0.02777691464871168,
+      "corrupt_function_body_anchor_density_median": 0.04403894767165184,
+      "clean_minus_corrupt_function_body_anchor_density": -0.01626203302294016,
+      "clean_file_target_density_median": 0.009091919753700495,
+      "corrupt_file_target_density_median": 0.010823529213666916,
+      "clean_minus_corrupt_file_target_density": -0.0017316094599664211,
+      "clean_tail_suffix_density_median": 0.012764922808855772,
+      "corrupt_tail_suffix_density_median": 0.012066063936799765,
+      "clean_minus_corrupt_tail_suffix_density": 0.0006988588720560074,
+      "clean_task_body_density_median": 0.0018932956154458225,
+      "corrupt_task_body_density_median": 0.0022522928193211555,
+      "clean_minus_corrupt_task_body_density": -0.00035899720387533307,
+      "best_causal_span": "tail_suffix",
+      "best_causal_rescue_median": 0.0569402228976697,
+      "best_component": "z",
+      "z_rescue_median": 0.2722222222222222,
+      "q_rescue_median": 0.09489918446990545,
+      "v_rescue_median": 0.0
+    },
+    {
+      "head": "L17H2",
+      "layer": 17,
+      "clean_rank1_tokens": "<|im_start|>, \\n",
+      "corrupt_rank1_tokens": "<|im_start|>",
+      "clean_lead_phrase_density_median": 0.0025916467420756817,
+      "corrupt_lead_phrase_density_median": 0.0035723154433071613,
+      "clean_minus_corrupt_lead_phrase_density": -0.0009806687012314796,
+      "clean_function_body_anchor_density_median": 0.0072400812059640884,
+      "corrupt_function_body_anchor_density_median": 0.01042203139513731,
+      "clean_minus_corrupt_function_body_anchor_density": -0.0031819501891732216,
+      "clean_file_target_density_median": 0.004428890999406576,
+      "corrupt_file_target_density_median": 0.006483907112851739,
+      "clean_minus_corrupt_file_target_density": -0.0020550161134451628,
+      "clean_tail_suffix_density_median": 0.00447316630743444,
+      "corrupt_tail_suffix_density_median": 0.006288019474595785,
+      "clean_minus_corrupt_tail_suffix_density": -0.0018148531671613455,
+      "clean_task_body_density_median": 0.0013699906412512064,
+      "corrupt_task_body_density_median": 0.0016337797860614955,
+      "clean_minus_corrupt_task_body_density": -0.00026378914481028914,
+      "best_causal_span": "file_target",
+      "best_causal_rescue_median": 0.0,
+      "best_component": "z",
+      "z_rescue_median": 0.2511243319552284,
+      "q_rescue_median": 0.23361075107442525,
+      "v_rescue_median": 0.0
+    },
+    {
+      "head": "L17H8",
+      "layer": 17,
+      "clean_rank1_tokens": "<|im_start|>, \\n",
+      "corrupt_rank1_tokens": "<|im_start|>",
+      "clean_lead_phrase_density_median": 0.0024303996469825506,
+      "corrupt_lead_phrase_density_median": 0.0043866808991879225,
+      "clean_minus_corrupt_lead_phrase_density": -0.001956281252205372,
+      "clean_function_body_anchor_density_median": 0.005656292196363211,
+      "corrupt_function_body_anchor_density_median": 0.007731840014457703,
+      "clean_minus_corrupt_function_body_anchor_density": -0.002075547818094492,
+      "clean_file_target_density_median": 0.005473642842844129,
+      "corrupt_file_target_density_median": 0.009308754466474056,
+      "clean_minus_corrupt_file_target_density": -0.0038351116236299276,
+      "clean_tail_suffix_density_median": 0.008154732640832663,
+      "corrupt_tail_suffix_density_median": 0.009174986276775599,
+      "clean_minus_corrupt_tail_suffix_density": -0.001020253635942936,
+      "clean_task_body_density_median": 0.00100692396517843,
+      "corrupt_task_body_density_median": 0.0011927834711968899,
+      "clean_minus_corrupt_task_body_density": -0.0001858595060184598,
+      "best_causal_span": "file_target",
+      "best_causal_rescue_median": 0.0,
+      "best_component": "z",
+      "z_rescue_median": 0.3184644524374378,
+      "q_rescue_median": 0.29224548202456746,
+      "v_rescue_median": 0.007722122838401908
+    },
+    {
+      "head": "L20H5",
+      "layer": 20,
+      "clean_rank1_tokens": "></, .py, .cpp, </think>, .java",
+      "corrupt_rank1_tokens": "></, .py, </think>,  body, .cpp, .java",
+      "clean_lead_phrase_density_median": 0.00015555760910501704,
+      "corrupt_lead_phrase_density_median": 0.00015238405467243865,
+      "clean_minus_corrupt_lead_phrase_density": 3.173554432578385e-06,
+      "clean_function_body_anchor_density_median": 0.011066387873142958,
+      "corrupt_function_body_anchor_density_median": 0.04244297184050083,
+      "clean_minus_corrupt_function_body_anchor_density": -0.031376583967357874,
+      "clean_file_target_density_median": 0.03778903931379318,
+      "corrupt_file_target_density_median": 0.051528437063097954,
+      "clean_minus_corrupt_file_target_density": -0.013739397749304771,
+      "clean_tail_suffix_density_median": 0.004033125936985016,
+      "corrupt_tail_suffix_density_median": 0.006317155668511987,
+      "clean_minus_corrupt_tail_suffix_density": -0.002284029731526971,
+      "clean_task_body_density_median": 0.0006200353091116995,
+      "corrupt_task_body_density_median": 0.0010716432007029653,
+      "clean_minus_corrupt_task_body_density": -0.0004516078915912658,
+      "best_causal_span": "function_body_anchor",
+      "best_causal_rescue_median": 0.03790626069107082,
+      "best_component": "z",
+      "z_rescue_median": 0.307643234704417,
+      "q_rescue_median": 0.15615337043908473,
+      "v_rescue_median": 0.0
+    }
+  ],
+  "transmission_summary_rows": [
+    {
+      "head": "L16H8",
+      "blocked_node": "MLP11",
+      "source_ratio_median": 0.2722222222222222,
+      "blocked_ratio_median": 0.2722222222222222,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0011614401858304297
+    },
+    {
+      "head": "L16H8",
+      "blocked_node": "MLP16",
+      "source_ratio_median": 0.2722222222222222,
+      "blocked_ratio_median": 0.16782118887823586,
+      "mediated_ratio_median": 0.09907785143634201,
+      "top1_rate": 0.0011614401858304297
+    },
+    {
+      "head": "L16H8",
+      "blocked_node": "MLP19",
+      "source_ratio_median": 0.2722222222222222,
+      "blocked_ratio_median": 0.1963470319634703,
+      "mediated_ratio_median": 0.07720588235294118,
+      "top1_rate": 0.0011614401858304297
+    },
+    {
+      "head": "L17H2",
+      "blocked_node": "MLP11",
+      "source_ratio_median": 0.2511243319552284,
+      "blocked_ratio_median": 0.2511243319552284,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L17H2",
+      "blocked_node": "MLP16",
+      "source_ratio_median": 0.2511243319552284,
+      "blocked_ratio_median": 0.2511243319552284,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L17H2",
+      "blocked_node": "MLP19",
+      "source_ratio_median": 0.2511243319552284,
+      "blocked_ratio_median": 0.22849891225525742,
+      "mediated_ratio_median": 0.02615329077367383,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L17H8",
+      "blocked_node": "MLP11",
+      "source_ratio_median": 0.3184644524374378,
+      "blocked_ratio_median": 0.3184644524374378,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L17H8",
+      "blocked_node": "MLP16",
+      "source_ratio_median": 0.3184644524374378,
+      "blocked_ratio_median": 0.3184644524374378,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L17H8",
+      "blocked_node": "MLP19",
+      "source_ratio_median": 0.3184644524374378,
+      "blocked_ratio_median": 0.2527448397013614,
+      "mediated_ratio_median": 0.06965861143076335,
+      "top1_rate": 0.0005807200929152149
+    },
+    {
+      "head": "L20H5",
+      "blocked_node": "MLP11",
+      "source_ratio_median": 0.307643234704417,
+      "blocked_ratio_median": 0.307643234704417,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.005226480836236934
+    },
+    {
+      "head": "L20H5",
+      "blocked_node": "MLP16",
+      "source_ratio_median": 0.307643234704417,
+      "blocked_ratio_median": 0.307643234704417,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.005226480836236934
+    },
+    {
+      "head": "L20H5",
+      "blocked_node": "MLP19",
+      "source_ratio_median": 0.307643234704417,
+      "blocked_ratio_median": 0.307643234704417,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.005226480836236934
+    },
+    {
+      "head": "L2H14",
+      "blocked_node": "MLP11",
+      "source_ratio_median": 0.0415587219343696,
+      "blocked_ratio_median": 0.02997872418473277,
+      "mediated_ratio_median": 0.009009009009009014,
+      "top1_rate": 0.0
+    },
+    {
+      "head": "L2H14",
+      "blocked_node": "MLP16",
+      "source_ratio_median": 0.0415587219343696,
+      "blocked_ratio_median": 0.04246822397801443,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0
+    },
+    {
+      "head": "L2H14",
+      "blocked_node": "MLP19",
+      "source_ratio_median": 0.0415587219343696,
+      "blocked_ratio_median": 0.044374120956399435,
+      "mediated_ratio_median": 0.0,
+      "top1_rate": 0.0
+    }
+  ],
+  "writer_summary_rows": [
+    {
+      "node": "MLP11",
+      "tool_token_delta_median": 0.75,
+      "distractor_token_delta_median": -0.875,
+      "top_positive_tokens": "<tool_call>,  threads, ewe,  τ, .hashCode, from"
+    },
+    {
+      "node": "MLP16",
+      "tool_token_delta_median": 1.125,
+      "distractor_token_delta_median": -1.75,
+      "top_positive_tokens": "<tool_call>, 扺,  τ, \":[\", opup, 抵"
+    },
+    {
+      "node": "MLP19",
+      "tool_token_delta_median": 1.25,
+      "distractor_token_delta_median": -1.5,
+      "top_positive_tokens": " τ, <tool_call>,  �, 拉开, .equal,  lắm"
+    }
+  ],
+  "stage_summary_rows": [
+    {
+      "stage_idx": 1,
+      "nodes": "L2H14",
+      "rescue_ratio_median": 0.0415587219343696,
+      "decision_score_median": -4.3693695068359375,
+      "tool_top1_rate": 0.0,
+      "boundary_flip_rate": 0.0
+    },
+    {
+      "stage_idx": 2,
+      "nodes": "L2H14|MLP11",
+      "rescue_ratio_median": 0.35,
+      "decision_score_median": -3.0606689453125,
+      "tool_top1_rate": 0.03716608594657375,
+      "boundary_flip_rate": 0.036004645760743324
+    },
+    {
+      "stage_idx": 3,
+      "nodes": "L2H14|MLP11|MLP16",
+      "rescue_ratio_median": 0.576847365233192,
+      "decision_score_median": -1.812255859375,
+      "tool_top1_rate": 0.13066202090592335,
+      "boundary_flip_rate": 0.12659698025551683
+    },
+    {
+      "stage_idx": 4,
+      "nodes": "L2H14|MLP11|MLP16|MLP19",
+      "rescue_ratio_median": 0.8461131371562709,
+      "decision_score_median": -0.234375,
+      "tool_top1_rate": 0.40476190476190477,
+      "boundary_flip_rate": 0.4268292682926829
+    },
+    {
+      "stage_idx": 5,
+      "nodes": "L2H14|MLP11|MLP16|MLP19|L20H5",
+      "rescue_ratio_median": 0.9024094320560005,
+      "decision_score_median": 0.2939453125,
+      "tool_top1_rate": 0.5447154471544715,
+      "boundary_flip_rate": 0.578397212543554
+    },
+    {
+      "stage_idx": 6,
+      "nodes": "L2H14|MLP11|MLP16|MLP19|L20H5|L21H1",
+      "rescue_ratio_median": 0.9543373745819399,
+      "decision_score_median": 0.947265625,
+      "tool_top1_rate": 0.7386759581881533,
+      "boundary_flip_rate": 0.8077816492450639
+    },
+    {
+      "stage_idx": 7,
+      "nodes": "L2H14|MLP11|MLP16|MLP19|L20H5|L21H1|L21H12",
+      "rescue_ratio_median": 0.9895271674010513,
+      "decision_score_median": 1.86962890625,
+      "tool_top1_rate": 0.9128919860627178,
+      "boundary_flip_rate": 0.9587688734030198
+    },
+    {
+      "stage_idx": 8,
+      "nodes": "L2H14|MLP11|MLP16|MLP19|L20H5|L21H1|L21H12|L24H6",
+      "rescue_ratio_median": 0.9926257225346091,
+      "decision_score_median": 2.059814453125,
+      "tool_top1_rate": 0.9465737514518002,
+      "boundary_flip_rate": 0.9849012775842044
+    },
+    {
+      "stage_idx": 9,
+      "nodes": "L2H14|MLP11|MLP16|MLP19|L20H5|L21H1|L21H12|L24H6|MLP27",
+      "rescue_ratio_median": 0.9981288101791763,
+      "decision_score_median": 2.66558837890625,
+      "tool_top1_rate": 0.9889663182346109,
+      "boundary_flip_rate": 1.0
+    }
+  ],
+  "claim_tiers": {
+    "strong_write": [
+      "L2H14 is the strongest earliest head-level candidate inside the 24-node circuit.",
+      "L2H14 feeds the earliest strong scaffold through MLP11.",
+      "MLP11 -> MLP16 -> MLP19 is the earliest strong scaffold segment.",
+      "L20H5 is a later tool ingress reader, not the earliest head-level reader.",
+      "L16H8, L17H2, and L17H8 are downstream carriers rather than earliest reader candidates for the tool scaffold."
+    ],
+    "weak_write": [
+      "L2H14 reads an early user-side object bundle that contains the minimal cue, rather than a clean isolated lead token.",
+      "MLP11 already writes an answer-opening polarity rather than a fully specific <tool_call> command."
+    ],
+    "still_unsolved": [
+      "A clean token-level object-language description of exactly what L2H14 reads first.",
+      "A stronger direct writer decomposition for MLP11 beyond exact-logit delta summaries."
+    ],
+    "paper_level_end_to_end": false
+  },
+  "artifacts": {
+    "head_summary_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_head_summary.csv",
+    "transmission_summary_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_transmission_summary.csv",
+    "writer_summary_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_writer_summary.csv",
+    "stage_summary_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_stage_summary.csv",
+    "report_md": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_bridge_report.md",
+    "claim_tiers_json": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/earliest_reader_tool_bridge/earliest_reader_tool_claim_tiers.json"
+  }
+}

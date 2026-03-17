@@ -1,0 +1,11 @@
+variant,span,attn_density_median
+base,file_target,0.007921549957245588
+base,function_body_anchor,0.005032786633819342
+base,lead_phrase,0.040197912603616714
+base,tail_suffix,0.0067904130555689335
+base,task_body,0.0015225967508740723
+clean,file_target,0.00846822652965784
+clean,function_body_anchor,0.005490257870405912
+clean,lead_phrase,0.016067360527813435
+clean,tail_suffix,0.0069376933388412
+clean,task_body,0.0016134382458403707

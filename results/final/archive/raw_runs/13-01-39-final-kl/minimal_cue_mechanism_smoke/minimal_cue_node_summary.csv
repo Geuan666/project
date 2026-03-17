@@ -1,0 +1,49 @@
+family,node,layer,group_key,semantic_hint,rescue_ratio_median,decision_score_median,tool_top1_rate,no_tool_top1_rate,boundary_flip_rate,n_samples
+no_tool,MLP27,27,symmetric_backbone,shared writer MLP,0.702020202020202,0.994140625,0.6666666666666666,0.3333333333333333,0.3333333333333333,3
+no_tool,MLP16,16,symmetric_backbone,shared writer MLP,0.5840909090909091,2.77734375,0.6666666666666666,0.3333333333333333,0.3333333333333333,3
+no_tool,MLP17,17,no_tool_bias_backbone,no-tool-biased writer MLP,0.4636363636363636,3.662109375,1.0,0.0,0.0,3
+no_tool,L24H6,24,symmetric_backbone,format/prefix router,0.40454545454545454,4.07763671875,1.0,0.0,0.0,3
+no_tool,MLP19,19,symmetric_backbone,shared writer MLP,0.3,4.8060302734375,1.0,0.0,0.0,3
+no_tool,MLP12,12,no_tool_bias_backbone,no-tool-biased writer MLP,0.23118279569892472,4.931640625,1.0,0.0,0.0,3
+no_tool,L23H6,23,tool_bias_backbone,tool-biased router,0.20454545454545456,5.248649597167969,1.0,0.0,0.0,3
+no_tool,L21H12,21,tool_bias_backbone,format/prefix router,0.1935483870967742,4.4896240234375,1.0,0.0,0.0,3
+no_tool,L17H8,17,symmetric_backbone,shared router,0.17727272727272728,5.65472412109375,1.0,0.0,0.0,3
+no_tool,L21H1,21,tool_bias_backbone,format/prefix router,0.15151515151515152,5.248619079589844,1.0,0.0,0.0,3
+no_tool,L16H8,16,no_tool_bias_backbone,no-tool-biased router,0.14545454545454545,5.655855178833008,1.0,0.0,0.0,3
+no_tool,L17H2,17,no_tool_tail,no-tool-tail router,0.13636363636363635,5.906119346618652,1.0,0.0,0.0,3
+no_tool,L16H4,16,no_tool_bias_backbone,no-tool-biased router,0.11827956989247312,4.648529052734375,1.0,0.0,0.0,3
+no_tool,L20H5,20,symmetric_backbone,user-content reader,0.10606060606060606,5.530628204345703,1.0,0.0,0.0,3
+no_tool,MLP21,21,tool_tail,tool-tail writer MLP,0.08080808080808081,5.687160491943359,1.0,0.0,0.0,3
+no_tool,L16H9,16,no_tool_tail,no-tool-tail router,0.08064516129032258,5.843389511108398,1.0,0.0,0.0,3
+no_tool,L18H14,18,tool_tail,format/prefix router,0.05,6.156230807304382,1.0,0.0,0.0,3
+no_tool,MLP11,11,tool_bias_backbone,tool-biased writer MLP,0.04838709677419355,4.994964599609375,1.0,0.0,0.0,3
+no_tool,L13H9,13,symmetric_backbone,shared router,0.04090909090909091,5.655786514282227,1.0,0.0,0.0,3
+no_tool,L16H13,16,no_tool_tail,no-tool-tail router,0.04040404040404041,5.937387466430664,1.0,0.0,0.0,3
+no_tool,L23H5,23,tool_tail,format/prefix router,0.03763440860215054,6.062368392944336,1.0,0.0,0.0,3
+no_tool,L12H6,12,symmetric_backbone,shared router,0.015151515151515152,6.093722939491272,1.0,0.0,0.0,3
+no_tool,L2H14,2,tool_tail,tool-tail router,0.0,6.312479376792908,1.0,0.0,0.0,3
+no_tool,L15H5,15,no_tool_tail,no-tool-tail router,0.0,6.562348365783691,1.0,0.0,0.0,3
+tool,MLP27,27,symmetric_backbone,shared writer MLP,0.8676108374384236,-0.9443359375,0.0,1.0,0.0,3
+tool,L21H12,21,tool_bias_backbone,format/prefix router,0.8466981132075472,-0.564453125,0.0,1.0,0.0,3
+tool,MLP16,16,symmetric_backbone,shared writer MLP,0.7794811320754716,-1.1953125,0.3333333333333333,0.6666666666666666,0.3333333333333333,3
+tool,L21H1,21,tool_bias_backbone,format/prefix router,0.6600985221674877,-1.123046875,0.0,1.0,0.0,3
+tool,L23H6,23,tool_bias_backbone,tool-biased router,0.6556603773584906,-2.16845703125,0.0,1.0,0.0,3
+tool,MLP19,19,symmetric_backbone,shared writer MLP,0.6320754716981132,-2.35205078125,0.0,1.0,0.0,3
+tool,MLP21,21,tool_tail,tool-tail writer MLP,0.579185520361991,-2.3642578125,0.0,1.0,0.0,3
+tool,L24H6,24,symmetric_backbone,format/prefix router,0.5778301886792453,-2.734619140625,0.0,1.0,0.0,3
+tool,MLP17,17,no_tool_bias_backbone,no-tool-biased writer MLP,0.5738916256157636,-3.4501953125,0.3333333333333333,0.6666666666666666,0.3333333333333333,3
+tool,MLP11,11,tool_bias_backbone,tool-biased writer MLP,0.3665158371040724,-6.2926025390625,0.0,1.0,0.0,3
+tool,L20H5,20,symmetric_backbone,user-content reader,0.32019704433497537,-3.4720458984375,0.0,1.0,0.0,3
+tool,L16H8,16,no_tool_bias_backbone,no-tool-biased router,0.2660098522167488,-5.2470703125,0.0,1.0,0.0,3
+tool,L16H4,16,no_tool_bias_backbone,no-tool-biased router,0.25943396226415094,-4.900604248046875,0.0,1.0,0.0,3
+tool,L23H5,23,tool_tail,format/prefix router,0.2512315270935961,-4.112548828125,0.0,1.0,0.0,3
+tool,L18H14,18,tool_tail,format/prefix router,0.25,-4.9598388671875,0.0,1.0,0.0,3
+tool,L17H8,17,symmetric_backbone,shared router,0.24528301886792453,-4.996063232421875,0.0,1.0,0.0,3
+tool,L17H2,17,no_tool_tail,no-tool-tail router,0.20361990950226244,-5.589691162109375,0.0,1.0,0.0,3
+tool,L16H9,16,no_tool_tail,no-tool-tail router,0.17733990147783252,-3.9443359375,0.0,1.0,0.0,3
+tool,MLP12,12,no_tool_bias_backbone,no-tool-biased writer MLP,0.13793103448275862,-6.4658355712890625,0.0,1.0,0.0,3
+tool,L2H14,2,tool_tail,tool-tail router,0.1330049261083744,-6.591766357421875,0.0,1.0,0.0,3
+tool,L12H6,12,symmetric_backbone,shared router,0.11330049261083744,-5.496734619140625,0.0,1.0,0.0,3
+tool,L13H9,13,symmetric_backbone,shared router,0.06787330316742081,-4.9561767578125,0.0,1.0,0.0,3
+tool,L16H13,16,no_tool_tail,no-tool-tail router,0.04245283018867924,-6.342765808105469,0.0,1.0,0.0,3
+tool,L15H5,15,no_tool_tail,no-tool-tail router,-0.009852216748768473,-8.36993408203125,0.0,1.0,0.0,3

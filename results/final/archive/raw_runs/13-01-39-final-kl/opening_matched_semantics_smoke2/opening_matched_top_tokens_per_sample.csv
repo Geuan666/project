@@ -1,0 +1,801 @@
+sample_id,variant,semantic,frame,rank,pos,token,attn
+apps_python_1,original_clean,tool,original,1,18, query,0.0775856077671051
+apps_python_1,original_clean,tool,original,2,225,\n\n,0.04854261875152588
+apps_python_1,original_clean,tool,original,3,220,assistant,0.04071587324142456
+apps_python_1,original_clean,tool,original,4,38,"{""",0.03618424013257027
+apps_python_1,original_clean,tool,original,5,8, call,0.028381584212183952
+apps_python_1,original_corrupt,no_tool,original,1,18, query,0.07293092459440231
+apps_python_1,original_corrupt,no_tool,original,2,225,\n\n,0.04685896262526512
+apps_python_1,original_corrupt,no_tool,original,3,137, the,0.04240480065345764
+apps_python_1,original_corrupt,no_tool,original,4,220,assistant,0.03792589157819748
+apps_python_1,original_corrupt,no_tool,original,5,38,"{""",0.03432784974575043
+apps_python_1,tool_out,tool,out,1,18, query,0.06765677779912949
+apps_python_1,tool_out,tool,out,2,136, the,0.05325702205300331
+apps_python_1,tool_out,tool,out,3,224,\n\n,0.045280616730451584
+apps_python_1,tool_out,tool,out,4,219,assistant,0.0376315712928772
+apps_python_1,tool_out,tool,out,5,38,"{""",0.03301500156521797
+apps_python_1,no_tool_out,no_tool,out,1,18, query,0.07297166436910629
+apps_python_1,no_tool_out,no_tool,out,2,224,\n\n,0.04600025340914726
+apps_python_1,no_tool_out,no_tool,out,3,219,assistant,0.0398225262761116
+apps_python_1,no_tool_out,no_tool,out,4,136, the,0.03605479747056961
+apps_python_1,no_tool_out,no_tool,out,5,38,"{""",0.035286035388708115
+apps_python_1,tool_manually,tool,manually,1,18, query,0.07659953832626343
+apps_python_1,tool_manually,tool,manually,2,225,\n\n,0.04862874373793602
+apps_python_1,tool_manually,tool,manually,3,220,assistant,0.040112558752298355
+apps_python_1,tool_manually,tool,manually,4,38,"{""",0.03531064838171005
+apps_python_1,tool_manually,tool,manually,5,137, the,0.028027189895510674
+apps_python_1,no_tool_manually,no_tool,manually,1,18, query,0.07579252123832703
+apps_python_1,no_tool_manually,no_tool,manually,2,225,\n\n,0.04716038703918457
+apps_python_1,no_tool_manually,no_tool,manually,3,220,assistant,0.038280416280031204
+apps_python_1,no_tool_manually,no_tool,manually,4,38,"{""",0.03590850159525871
+apps_python_1,no_tool_manually,no_tool,manually,5,137, the,0.0315147340297699
+apps_python_1,tool_properly,tool,properly,1,18, query,0.08054256439208984
+apps_python_1,tool_properly,tool,properly,2,226,\n\n,0.04720659554004669
+apps_python_1,tool_properly,tool,properly,3,221,assistant,0.040587715804576874
+apps_python_1,tool_properly,tool,properly,4,38,"{""",0.03600995987653732
+apps_python_1,tool_properly,tool,properly,5,17, user,0.02672128565609455
+apps_python_1,no_tool_properly,no_tool,properly,1,18, query,0.07946096360683441
+apps_python_1,no_tool_properly,no_tool,properly,2,226,\n\n,0.04709329828619957
+apps_python_1,no_tool_properly,no_tool,properly,3,221,assistant,0.03991800174117088
+apps_python_1,no_tool_properly,no_tool,properly,4,38,"{""",0.03590262308716774
+apps_python_1,no_tool_properly,no_tool,properly,5,17, user,0.026404326781630516
+codecontests_cpp_1,original_clean,tool,original,1,136, the,0.0658174529671669
+codecontests_cpp_1,original_clean,tool,original,2,18, query,0.050239793956279755
+codecontests_cpp_1,original_clean,tool,original,3,252,\n\n,0.04697477072477341
+codecontests_cpp_1,original_clean,tool,original,4,134,Write,0.04365674778819084
+codecontests_cpp_1,original_clean,tool,original,5,247,assistant,0.03993275761604309
+codecontests_cpp_1,original_corrupt,no_tool,original,1,18, query,0.056639138609170914
+codecontests_cpp_1,original_corrupt,no_tool,original,2,252,\n\n,0.04795857146382332
+codecontests_cpp_1,original_corrupt,no_tool,original,3,136, the,0.045090045779943466
+codecontests_cpp_1,original_corrupt,no_tool,original,4,247,assistant,0.043968357145786285
+codecontests_cpp_1,original_corrupt,no_tool,original,5,150, below,0.03842215985059738
+codecontests_cpp_1,tool_out,tool,out,1,136, the,0.0658174529671669
+codecontests_cpp_1,tool_out,tool,out,2,18, query,0.050239793956279755
+codecontests_cpp_1,tool_out,tool,out,3,252,\n\n,0.04697477072477341
+codecontests_cpp_1,tool_out,tool,out,4,134,Write,0.04365674778819084
+codecontests_cpp_1,tool_out,tool,out,5,247,assistant,0.03993275761604309
+codecontests_cpp_1,no_tool_out,no_tool,out,1,18, query,0.056639138609170914
+codecontests_cpp_1,no_tool_out,no_tool,out,2,252,\n\n,0.04795857146382332
+codecontests_cpp_1,no_tool_out,no_tool,out,3,136, the,0.045090045779943466
+codecontests_cpp_1,no_tool_out,no_tool,out,4,247,assistant,0.043968357145786285
+codecontests_cpp_1,no_tool_out,no_tool,out,5,150, below,0.03842215985059738
+codecontests_cpp_1,tool_manually,tool,manually,1,18, query,0.05971020832657814
+codecontests_cpp_1,tool_manually,tool,manually,2,253,\n\n,0.0504365935921669
+codecontests_cpp_1,tool_manually,tool,manually,3,248,assistant,0.04536223039031029
+codecontests_cpp_1,tool_manually,tool,manually,4,137, the,0.04340659826993942
+codecontests_cpp_1,tool_manually,tool,manually,5,151, below,0.03272757679224014
+codecontests_cpp_1,no_tool_manually,no_tool,manually,1,18, query,0.0598248727619648
+codecontests_cpp_1,no_tool_manually,no_tool,manually,2,253,\n\n,0.04932265356183052
+codecontests_cpp_1,no_tool_manually,no_tool,manually,3,248,assistant,0.04315925016999245
+codecontests_cpp_1,no_tool_manually,no_tool,manually,4,137, the,0.04314669966697693
+codecontests_cpp_1,no_tool_manually,no_tool,manually,5,151, below,0.03257479891180992
+codecontests_cpp_1,tool_properly,tool,properly,1,18, query,0.05851781368255615
+codecontests_cpp_1,tool_properly,tool,properly,2,254,\n\n,0.051474954932928085
+codecontests_cpp_1,tool_properly,tool,properly,3,249,assistant,0.04488770663738251
+codecontests_cpp_1,tool_properly,tool,properly,4,137, add,0.033804215490818024
+codecontests_cpp_1,tool_properly,tool,properly,5,38,"{""",0.030785931274294853
+codecontests_cpp_1,no_tool_properly,no_tool,properly,1,18, query,0.05813182145357132
+codecontests_cpp_1,no_tool_properly,no_tool,properly,2,254,\n\n,0.05098908394575119
+codecontests_cpp_1,no_tool_properly,no_tool,properly,3,249,assistant,0.04345882683992386
+codecontests_cpp_1,no_tool_properly,no_tool,properly,4,152, below,0.031067775562405586
+codecontests_cpp_1,no_tool_properly,no_tool,properly,5,38,"{""",0.030945107340812683
+codecontests_java_1,original_clean,tool,original,1,18, query,0.0642862319946289
+codecontests_java_1,original_clean,tool,original,2,246,\n\n,0.05779576301574707
+codecontests_java_1,original_clean,tool,original,3,241,assistant,0.04913939908146858
+codecontests_java_1,original_clean,tool,original,4,149, below,0.04357257857918739
+codecontests_java_1,original_clean,tool,original,5,38,"{""",0.032366469502449036
+codecontests_java_1,original_corrupt,no_tool,original,1,135, the,0.14765368402004242
+codecontests_java_1,original_corrupt,no_tool,original,2,18, query,0.054308608174324036
+codecontests_java_1,original_corrupt,no_tool,original,3,246,\n\n,0.04663011059165001
+codecontests_java_1,original_corrupt,no_tool,original,4,241,assistant,0.04343552887439728
+codecontests_java_1,original_corrupt,no_tool,original,5,149, below,0.039560724049806595
+codecontests_java_1,tool_out,tool,out,1,136, the,0.05690933018922806
+codecontests_java_1,tool_out,tool,out,2,18, query,0.05569317564368248
+codecontests_java_1,tool_out,tool,out,3,247,\n\n,0.05320974066853523
+codecontests_java_1,tool_out,tool,out,4,242,assistant,0.041458819061517715
+codecontests_java_1,tool_out,tool,out,5,150, below,0.03937757760286331
+codecontests_java_1,no_tool_out,no_tool,out,1,18, query,0.062160659581422806
+codecontests_java_1,no_tool_out,no_tool,out,2,247,\n\n,0.05377110093832016
+codecontests_java_1,no_tool_out,no_tool,out,3,242,assistant,0.04490383714437485
+codecontests_java_1,no_tool_out,no_tool,out,4,150, below,0.04340457171201706
+codecontests_java_1,no_tool_out,no_tool,out,5,136, the,0.03950360044836998
+codecontests_java_1,tool_manually,tool,manually,1,18, query,0.061724524945020676
+codecontests_java_1,tool_manually,tool,manually,2,248,\n\n,0.056187212467193604
+codecontests_java_1,tool_manually,tool,manually,3,243,assistant,0.043465156108140945
+codecontests_java_1,tool_manually,tool,manually,4,137, the,0.03746119514107704
+codecontests_java_1,tool_manually,tool,manually,5,151, below,0.036044925451278687
+codecontests_java_1,no_tool_manually,no_tool,manually,1,18, query,0.06108514592051506
+codecontests_java_1,no_tool_manually,no_tool,manually,2,248,\n\n,0.05531265214085579
+codecontests_java_1,no_tool_manually,no_tool,manually,3,243,assistant,0.041559528559446335
+codecontests_java_1,no_tool_manually,no_tool,manually,4,137, the,0.04017641022801399
+codecontests_java_1,no_tool_manually,no_tool,manually,5,151, below,0.03551528975367546
+codecontests_java_1,tool_properly,tool,properly,1,18, query,0.057594504207372665
+codecontests_java_1,tool_properly,tool,properly,2,249,\n\n,0.056166939437389374
+codecontests_java_1,tool_properly,tool,properly,3,244,assistant,0.04321087524294853
+codecontests_java_1,tool_properly,tool,properly,4,38,"{""",0.03428097814321518
+codecontests_java_1,tool_properly,tool,properly,5,152, below,0.03298230469226837
+codecontests_java_1,no_tool_properly,no_tool,properly,1,18, query,0.05652707442641258
+codecontests_java_1,no_tool_properly,no_tool,properly,2,249,\n\n,0.05600652098655701
+codecontests_java_1,no_tool_properly,no_tool,properly,3,244,assistant,0.04283497482538223
+codecontests_java_1,no_tool_properly,no_tool,properly,4,152, below,0.03534775599837303
+codecontests_java_1,no_tool_properly,no_tool,properly,5,38,"{""",0.03447793796658516
+mbpp_python_1,original_clean,tool,original,1,18, query,0.07871535420417786
+mbpp_python_1,original_clean,tool,original,2,302,\n\n,0.05751994624733925
+mbpp_python_1,original_clean,tool,original,3,297,assistant,0.04618358984589577
+mbpp_python_1,original_clean,tool,original,4,151, below,0.03778612241148949
+mbpp_python_1,original_clean,tool,original,5,137, the,0.03005049005150795
+mbpp_python_1,original_corrupt,no_tool,original,1,18, query,0.0827343538403511
+mbpp_python_1,original_corrupt,no_tool,original,2,302,\n\n,0.059049248695373535
+mbpp_python_1,original_corrupt,no_tool,original,3,297,assistant,0.04752189666032791
+mbpp_python_1,original_corrupt,no_tool,original,4,151, below,0.03656110540032387
+mbpp_python_1,original_corrupt,no_tool,original,5,160," """"""\n",0.03088950179517269
+mbpp_python_1,tool_out,tool,out,1,18, query,0.0620645135641098
+mbpp_python_1,tool_out,tool,out,2,136, the,0.061522647738456726
+mbpp_python_1,tool_out,tool,out,3,301,\n\n,0.05386050045490265
+mbpp_python_1,tool_out,tool,out,4,296,assistant,0.0424719862639904
+mbpp_python_1,tool_out,tool,out,5,150, below,0.0407460480928421
+mbpp_python_1,no_tool_out,no_tool,out,1,18, query,0.06820935010910034
+mbpp_python_1,no_tool_out,no_tool,out,2,301,\n\n,0.05465377867221832
+mbpp_python_1,no_tool_out,no_tool,out,3,296,assistant,0.04555762931704521
+mbpp_python_1,no_tool_out,no_tool,out,4,136, the,0.043765030801296234
+mbpp_python_1,no_tool_out,no_tool,out,5,150, below,0.042852405458688736
+mbpp_python_1,tool_manually,tool,manually,1,18, query,0.07871535420417786
+mbpp_python_1,tool_manually,tool,manually,2,302,\n\n,0.05751994624733925
+mbpp_python_1,tool_manually,tool,manually,3,297,assistant,0.04618358984589577
+mbpp_python_1,tool_manually,tool,manually,4,151, below,0.03778612241148949
+mbpp_python_1,tool_manually,tool,manually,5,137, the,0.03005049005150795
+mbpp_python_1,no_tool_manually,no_tool,manually,1,18, query,0.07758364081382751
+mbpp_python_1,no_tool_manually,no_tool,manually,2,302,\n\n,0.057014551013708115
+mbpp_python_1,no_tool_manually,no_tool,manually,3,297,assistant,0.04535272717475891
+mbpp_python_1,no_tool_manually,no_tool,manually,4,151, below,0.03725970536470413
+mbpp_python_1,no_tool_manually,no_tool,manually,5,137, the,0.03641682490706444
+mbpp_python_1,tool_properly,tool,properly,1,18, query,0.08400478959083557
+mbpp_python_1,tool_properly,tool,properly,2,303,\n\n,0.05712736397981644
+mbpp_python_1,tool_properly,tool,properly,3,298,assistant,0.04574405774474144
+mbpp_python_1,tool_properly,tool,properly,4,152, below,0.03281699866056442
+mbpp_python_1,tool_properly,tool,properly,5,161," """"""\n",0.0263501089066267
+mbpp_python_1,no_tool_properly,no_tool,properly,1,18, query,0.08266421407461166
+mbpp_python_1,no_tool_properly,no_tool,properly,2,303,\n\n,0.05518684163689613
+mbpp_python_1,no_tool_properly,no_tool,properly,3,298,assistant,0.04445536434650421
+mbpp_python_1,no_tool_properly,no_tool,properly,4,152, below,0.035825468599796295
+mbpp_python_1,no_tool_properly,no_tool,properly,5,161," """"""\n",0.030066898092627525
+codecontests_java_2,original_clean,tool,original,1,150, below,0.06210935115814209
+codecontests_java_2,original_clean,tool,original,2,288,\n\n,0.05496279522776604
+codecontests_java_2,original_clean,tool,original,3,18, query,0.04496254771947861
+codecontests_java_2,original_clean,tool,original,4,283,assistant,0.04414064437150955
+codecontests_java_2,original_clean,tool,original,5,136, the,0.028905684128403664
+codecontests_java_2,original_corrupt,no_tool,original,1,136, the,0.11164852231740952
+codecontests_java_2,original_corrupt,no_tool,original,2,150, below,0.04792020469903946
+codecontests_java_2,original_corrupt,no_tool,original,3,288,\n\n,0.04568793997168541
+codecontests_java_2,original_corrupt,no_tool,original,4,18, query,0.04059065133333206
+codecontests_java_2,original_corrupt,no_tool,original,5,135,ise,0.03903821483254433
+codecontests_java_2,tool_out,tool,out,1,136, the,0.0664178729057312
+codecontests_java_2,tool_out,tool,out,2,150, below,0.053372789174318314
+codecontests_java_2,tool_out,tool,out,3,288,\n\n,0.050249289721250534
+codecontests_java_2,tool_out,tool,out,4,18, query,0.04217615723609924
+codecontests_java_2,tool_out,tool,out,5,283,assistant,0.03920497000217438
+codecontests_java_2,no_tool_out,no_tool,out,1,150, below,0.05906035006046295
+codecontests_java_2,no_tool_out,no_tool,out,2,288,\n\n,0.05202914774417877
+codecontests_java_2,no_tool_out,no_tool,out,3,136, the,0.04868876934051514
+codecontests_java_2,no_tool_out,no_tool,out,4,18, query,0.045905277132987976
+codecontests_java_2,no_tool_out,no_tool,out,5,283,assistant,0.04274376109242439
+codecontests_java_2,tool_manually,tool,manually,1,289,\n\n,0.05231963098049164
+codecontests_java_2,tool_manually,tool,manually,2,151, below,0.049768149852752686
+codecontests_java_2,tool_manually,tool,manually,3,18, query,0.04854711890220642
+codecontests_java_2,tool_manually,tool,manually,4,284,assistant,0.045028507709503174
+codecontests_java_2,tool_manually,tool,manually,5,137, the,0.044230952858924866
+codecontests_java_2,no_tool_manually,no_tool,manually,1,289,\n\n,0.05155724659562111
+codecontests_java_2,no_tool_manually,no_tool,manually,2,151, below,0.049682989716529846
+codecontests_java_2,no_tool_manually,no_tool,manually,3,18, query,0.048014767467975616
+codecontests_java_2,no_tool_manually,no_tool,manually,4,137, the,0.04506416618824005
+codecontests_java_2,no_tool_manually,no_tool,manually,5,284,assistant,0.04406162351369858
+codecontests_java_2,tool_properly,tool,properly,1,18, query,0.05297079309821129
+codecontests_java_2,tool_properly,tool,properly,2,290,\n\n,0.05269593745470047
+codecontests_java_2,tool_properly,tool,properly,3,285,assistant,0.04660198464989662
+codecontests_java_2,tool_properly,tool,properly,4,152, below,0.04642791301012039
+codecontests_java_2,tool_properly,tool,properly,5,137, add,0.03329822048544884
+codecontests_java_2,no_tool_properly,no_tool,properly,1,290,\n\n,0.052861522883176804
+codecontests_java_2,no_tool_properly,no_tool,properly,2,18, query,0.05221986770629883
+codecontests_java_2,no_tool_properly,no_tool,properly,3,152, below,0.047813646495342255
+codecontests_java_2,no_tool_properly,no_tool,properly,4,285,assistant,0.045726507902145386
+codecontests_java_2,no_tool_properly,no_tool,properly,5,138, the,0.027660081163048744
+codecontests_cpp_3,original_clean,tool,original,1,135, the,0.05847826600074768
+codecontests_cpp_3,original_clean,tool,original,2,18, query,0.05424140766263008
+codecontests_cpp_3,original_clean,tool,original,3,239,assistant,0.050368648022413254
+codecontests_cpp_3,original_clean,tool,original,4,244,\n\n,0.04931196570396423
+codecontests_cpp_3,original_clean,tool,original,5,149, below,0.03341101109981537
+codecontests_cpp_3,original_corrupt,no_tool,original,1,135, the,0.08749796450138092
+codecontests_cpp_3,original_corrupt,no_tool,original,2,18, query,0.05181724950671196
+codecontests_cpp_3,original_corrupt,no_tool,original,3,239,assistant,0.0473865307867527
+codecontests_cpp_3,original_corrupt,no_tool,original,4,244,\n\n,0.045682571828365326
+codecontests_cpp_3,original_corrupt,no_tool,original,5,134,Implement,0.03213341534137726
+codecontests_cpp_3,tool_out,tool,out,1,18, query,0.055163998156785965
+codecontests_cpp_3,tool_out,tool,out,2,136, the,0.05120772868394852
+codecontests_cpp_3,tool_out,tool,out,3,240,assistant,0.0490703359246254
+codecontests_cpp_3,tool_out,tool,out,4,245,\n\n,0.047913964837789536
+codecontests_cpp_3,tool_out,tool,out,5,134,Write,0.03498278930783272
+codecontests_cpp_3,no_tool_out,no_tool,out,1,18, query,0.06031332537531853
+codecontests_cpp_3,no_tool_out,no_tool,out,2,240,assistant,0.05248955637216568
+codecontests_cpp_3,no_tool_out,no_tool,out,3,245,\n\n,0.04817116633057594
+codecontests_cpp_3,no_tool_out,no_tool,out,4,136, the,0.03525257483124733
+codecontests_cpp_3,no_tool_out,no_tool,out,5,38,"{""",0.03132177144289017
+codecontests_cpp_3,tool_manually,tool,manually,1,18, query,0.06543860584497452
+codecontests_cpp_3,tool_manually,tool,manually,2,241,assistant,0.05186339467763901
+codecontests_cpp_3,tool_manually,tool,manually,3,246,\n\n,0.050002321600914
+codecontests_cpp_3,tool_manually,tool,manually,4,137, the,0.034240420907735825
+codecontests_cpp_3,tool_manually,tool,manually,5,38,"{""",0.033091332763433456
+codecontests_cpp_3,no_tool_manually,no_tool,manually,1,18, query,0.06492894887924194
+codecontests_cpp_3,no_tool_manually,no_tool,manually,2,241,assistant,0.05051441863179207
+codecontests_cpp_3,no_tool_manually,no_tool,manually,3,246,\n\n,0.05047782137989998
+codecontests_cpp_3,no_tool_manually,no_tool,manually,4,137, the,0.035498782992362976
+codecontests_cpp_3,no_tool_manually,no_tool,manually,5,38,"{""",0.033462900668382645
+codecontests_cpp_3,tool_properly,tool,properly,1,18, query,0.06659725308418274
+codecontests_cpp_3,tool_properly,tool,properly,2,247,\n\n,0.05236883461475372
+codecontests_cpp_3,tool_properly,tool,properly,3,242,assistant,0.04916726425290108
+codecontests_cpp_3,tool_properly,tool,properly,4,38,"{""",0.03435983508825302
+codecontests_cpp_3,tool_properly,tool,properly,5,137, add,0.029344836249947548
+codecontests_cpp_3,no_tool_properly,no_tool,properly,1,18, query,0.06526098400354385
+codecontests_cpp_3,no_tool_properly,no_tool,properly,2,247,\n\n,0.051075201481580734
+codecontests_cpp_3,no_tool_properly,no_tool,properly,3,242,assistant,0.04812787100672722
+codecontests_cpp_3,no_tool_properly,no_tool,properly,4,38,"{""",0.0351719856262207
+codecontests_cpp_3,no_tool_properly,no_tool,properly,5,152, below,0.025093458592891693
+codecontests_java_3,original_clean,tool,original,1,239,\n\n,0.05628174543380737
+codecontests_java_3,original_clean,tool,original,2,18, query,0.05278943479061127
+codecontests_java_3,original_clean,tool,original,3,234,assistant,0.05011094734072685
+codecontests_java_3,original_clean,tool,original,4,149, below,0.03769824281334877
+codecontests_java_3,original_clean,tool,original,5,38,"{""",0.02589200995862484
+codecontests_java_3,original_corrupt,no_tool,original,1,135, the,0.14774812757968903
+codecontests_java_3,original_corrupt,no_tool,original,2,239,\n\n,0.04734091833233833
+codecontests_java_3,original_corrupt,no_tool,original,3,18, query,0.04423617571592331
+codecontests_java_3,original_corrupt,no_tool,original,4,234,assistant,0.04342958331108093
+codecontests_java_3,original_corrupt,no_tool,original,5,149, below,0.034798964858055115
+codecontests_java_3,tool_out,tool,out,1,136, the,0.0570249930024147
+codecontests_java_3,tool_out,tool,out,2,240,\n\n,0.05350446701049805
+codecontests_java_3,tool_out,tool,out,3,18, query,0.04869198426604271
+codecontests_java_3,tool_out,tool,out,4,235,assistant,0.04414762556552887
+codecontests_java_3,tool_out,tool,out,5,150, below,0.03367694094777107
+codecontests_java_3,no_tool_out,no_tool,out,1,240,\n\n,0.05364594981074333
+codecontests_java_3,no_tool_out,no_tool,out,2,18, query,0.05230722948908806
+codecontests_java_3,no_tool_out,no_tool,out,3,235,assistant,0.0478036068379879
+codecontests_java_3,no_tool_out,no_tool,out,4,136, the,0.03853404149413109
+codecontests_java_3,no_tool_out,no_tool,out,5,150, below,0.03581559285521507
+codecontests_java_3,tool_manually,tool,manually,1,18, query,0.056274231523275375
+codecontests_java_3,tool_manually,tool,manually,2,241,\n\n,0.05213164538145065
+codecontests_java_3,tool_manually,tool,manually,3,236,assistant,0.04931412637233734
+codecontests_java_3,tool_manually,tool,manually,4,137, the,0.03678789734840393
+codecontests_java_3,tool_manually,tool,manually,5,151, below,0.030726267024874687
+codecontests_java_3,no_tool_manually,no_tool,manually,1,18, query,0.055076152086257935
+codecontests_java_3,no_tool_manually,no_tool,manually,2,241,\n\n,0.05383331701159477
+codecontests_java_3,no_tool_manually,no_tool,manually,3,236,assistant,0.04901588708162308
+codecontests_java_3,no_tool_manually,no_tool,manually,4,137, the,0.040345676243305206
+codecontests_java_3,no_tool_manually,no_tool,manually,5,151, below,0.030385147780179977
+codecontests_java_3,tool_properly,tool,properly,1,18, query,0.058530766516923904
+codecontests_java_3,tool_properly,tool,properly,2,242,\n\n,0.05330486595630646
+codecontests_java_3,tool_properly,tool,properly,3,237,assistant,0.04976099357008934
+codecontests_java_3,tool_properly,tool,properly,4,152, below,0.027386510744690895
+codecontests_java_3,tool_properly,tool,properly,5,38,"{""",0.027108175680041313
+codecontests_java_3,no_tool_properly,no_tool,properly,1,18, query,0.05732063949108124
+codecontests_java_3,no_tool_properly,no_tool,properly,2,242,\n\n,0.055173687636852264
+codecontests_java_3,no_tool_properly,no_tool,properly,3,237,assistant,0.048733461648225784
+codecontests_java_3,no_tool_properly,no_tool,properly,4,152, below,0.02937985211610794
+codecontests_java_3,no_tool_properly,no_tool,properly,5,38,"{""",0.027251852676272392
+apps_python_4,original_clean,tool,original,1,18, query,0.057941704988479614
+apps_python_4,original_clean,tool,original,2,136, the,0.0559040829539299
+apps_python_4,original_clean,tool,original,3,239,\n\n,0.04791194573044777
+apps_python_4,original_clean,tool,original,4,234,assistant,0.041733209043741226
+apps_python_4,original_clean,tool,original,5,150, below,0.026870721951127052
+apps_python_4,original_corrupt,no_tool,original,1,18, query,0.06418508291244507
+apps_python_4,original_corrupt,no_tool,original,2,239,\n\n,0.04805789515376091
+apps_python_4,original_corrupt,no_tool,original,3,234,assistant,0.04430253058671951
+apps_python_4,original_corrupt,no_tool,original,4,136, the,0.038328252732753754
+apps_python_4,original_corrupt,no_tool,original,5,150, below,0.028432538732886314
+apps_python_4,tool_out,tool,out,1,18, query,0.057941704988479614
+apps_python_4,tool_out,tool,out,2,136, the,0.0559040829539299
+apps_python_4,tool_out,tool,out,3,239,\n\n,0.04791194573044777
+apps_python_4,tool_out,tool,out,4,234,assistant,0.041733209043741226
+apps_python_4,tool_out,tool,out,5,150, below,0.026870721951127052
+apps_python_4,no_tool_out,no_tool,out,1,18, query,0.06418508291244507
+apps_python_4,no_tool_out,no_tool,out,2,239,\n\n,0.04805789515376091
+apps_python_4,no_tool_out,no_tool,out,3,234,assistant,0.04430253058671951
+apps_python_4,no_tool_out,no_tool,out,4,136, the,0.038328252732753754
+apps_python_4,no_tool_out,no_tool,out,5,150, below,0.028432538732886314
+apps_python_4,tool_manually,tool,manually,1,18, query,0.06855671852827072
+apps_python_4,tool_manually,tool,manually,2,240,\n\n,0.0495687797665596
+apps_python_4,tool_manually,tool,manually,3,235,assistant,0.04545397683978081
+apps_python_4,tool_manually,tool,manually,4,137, the,0.03196127712726593
+apps_python_4,tool_manually,tool,manually,5,38,"{""",0.02743748389184475
+apps_python_4,no_tool_manually,no_tool,manually,1,18, query,0.06792020797729492
+apps_python_4,no_tool_manually,no_tool,manually,2,240,\n\n,0.0502464585006237
+apps_python_4,no_tool_manually,no_tool,manually,3,235,assistant,0.04346504062414169
+apps_python_4,no_tool_manually,no_tool,manually,4,137, the,0.03399375453591347
+apps_python_4,no_tool_manually,no_tool,manually,5,38,"{""",0.027461396530270576
+apps_python_4,tool_properly,tool,properly,1,18, query,0.07114646583795547
+apps_python_4,tool_properly,tool,properly,2,241,\n\n,0.04886869341135025
+apps_python_4,tool_properly,tool,properly,3,236,assistant,0.04672466963529587
+apps_python_4,tool_properly,tool,properly,4,38,"{""",0.02939235419034958
+apps_python_4,tool_properly,tool,properly,5,8, call,0.029201583936810493
+apps_python_4,no_tool_properly,no_tool,properly,1,18, query,0.07031092792749405
+apps_python_4,no_tool_properly,no_tool,properly,2,241,\n\n,0.049535706639289856
+apps_python_4,no_tool_properly,no_tool,properly,3,236,assistant,0.0442860946059227
+apps_python_4,no_tool_properly,no_tool,properly,4,38,"{""",0.029950987547636032
+apps_python_4,no_tool_properly,no_tool,properly,5,8, call,0.02879379317164421
+codecontests_cpp_4,original_clean,tool,original,1,242,\n\n,0.053592100739479065
+codecontests_cpp_4,original_clean,tool,original,2,18, query,0.05296894907951355
+codecontests_cpp_4,original_clean,tool,original,3,135, the,0.05020492896437645
+codecontests_cpp_4,original_clean,tool,original,4,237,assistant,0.04722009599208832
+codecontests_cpp_4,original_clean,tool,original,5,149, below,0.03942122310400009
+codecontests_cpp_4,original_corrupt,no_tool,original,1,135, the,0.09980552643537521
+codecontests_cpp_4,original_corrupt,no_tool,original,2,242,\n\n,0.05169134587049484
+codecontests_cpp_4,original_corrupt,no_tool,original,3,18, query,0.05116996541619301
+codecontests_cpp_4,original_corrupt,no_tool,original,4,237,assistant,0.045593224465847015
+codecontests_cpp_4,original_corrupt,no_tool,original,5,149, below,0.03220752626657486
+codecontests_cpp_4,tool_out,tool,out,1,136, the,0.05455763265490532
+codecontests_cpp_4,tool_out,tool,out,2,243,\n\n,0.054031919687986374
+codecontests_cpp_4,tool_out,tool,out,3,18, query,0.05144151300191879
+codecontests_cpp_4,tool_out,tool,out,4,238,assistant,0.04681476578116417
+codecontests_cpp_4,tool_out,tool,out,5,134,Write,0.030219411477446556
+codecontests_cpp_4,no_tool_out,no_tool,out,1,18, query,0.0564887598156929
+codecontests_cpp_4,no_tool_out,no_tool,out,2,243,\n\n,0.05522136762738228
+codecontests_cpp_4,no_tool_out,no_tool,out,3,238,assistant,0.049857430160045624
+codecontests_cpp_4,no_tool_out,no_tool,out,4,136, the,0.03691751882433891
+codecontests_cpp_4,no_tool_out,no_tool,out,5,150, below,0.03030386194586754
+codecontests_cpp_4,tool_manually,tool,manually,1,18, query,0.05824791267514229
+codecontests_cpp_4,tool_manually,tool,manually,2,244,\n\n,0.05520658195018768
+codecontests_cpp_4,tool_manually,tool,manually,3,239,assistant,0.051352839916944504
+codecontests_cpp_4,tool_manually,tool,manually,4,137, the,0.03260238841176033
+codecontests_cpp_4,tool_manually,tool,manually,5,38,"{""",0.02974257618188858
+codecontests_cpp_4,no_tool_manually,no_tool,manually,1,18, query,0.058143097907304764
+codecontests_cpp_4,no_tool_manually,no_tool,manually,2,244,\n\n,0.0549113005399704
+codecontests_cpp_4,no_tool_manually,no_tool,manually,3,239,assistant,0.050125401467084885
+codecontests_cpp_4,no_tool_manually,no_tool,manually,4,137, the,0.036626335233449936
+codecontests_cpp_4,no_tool_manually,no_tool,manually,5,38,"{""",0.029937010258436203
+codecontests_cpp_4,tool_properly,tool,properly,1,18, query,0.06270363181829453
+codecontests_cpp_4,tool_properly,tool,properly,2,245,\n\n,0.05550515651702881
+codecontests_cpp_4,tool_properly,tool,properly,3,240,assistant,0.052661098539829254
+codecontests_cpp_4,tool_properly,tool,properly,4,38,"{""",0.03169897198677063
+codecontests_cpp_4,tool_properly,tool,properly,5,14, assist,0.02735050953924656
+codecontests_cpp_4,no_tool_properly,no_tool,properly,1,18, query,0.06231122463941574
+codecontests_cpp_4,no_tool_properly,no_tool,properly,2,245,\n\n,0.05602298304438591
+codecontests_cpp_4,no_tool_properly,no_tool,properly,3,240,assistant,0.05088691785931587
+codecontests_cpp_4,no_tool_properly,no_tool,properly,4,38,"{""",0.032180026173591614
+codecontests_cpp_4,no_tool_properly,no_tool,properly,5,14, assist,0.02703152410686016
+codecontests_java_4,original_clean,tool,original,1,237,\n\n,0.06361314654350281
+codecontests_java_4,original_clean,tool,original,2,18, query,0.05525340884923935
+codecontests_java_4,original_clean,tool,original,3,232,assistant,0.0520135723054409
+codecontests_java_4,original_clean,tool,original,4,38,"{""",0.02975095994770527
+codecontests_java_4,original_clean,tool,original,5,149, below,0.027688780799508095
+codecontests_java_4,original_corrupt,no_tool,original,1,135, the,0.06731517612934113
+codecontests_java_4,original_corrupt,no_tool,original,2,237,\n\n,0.058128345757722855
+codecontests_java_4,original_corrupt,no_tool,original,3,18, query,0.05161917954683304
+codecontests_java_4,original_corrupt,no_tool,original,4,232,assistant,0.0475040040910244
+codecontests_java_4,original_corrupt,no_tool,original,5,149, below,0.03146888315677643
+codecontests_java_4,tool_out,tool,out,1,238,\n\n,0.058973025530576706
+codecontests_java_4,tool_out,tool,out,2,136, the,0.053909871727228165
+codecontests_java_4,tool_out,tool,out,3,18, query,0.04646989330649376
+codecontests_java_4,tool_out,tool,out,4,233,assistant,0.04608361795544624
+codecontests_java_4,tool_out,tool,out,5,134,Write,0.031717877835035324
+codecontests_java_4,no_tool_out,no_tool,out,1,238,\n\n,0.06187676265835762
+codecontests_java_4,no_tool_out,no_tool,out,2,18, query,0.05033799260854721
+codecontests_java_4,no_tool_out,no_tool,out,3,233,assistant,0.04954029992222786
+codecontests_java_4,no_tool_out,no_tool,out,4,136, the,0.03646042197942734
+codecontests_java_4,no_tool_out,no_tool,out,5,150, below,0.029301440343260765
+codecontests_java_4,tool_manually,tool,manually,1,239,\n\n,0.06214813515543938
+codecontests_java_4,tool_manually,tool,manually,2,18, query,0.05295581743121147
+codecontests_java_4,tool_manually,tool,manually,3,234,assistant,0.04735087975859642
+codecontests_java_4,tool_manually,tool,manually,4,137, the,0.03508686646819115
+codecontests_java_4,tool_manually,tool,manually,5,151, below,0.024884872138500214
+codecontests_java_4,no_tool_manually,no_tool,manually,1,239,\n\n,0.06167655810713768
+codecontests_java_4,no_tool_manually,no_tool,manually,2,18, query,0.05180429667234421
+codecontests_java_4,no_tool_manually,no_tool,manually,3,234,assistant,0.0469864085316658
+codecontests_java_4,no_tool_manually,no_tool,manually,4,137, the,0.03755694627761841
+codecontests_java_4,no_tool_manually,no_tool,manually,5,38,"{""",0.024094417691230774
+codecontests_java_4,tool_properly,tool,properly,1,240,\n\n,0.06147461757063866
+codecontests_java_4,tool_properly,tool,properly,2,18, query,0.05665910989046097
+codecontests_java_4,tool_properly,tool,properly,3,235,assistant,0.04871174693107605
+codecontests_java_4,tool_properly,tool,properly,4,137, add,0.02636430412530899
+codecontests_java_4,tool_properly,tool,properly,5,38,"{""",0.023829318583011627
+codecontests_java_4,no_tool_properly,no_tool,properly,1,240,\n\n,0.06300394237041473
+codecontests_java_4,no_tool_properly,no_tool,properly,2,18, query,0.055743977427482605
+codecontests_java_4,no_tool_properly,no_tool,properly,3,235,assistant,0.04762992262840271
+codecontests_java_4,no_tool_properly,no_tool,properly,4,38,"{""",0.024055734276771545
+codecontests_java_4,no_tool_properly,no_tool,properly,5,138, the,0.023845916613936424
+mbpp_python_4,original_clean,tool,original,1,18, query,0.06671522557735443
+mbpp_python_4,original_clean,tool,original,2,136, the,0.05483194440603256
+mbpp_python_4,original_clean,tool,original,3,212,\n\n,0.04495813325047493
+mbpp_python_4,original_clean,tool,original,4,207,assistant,0.038879018276929855
+mbpp_python_4,original_clean,tool,original,5,38,"{""",0.03542766347527504
+mbpp_python_4,original_corrupt,no_tool,original,1,18, query,0.07226445525884628
+mbpp_python_4,original_corrupt,no_tool,original,2,212,\n\n,0.047140613198280334
+mbpp_python_4,original_corrupt,no_tool,original,3,207,assistant,0.041185054928064346
+mbpp_python_4,original_corrupt,no_tool,original,4,38,"{""",0.0382830910384655
+mbpp_python_4,original_corrupt,no_tool,original,5,136, the,0.03817703202366829
+mbpp_python_4,tool_out,tool,out,1,18, query,0.06671522557735443
+mbpp_python_4,tool_out,tool,out,2,136, the,0.05483194440603256
+mbpp_python_4,tool_out,tool,out,3,212,\n\n,0.04495813325047493
+mbpp_python_4,tool_out,tool,out,4,207,assistant,0.038879018276929855
+mbpp_python_4,tool_out,tool,out,5,38,"{""",0.03542766347527504
+mbpp_python_4,no_tool_out,no_tool,out,1,18, query,0.07226445525884628
+mbpp_python_4,no_tool_out,no_tool,out,2,212,\n\n,0.047140613198280334
+mbpp_python_4,no_tool_out,no_tool,out,3,207,assistant,0.041185054928064346
+mbpp_python_4,no_tool_out,no_tool,out,4,38,"{""",0.0382830910384655
+mbpp_python_4,no_tool_out,no_tool,out,5,136, the,0.03817703202366829
+mbpp_python_4,tool_manually,tool,manually,1,18, query,0.08152026683092117
+mbpp_python_4,tool_manually,tool,manually,2,213,\n\n,0.046547893434762955
+mbpp_python_4,tool_manually,tool,manually,3,208,assistant,0.04034718871116638
+mbpp_python_4,tool_manually,tool,manually,4,38,"{""",0.037159401923418045
+mbpp_python_4,tool_manually,tool,manually,5,137, the,0.03022540546953678
+mbpp_python_4,no_tool_manually,no_tool,manually,1,18, query,0.07994557172060013
+mbpp_python_4,no_tool_manually,no_tool,manually,2,213,\n\n,0.04595012217760086
+mbpp_python_4,no_tool_manually,no_tool,manually,3,208,assistant,0.03864254802465439
+mbpp_python_4,no_tool_manually,no_tool,manually,4,38,"{""",0.037648726254701614
+mbpp_python_4,no_tool_manually,no_tool,manually,5,137, the,0.034265272319316864
+mbpp_python_4,tool_properly,tool,properly,1,18, query,0.09191929548978806
+mbpp_python_4,tool_properly,tool,properly,2,214,\n\n,0.046608779579401016
+mbpp_python_4,tool_properly,tool,properly,3,209,assistant,0.039801135659217834
+mbpp_python_4,tool_properly,tool,properly,4,38,"{""",0.03482437506318092
+mbpp_python_4,tool_properly,tool,properly,5,24, function,0.028580885380506516
+mbpp_python_4,no_tool_properly,no_tool,properly,1,18, query,0.09009408205747604
+mbpp_python_4,no_tool_properly,no_tool,properly,2,214,\n\n,0.04678431898355484
+mbpp_python_4,no_tool_properly,no_tool,properly,3,209,assistant,0.03891606256365776
+mbpp_python_4,no_tool_properly,no_tool,properly,4,38,"{""",0.03537040576338768
+mbpp_python_4,no_tool_properly,no_tool,properly,5,24, function,0.028826845809817314
+apps_python_5,original_clean,tool,original,1,18, query,0.07467527687549591
+apps_python_5,original_clean,tool,original,2,243,\n\n,0.04836328327655792
+apps_python_5,original_clean,tool,original,3,238,assistant,0.044225312769412994
+apps_python_5,original_clean,tool,original,4,8, call,0.04103470221161842
+apps_python_5,original_clean,tool,original,5,38,"{""",0.03494894877076149
+apps_python_5,original_corrupt,no_tool,original,1,18, query,0.07618562877178192
+apps_python_5,original_corrupt,no_tool,original,2,243,\n\n,0.04883018508553505
+apps_python_5,original_corrupt,no_tool,original,3,238,assistant,0.04361914098262787
+apps_python_5,original_corrupt,no_tool,original,4,8, call,0.041886456310749054
+apps_python_5,original_corrupt,no_tool,original,5,38,"{""",0.035969771444797516
+apps_python_5,tool_out,tool,out,1,18, query,0.06665338575839996
+apps_python_5,tool_out,tool,out,2,136, the,0.06253539770841599
+apps_python_5,tool_out,tool,out,3,242,\n\n,0.04757564514875412
+apps_python_5,tool_out,tool,out,4,237,assistant,0.0381697453558445
+apps_python_5,tool_out,tool,out,5,8, call,0.0328044556081295
+apps_python_5,no_tool_out,no_tool,out,1,18, query,0.07259631156921387
+apps_python_5,no_tool_out,no_tool,out,2,242,\n\n,0.04776568338274956
+apps_python_5,no_tool_out,no_tool,out,3,237,assistant,0.04126555100083351
+apps_python_5,no_tool_out,no_tool,out,4,136, the,0.04066408425569534
+apps_python_5,no_tool_out,no_tool,out,5,8, call,0.035348933190107346
+apps_python_5,tool_manually,tool,manually,1,18, query,0.07405337691307068
+apps_python_5,tool_manually,tool,manually,2,243,\n\n,0.04777466878294945
+apps_python_5,tool_manually,tool,manually,3,238,assistant,0.04311934858560562
+apps_python_5,tool_manually,tool,manually,4,8, call,0.04015253484249115
+apps_python_5,tool_manually,tool,manually,5,38,"{""",0.03395657613873482
+apps_python_5,no_tool_manually,no_tool,manually,1,18, query,0.0742352306842804
+apps_python_5,no_tool_manually,no_tool,manually,2,243,\n\n,0.0469638854265213
+apps_python_5,no_tool_manually,no_tool,manually,3,238,assistant,0.04160638526082039
+apps_python_5,no_tool_manually,no_tool,manually,4,8, call,0.04075130447745323
+apps_python_5,no_tool_manually,no_tool,manually,5,38,"{""",0.033977046608924866
+apps_python_5,tool_properly,tool,properly,1,18, query,0.0773288756608963
+apps_python_5,tool_properly,tool,properly,2,244,\n\n,0.047534603625535965
+apps_python_5,tool_properly,tool,properly,3,239,assistant,0.043290864676237106
+apps_python_5,tool_properly,tool,properly,4,8, call,0.03993254154920578
+apps_python_5,tool_properly,tool,properly,5,38,"{""",0.037249598652124405
+apps_python_5,no_tool_properly,no_tool,properly,1,18, query,0.0747055783867836
+apps_python_5,no_tool_properly,no_tool,properly,2,244,\n\n,0.04842856153845787
+apps_python_5,no_tool_properly,no_tool,properly,3,239,assistant,0.041601430624723434
+apps_python_5,no_tool_properly,no_tool,properly,4,8, call,0.03966979682445526
+apps_python_5,no_tool_properly,no_tool,properly,5,38,"{""",0.03733216971158981
+codecontests_cpp_5,original_clean,tool,original,1,135, the,0.06757460534572601
+codecontests_cpp_5,original_clean,tool,original,2,238,\n\n,0.05388539656996727
+codecontests_cpp_5,original_clean,tool,original,3,233,assistant,0.04994461312890053
+codecontests_cpp_5,original_clean,tool,original,4,18, query,0.046935491263866425
+codecontests_cpp_5,original_clean,tool,original,5,149, below,0.03070555068552494
+codecontests_cpp_5,original_corrupt,no_tool,original,1,135, the,0.11368830502033234
+codecontests_cpp_5,original_corrupt,no_tool,original,2,238,\n\n,0.04912693053483963
+codecontests_cpp_5,original_corrupt,no_tool,original,3,233,assistant,0.04777806997299194
+codecontests_cpp_5,original_corrupt,no_tool,original,4,18, query,0.04358390346169472
+codecontests_cpp_5,original_corrupt,no_tool,original,5,149, below,0.029136262834072113
+codecontests_cpp_5,tool_out,tool,out,1,136, the,0.05744366720318794
+codecontests_cpp_5,tool_out,tool,out,2,239,\n\n,0.05371938273310661
+codecontests_cpp_5,tool_out,tool,out,3,234,assistant,0.04757634922862053
+codecontests_cpp_5,tool_out,tool,out,4,18, query,0.04492342472076416
+codecontests_cpp_5,tool_out,tool,out,5,134,Write,0.030360568314790726
+codecontests_cpp_5,no_tool_out,no_tool,out,1,239,\n\n,0.05462168529629707
+codecontests_cpp_5,no_tool_out,no_tool,out,2,234,assistant,0.05207640677690506
+codecontests_cpp_5,no_tool_out,no_tool,out,3,18, query,0.04981091246008873
+codecontests_cpp_5,no_tool_out,no_tool,out,4,136, the,0.03869960457086563
+codecontests_cpp_5,no_tool_out,no_tool,out,5,150, below,0.028696568682789803
+codecontests_cpp_5,tool_manually,tool,manually,1,240,\n\n,0.054562509059906006
+codecontests_cpp_5,tool_manually,tool,manually,2,18, query,0.0536014549434185
+codecontests_cpp_5,tool_manually,tool,manually,3,235,assistant,0.052495427429676056
+codecontests_cpp_5,tool_manually,tool,manually,4,137, the,0.04045631363987923
+codecontests_cpp_5,tool_manually,tool,manually,5,14, assist,0.024698348715901375
+codecontests_cpp_5,no_tool_manually,no_tool,manually,1,240,\n\n,0.05409601703286171
+codecontests_cpp_5,no_tool_manually,no_tool,manually,2,18, query,0.05357940122485161
+codecontests_cpp_5,no_tool_manually,no_tool,manually,3,235,assistant,0.05050692334771156
+codecontests_cpp_5,no_tool_manually,no_tool,manually,4,137, the,0.04147687554359436
+codecontests_cpp_5,no_tool_manually,no_tool,manually,5,151, below,0.024644751101732254
+codecontests_cpp_5,tool_properly,tool,properly,1,18, query,0.05627759173512459
+codecontests_cpp_5,tool_properly,tool,properly,2,236,assistant,0.053922709077596664
+codecontests_cpp_5,tool_properly,tool,properly,3,241,\n\n,0.053708288818597794
+codecontests_cpp_5,tool_properly,tool,properly,4,137, add,0.028482094407081604
+codecontests_cpp_5,tool_properly,tool,properly,5,38,"{""",0.024891389533877373
+codecontests_cpp_5,no_tool_properly,no_tool,properly,1,18, query,0.05585255101323128
+codecontests_cpp_5,no_tool_properly,no_tool,properly,2,241,\n\n,0.055231597274541855
+codecontests_cpp_5,no_tool_properly,no_tool,properly,3,236,assistant,0.05329126864671707
+codecontests_cpp_5,no_tool_properly,no_tool,properly,4,138, the,0.025940168648958206
+codecontests_cpp_5,no_tool_properly,no_tool,properly,5,38,"{""",0.02505027875304222
+codecontests_java_5,original_clean,tool,original,1,135, the,0.06596297025680542
+codecontests_java_5,original_clean,tool,original,2,18, query,0.06040893867611885
+codecontests_java_5,original_clean,tool,original,3,233,\n\n,0.050884757190942764
+codecontests_java_5,original_clean,tool,original,4,228,assistant,0.04393552988767624
+codecontests_java_5,original_clean,tool,original,5,149, below,0.038144905120134354
+codecontests_java_5,original_corrupt,no_tool,original,1,135, the,0.18885475397109985
+codecontests_java_5,original_corrupt,no_tool,original,2,18, query,0.0502629317343235
+codecontests_java_5,original_corrupt,no_tool,original,3,233,\n\n,0.04305990785360336
+codecontests_java_5,original_corrupt,no_tool,original,4,228,assistant,0.037537768483161926
+codecontests_java_5,original_corrupt,no_tool,original,5,134,Craft,0.032673854380846024
+codecontests_java_5,tool_out,tool,out,1,18, query,0.060339827090501785
+codecontests_java_5,tool_out,tool,out,2,234,\n\n,0.051718950271606445
+codecontests_java_5,tool_out,tool,out,3,136, the,0.05094267055392265
+codecontests_java_5,tool_out,tool,out,4,229,assistant,0.04413304105401039
+codecontests_java_5,tool_out,tool,out,5,150, below,0.035189077258110046
+codecontests_java_5,no_tool_out,no_tool,out,1,18, query,0.06411001086235046
+codecontests_java_5,no_tool_out,no_tool,out,2,234,\n\n,0.053605422377586365
+codecontests_java_5,no_tool_out,no_tool,out,3,229,assistant,0.0466780923306942
+codecontests_java_5,no_tool_out,no_tool,out,4,150, below,0.03760695457458496
+codecontests_java_5,no_tool_out,no_tool,out,5,136, the,0.03421880304813385
+codecontests_java_5,tool_manually,tool,manually,1,18, query,0.0657077208161354
+codecontests_java_5,tool_manually,tool,manually,2,235,\n\n,0.05548669770359993
+codecontests_java_5,tool_manually,tool,manually,3,230,assistant,0.04901547357439995
+codecontests_java_5,tool_manually,tool,manually,4,38,"{""",0.03367295861244202
+codecontests_java_5,tool_manually,tool,manually,5,137, the,0.0321485660970211
+codecontests_java_5,no_tool_manually,no_tool,manually,1,18, query,0.06489568948745728
+codecontests_java_5,no_tool_manually,no_tool,manually,2,235,\n\n,0.055804185569286346
+codecontests_java_5,no_tool_manually,no_tool,manually,3,230,assistant,0.04801994934678078
+codecontests_java_5,no_tool_manually,no_tool,manually,4,137, the,0.034701693803071976
+codecontests_java_5,no_tool_manually,no_tool,manually,5,38,"{""",0.03329348564147949
+codecontests_java_5,tool_properly,tool,properly,1,18, query,0.06114888936281204
+codecontests_java_5,tool_properly,tool,properly,2,236,\n\n,0.05530846491456032
+codecontests_java_5,tool_properly,tool,properly,3,231,assistant,0.05061940476298332
+codecontests_java_5,tool_properly,tool,properly,4,38,"{""",0.03349372744560242
+codecontests_java_5,tool_properly,tool,properly,5,152, below,0.0298368651419878
+codecontests_java_5,no_tool_properly,no_tool,properly,1,18, query,0.061214614659547806
+codecontests_java_5,no_tool_properly,no_tool,properly,2,236,\n\n,0.0554652102291584
+codecontests_java_5,no_tool_properly,no_tool,properly,3,231,assistant,0.04900409281253815
+codecontests_java_5,no_tool_properly,no_tool,properly,4,38,"{""",0.033740345388650894
+codecontests_java_5,no_tool_properly,no_tool,properly,5,152, below,0.03147860988974571
+codecontests_cpp_6,original_clean,tool,original,1,135, the,0.06813789159059525
+codecontests_cpp_6,original_clean,tool,original,2,18, query,0.05313298851251602
+codecontests_cpp_6,original_clean,tool,original,3,149, below,0.0472140833735466
+codecontests_cpp_6,original_clean,tool,original,4,252,\n\n,0.04506071284413338
+codecontests_cpp_6,original_clean,tool,original,5,247,assistant,0.043484993278980255
+codecontests_cpp_6,original_corrupt,no_tool,original,1,135, the,0.10394492000341415
+codecontests_cpp_6,original_corrupt,no_tool,original,2,18, query,0.05079130828380585
+codecontests_cpp_6,original_corrupt,no_tool,original,3,252,\n\n,0.04542386159300804
+codecontests_cpp_6,original_corrupt,no_tool,original,4,247,assistant,0.04221446439623833
+codecontests_cpp_6,original_corrupt,no_tool,original,5,134,Implement,0.03807241469621658
+codecontests_cpp_6,tool_out,tool,out,1,136, the,0.06524821370840073
+codecontests_cpp_6,tool_out,tool,out,2,18, query,0.05475405231118202
+codecontests_cpp_6,tool_out,tool,out,3,253,\n\n,0.04635116085410118
+codecontests_cpp_6,tool_out,tool,out,4,248,assistant,0.043924637138843536
+codecontests_cpp_6,tool_out,tool,out,5,134,Write,0.04361191764473915
+codecontests_cpp_6,no_tool_out,no_tool,out,1,18, query,0.06092458218336105
+codecontests_cpp_6,no_tool_out,no_tool,out,2,253,\n\n,0.04753012955188751
+codecontests_cpp_6,no_tool_out,no_tool,out,3,248,assistant,0.04632749781012535
+codecontests_cpp_6,no_tool_out,no_tool,out,4,136, the,0.04606000706553459
+codecontests_cpp_6,no_tool_out,no_tool,out,5,150, below,0.0371166467666626
+codecontests_cpp_6,tool_manually,tool,manually,1,18, query,0.05987486243247986
+codecontests_cpp_6,tool_manually,tool,manually,2,254,\n\n,0.04869050160050392
+codecontests_cpp_6,tool_manually,tool,manually,3,249,assistant,0.048258449882268906
+codecontests_cpp_6,tool_manually,tool,manually,4,137, the,0.044767819344997406
+codecontests_cpp_6,tool_manually,tool,manually,5,38,"{""",0.03418611362576485
+codecontests_cpp_6,no_tool_manually,no_tool,manually,1,18, query,0.058771923184394836
+codecontests_cpp_6,no_tool_manually,no_tool,manually,2,254,\n\n,0.04943889006972313
+codecontests_cpp_6,no_tool_manually,no_tool,manually,3,249,assistant,0.048118483275175095
+codecontests_cpp_6,no_tool_manually,no_tool,manually,4,137, the,0.04511669650673866
+codecontests_cpp_6,no_tool_manually,no_tool,manually,5,38,"{""",0.03421076759696007
+codecontests_cpp_6,tool_properly,tool,properly,1,18, query,0.05468691140413284
+codecontests_cpp_6,tool_properly,tool,properly,2,255,\n\n,0.05001801997423172
+codecontests_cpp_6,tool_properly,tool,properly,3,250,assistant,0.04866538569331169
+codecontests_cpp_6,tool_properly,tool,properly,4,137, add,0.03514065966010094
+codecontests_cpp_6,tool_properly,tool,properly,5,38,"{""",0.033831287175416946
+codecontests_cpp_6,no_tool_properly,no_tool,properly,1,18, query,0.0543338768184185
+codecontests_cpp_6,no_tool_properly,no_tool,properly,2,255,\n\n,0.05000833794474602
+codecontests_cpp_6,no_tool_properly,no_tool,properly,3,250,assistant,0.04805856943130493
+codecontests_cpp_6,no_tool_properly,no_tool,properly,4,38,"{""",0.034259695559740067
+codecontests_cpp_6,no_tool_properly,no_tool,properly,5,152, below,0.030809683725237846
+codecontests_java_6,original_clean,tool,original,1,135, the,0.07138445973396301
+codecontests_java_6,original_clean,tool,original,2,18, query,0.06068648025393486
+codecontests_java_6,original_clean,tool,original,3,247,\n\n,0.051966842263936996
+codecontests_java_6,original_clean,tool,original,4,242,assistant,0.04513471573591232
+codecontests_java_6,original_clean,tool,original,5,149, below,0.042339473962783813
+codecontests_java_6,original_corrupt,no_tool,original,1,135, the,0.15036238729953766
+codecontests_java_6,original_corrupt,no_tool,original,2,18, query,0.05494436249136925
+codecontests_java_6,original_corrupt,no_tool,original,3,247,\n\n,0.04670223593711853
+codecontests_java_6,original_corrupt,no_tool,original,4,242,assistant,0.04357193410396576
+codecontests_java_6,original_corrupt,no_tool,original,5,149, below,0.03930431604385376
+codecontests_java_6,tool_out,tool,out,1,136, the,0.0584343820810318
+codecontests_java_6,tool_out,tool,out,2,18, query,0.05560559406876564
+codecontests_java_6,tool_out,tool,out,3,248,\n\n,0.053719498217105865
+codecontests_java_6,tool_out,tool,out,4,243,assistant,0.043402038514614105
+codecontests_java_6,tool_out,tool,out,5,150, below,0.03924006223678589
+codecontests_java_6,no_tool_out,no_tool,out,1,18, query,0.060451459139585495
+codecontests_java_6,no_tool_out,no_tool,out,2,248,\n\n,0.05435619130730629
+codecontests_java_6,no_tool_out,no_tool,out,3,243,assistant,0.04621044918894768
+codecontests_java_6,no_tool_out,no_tool,out,4,150, below,0.04204815253615379
+codecontests_java_6,no_tool_out,no_tool,out,5,136, the,0.04050377383828163
+codecontests_java_6,tool_manually,tool,manually,1,18, query,0.05713052675127983
+codecontests_java_6,tool_manually,tool,manually,2,249,\n\n,0.055326566100120544
+codecontests_java_6,tool_manually,tool,manually,3,244,assistant,0.04750765487551689
+codecontests_java_6,tool_manually,tool,manually,4,137, the,0.038109853863716125
+codecontests_java_6,tool_manually,tool,manually,5,38,"{""",0.03739260137081146
+codecontests_java_6,no_tool_manually,no_tool,manually,1,18, query,0.056423723697662354
+codecontests_java_6,no_tool_manually,no_tool,manually,2,249,\n\n,0.054052162915468216
+codecontests_java_6,no_tool_manually,no_tool,manually,3,244,assistant,0.04516998305916786
+codecontests_java_6,no_tool_manually,no_tool,manually,4,137, the,0.0406021922826767
+codecontests_java_6,no_tool_manually,no_tool,manually,5,38,"{""",0.03692926838994026
+codecontests_java_6,tool_properly,tool,properly,1,250,\n\n,0.05500885844230652
+codecontests_java_6,tool_properly,tool,properly,2,18, query,0.054608575999736786
+codecontests_java_6,tool_properly,tool,properly,3,245,assistant,0.04843277484178543
+codecontests_java_6,tool_properly,tool,properly,4,38,"{""",0.03651359677314758
+codecontests_java_6,tool_properly,tool,properly,5,152, below,0.03310827538371086
+codecontests_java_6,no_tool_properly,no_tool,properly,1,250,\n\n,0.055511731654405594
+codecontests_java_6,no_tool_properly,no_tool,properly,2,18, query,0.053108666092157364
+codecontests_java_6,no_tool_properly,no_tool,properly,3,245,assistant,0.046172354370355606
+codecontests_java_6,no_tool_properly,no_tool,properly,4,38,"{""",0.03658943623304367
+codecontests_java_6,no_tool_properly,no_tool,properly,5,152, below,0.03560324385762215
+codecontests_java_7,original_clean,tool,original,1,18, query,0.05941227450966835
+codecontests_java_7,original_clean,tool,original,2,225,\n\n,0.056830812245607376
+codecontests_java_7,original_clean,tool,original,3,220,assistant,0.04921203479170799
+codecontests_java_7,original_clean,tool,original,4,38,"{""",0.030013496056199074
+codecontests_java_7,original_clean,tool,original,5,14, assist,0.02770712785422802
+codecontests_java_7,original_corrupt,no_tool,original,1,18, query,0.058899253606796265
+codecontests_java_7,original_corrupt,no_tool,original,2,225,\n\n,0.057052552700042725
+codecontests_java_7,original_corrupt,no_tool,original,3,220,assistant,0.048167116940021515
+codecontests_java_7,original_corrupt,no_tool,original,4,38,"{""",0.030486702919006348
+codecontests_java_7,original_corrupt,no_tool,original,5,14, assist,0.027645597234368324
+codecontests_java_7,tool_out,tool,out,1,136, the,0.055641647428274155
+codecontests_java_7,tool_out,tool,out,2,223,\n\n,0.05358069762587547
+codecontests_java_7,tool_out,tool,out,3,18, query,0.053122375160455704
+codecontests_java_7,tool_out,tool,out,4,218,assistant,0.04625680670142174
+codecontests_java_7,tool_out,tool,out,5,134,Write,0.02988085150718689
+codecontests_java_7,no_tool_out,no_tool,out,1,18, query,0.05726858973503113
+codecontests_java_7,no_tool_out,no_tool,out,2,223,\n\n,0.05413713678717613
+codecontests_java_7,no_tool_out,no_tool,out,3,218,assistant,0.050808023661375046
+codecontests_java_7,no_tool_out,no_tool,out,4,136, the,0.037499502301216125
+codecontests_java_7,no_tool_out,no_tool,out,5,150, below,0.0306865181773901
+codecontests_java_7,tool_manually,tool,manually,1,18, query,0.05935690179467201
+codecontests_java_7,tool_manually,tool,manually,2,224,\n\n,0.05643553286790848
+codecontests_java_7,tool_manually,tool,manually,3,219,assistant,0.04953952878713608
+codecontests_java_7,tool_manually,tool,manually,4,137, the,0.033993739634752274
+codecontests_java_7,tool_manually,tool,manually,5,38,"{""",0.029689719900488853
+codecontests_java_7,no_tool_manually,no_tool,manually,1,18, query,0.05749481916427612
+codecontests_java_7,no_tool_manually,no_tool,manually,2,224,\n\n,0.056260354816913605
+codecontests_java_7,no_tool_manually,no_tool,manually,3,219,assistant,0.047436799854040146
+codecontests_java_7,no_tool_manually,no_tool,manually,4,137, the,0.03883040323853493
+codecontests_java_7,no_tool_manually,no_tool,manually,5,38,"{""",0.029880305752158165
+codecontests_java_7,tool_properly,tool,properly,1,18, query,0.05941227450966835
+codecontests_java_7,tool_properly,tool,properly,2,225,\n\n,0.056830812245607376
+codecontests_java_7,tool_properly,tool,properly,3,220,assistant,0.04921203479170799
+codecontests_java_7,tool_properly,tool,properly,4,38,"{""",0.030013496056199074
+codecontests_java_7,tool_properly,tool,properly,5,14, assist,0.02770712785422802
+codecontests_java_7,no_tool_properly,no_tool,properly,1,18, query,0.058899253606796265
+codecontests_java_7,no_tool_properly,no_tool,properly,2,225,\n\n,0.057052552700042725
+codecontests_java_7,no_tool_properly,no_tool,properly,3,220,assistant,0.048167116940021515
+codecontests_java_7,no_tool_properly,no_tool,properly,4,38,"{""",0.030486702919006348
+codecontests_java_7,no_tool_properly,no_tool,properly,5,14, assist,0.027645597234368324
+apps_python_8,original_clean,tool,original,1,18, query,0.08414335548877716
+apps_python_8,original_clean,tool,original,2,217,\n\n,0.05528148263692856
+apps_python_8,original_clean,tool,original,3,212,assistant,0.04288269206881523
+apps_python_8,original_clean,tool,original,4,151, below,0.0331328809261322
+apps_python_8,original_clean,tool,original,5,38,"{""",0.031047934666275978
+apps_python_8,original_corrupt,no_tool,original,1,18, query,0.08219052851200104
+apps_python_8,original_corrupt,no_tool,original,2,217,\n\n,0.054260265082120895
+apps_python_8,original_corrupt,no_tool,original,3,212,assistant,0.04203179478645325
+apps_python_8,original_corrupt,no_tool,original,4,137, the,0.03722148761153221
+apps_python_8,original_corrupt,no_tool,original,5,151, below,0.03381713479757309
+apps_python_8,tool_out,tool,out,1,18, query,0.08652393519878387
+apps_python_8,tool_out,tool,out,2,136, the,0.052923768758773804
+apps_python_8,tool_out,tool,out,3,216,\n\n,0.05062307417392731
+apps_python_8,tool_out,tool,out,4,211,assistant,0.0393671877682209
+apps_python_8,tool_out,tool,out,5,150, below,0.03534023091197014
+apps_python_8,no_tool_out,no_tool,out,1,18, query,0.09299182146787643
+apps_python_8,no_tool_out,no_tool,out,2,216,\n\n,0.050885383039712906
+apps_python_8,no_tool_out,no_tool,out,3,211,assistant,0.04156744107604027
+apps_python_8,no_tool_out,no_tool,out,4,150, below,0.03745512664318085
+apps_python_8,no_tool_out,no_tool,out,5,136, the,0.037418119609355927
+apps_python_8,tool_manually,tool,manually,1,18, query,0.08467008173465729
+apps_python_8,tool_manually,tool,manually,2,217,\n\n,0.053334686905145645
+apps_python_8,tool_manually,tool,manually,3,212,assistant,0.04304484277963638
+apps_python_8,tool_manually,tool,manually,4,151, below,0.034114252775907516
+apps_python_8,tool_manually,tool,manually,5,137, the,0.034114234149456024
+apps_python_8,no_tool_manually,no_tool,manually,1,18, query,0.08219052851200104
+apps_python_8,no_tool_manually,no_tool,manually,2,217,\n\n,0.054260265082120895
+apps_python_8,no_tool_manually,no_tool,manually,3,212,assistant,0.04203179478645325
+apps_python_8,no_tool_manually,no_tool,manually,4,137, the,0.03722148761153221
+apps_python_8,no_tool_manually,no_tool,manually,5,151, below,0.03381713479757309
+apps_python_8,tool_properly,tool,properly,1,18, query,0.0693185105919838
+apps_python_8,tool_properly,tool,properly,2,218,\n\n,0.05505973845720291
+apps_python_8,tool_properly,tool,properly,3,213,assistant,0.042878106236457825
+apps_python_8,tool_properly,tool,properly,4,8, call,0.03117462247610092
+apps_python_8,tool_properly,tool,properly,5,137, add,0.031021086499094963
+apps_python_8,no_tool_properly,no_tool,properly,1,18, query,0.0682031437754631
+apps_python_8,no_tool_properly,no_tool,properly,2,218,\n\n,0.056146856397390366
+apps_python_8,no_tool_properly,no_tool,properly,3,213,assistant,0.042841412127017975
+apps_python_8,no_tool_properly,no_tool,properly,4,152, below,0.03274381533265114
+apps_python_8,no_tool_properly,no_tool,properly,5,8, call,0.031210104003548622
+apps_python_9,original_clean,tool,original,1,18, query,0.06969434767961502
+apps_python_9,original_clean,tool,original,2,239,\n\n,0.04718569293618202
+apps_python_9,original_clean,tool,original,3,234,assistant,0.038028910756111145
+apps_python_9,original_clean,tool,original,4,137, the,0.03139711171388626
+apps_python_9,original_clean,tool,original,5,38,"{""",0.030237648636102676
+apps_python_9,original_corrupt,no_tool,original,1,18, query,0.06771562993526459
+apps_python_9,original_corrupt,no_tool,original,2,239,\n\n,0.048163097351789474
+apps_python_9,original_corrupt,no_tool,original,3,234,assistant,0.037206731736660004
+apps_python_9,original_corrupt,no_tool,original,4,137, the,0.032847099006175995
+apps_python_9,original_corrupt,no_tool,original,5,38,"{""",0.030336307361721992
+apps_python_9,tool_out,tool,out,1,18, query,0.059217534959316254
+apps_python_9,tool_out,tool,out,2,136, the,0.05681365728378296
+apps_python_9,tool_out,tool,out,3,238,\n\n,0.046033285558223724
+apps_python_9,tool_out,tool,out,4,233,assistant,0.03542306646704674
+apps_python_9,tool_out,tool,out,5,38,"{""",0.029933108016848564
+apps_python_9,no_tool_out,no_tool,out,1,18, query,0.06456390023231506
+apps_python_9,no_tool_out,no_tool,out,2,238,\n\n,0.046584486961364746
+apps_python_9,no_tool_out,no_tool,out,3,136, the,0.0388638935983181
+apps_python_9,no_tool_out,no_tool,out,4,233,assistant,0.03876051306724548
+apps_python_9,no_tool_out,no_tool,out,5,38,"{""",0.032418254762887955
+apps_python_9,tool_manually,tool,manually,1,18, query,0.06969434767961502
+apps_python_9,tool_manually,tool,manually,2,239,\n\n,0.04718569293618202
+apps_python_9,tool_manually,tool,manually,3,234,assistant,0.038028910756111145
+apps_python_9,tool_manually,tool,manually,4,137, the,0.03139711171388626
+apps_python_9,tool_manually,tool,manually,5,38,"{""",0.030237648636102676
+apps_python_9,no_tool_manually,no_tool,manually,1,18, query,0.06771562993526459
+apps_python_9,no_tool_manually,no_tool,manually,2,239,\n\n,0.048163097351789474
+apps_python_9,no_tool_manually,no_tool,manually,3,234,assistant,0.037206731736660004
+apps_python_9,no_tool_manually,no_tool,manually,4,137, the,0.032847099006175995
+apps_python_9,no_tool_manually,no_tool,manually,5,38,"{""",0.030336307361721992
+apps_python_9,tool_properly,tool,properly,1,18, query,0.07251408696174622
+apps_python_9,tool_properly,tool,properly,2,240,\n\n,0.04765387251973152
+apps_python_9,tool_properly,tool,properly,3,235,assistant,0.037888702005147934
+apps_python_9,tool_properly,tool,properly,4,38,"{""",0.029109971597790718
+apps_python_9,tool_properly,tool,properly,5,8, call,0.026831302791833878
+apps_python_9,no_tool_properly,no_tool,properly,1,18, query,0.07182499021291733
+apps_python_9,no_tool_properly,no_tool,properly,2,240,\n\n,0.04733971133828163
+apps_python_9,no_tool_properly,no_tool,properly,3,235,assistant,0.037236329168081284
+apps_python_9,no_tool_properly,no_tool,properly,4,38,"{""",0.0299503356218338
+apps_python_9,no_tool_properly,no_tool,properly,5,8, call,0.02643757127225399
+codecontests_cpp_9,original_clean,tool,original,1,135, the,0.13504014909267426
+codecontests_cpp_9,original_clean,tool,original,2,18, query,0.04849489778280258
+codecontests_cpp_9,original_clean,tool,original,3,232,\n\n,0.048365116119384766
+codecontests_cpp_9,original_clean,tool,original,4,227,assistant,0.043094754219055176
+codecontests_cpp_9,original_clean,tool,original,5,149, below,0.03401634097099304
+codecontests_cpp_9,original_corrupt,no_tool,original,1,135, the,0.0852513238787651
+codecontests_cpp_9,original_corrupt,no_tool,original,2,18, query,0.054239291697740555
+codecontests_cpp_9,original_corrupt,no_tool,original,3,232,\n\n,0.05052173137664795
+codecontests_cpp_9,original_corrupt,no_tool,original,4,227,assistant,0.04564675688743591
+codecontests_cpp_9,original_corrupt,no_tool,original,5,134,Implement,0.03539329394698143
+codecontests_cpp_9,tool_out,tool,out,1,18, query,0.05726098641753197
+codecontests_cpp_9,tool_out,tool,out,2,233,\n\n,0.053401317447423935
+codecontests_cpp_9,tool_out,tool,out,3,136, the,0.05054401606321335
+codecontests_cpp_9,tool_out,tool,out,4,228,assistant,0.04642791301012039
+codecontests_cpp_9,tool_out,tool,out,5,134,Write,0.03399066999554634
+codecontests_cpp_9,no_tool_out,no_tool,out,1,18, query,0.06109203025698662
+codecontests_cpp_9,no_tool_out,no_tool,out,2,233,\n\n,0.05404484644532204
+codecontests_cpp_9,no_tool_out,no_tool,out,3,228,assistant,0.050556108355522156
+codecontests_cpp_9,no_tool_out,no_tool,out,4,150, below,0.03507418930530548
+codecontests_cpp_9,no_tool_out,no_tool,out,5,136, the,0.03431602567434311
+codecontests_cpp_9,tool_manually,tool,manually,1,18, query,0.06553442776203156
+codecontests_cpp_9,tool_manually,tool,manually,2,234,\n\n,0.05436337739229202
+codecontests_cpp_9,tool_manually,tool,manually,3,229,assistant,0.05121007561683655
+codecontests_cpp_9,tool_manually,tool,manually,4,137, the,0.03285742923617363
+codecontests_cpp_9,tool_manually,tool,manually,5,151, below,0.03056451864540577
+codecontests_cpp_9,no_tool_manually,no_tool,manually,1,18, query,0.06446729600429535
+codecontests_cpp_9,no_tool_manually,no_tool,manually,2,234,\n\n,0.055346906185150146
+codecontests_cpp_9,no_tool_manually,no_tool,manually,3,229,assistant,0.04963384196162224
+codecontests_cpp_9,no_tool_manually,no_tool,manually,4,137, the,0.03442440181970596
+codecontests_cpp_9,no_tool_manually,no_tool,manually,5,151, below,0.02981349639594555
+codecontests_cpp_9,tool_properly,tool,properly,1,18, query,0.06538906693458557
+codecontests_cpp_9,tool_properly,tool,properly,2,235,\n\n,0.05473589152097702
+codecontests_cpp_9,tool_properly,tool,properly,3,230,assistant,0.0515148788690567
+codecontests_cpp_9,tool_properly,tool,properly,4,137, add,0.03177811577916145
+codecontests_cpp_9,tool_properly,tool,properly,5,38,"{""",0.03048999048769474
+codecontests_cpp_9,no_tool_properly,no_tool,properly,1,18, query,0.06563994288444519
+codecontests_cpp_9,no_tool_properly,no_tool,properly,2,235,\n\n,0.05508802831172943
+codecontests_cpp_9,no_tool_properly,no_tool,properly,3,230,assistant,0.05124695971608162
+codecontests_cpp_9,no_tool_properly,no_tool,properly,4,38,"{""",0.030790681019425392
+codecontests_cpp_9,no_tool_properly,no_tool,properly,5,152, below,0.028490304946899414

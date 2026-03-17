@@ -1,0 +1,467 @@
+variant,rank,token,count,attn_median
+no_tool_manually,1, below,6,0.05759723298251629
+no_tool_manually,1, how,12,0.07851412519812584
+no_tool_manually,1, query,1372,0.06327236071228981
+no_tool_manually,1, the,8,0.04946501553058624
+no_tool_manually,1,What,1,0.08832036703824997
+no_tool_manually,1,\n\n,294,0.05633365362882614
+no_tool_manually,1,assistant,29,0.0546167828142643
+no_tool_manually,2," """"""\n",1,0.04464805871248245
+no_tool_manually,2, below,36,0.050414884462952614
+no_tool_manually,2, call,1,0.043575774878263474
+no_tool_manually,2, choices,1,0.04813311621546745
+no_tool_manually,2, how,1,0.05674297362565994
+no_tool_manually,2, query,244,0.0530199371278286
+no_tool_manually,2, the,37,0.048429571092128754
+no_tool_manually,2,\n\n,1247,0.05129123479127884
+no_tool_manually,2,assistant,153,0.05165661498904228
+no_tool_manually,2,"{""",1,0.044133685529232025
+no_tool_manually,3, answer,1,0.045026373118162155
+no_tool_manually,3, below,34,0.04485710524022579
+no_tool_manually,3, call,8,0.04044279083609581
+no_tool_manually,3, how,3,0.04464736208319664
+no_tool_manually,3, query,100,0.04913254827260971
+no_tool_manually,3, rank,1,0.04524090141057968
+no_tool_manually,3, the,137,0.045176949352025986
+no_tool_manually,3,\n\n,147,0.048728249967098236
+no_tool_manually,3,assistant,1250,0.04562379606068134
+no_tool_manually,3,"{""",41,0.039143189787864685
+no_tool_manually,4," """"""\n",1,0.04038422182202339
+no_tool_manually,4, assist,1,0.03200789541006088
+no_tool_manually,4, below,259,0.036722153425216675
+no_tool_manually,4, call,55,0.037391480058431625
+no_tool_manually,4, function,1,0.03141744062304497
+no_tool_manually,4, how,5,0.04204089567065239
+no_tool_manually,4, query,6,0.04519084468483925
+no_tool_manually,4, the,1005,0.03671162575483322
+no_tool_manually,4,\n\n,32,0.044172169640660286
+no_tool_manually,4,assistant,187,0.04082619026303291
+no_tool_manually,4,"{""",170,0.03557666204869747
+no_tool_manually,5," """"""\n",1,0.03612624853849411
+no_tool_manually,5, answer,1,0.042646460235118866
+no_tool_manually,5, assist,54,0.0275680311024189
+no_tool_manually,5, below,439,0.03188205137848854
+no_tool_manually,5, call,82,0.03149215877056122
+no_tool_manually,5, chapter,1,0.0314025804400444
+no_tool_manually,5, function,72,0.02974733617156744
+no_tool_manually,5, how,2,0.02707609161734581
+no_tool_manually,5, minimize,2,0.0355698075145483
+no_tool_manually,5, the,403,0.03368467465043068
+no_tool_manually,5, user,2,0.030484731309115887
+no_tool_manually,5, which,1,0.03802605718374252
+no_tool_manually,5,\n\n,2,0.04253198578953743
+no_tool_manually,5,assistant,88,0.036931468173861504
+no_tool_manually,5,"{""",572,0.0312966201454401
+no_tool_out,1, below,41,0.05758941173553467
+no_tool_out,1, how,11,0.07770579308271408
+no_tool_out,1, query,1333,0.06293173879384995
+no_tool_out,1, the,28,0.05083262920379639
+no_tool_out,1,What,1,0.0860225260257721
+no_tool_out,1,\n\n,264,0.05564862862229347
+no_tool_out,1,assistant,44,0.053511492908000946
+no_tool_out,2, below,67,0.05177595093846321
+no_tool_out,2, choices,1,0.050537966191768646
+no_tool_out,2, how,2,0.057730814442038536
+no_tool_out,2, query,236,0.05224722996354103
+no_tool_out,2, the,87,0.04952745512127876
+no_tool_out,2,\n\n,1137,0.05086831748485565
+no_tool_out,2,assistant,192,0.05211738310754299
+no_tool_out,3," """"""\n",1,0.04269511252641678
+no_tool_out,3, answer,1,0.04684530943632126
+no_tool_out,3, below,64,0.045958150178194046
+no_tool_out,3, call,4,0.04126294329762459
+no_tool_out,3, how,2,0.04542526602745056
+no_tool_out,3, query,119,0.04963980242609978
+no_tool_out,3, rank,1,0.04615627974271774
+no_tool_out,3, the,205,0.04582882672548294
+no_tool_out,3,\n\n,202,0.048736572265625
+no_tool_out,3,assistant,1110,0.046537043526768684
+no_tool_out,3,"{""",13,0.039393823593854904
+no_tool_out,4, below,398,0.0395573154091835
+no_tool_out,4, call,27,0.03911825641989708
+no_tool_out,4, how,6,0.04316948540508747
+no_tool_out,4, query,29,0.044317107647657394
+no_tool_out,4, the,903,0.037175003439188004
+no_tool_out,4, which,1,0.03772306442260742
+no_tool_out,4,\n\n,93,0.045523419976234436
+no_tool_out,4,assistant,203,0.0413903184235096
+no_tool_out,4,"{""",62,0.03713305667042732
+no_tool_out,5," """"""\n",1,0.03763718530535698
+no_tool_out,5, answer,1,0.0439421571791172
+no_tool_out,5, assist,22,0.028549627400934696
+no_tool_out,5, below,597,0.03373759984970093
+no_tool_out,5, call,65,0.03316687420010567
+no_tool_out,5, chapter,1,0.032012831419706345
+no_tool_out,5, function,25,0.02981369011104107
+no_tool_out,5, minimize,1,0.03149682283401489
+no_tool_out,5, query,5,0.04379024729132652
+no_tool_out,5, the,474,0.03427901118993759
+no_tool_out,5,\n\n,26,0.04198523052036762
+no_tool_out,5,assistant,155,0.04092024639248848
+no_tool_out,5,"{""",349,0.03173790127038956
+no_tool_properly,1, below,3,0.05462493374943733
+no_tool_properly,1, choices,1,0.04832405969500542
+no_tool_properly,1, how,12,0.07844319194555283
+no_tool_properly,1, query,1355,0.06397537142038345
+no_tool_properly,1,What,1,0.09104730933904648
+no_tool_properly,1,\n\n,309,0.05678560212254524
+no_tool_properly,1,assistant,41,0.05544762313365936
+no_tool_properly,2," """"""\n",1,0.04488513991236687
+no_tool_properly,2, answer,1,0.04608557000756264
+no_tool_properly,2, below,25,0.050786543637514114
+no_tool_properly,2, how,1,0.05790720134973526
+no_tool_properly,2, query,268,0.05318308435380459
+no_tool_properly,2, the,1,0.05383674055337906
+no_tool_properly,2,\n\n,1278,0.0517569687217474
+no_tool_properly,2,assistant,145,0.05264357104897499
+no_tool_properly,2,"{""",2,0.045106589794158936
+no_tool_properly,3, assist,1,0.03304719552397728
+no_tool_properly,3, below,48,0.046046873554587364
+no_tool_properly,3, call,5,0.03961589187383652
+no_tool_properly,3, how,4,0.047363875433802605
+no_tool_properly,3, query,97,0.04989710450172424
+no_tool_properly,3, rank,1,0.046128787100315094
+no_tool_properly,3,\n\n,122,0.04987825080752373
+no_tool_properly,3,assistant,1389,0.0460379421710968
+no_tool_properly,3,"{""",55,0.039056263864040375
+no_tool_properly,4," """"""\n",4,0.03651180863380432
+no_tool_properly,4, answer,1,0.042317863553762436
+no_tool_properly,4, assist,56,0.02686205320060253
+no_tool_properly,4, below,515,0.0339016430079937
+no_tool_properly,4, call,114,0.03239282965660095
+no_tool_properly,4, each,1,0.033158402889966965
+no_tool_properly,4, function,45,0.030060293152928352
+no_tool_properly,4, how,6,0.03878965601325035
+no_tool_properly,4, minimize,1,0.032615531235933304
+no_tool_properly,4, query,2,0.04545726627111435
+no_tool_properly,4, the,34,0.025352422147989273
+no_tool_properly,4, user,2,0.028733658604323864
+no_tool_properly,4, which,1,0.03902866691350937
+no_tool_properly,4,\n\n,13,0.04419928789138794
+no_tool_properly,4,assistant,137,0.03867445886135101
+no_tool_properly,4,"{""",790,0.03228299133479595
+no_tool_properly,5," """"""\n",8,0.030008831061422825
+no_tool_properly,5, ->,3,0.030320314690470695
+no_tool_properly,5, Tools,2,0.02906667347997427
+no_tool_properly,5, assist,224,0.02667998056858778
+no_tool_properly,5, below,399,0.028960365802049637
+no_tool_properly,5, call,168,0.028801435604691505
+no_tool_properly,5, chapter,1,0.033356424421072006
+no_tool_properly,5, compute,2,0.027842124924063683
+no_tool_properly,5, determine,4,0.027383259497582912
+no_tool_properly,5, develop,2,0.02549511007964611
+no_tool_properly,5, find,1,0.02713710628449917
+no_tool_properly,5, function,119,0.030635597184300423
+no_tool_properly,5, how,4,0.02709209267050028
+no_tool_properly,5, minimize,1,0.04137585312128067
+no_tool_properly,5, the,191,0.028065044432878494
+no_tool_properly,5, to,7,0.02616460993885994
+no_tool_properly,5, user,78,0.027593936771154404
+no_tool_properly,5,Replace,1,0.03224319592118263
+no_tool_properly,5,\n\n,7,0.02366926521062851
+no_tool_properly,5,assistant,8,0.03272879496216774
+no_tool_properly,5,"{""",492,0.028719485737383366
+original_clean,1, below,24,0.05951572209596634
+original_clean,1, how,10,0.07753052562475204
+original_clean,1, query,990,0.06578940898180008
+original_clean,1, the,383,0.07098474353551865
+original_clean,1,What,1,0.10107503831386566
+original_clean,1,\n\n,286,0.058328693732619286
+original_clean,1,assistant,28,0.055101992562413216
+original_clean,2," """"""\n",1,0.04575488716363907
+original_clean,2, add,3,0.049803487956523895
+original_clean,2, below,69,0.052406348288059235
+original_clean,2, how,4,0.06069512665271759
+original_clean,2, query,440,0.054311543703079224
+original_clean,2, the,160,0.0550222247838974
+original_clean,2,Write,4,0.050079671666026115
+original_clean,2,\n\n,919,0.05209895595908165
+original_clean,2,assistant,122,0.052051061764359474
+original_clean,3, add,2,0.0438943337649107
+original_clean,3, answer,1,0.04379060119390488
+original_clean,3, below,80,0.04638448730111122
+original_clean,3, call,3,0.040694545954465866
+original_clean,3, choices,1,0.04548276215791702
+original_clean,3, how,4,0.046331506222486496
+original_clean,3, implement,1,0.043140675872564316
+original_clean,3, query,215,0.04876428470015526
+original_clean,3, the,38,0.048033831641077995
+original_clean,3,Write,1,0.04688142612576485
+original_clean,3,\n\n,418,0.04833829030394554
+original_clean,3,assistant,940,0.04732831194996834
+original_clean,3,"{""",18,0.04058161377906799
+original_clean,4, add,26,0.03035786934196949
+original_clean,4, answer,1,0.045174840837717056
+original_clean,4, assist,5,0.029178064316511154
+original_clean,4, below,491,0.03732237592339516
+original_clean,4, call,78,0.03717410750687122
+original_clean,4, function,11,0.0317794568836689
+original_clean,4, how,2,0.0439640749245882
+original_clean,4, minimize,1,0.0328027568757534
+original_clean,4, query,70,0.04506647773087025
+original_clean,4, rank,1,0.04425019398331642
+original_clean,4, the,180,0.035474713891744614
+original_clean,4, user,1,0.03160063177347183
+original_clean,4, which,1,0.03835481032729149
+original_clean,4,Replace,1,0.03244120627641678
+original_clean,4,Write,12,0.04059046879410744
+original_clean,4,\n\n,89,0.04506071284413338
+original_clean,4,assistant,474,0.042925167828798294
+original_clean,4,"{""",278,0.03401368111371994
+original_clean,5," """"""\n",3,0.031931616365909576
+original_clean,5, add,35,0.029479341581463814
+original_clean,5, assist,95,0.027269739657640457
+original_clean,5, below,465,0.03390119969844818
+original_clean,5, call,123,0.030451077967882156
+original_clean,5, compute,1,0.026183446869254112
+original_clean,5, determine,3,0.025153404101729393
+original_clean,5, each,1,0.031226500868797302
+original_clean,5, find,1,0.028910204768180847
+original_clean,5, function,65,0.0317198783159256
+original_clean,5, how,3,0.02793027088046074
+original_clean,5, implement,13,0.02921503782272339
+original_clean,5, minimize,1,0.03995359688997269
+original_clean,5, multiline,1,0.025562278926372528
+original_clean,5, query,7,0.04173336923122406
+original_clean,5, the,221,0.031120698899030685
+original_clean,5, to,6,0.024757852777838707
+original_clean,5, user,18,0.026167400181293488
+original_clean,5,.cpp,5,0.025481220334768295
+original_clean,5,Write,60,0.031169427558779716
+original_clean,5,\n\n,19,0.037461500614881516
+original_clean,5,assistant,129,0.039340004324913025
+original_clean,5,"{""",447,0.03028855472803116
+original_corrupt,1, below,9,0.05985455960035324
+original_corrupt,1, how,4,0.10023924708366394
+original_corrupt,1, implement,1,0.05332585424184799
+original_corrupt,1, query,565,0.06850895285606384
+original_corrupt,1, the,1016,0.10808926075696945
+original_corrupt,1,What,1,0.09019028395414352
+original_corrupt,1,\n\n,108,0.0562603734433651
+original_corrupt,1,assistant,18,0.05567743815481663
+original_corrupt,2, answer,1,0.04608557000756264
+original_corrupt,2, below,63,0.05107155442237854
+original_corrupt,2, how,8,0.06478052586317062
+original_corrupt,2, implement,2,0.05095003731548786
+original_corrupt,2, query,768,0.05430636368691921
+original_corrupt,2, the,38,0.049822743982076645
+original_corrupt,2,Compose,4,0.05165327526628971
+original_corrupt,2,Craft,6,0.05064570717513561
+original_corrupt,2,Implement,1,0.054716628044843674
+original_corrupt,2,\n\n,752,0.05019675754010677
+original_corrupt,2,assistant,77,0.05107780918478966
+original_corrupt,2,ise,2,0.05095122009515762
+original_corrupt,3, below,69,0.04632268846035004
+original_corrupt,3, call,3,0.040018998086452484
+original_corrupt,3, choices,1,0.04625115171074867
+original_corrupt,3, how,2,0.045601826161146164
+original_corrupt,3, implement,3,0.04742111265659332
+original_corrupt,3, query,262,0.04771746136248112
+original_corrupt,3, rank,1,0.04666633531451225
+original_corrupt,3, the,57,0.04396914318203926
+original_corrupt,3,Craft,3,0.04383007436990738
+original_corrupt,3,Implement,3,0.049795567989349365
+original_corrupt,3,\n\n,691,0.04682285338640213
+original_corrupt,3,assistant,604,0.04510035552084446
+original_corrupt,3,ise,1,0.04443355277180672
+original_corrupt,3,"{""",22,0.040353406220674515
+original_corrupt,4," """"""\n",3,0.04038422182202339
+original_corrupt,4, assist,6,0.026528185233473778
+original_corrupt,4, below,230,0.037837157025933266
+original_corrupt,4, call,54,0.03731723129749298
+original_corrupt,4, each,1,0.033158402889966965
+original_corrupt,4, function,11,0.032285887748003006
+original_corrupt,4, how,5,0.04118504002690315
+original_corrupt,4, implement,7,0.04062379524111748
+original_corrupt,4, query,110,0.04363149404525757
+original_corrupt,4, the,180,0.037779463455080986
+original_corrupt,4, user,1,0.03193819522857666
+original_corrupt,4,Compose,3,0.03712870553135872
+original_corrupt,4,Craft,5,0.037677567452192307
+original_corrupt,4,Implement,3,0.04394027218222618
+original_corrupt,4,\n\n,139,0.04386814311146736
+original_corrupt,4,assistant,779,0.041557636111974716
+original_corrupt,4,ise,10,0.03789689019322395
+original_corrupt,4,"{""",175,0.03433283790946007
+original_corrupt,5," """"""\n",6,0.0308400085195899
+original_corrupt,5, assist,44,0.02748336922377348
+original_corrupt,5, below,646,0.03386426344513893
+original_corrupt,5, call,108,0.030456654727458954
+original_corrupt,5, compute,2,0.027842124924063683
+original_corrupt,5, determine,1,0.02477825991809368
+original_corrupt,5, function,40,0.032473742961883545
+original_corrupt,5, how,3,0.02931385114789009
+original_corrupt,5, implement,57,0.0373922698199749
+original_corrupt,5, minimize,1,0.04137585312128067
+original_corrupt,5, query,16,0.04058411531150341
+original_corrupt,5, the,74,0.035037215799093246
+original_corrupt,5, to,1,0.027920307591557503
+original_corrupt,5, user,7,0.02916475385427475
+original_corrupt,5, which,1,0.03768014907836914
+original_corrupt,5,.cpp,4,0.026455028913915157
+original_corrupt,5,Author,11,0.028346816077828407
+original_corrupt,5,Compose,7,0.02711225114762783
+original_corrupt,5,Craft,47,0.032673854380846024
+original_corrupt,5,Design,1,0.0304630845785141
+original_corrupt,5,Develop,3,0.03411528840661049
+original_corrupt,5,Implement,54,0.03389030694961548
+original_corrupt,5,\n\n,31,0.03836149349808693
+original_corrupt,5,assistant,203,0.038363147526979446
+original_corrupt,5,ise,57,0.037046290934085846
+original_corrupt,5,"{""",297,0.031653404235839844
+tool_manually,1, below,5,0.05682818964123726
+tool_manually,1, how,12,0.07809962704777718
+tool_manually,1, query,1387,0.06403278559446335
+tool_manually,1,What,1,0.09059369564056396
+tool_manually,1,\n\n,264,0.05658169277012348
+tool_manually,1,assistant,53,0.05578487366437912
+tool_manually,2," """"""\n",1,0.04575488716363907
+tool_manually,2, below,35,0.05076926574110985
+tool_manually,2, choices,1,0.04832899570465088
+tool_manually,2, how,1,0.05908522382378578
+tool_manually,2, query,228,0.05339963547885418
+tool_manually,2, the,19,0.0482337512075901
+tool_manually,2,\n\n,1244,0.05166478455066681
+tool_manually,2,assistant,192,0.05233594961464405
+tool_manually,2,"{""",1,0.044351909309625626
+tool_manually,3, answer,1,0.04470723867416382
+tool_manually,3, below,34,0.046771129593253136
+tool_manually,3, call,5,0.04182785376906395
+tool_manually,3, how,2,0.045730357989668846
+tool_manually,3, query,102,0.05073399096727371
+tool_manually,3, the,85,0.045264385640621185
+tool_manually,3,\n\n,187,0.04936408996582031
+tool_manually,3,assistant,1274,0.0465779434889555
+tool_manually,3,"{""",32,0.03935527056455612
+tool_manually,4, answer,1,0.041812293231487274
+tool_manually,4, assist,3,0.03253844007849693
+tool_manually,4, below,317,0.03593485802412033
+tool_manually,4, call,72,0.036838484928011894
+tool_manually,4, function,7,0.031926654279232025
+tool_manually,4, how,6,0.04079523868858814
+tool_manually,4, query,5,0.045023299753665924
+tool_manually,4, rank,1,0.04425019398331642
+tool_manually,4, the,868,0.0348307304084301
+tool_manually,4, user,1,0.030919091776013374
+tool_manually,4, which,1,0.036899156868457794
+tool_manually,4,\n\n,26,0.043759483844041824
+tool_manually,4,assistant,135,0.0423462837934494
+tool_manually,4,"{""",279,0.034820038825273514
+tool_manually,5," """"""\n",2,0.035339390859007835
+tool_manually,5, assist,80,0.028230692259967327
+tool_manually,5, below,412,0.03156873770058155
+tool_manually,5, call,84,0.03088316973298788
+tool_manually,5, chapter,1,0.030388670042157173
+tool_manually,5, function,93,0.030961008742451668
+tool_manually,5, minimize,2,0.03351771645247936
+tool_manually,5, the,458,0.03166699595749378
+tool_manually,5, user,7,0.029611706733703613
+tool_manually,5,\n\n,2,0.032997749745845795
+tool_manually,5,assistant,62,0.03817409463226795
+tool_manually,5,"{""",519,0.030826659873127937
+tool_out,1, below,1,0.06189359351992607
+tool_out,1, how,10,0.07238539680838585
+tool_out,1, query,838,0.06295904889702797
+tool_out,1, the,637,0.061253320425748825
+tool_out,1,What,1,0.0815720409154892
+tool_out,1,\n\n,232,0.0553735438734293
+tool_out,1,assistant,3,0.05286464840173721
+tool_out,2, below,50,0.052969107404351234
+tool_out,2, how,2,0.052669819444417953
+tool_out,2, query,388,0.05256540700793266
+tool_out,2, the,680,0.053687456995248795
+tool_out,2,Write,34,0.052969880402088165
+tool_out,2,\n\n,542,0.05266140028834343
+tool_out,2,assistant,26,0.05058046244084835
+tool_out,3," """"""\n",1,0.040673837065696716
+tool_out,3, below,68,0.04803783260285854
+tool_out,3, choices,1,0.045544032007455826
+tool_out,3, query,293,0.048838697373867035
+tool_out,3, the,377,0.049750931560993195
+tool_out,3,Write,38,0.046234531328082085
+tool_out,3,\n\n,778,0.04732694290578365
+tool_out,3,assistant,166,0.048888199031353
+tool_out,4, answer,1,0.04281723126769066
+tool_out,4, below,71,0.04108211025595665
+tool_out,4, call,4,0.03820502385497093
+tool_out,4, how,2,0.045415401458740234
+tool_out,4, query,175,0.04557012766599655
+tool_out,4, rank,1,0.0417180098593235
+tool_out,4, the,27,0.048758041113615036
+tool_out,4,Write,79,0.04348425939679146
+tool_out,4,\n\n,117,0.04496382549405098
+tool_out,4,assistant,1220,0.0430393572896719
+tool_out,4,"{""",25,0.036504171788692474
+tool_out,5, below,605,0.035569123923778534
+tool_out,5, call,72,0.032862456515431404
+tool_out,5, function,21,0.027807194739580154
+tool_out,5, how,7,0.03951369598507881
+tool_out,5, query,24,0.04032601974904537
+tool_out,5, the,2,0.04038870148360729
+tool_out,5, which,1,0.03583771735429764
+tool_out,5,Write,525,0.03353716805577278
+tool_out,5,\n\n,48,0.041967371478676796
+tool_out,5,assistant,189,0.03950890526175499
+tool_out,5,"{""",228,0.03237009793519974
+tool_properly,1, below,1,0.05301057919859886
+tool_properly,1, choices,1,0.048506394028663635
+tool_properly,1, how,13,0.08077061176300049
+tool_properly,1, query,1385,0.0641058012843132
+tool_properly,1,What,1,0.0863940492272377
+tool_properly,1,\n\n,269,0.05683283880352974
+tool_properly,1,assistant,52,0.05637901648879051
+tool_properly,2, add,20,0.04863608255982399
+tool_properly,2, below,9,0.04893692955374718
+tool_properly,2, call,1,0.04603341221809387
+tool_properly,2, query,220,0.053508831188082695
+tool_properly,2, the,1,0.05018587410449982
+tool_properly,2,\n\n,1268,0.05177454650402069
+tool_properly,2,assistant,202,0.05260913074016571
+tool_properly,2,"{""",1,0.04587318375706673
+tool_properly,3," """"""\n",1,0.04213320091366768
+tool_properly,3, add,37,0.045688409358263016
+tool_properly,3, answer,1,0.04379060119390488
+tool_properly,3, assist,1,0.033308107405900955
+tool_properly,3, below,31,0.04438110440969467
+tool_properly,3, call,4,0.039315659552812576
+tool_properly,3, how,3,0.04668751731514931
+tool_properly,3, query,115,0.05066196992993355
+tool_properly,3, rank,1,0.04425399750471115
+tool_properly,3,\n\n,169,0.04981541261076927
+tool_properly,3,assistant,1320,0.0465736910700798
+tool_properly,3,"{""",39,0.0390709824860096
+tool_properly,4," """"""\n",1,0.03428969532251358
+tool_properly,4, add,349,0.0309841837733984
+tool_properly,4, answer,1,0.0419657863676548
+tool_properly,4, assist,38,0.028206772170960903
+tool_properly,4, below,304,0.03291885182261467
+tool_properly,4, call,143,0.03172916918992996
+tool_properly,4, function,45,0.029893340542912483
+tool_properly,4, how,6,0.04280174896121025
+tool_properly,4, minimize,1,0.032773371785879135
+tool_properly,4, query,2,0.04584844037890434
+tool_properly,4, the,2,0.02920318953692913
+tool_properly,4, user,4,0.02884309459477663
+tool_properly,4, which,1,0.037662994116544724
+tool_properly,4,\n\n,10,0.04344874992966652
+tool_properly,4,assistant,123,0.04014654830098152
+tool_properly,4,"{""",692,0.03248155489563942
+tool_properly,5," """"""\n",2,0.03134292829781771
+tool_properly,5, Tools,1,0.02916869707405567
+tool_properly,5, add,359,0.02986321598291397
+tool_properly,5, assist,274,0.026814764365553856
+tool_properly,5, below,262,0.030191942118108273
+tool_properly,5, call,116,0.029223059304058552
+tool_properly,5, chapter,1,0.03186831623315811
+tool_properly,5, decide,1,0.02549142576754093
+tool_properly,5, determine,2,0.026961571536958218
+tool_properly,5, each,1,0.031226500868797302
+tool_properly,5, find,1,0.025726905092597008
+tool_properly,5, function,105,0.030831562355160713
+tool_properly,5, how,3,0.028351012617349625
+tool_properly,5, minimize,1,0.03995359688997269
+tool_properly,5, the,5,0.024538403376936913
+tool_properly,5, user,79,0.027619803324341774
+tool_properly,5,\n\n,9,0.0428132563829422
+tool_properly,5,assistant,22,0.03554258868098259
+tool_properly,5,"{""",478,0.02845034748315811

@@ -1,0 +1,18 @@
+{
+  "strong_write": [
+    "L2H14 is the strongest earliest head-level candidate inside the 24-node circuit.",
+    "L2H14 feeds the earliest strong scaffold through MLP11.",
+    "MLP11 -> MLP16 -> MLP19 is the earliest strong scaffold segment.",
+    "L20H5 is a later tool ingress reader, not the earliest head-level reader.",
+    "L16H8, L17H2, and L17H8 are downstream carriers rather than earliest reader candidates for the tool scaffold."
+  ],
+  "weak_write": [
+    "L2H14 reads an early user-side object bundle that contains the minimal cue, rather than a clean isolated lead token.",
+    "MLP11 already writes an answer-opening polarity rather than a fully specific <tool_call> command."
+  ],
+  "still_unsolved": [
+    "A clean token-level object-language description of exactly what L2H14 reads first.",
+    "A stronger direct writer decomposition for MLP11 beyond exact-logit delta summaries."
+  ],
+  "paper_level_end_to_end": false
+}

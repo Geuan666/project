@@ -1,0 +1,55 @@
+variant,rank,token,count,attn_median
+develop_below,1, the,10,0.10046130418777466
+develop_below,2, below,1,0.07333055883646011
+develop_below,2, query,8,0.05356106907129288
+develop_below,2,\n\n,1,0.05212044343352318
+develop_below,3, below,3,0.052178796380758286
+develop_below,3, query,1,0.0457121916115284
+develop_below,3,\n\n,5,0.04804033041000366
+develop_below,3,assistant,1,0.04545072093605995
+develop_below,4, below,2,0.042439179494977
+develop_below,4, query,1,0.05198417603969574
+develop_below,4,\n\n,4,0.0441877581179142
+develop_below,4,assistant,3,0.04279964789748192
+develop_below,5, below,4,0.039501991122961044
+develop_below,5,assistant,6,0.039031222462654114
+develop_file,1, the,10,0.10172074660658836
+develop_file,2, below,1,0.055141352117061615
+develop_file,2, query,6,0.05527433007955551
+develop_file,2,\n\n,3,0.05169134587049484
+develop_file,3, query,3,0.04810648038983345
+develop_file,3,\n\n,6,0.046448180451989174
+develop_file,3,assistant,1,0.04770679026842117
+develop_file,4, below,2,0.04233457148075104
+develop_file,4, query,1,0.04591454938054085
+develop_file,4,\n\n,1,0.04591016098856926
+develop_file,4,assistant,6,0.043313974514603615
+develop_file,5, below,6,0.031804805621504784
+develop_file,5,assistant,3,0.038345545530319214
+develop_file,5,"{""",1,0.028001319617033005
+write_below,1, the,10,0.13721944391727448
+write_below,2, below,6,0.05774528533220291
+write_below,2, query,3,0.06341028213500977
+write_below,2,\n\n,1,0.04631209000945091
+write_below,3, below,3,0.04578707739710808
+write_below,3, query,4,0.045363521203398705
+write_below,3,\n\n,3,0.048767752945423126
+write_below,4, below,1,0.04570366069674492
+write_below,4, query,3,0.044574446976184845
+write_below,4,\n\n,6,0.04147887043654919
+write_below,5, function,1,0.03520072251558304
+write_below,5,assistant,9,0.03773396089673042
+write_file,1, the,10,0.14079075306653976
+write_file,2, below,1,0.05216016620397568
+write_file,2, query,5,0.04970278963446617
+write_file,2,\n\n,4,0.048749977722764015
+write_file,3, query,4,0.042761486023664474
+write_file,3,\n\n,6,0.0445314384996891
+write_file,4, below,2,0.039890240877866745
+write_file,4, query,1,0.04076196998357773
+write_file,4,assistant,7,0.039989665150642395
+write_file,5, below,5,0.030596742406487465
+write_file,5, function,1,0.03719469904899597
+write_file,5,Write,2,0.032652080059051514
+write_file,5,assistant,1,0.04159679263830185
+write_file,5,"{""",1,0.0254888366907835

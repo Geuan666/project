@@ -107,6 +107,75 @@
 - `L16H4 -> MLP17 -> L23H6` 则构成 competing no-tool chain。
 - `MLP17` 不只是写 `no_tool`，还会压 `L20H5 / L21H1 / L21H12` 这些 tool ingress 点。
 
+### 5.2 最小 Cue 的全量链路证据
+
+- 在 `1722` 个 shared samples 上，full minimal-cue rerun 证明：只换首句 lead phrase 就足以把 `clean_with_corrupt_lead` 压到 no-tool-top1 `0.999`，并把 `corrupt_with_clean_lead` 拉回 tool-top1 `1.000`。
+- 单节点 scan 里，final circuit 中最早稳定携带这份 cue 的节点在两侧都是 `MLP11`：tool rescue `0.331`，no-tool rescue `0.153`。这更像 shared early scaffold，而不是最终决策 writer。
+- tool 主链 `L20H5 -> L21H1 -> L21H12 -> L24H6 -> MLP27` 的 stepwise rescue 从 `0.308` 逐步升到 `0.991`；最终 tool-top1 `0.937`，boundary-flip `0.991`。
+- no-tool 主链 `L16H4 -> MLP17 -> L23H6` 的 rescue 从 `0.198` 升到 `0.795`；最终 no-tool-top1 `0.516`，boundary-flip `0.474`。
+- minimal cue 下最强 tool 边仍是 `L21H12 -> MLP27`，mediated `0.328`；最强 no-tool 边是 `L16H4 -> MLP17`，mediated `0.076`，同时 `MLP17 -> L23H6` 与 `MLP17 -> L21H12` 也保持显著（`0.066` / `0.066`）。
+- 详细 artifact 见 `data/minimal_cue_mechanism_report.md`、`data/minimal_cue_mechanism_summary.json`，以及对应的 per-sample / summary CSV。
+
+### 5.3 最早 Reader 到最终 Writer 的全量桥接证据
+
+- 新的全量 earliest-reader bridge audit 只回答一个问题：最小 cue 在已有 24 节点 circuit 内，最早是由哪个 head-level node 读入，并怎样进入 `MLP11 -> MLP16 -> MLP19` scaffold。
+- 在 `1722` 个样本上，完整链 `L2H14 -> MLP11 -> MLP16 -> MLP19 -> L20H5 -> L21H1 -> L21H12 -> L24H6 -> MLP27` 达到 rescue `0.998`、tool-top1 `0.989`、boundary `1.000`。这说明从最早 reader 到最终 writer 的链路身份已经闭环。
+- `L2H14` 现在可以强写成 circuit 内最早的 head-level reader：
+  它的 best causal span 是 `lead_phrase`（median `0.025`）；
+  clean `lead_phrase` density `0.0161`，高于 `file_target` `0.0085` 和 `function_body_anchor` `0.0055`；
+  它还是优先候选里唯一保留 `L2H14 -> MLP11` 直接边的 head，edge support `0.187 / 0.045`。
+- `L2H14 -> MLP11` 的中介效应虽然不大，但已经稳定：
+  source-only rescue `0.042`，
+  blocked-by-`MLP11` `0.030`，
+  mediated median `0.009`，
+  `51.7%` 样本为正，
+  `p75 = 0.082`，
+  `p90 = 0.156`。
+  相比之下，`L16H8 / L17H2 / L17H8 / L20H5` 在 `MLP11` 上的 mediated 都是 `0.000`。
+- 组件级桥接把 `L2H14` 的读写分工补清楚了：
+  `K` 是最强 source component（`0.066`）；
+  `Q` 基本为零（`0.004`）；
+  `V` 是净负向（mediated `-0.018`）；
+  `Z` 也保留了和 `K` 同量级的正向 `MLP11`-mediated 部分（`0.009`）。
+  所以最稳的写法不是“只有 `Z` 在写”，而是：
+  `L2H14` 先通过 lead-sensitive key-side read 选中 instruction opening，再把这份差异写成 head output，送进 `MLP11`。
+- `MLP11` 仍然是最早稳定 scaffold writer；`MLP11 -> MLP16 -> MLP19` 仍然是最早强机制段。详细文件见：
+  `data/earliest_reader_end_to_end_report.md`、
+  `data/earliest_reader_focused_evidence_table.csv`、
+  `data/earliest_reader_claim_tiers.json`、
+  `data/earliest_reader_still_unsolved.csv`，
+  以及支撑用的 `data/earliest_reader_tool_*` 与 `data/l2h14_mlp11_*` 汇总表。
+
+### 5.4 Within-Opening Matched Counterfactual
+
+- 这组新实验把 full prompt 固定，只替换 instruction 第一行 opening，构造了 6 个 matched openings：
+  `Write out / Build out`，
+  `Manually build / Manually develop`，
+  `Properly add / Properly develop`。
+- 行为上，语义分组非常强：
+  tool variants 的 decision score 中位数分别是 `4.535 / 1.462 / 2.856`，
+  no-tool variants 则是 `-3.343 / -4.394 / -4.082`。
+  所以 opening semantics 本身足以稳定决定末端行为。
+- 但 `L2H14` 的局部表示并不按语义分组，而更按 opening frame 分组：
+  `l2h14_lead_k` 的 same-semantic cross-frame cosine 只有 `0.924`，
+  same-frame opposite-semantic 却是 `0.965`；
+  centered 后差距更大（`-0.295` vs `0.484`）。
+  `l2h14_z` 也一样：same-semantic `0.989`，same-frame-opposite `0.993`。
+- 这说明 `L2H14` 更像 opening-frame / lexical scaffold reader，而不是最早的抽象 delivery-semantic reader。
+- `MLP11` 才开始更像 semantic scaffold writer：
+  `mlp11_out` 对原始 clean/corrupt line 的 semantic-correct rate 是 `1.000 / 0.923`；
+  centered semantic margin 分别是 `1.120 / 0.615`。
+  所以更稳的链条写法变成：
+  `L2H14` 先读取 opening frame，
+  `MLP11` 第一次把这份差异写成 tool-vs-no-tool answer-delivery scaffold，
+  然后 `MLP16 -> MLP19` 放大并送进晚层 writer。
+- 详细 artifact 见：
+  `data/opening_matched_counterfactual_report.md`、
+  `data/opening_matched_variant_summary.csv`、
+  `data/opening_matched_representation_summary.csv`、
+  `data/opening_matched_alignment_summary.csv`，
+  以及对应 per-sample CSV。
+
 ## 6. 完整 24 节点清单
 
 下表保留了全 24 个节点的当前语义和证据摘要。它回答的是“全电路里每个节点目前被解释成什么”，而不是“所有节点都已经达到相同强度的 mechanistic certainty”。
@@ -390,6 +459,15 @@ no-tool 目标分数定义为：
 - `data/query_decision_summary.json`：固定 schema 下的主链/竞争链结果。
 - `data/instruction_commitment_summary.json`：整句 instruction 交换结果。
 - `data/instruction_lead_summary.json`：lead phrase 交换结果。
+- `data/minimal_cue_mechanism_summary.json`：`1722` 对样本上的 final-circuit minimal cue 机制总表。
+- `data/minimal_cue_mechanism_report.md`：最小 cue 如何在 final circuit 内被读取、传播、放大并写成决策的完整报告。
+- `data/minimal_cue_variant_summary.csv` / `data/minimal_cue_variant_per_sample.csv`：lead-swap 行为翻转表。
+- `data/minimal_cue_node_summary.csv` / `data/minimal_cue_node_per_sample.csv`：单节点 cue rescue 表。
+- `data/minimal_cue_step_summary.csv` / `data/minimal_cue_step_per_sample.csv`：tool / no-tool 链的逐步放大表。
+- `data/minimal_cue_edge_summary.csv` / `data/minimal_cue_edge_per_sample.csv`：minimal cue 下的边级中介表。
+- `data/focused_mechanism_report.md`：只围绕 reader / writer / transmission / amplification / suppression 的机制总报告。
+- `data/focused_mechanism_table.csv`：节点 / 边机制证据表。
+- `data/focused_mechanism_claim_tiers.json`：强写 / 弱写 / 未解决主张分级。
 - `data/mlp27_steering_summary.json`：`MLP27` 局部写出干预结果。
 - `data/late_writer_backup_summary.json`：`MLP27` backup/minimality 结果。
 - `data/head_final_audit_summary.json`：attention head 终版审计。

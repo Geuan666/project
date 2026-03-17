@@ -1,0 +1,253 @@
+{
+  "variant_summary_rows": [
+    {
+      "variant": "original_clean",
+      "semantic": "tool",
+      "frame": "original",
+      "n_samples": 10,
+      "decision_score_median": 4.65625,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0,
+      "l2h14_lead_density_median": 0.013147103134542704,
+      "l2h14_file_density_median": 0.009148056153208017,
+      "l2h14_function_density_median": 0.005132645135745406
+    },
+    {
+      "variant": "original_corrupt",
+      "semantic": "no_tool",
+      "frame": "original",
+      "n_samples": 10,
+      "decision_score_median": -5.453125,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 1.0,
+      "l2h14_lead_density_median": 0.045979660004377365,
+      "l2h14_file_density_median": 0.008609145181253552,
+      "l2h14_function_density_median": 0.004898360697552562
+    },
+    {
+      "variant": "tool_out",
+      "semantic": "tool",
+      "frame": "out",
+      "n_samples": 10,
+      "decision_score_median": 4.54931640625,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0,
+      "l2h14_lead_density_median": 0.03172551468014717,
+      "l2h14_file_density_median": 0.01040052343159914,
+      "l2h14_function_density_median": 0.009691340383142233
+    },
+    {
+      "variant": "no_tool_out",
+      "semantic": "no_tool",
+      "frame": "out",
+      "n_samples": 10,
+      "decision_score_median": -5.1014404296875,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 1.0,
+      "l2h14_lead_density_median": 0.015637665521353483,
+      "l2h14_file_density_median": 0.010547675658017397,
+      "l2h14_function_density_median": 0.005565522238612175
+    },
+    {
+      "variant": "tool_manually",
+      "semantic": "tool",
+      "frame": "manually",
+      "n_samples": 10,
+      "decision_score_median": 1.82177734375,
+      "tool_top1_rate": 0.8,
+      "no_tool_top1_rate": 0.2,
+      "l2h14_lead_density_median": 0.01310833403840661,
+      "l2h14_file_density_median": 0.008492941036820412,
+      "l2h14_function_density_median": 0.003203071537427604
+    },
+    {
+      "variant": "no_tool_manually",
+      "semantic": "no_tool",
+      "frame": "manually",
+      "n_samples": 10,
+      "decision_score_median": -4.53955078125,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 1.0,
+      "l2h14_lead_density_median": 0.014485372230410576,
+      "l2h14_file_density_median": 0.008016762789338827,
+      "l2h14_function_density_median": 0.0028055980801582336
+    },
+    {
+      "variant": "tool_properly",
+      "semantic": "tool",
+      "frame": "properly",
+      "n_samples": 10,
+      "decision_score_median": 3.0468978881835938,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0,
+      "l2h14_lead_density_median": 0.01201211055740714,
+      "l2h14_file_density_median": 0.008608109317719936,
+      "l2h14_function_density_median": 0.0029782240744680166
+    },
+    {
+      "variant": "no_tool_properly",
+      "semantic": "no_tool",
+      "frame": "properly",
+      "n_samples": 10,
+      "decision_score_median": -3.78955078125,
+      "tool_top1_rate": 0.1,
+      "no_tool_top1_rate": 0.8,
+      "l2h14_lead_density_median": 0.010381705593317747,
+      "l2h14_file_density_median": 0.008352741599082947,
+      "l2h14_function_density_median": 0.0031663980334997177
+    }
+  ],
+  "representation_summary_rows": [
+    {
+      "space": "l2h14_z",
+      "same_semantic_cross_frame_cosine_median": 0.9880433430274327,
+      "same_frame_opposite_semantic_cosine_median": 0.9924245576063793,
+      "semantic_minus_frame_cosine_median": -0.0047683368126551495,
+      "semantic_wins_rate": 0.0
+    },
+    {
+      "space": "mlp11_out",
+      "same_semantic_cross_frame_cosine_median": 0.993709459900856,
+      "same_frame_opposite_semantic_cosine_median": 0.9937849541505177,
+      "semantic_minus_frame_cosine_median": -0.00018239021301275082,
+      "semantic_wins_rate": 0.4
+    }
+  ],
+  "alignment_summary_rows": [
+    {
+      "space": "l2h14_z",
+      "variant": "no_tool_manually",
+      "semantic": "no_tool",
+      "frame": "manually",
+      "semantic_margin_median": 0.002382934093475342,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "no_tool_out",
+      "semantic": "no_tool",
+      "frame": "out",
+      "semantic_margin_median": -0.002155005931854248,
+      "semantic_correct_rate": 0.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "no_tool_properly",
+      "semantic": "no_tool",
+      "frame": "properly",
+      "semantic_margin_median": 0.0021841228008270264,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "original_clean",
+      "semantic": "tool",
+      "frame": "original",
+      "semantic_margin_median": -0.002213805913925171,
+      "semantic_correct_rate": 0.4
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "original_corrupt",
+      "semantic": "no_tool",
+      "frame": "original",
+      "semantic_margin_median": -0.004437625408172607,
+      "semantic_correct_rate": 0.3
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "tool_manually",
+      "semantic": "tool",
+      "frame": "manually",
+      "semantic_margin_median": -0.0061337947845458984,
+      "semantic_correct_rate": 0.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "tool_out",
+      "semantic": "tool",
+      "frame": "out",
+      "semantic_margin_median": -0.005203574895858765,
+      "semantic_correct_rate": 0.0
+    },
+    {
+      "space": "l2h14_z",
+      "variant": "tool_properly",
+      "semantic": "tool",
+      "frame": "properly",
+      "semantic_margin_median": -0.0075089335441589355,
+      "semantic_correct_rate": 0.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "no_tool_manually",
+      "semantic": "no_tool",
+      "frame": "manually",
+      "semantic_margin_median": 0.0016832053661346436,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "no_tool_out",
+      "semantic": "no_tool",
+      "frame": "out",
+      "semantic_margin_median": -0.0008082389831542969,
+      "semantic_correct_rate": 0.1
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "no_tool_properly",
+      "semantic": "no_tool",
+      "frame": "properly",
+      "semantic_margin_median": 0.003993391990661621,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "original_clean",
+      "semantic": "tool",
+      "frame": "original",
+      "semantic_margin_median": 0.005216509103775024,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "original_corrupt",
+      "semantic": "no_tool",
+      "frame": "original",
+      "semantic_margin_median": 0.0021722018718719482,
+      "semantic_correct_rate": 0.9
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "tool_manually",
+      "semantic": "tool",
+      "frame": "manually",
+      "semantic_margin_median": 0.0021437108516693115,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "tool_out",
+      "semantic": "tool",
+      "frame": "out",
+      "semantic_margin_median": 0.002668023109436035,
+      "semantic_correct_rate": 1.0
+    },
+    {
+      "space": "mlp11_out",
+      "variant": "tool_properly",
+      "semantic": "tool",
+      "frame": "properly",
+      "semantic_margin_median": -0.001218646764755249,
+      "semantic_correct_rate": 0.0
+    }
+  ],
+  "artifacts": {
+    "variant_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/opening_matched_semantics_smoke/opening_matched_variant_per_sample.csv",
+    "representation_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/opening_matched_semantics_smoke/opening_matched_representation_per_sample.csv",
+    "alignment_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/opening_matched_semantics_smoke/opening_matched_alignment_per_sample.csv",
+    "top_tokens_per_sample_csv": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/opening_matched_semantics_smoke/opening_matched_top_tokens_per_sample.csv",
+    "report_md": "/root/autodl-tmp/project/results/final/archive/raw_runs/13-01-39-final-kl/opening_matched_semantics_smoke/opening_matched_counterfactual_report.md"
+  }
+}

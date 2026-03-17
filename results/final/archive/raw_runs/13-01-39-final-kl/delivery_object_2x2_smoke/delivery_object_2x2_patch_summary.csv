@@ -1,0 +1,5 @@
+frame,node,file_rescue_ratio_median,object_decision_score_median,object_boundary_flip_rate,tool_top1_rate
+develop,L2H14,-0.009868421052631578,-0.0599822998046875,0.0,0.0
+develop,MLP11,0.11500449236298292,-0.0357666015625,0.3,0.0
+write,L2H14,0.03367286392405063,-0.3193817138671875,0.0,0.5
+write,MLP11,-0.0993923611111111,-0.6251220703125,0.2,0.2
