@@ -1,206 +1,314 @@
 # TODO: `/root/autodl-tmp/project`
 
-## 1. 总目标
+## 背景
 
-当前主线目标不变，但需要重新收束成更清晰、也更符合导师讨论结果的版本：
+### 我们当前工作的基本思路
 
-- 找到一个 **faithful circuit**，解释模型在首个生成位置上是输出 `<tool_call>` 还是进入 no-tool 模式。
-- 给这个 circuit 做 **功能优先的语义分组**，而不是把 `backbone / bias / tail` 当作最终解释语言。
-- 用明确的 **circuit 指标** 证明电路有效。
-- 用明确的 **grouping 指标** 证明语义分组合理。
-- 在方法上突出 novelty：通过 **双向运行** 同时恢复促进机制和抑制机制，再把它们合成为一个 signed decision circuit。
+当前这项工作的目标，不是再去证明“某个 cue 会不会让模型调用工具”，而是：
 
-一句话概括：最终要交付的是一个 **可验证的 signed circuit + 可信的功能语义分组 + 对应的验证链条**。
+- 先用 **双向电路发现** 的方式，在模型内部找到一张真实参与首 token 决策的 circuit。
+- 再在这张已经找到的 circuit 里，反向解释：
+  - 哪些节点在读信息
+  - 哪些节点在路由信息
+  - 哪些节点在放大信息
+  - 哪些节点最终把状态写成 `<tool_call>` 或 `no_tool`
+- 最终把这些节点和边串成一条 **人类可理解、对象语言化、带证据的 mechanistic chain**
 
-## 2. 当前情况
+换句话说，方法顺序必须是：
 
-### 2.1 已有基础
+1. 先找 circuit
+2. 再解释 circuit 的语义
+3. 不在全模型里漫无目的搜头
+4. 而是在已发现的 circuit 中定位：到底是谁实现了我们关心的语义与决策
 
-- 主项目已经有一套可运行的双向分析流程，并产生过 signed circuit、group-level suff/nec、token flip、family mediation 等结果。
-- 当前结果已经说明：模型的决策不是单向 promote circuit，而更像是共享子系统上叠加促进/抑制偏置。
-- 已有报告、图和脚本主要集中在 `results/11-22-45-bidirectional_approxy/` 下。
+### 当前工作的真实状态
 
-### 2.2 当前主要问题
+当前工作的核心其实已经很明确：
 
-根据最新讨论，现有版本至少有以下三个核心问题：
+- 我们已经通过双向方法 **计算出了 circuit**
+- 也已经通过 faithful 性验证 **证明了 circuit 是对的**
+- 当前真正缺的，不再是“这张电路存不存在”
+- 当前真正缺的是：**这张电路到底如何实现机制**
 
-1. **语义分组不够强，也不够“功能化”**
-   - 现在的 `backbone / bias / tail` 更像结构描述，不是最终应使用的语义解释。
-   - 需要把结构信息降为辅助信息，把最终叙事改成功能分组，例如：
-     - promoting readers
-     - suppressing readers
-     - promoting routers / mediators
-     - suppressing routers / mediators
-     - promoting writers
-     - suppressing writers
-     - shared integrators / arbitration modules
-   - 分组方式需要参考 [Answer.md](/root/autodl-tmp/project/Answer.md) 的思路：联合 read pattern、write pattern、causal role 来定义，而不是只按几何位置或聚合来源命名。
+也就是说，当前工作的短板不是 circuit correctness，而是 mechanistic evidence。
 
-2. **目标函数需要从 logit difference 升级到 KL**
-   - 直接用两个标量 logit 差值作为目标过于粗糙。
-   - 下一版主目标应改成 clean / corrupt 两个方向在首个生成位置上的 **KL divergence** 或其对称变体，用来度量“整个 next-token 分布”而不是单个 token 标值差。
+从现在开始，后续讨论要从：
 
-3. **方法比较还不够**
-   - 当前主结果主要来自现有 pipeline 的 ACDC-style 局部化流程。
-   - 还没有把 `EAP-IG`、`feature-circuits`、`RelP` 三种方法桥接进同一任务与评估框架。
-   - 缺少“同一任务、同一数据、同一验证标准”下的方法对照。
+- “哪些节点和边重要”
+- “这张电路能不能恢复行为”
 
-## 3. 数据、环境与系统配置
+推进到：
 
-### 3.1 数据
+- “这些节点分别读什么”
+- “这些节点分别写什么”
+- “这些边到底在传递什么状态”
+- “这个最小 cue 为什么会沿着电路被放大并最终翻转首 token 决策”
 
-- 当前最新数据集位于 `datasets/clean/` 与 `datasets/corrupt/`。
-- 最新计数为：
-  - `clean`: 1722
-  - `corrupt`: 1722
-- 因此后续所有实验都应以 **1722 对样本** 为准，而不是旧版 1189。
+### 当前已有结果在哪里
 
-### 3.2 环境
+当前主结果已经整理到：
 
-- Conda 环境：`base`
-- Python：`3.12.3`
-- Python 路径：`/root/miniconda3/bin/python`
-- Pip 路径：`/root/miniconda3/bin/pip`
+- [results/final](/root/autodl-tmp/project/results/final)
 
-### 3.3 硬件
+其中最重要的文件是：
 
-- GPU：`NVIDIA GeForce RTX 4090 D`
-- 显存：`24GB`
-- Driver：`580.76.05`
-- CUDA：`13.0`
+- 总文档：[FINAL_PACKAGE.md](/root/autodl-tmp/project/results/final/FINAL_PACKAGE.md)
+- 图像目录：[figures](/root/autodl-tmp/project/results/final/figures)
+- 数据目录：[data](/root/autodl-tmp/project/results/final/data)
+- 旧 run 归档：[archive/raw_runs](/root/autodl-tmp/project/results/final/archive/raw_runs)
 
-## 4. 主项目接下来必须改进的部分
+主线已有结果包括：
 
-### 4.1 目标函数改造：从 logit gap 到 KL objective
+- 最终 signed circuit：`24` 个节点，`64` 条边
+- 最终机制主链候选：
+  - tool 路：`L20H5 -> L21H1/L21H12 -> L24H6 -> MLP27`
+  - no-tool 路：`L16H4 -> MLP17 -> L23H6`
+- 反向发现与 no-tool 语义线的高重合
+- attention head 的 span / QKV 审计
+- `MLP27` 的 late writer 证据
 
-需要统一把双向目标重写为分布级目标。建议至少实现以下两个版本：
+### 当前必须始终记住的前提
 
-- `KL_tool`: clean 分布相对 corrupt 分布的 KL，在 `<tool_call>` endpoint 上定义
-- `KL_no_tool`: clean 分布相对 corrupt 分布的 KL，在 no-tool endpoint 上定义
+这不是研究结果，而是**数据构造前提**：
 
-进一步可选：
+- clean 和 corrupt 的关键差异，是用户 instruction 最前面的极小 token / lead phrase
+- clean 会走 `<tool_call>`
+- corrupt 不会走 `<tool_call>`
 
-- symmetric KL
-- Jensen-Shannon divergence
+因此，下面这些问题**不是**当前研究目标：
 
-要求：
+- “第一句 instruction 重不重要？”
+- “lead phrase 会不会翻转行为？”
 
-- 明确记录使用的是首个生成位置的 logits 分布
-- 明确记录 softmax 温度与 masking 规则
-- 保持 forward / reverse 两个方向定义完全对称
+因为这些是数据设计里已经写死的。
 
-### 4.2 语义分组重构：功能优先，结构辅助
+真正要解释的是：
 
-要把当前分组体系升级成两层：
+**为什么只改这一个 token / 极小短语，模型内部就会发生级联变化，最后在首个生成位置从 `<tool_call>` 翻到 `no_tool`，或者反过来。**
 
-1. **最终展示层：功能语义组**
-   - tool-schema readers
-   - user-query readers
-   - suppression readers
-   - promotion routers / mediators
-   - suppression routers / mediators
-   - tool-call writers
-   - no-tool writers
-   - arbitration / integrator nodes
+### 当前必须区分的两类证据
 
-2. **内部分析层：结构辅助标签**
-   - shared support
-   - forward-only support
-   - reverse-only support
-   - overlap / tail / bridge
+后续讨论里，必须明确区分：
 
-要求：
+#### 1. 定位证据
 
-- 最终 PPT 和 paper 叙事以功能组为主，不以 `backbone` 为主。
-- 结构标签只作为“这些功能节点来自哪里”的辅助信息。
+这些证据回答的是：
 
-### 4.3 语义分组证据链补强
+- 这个节点是不是在这条链上
+- 这条边是不是重要
+- 动这个节点之后，行为会不会变
 
-必须补以下直观证据：
+目前已经有很多这类证据，例如：
 
-- **Attention heatmap**：说明 head 在读什么
-- **Logit lens / residual trajectory**：说明节点在把表示往哪个 token / mode 上推
-- **Causal validation**：说明这个组 patch 后真的改变行为
-- **Group ablation / leave-one-group-out**：说明该组对整体 circuit 是必要的
+- reverse overlap
+- patch rescue
+- stepwise rescue
+- edge mediation
+- sufficiency / necessity
 
-还要进一步细化 head / MLP 的角色，不再停留在泛化标签上。
+这些证据很重要，但它们本质上回答的是：
 
-### 4.4 电路 faithful 性验证补强
+**“它在不在这条电路里，以及动它会不会影响行为。”**
 
-对 final circuit 需要至少补齐以下验证：
+#### 2. 机制证据
 
-- full-circuit sufficiency
-- full-circuit necessity
-- leave-one-node-out necessity
-- leave-one-edge-out necessity
-- leave-one-group-out necessity
-- behavioral top-1 flip
-- distributional KL recovery
+这些证据回答的是：
 
-说明：
+- 它读了什么对象
+- 它把 residual 往哪个方向推
+- 它到底是在抬高 `no_tool`，还是在压低 `<tool_call>`，还是两者同时发生
+- 它怎样具体影响下游节点
 
-- 不仅要看 margin 或 ratio，还要看分布级恢复。
-- 最终 faithful 性应由“因果恢复 + 行为翻转 + 分布恢复”共同支撑。
+这类证据才是真正的 mechanistic evidence。
 
-### 4.5 方法比较框架统一
+所以从现在开始，必须避免把：
 
-主项目需要提供一个统一评估接口，供三种外部方法接入：
+- reverse overlap
+- patch 后恢复 no-tool
+- clean 上逐步 patch 后越来越像 no-tool
 
-- `EAP-IG`
-- `feature-circuits`
-- `RelP`
+直接当作“机制已经解释完了”。
 
-统一内容至少包括：
+这些结果只能说明：
 
-- 同一数据集
-- 同一 forward / reverse 任务定义
-- 同一 KL objective
-- 同一 circuit 输出格式
-- 同一 semantic grouping 流程
-- 同一 validation 指标
+**我们定位到了 suppressive branch。**
 
-## 5. 建议实施顺序
+但还不能单独说明：
 
-### 阶段 A：主项目方法升级
+**这个 suppressive branch 到底是如何实现抑制的。**
 
-1. 把当前 objective 改写成 KL 版本。
-2. 重跑双向主流程，得到新的 signed circuit 候选。
-3. 基于 `Answer.md` 重构功能语义分组。
-4. 补 attention heatmap 与 logit-lens 风格图。
+---
 
-### 阶段 B：faithfulness 与 grouping 验证
+## 第一点：解释“最小 cue 如何在已发现的 circuit 中引发级联决策翻转”
 
-1. 对 final circuit 做 suff / nec / top-1 flip / KL recovery。
-2. 对每个语义组做 group-level suff / nec。
-3. 做 leave-one-group-out 与 family mediation。
-4. 输出更直观的表和图。
+### 这一点到底要解决什么问题
 
-### 阶段 C：方法扩展与对照
+当前第一核心问题是：
 
-1. 把 EAP-IG 接进同一任务。
-2. 把 feature-circuits 接进同一任务。
-3. 把 RelP 接进同一任务。
-4. 对比三种方法与当前 baseline：
-   - faithfulness
-   - sparsity
-   - semantic coherence
-   - runtime / GPU cost
+**在已经发现的 24 节点 circuit 里面，找出这个已知最小 cue 是如何被某个具体节点读取、经具体边传播、被具体 MLP/heads 放大，并最终写成 `<tool_call>` / `no_tool` 决策的。**
 
-## 6. 最终交付标准
+更具体地说，我们接下来真正要拆清楚的是：
 
-主项目最终应该交付以下结果：
+1. 这个首 token / 极小 lead phrase，先被 circuit 里的哪个 head 读到。
+2. 这个 head 读到的到底是什么：
+   - 这个词的词面身份
+   - 这个位置
+   - 它和 `solve.py / solve.cpp / solve.java / function body` 的组合对象
+   - 还是更抽象的“交付承诺”语义
+3. 它通过哪条 Q/K/V 路径，把这个局部差异送到下游。
+4. 下游哪些节点把这个微小差异放大成：
+   - `L20H5 -> L21H1/L21H12 -> L24H6 -> MLP27` 这类 tool 链优势
+   - 或者 `L16H4 -> MLP17 -> L23H6` 这类 no-tool 链优势
+5. 为什么这个差异最后会被写成几乎二值化的首 token 翻转。
 
-- 一个 final faithful signed circuit
-- 一套功能优先的 semantic grouping
-- 对 circuit 的 sufficiency / necessity / behavior / KL 验证
-- 对 grouping 的 read / write / causal 验证
-- 一套可视化：
-  - circuit graph
-  - attention heatmap
-  - logit-lens or trajectory figure
-  - suff/nec heatmap
-  - node / edge importance
-- 一个能支撑汇报与论文的故事线：
-  - 双向方法如何发现促进与抑制
-  - 为什么这种方法比单向更 faithful
-  - 为什么功能语义分组是合理的
+### 这一点的边界
+
+这一点当前**不是**在问：
+
+- “哪个 cue 会导致翻转？”
+- “哪个词和 `<tool_call>` 相关？”
+
+而是在问：
+
+**这个已知 cue，为什么能通过我们已经找到的 circuit，造成最终决策的级联翻转。**
+
+所以接下来所有提问、分析、实验，都应该受这个边界约束：
+
+- 必须在当前已发现的 circuit 里寻找解释
+- 必须优先解释当前电路中的节点与边
+- 不要把“数据构造事实”误当成“机制发现”
+- 不要把“定位证据”误当成“机制证据”
+
+### 当前第一问题最缺的机制证据类型
+
+当前这一步最缺的不是更多 patch，而是更接近经典 mech interp 的机制证据：
+
+#### A. Attention Heatmap / Readout 可视化
+
+目标：
+
+- 展示某个 head 到底读了哪个对象
+
+重点问题：
+
+- 它读的是首词本身？
+- 还是首词和 `solve.py / solve.cpp / solve.java / function body` 的组合？
+- 还是句首位置 / instruction 边界？
+
+这类证据主要服务于：
+
+- 找最早 cue-reader head
+- 解释 `L16H4 / L16H8 / L17H2 / L17H8 / L20H5`
+
+#### B. Logit Lens / Residual Direction 可视化
+
+目标：
+
+- 展示某个节点把 residual 往什么方向推
+
+重点问题：
+
+- 它是在抬高 `<tool_call>`？
+- 还是在抬高 `no_tool`？
+- 还是主要在压低对侧方向？
+
+这类证据主要服务于：
+
+- 解释 `MLP17`
+- 解释 `L23H6`
+- 解释 `MLP27`
+
+#### C. Downstream Suppression Visualization
+
+目标：
+
+- 展示 no-tool 链如何具体压制 tool ingress
+
+重点问题：
+
+- `MLP17` 之后，`L20H5 / L21H1 / L21H12` 的 tool-biased state 是否被削弱？
+- 去掉 `MLP17` 之后，这些节点的状态是否回升？
+
+这类证据主要服务于：
+
+- 解释 no-tool 链不只是“自己写 no_tool”
+- 而是真的在 **压制 tool 路**
+
+### 当前最值得重点追问的节点范围
+
+接下来第一问题的分析，应优先围绕以下节点展开。
+
+#### 可能的最早 cue-reader 候选
+
+- `L2H14`
+- `L16H8`
+- `L17H2`
+- `L17H8`
+- `L20H5`
+
+#### tool 路由 / 放大 / 写出候选
+
+- `L21H1`
+- `L21H12`
+- `L24H6`
+- `MLP27`
+
+#### no-tool 竞争 / 抑制候选
+
+- `L16H4`
+- `MLP17`
+- `L23H6`
+- 以及 reverse-aligned 支路上的：
+  - `MLP12`
+  - `L15H5`
+  - `L16H13`
+  - `L16H9`
+
+### 当前 no-tool 链的专门机制问题
+
+对于：
+
+- `L16H4 -> MLP17 -> L23H6`
+
+当前已经有很多“定位证据”，但真正要补的是“机制证据”。
+
+接下来要围绕这条链明确回答：
+
+1. `L16H4` 到底读了什么，才把状态送进 suppressive route？
+2. `MLP17` 到底是在写 `no_tool`，还是在压 `<tool_call>`，还是两者都有？
+3. `L23H6` 是不是把这个 suppressive state 送到了输出附近？
+4. `MLP17` 到底如何让 `L20H5 / L21H1 / L21H12` 这些 tool ingress 节点变弱？
+
+这 4 个问题，才是 no-tool 链后续真正的 mechanistic target。
+
+### 当前这一步真正想要的最终答案形式
+
+这一点最终不是要得到一句泛泛的话，而是要得到一条可以写进主文的 mechanistic chain：
+
+1. `Head A` 最先读取这个最小 cue
+2. `Head A` 读到的是 `X`，不是 `Y`
+3. 它主要通过 `Q / K / V / Z` 的哪一部分起作用
+4. 它把这个差异传给 `Node B`
+5. `Node B / C / D` 如何继续放大
+6. `MLP27` 或 `MLP17` 如何把这个差异写成最终首 token 偏置
+
+### 当前这一步的验收标准
+
+这一点只有在下面这些问题都能回答时，才算真正完成：
+
+- 哪个节点最先读取了最小 cue？
+- 它读到的是词面、位置、对象组合，还是更抽象的语义？
+- 它的主要作用成分是 `Q`、`K`、`V` 还是 `Z`？
+- 它通过哪条边影响了哪个下游节点？
+- 哪些节点负责放大？
+- 哪个节点最终完成了 `<tool_call>` / `no_tool` 的写出？
+
+---
+
+## 备注
+
+从现在开始，后续围绕 [results/final](/root/autodl-tmp/project/results/final) 的提问，默认都应服务于上面“第一点”的任务推进。
+
+也就是说，后续问题应该优先帮助我们回答：
+
+**这个已知最小 cue，究竟如何在当前已发现的 circuit 中被读取、传播、放大并最终写成决策。**
