@@ -1,5 +1,0 @@
-variant,frame,delivery_object,n_samples,decision_score_median,tool_top1_rate,no_tool_top1_rate,l2h14_opening_density_median,l2h14_object_density_median
-write_file,write,file,20,1.27734375,0.6,0.4,0.029025024734437466,0.009222089312970638
-write_answer,write,answer,20,0.18115234375,0.3,0.65,0.02700247522443533,0.02893788367509842
-develop_file,develop,file,20,-2.6484375,0.0,1.0,0.017706824466586113,0.011430342216044664
-develop_answer,develop,answer,20,-4.53125,0.0,0.95,0.01592002436518669,0.0371271688491106

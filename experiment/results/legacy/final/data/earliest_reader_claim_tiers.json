@@ -1,0 +1,26 @@
+{
+  "strong_write": [
+    "Within the fixed 24-node circuit, `L2H14` is the earliest retained head-level reader that feeds `MLP11`.",
+    "`L2H14` is not the first stable delivery-object writer: its state is still frame-dominant in matched 2x2 prompts, and editing only its shared file-vs-answer direction barely changes endpoint scores or late-writer logits.",
+    "`L2H14` already carries a small, cross-frame file-vs-answer component, but that component is weak and not yet behaviorally decisive at the reader stage.",
+    "`MLP11` is the first stable delivery-object writer.",
+    "Editing only `MLP11`'s shared file-vs-answer direction strongly changes object score, tool/no-tool token logits, and downstream activations in `MLP16`, `MLP19`, `L20H5`, `L21H12`, `L24H6`, and `MLP27`.",
+    "The strongest end-to-end chain can now be written as `minimal cue -> L2H14 -> MLP11 -> MLP16 -> MLP19 -> L20H5 -> L21H12 -> L24H6 -> MLP27`."
+  ],
+  "medium_write": [
+    "`L21H1` remains part of the late tool route overall, but it is not the cleanest monotonic carrier of the shared file-vs-answer direction in the new direction-level audit.",
+    "`L2H14`'s shared object component is real but low-amplitude; current experiments do not yet pin it down to a single microfeature label."
+  ],
+  "weak_write": [
+    "A fully isolated object-language name for the exact microfeature read by `L2H14`."
+  ],
+  "paper_grade_status": {
+    "earliest_head_reader_identity": true,
+    "reader_to_mlp11_transmission": true,
+    "first_stable_delivery_object_writer": true,
+    "late_writer_bridge_from_mlp11": true,
+    "l2h14_exact_microfeature_name": false,
+    "end_to_end_chain": true,
+    "overall": true
+  }
+}

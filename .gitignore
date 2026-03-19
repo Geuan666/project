@@ -1,0 +1,57 @@
+# Local environments and editor settings
+.venvs/
+.vscode/
+.python-version
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Temporary workspace and package probes
+tmp/
+*.whl
+
+# External reference repos / downloaded survey assets
+survey/references/
+
+# LaTeX build artifacts, but keep paper sources and final PDF
+paper/other/
+paper/*.aux
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.xdv
+
+# Logs
+*.log
+
+# Raw / bulky experiment artifacts
+experiment/results/attentionhead/
+experiment/results/**/archive/raw_runs/
+experiment/results/**/logs/
+experiment/results/**/plots/
+experiment/results/**/analysis/
+experiment/results/**/smoke_*/
+experiment/results/**/full_run.log
+experiment/results/**/aggregate_arrays.npz
+experiment/results/**/*_per_sample.csv
+experiment/results/**/*_per_sample.json
+experiment/results/**/*_per_sample.jsonl
+experiment/results/**/sample_catalog.jsonl
+experiment/results/**/batch_progress.jsonl
+
+# Generic numeric dumps
+*.npy
+*.npz
+
+# OS junk
+.DS_Store

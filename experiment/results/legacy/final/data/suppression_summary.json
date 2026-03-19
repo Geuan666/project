@@ -1,0 +1,11 @@
+{
+  "n_samples": 1722,
+  "projection_summary_csv": "/root/autodl-tmp/project/results/final/data/suppression_projection_summary.csv",
+  "direction_summary_csv": "/root/autodl-tmp/project/results/final/data/suppression_direction_summary.csv",
+  "intervention_summary_csv": "/root/autodl-tmp/project/results/final/data/suppression_intervention_summary.csv",
+  "stagewise_summary_csv": "/root/autodl-tmp/project/results/final/data/suppression_stagewise_summary.csv",
+  "focused_evidence_csv": "/root/autodl-tmp/project/results/final/data/suppression_focused_evidence_table.csv",
+  "claim_tiers_json": "/root/autodl-tmp/project/results/final/data/suppression_claim_tiers.json",
+  "still_unsolved_csv": "/root/autodl-tmp/project/results/final/data/suppression_still_unsolved.csv",
+  "report_md": "/root/autodl-tmp/project/results/final/data/suppression_mechanism_report.md"
+}

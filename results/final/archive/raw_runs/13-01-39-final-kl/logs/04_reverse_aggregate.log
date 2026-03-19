@@ -1,6 +1,0 @@
-
-[2026-03-13 11:04:11] launch: /root/miniconda3/bin/python /root/autodl-tmp/project/scripts/aggregate_toolcall_behavior.py --input-root /root/autodl-tmp/project/results/13-01-39-final-kl/reverse_batch --output-root /root/autodl-tmp/project/results/13-01-39-final-kl/reverse_aggregate --model-path /root/autodl-tmp/Qwen/Qwen3-1.7B --device cuda --output-node-label Residual Output: no_tool --summary-label reverse_kl --skip-replay
-[done] aggregate outputs: /root/autodl-tmp/project/results/13-01-39-final-kl/reverse_aggregate
-[done] core nodes=12 edges=25
-[done] replay samples=0
-[2026-03-13 11:04:27] exit_code=0

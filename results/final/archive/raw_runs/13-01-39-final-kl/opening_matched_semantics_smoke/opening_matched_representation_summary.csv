@@ -1,3 +1,0 @@
-space,same_semantic_cross_frame_cosine_median,same_frame_opposite_semantic_cosine_median,semantic_minus_frame_cosine_median,semantic_wins_rate
-l2h14_z,0.9880433430274327,0.9924245576063793,-0.0047683368126551495,0.0
-mlp11_out,0.993709459900856,0.9937849541505177,-0.00018239021301275082,0.4

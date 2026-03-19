@@ -1,5 +1,0 @@
-variant,n_samples,tool_score_median,no_tool_score_median,decision_score_median,tool_top1_rate,no_tool_top1_rate
-clean_full,3,0.0,-6.1875,6.1875,1.0,0.0
-clean_with_corrupt_lead,3,-6.625,0.0,-6.625,0.0,1.0
-corrupt_full,3,-6.625,0.0,-6.625,0.0,1.0
-corrupt_with_clean_lead,3,0.0,-6.1875,6.1875,1.0,0.0

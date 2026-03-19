@@ -1,0 +1,31 @@
+{
+  "strong_write": [
+    "`L2H14` is the earliest retained head-level reader inside the 24-node circuit.",
+    "`MLP11` is the first stable delivery-object writer.",
+    "`MLP11 -> MLP16 -> MLP19` is the earliest strong amplification segment for the shared file-vs-answer direction.",
+    "`L20H5 -> L21H12 -> L24H6 -> MLP27` is the cleanest late writer bridge for that shared object axis.",
+    "`MLP27` remains the primary late writer for `<tool_call>`.",
+    "`L16H4 -> MLP17 -> L23H6` is the suppressive no-tool chain.",
+    "`L16H4` reads user-side ordinary-answer evidence concentrated in the task-body / tail-suffix region rather than tool schema tokens.",
+    "`MLP17` both raises `no_tool` and lowers `<tool_call>`.",
+    "`MLP17` also disturbs the late tool ingress route."
+  ],
+  "medium_write": [
+    "`L2H14` already carries a weak shared file-vs-answer component, but it is not the first stable writer.",
+    "`L21H1` remains part of the late tool route overall, but it is not the cleanest monotonic carrier of the shared file-vs-answer direction.",
+    "`L23H6` is best described as a late suppressive relay rather than a main reader."
+  ],
+  "not_yet_solved": [
+    "The exact microfeature label inside `L2H14`.",
+    "The exact microfeature label inside `L16H4`."
+  ],
+  "bottom_line": {
+    "forward_chain_status": "paper-ready",
+    "suppression_chain_status": "paper-ready",
+    "remaining_blockers": "none",
+    "remaining_non_blocking_gaps": [
+      "exact microfeature inside L2H14",
+      "exact microfeature inside L16H4"
+    ]
+  }
+}

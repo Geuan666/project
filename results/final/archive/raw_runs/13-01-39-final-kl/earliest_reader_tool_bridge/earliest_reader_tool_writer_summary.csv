@@ -1,4 +1,0 @@
-node,tool_token_delta_median,distractor_token_delta_median,top_positive_tokens
-MLP11,0.75,-0.875,"<tool_call>,  threads, ewe,  τ, .hashCode, from"
-MLP16,1.125,-1.75,"<tool_call>, 扺,  τ, "":["", opup, 抵"
-MLP19,1.25,-1.5," τ, <tool_call>,  �, 拉开, .equal,  lắm"

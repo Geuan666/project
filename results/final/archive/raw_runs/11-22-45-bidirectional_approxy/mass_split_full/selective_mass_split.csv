@@ -1,3 +1,0 @@
-group,support_key,n_nodes_total,n_nodes_overlap,n_nodes_unique,total_mass,overlap_mass,unique_mass,overlap_mass_fraction,unique_mass_fraction,overlap_nodes,unique_nodes
-forward_selective,forward_support,8,3,5,3.5066333583648124,2.4401625928006627,1.0664707655641499,0.6958704670335257,0.3041295329664743,"L21H1,L21H12,MLP11","L19H6,L23H5,L2H14,MLP18,MLP21"
-reverse_selective,reverse_support,8,6,2,4.577637633748206,4.05541254773828,0.5222250860099268,0.8859182120140157,0.11408178798598453,"L16H4,L16H8,L20H5,MLP12,MLP16,MLP17","L16H9,L17H2"

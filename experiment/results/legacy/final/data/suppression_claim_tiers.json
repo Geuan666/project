@@ -1,0 +1,27 @@
+{
+  "strong_write": [
+    "`L16H4` reads user-side ordinary-answer evidence concentrated in the task body / tail-suffix region rather than tool schema tokens.",
+    "`MLP17` is the main suppressive writer in the no-tool chain.",
+    "`MLP17` both raises `no_tool` and lowers `<tool_call>`; it is not a pure single-sided writer.",
+    "`MLP17` also disturbs the tool ingress route by pushing `L20H5`, `L21H1`, `L21H12`, `L24H6`, and `MLP27` toward their local no-tool directions.",
+    "`L23H6` acts as a late suppressive relay that carries the already-written no-tool state into the output-adjacent region.",
+    "The stagewise suppressive story can be written as `L16H4 -> MLP17 -> L23H6`, with token-level consequences appearing sharply once `MLP17` is added."
+  ],
+  "medium_write": [
+    "`L16H4` likely reads a user-side ordinary-answer / plain-function-body bundle rather than a single isolated lexical cue.",
+    "`L23H6` appears more relay-like than reader-like, but its exact transported microfeature is still named only at the level of a suppressive state."
+  ],
+  "weak_write": [
+    "A maximally narrow object-language label for the exact subfeature inside the `L16H4` readout."
+  ],
+  "paper_grade_status": {
+    "l16h4_reader_object": true,
+    "mlp17_writer_direction": true,
+    "l23h6_late_relay": true,
+    "raise_no_tool_vs_lower_tool": true,
+    "tool_ingress_disturbance": true,
+    "stagewise_suppression": true,
+    "exact_l16h4_microfeature_name": false,
+    "overall": true
+  }
+}
