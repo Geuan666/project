@@ -1,7 +1,0 @@
-mode,step_label,n_samples,route_rescue_ratio_median,route_delta_median,boundary_flip_rate,tool_top1_rate,no_tool_top1_rate
-promote_tool_route,MLP11,8,0.17569502490580297,1.044464111328125,0.0,0.0,1.0
-erase_tool_route,MLP11,8,0.03854032531690528,-0.37738800048828125,0.0,1.0,0.0
-promote_tool_route,MLP11+MLP16,8,0.39080997541694784,3.61669921875,0.125,0.125,0.875
-erase_tool_route,MLP11+MLP16,8,0.2124002551572906,-1.633056640625,0.0,1.0,0.0
-promote_tool_route,MLP11+MLP16+MLP19,8,0.5819321857901674,4.605224609375,0.5,0.75,0.25
-erase_tool_route,MLP11+MLP16+MLP19,8,0.34805250334642435,-3.279296875,0.5,0.5,0.5

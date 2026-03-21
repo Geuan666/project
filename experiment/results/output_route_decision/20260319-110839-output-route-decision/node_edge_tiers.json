@@ -1,0 +1,33 @@
+{
+  "anchor_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP19"
+  ],
+  "support_nodes": [
+    "L2H14",
+    "MLP12",
+    "L20H5",
+    "L21H12",
+    "MLP17",
+    "MLP27",
+    "L23H6"
+  ],
+  "candidate_nodes": [
+    "L12H6",
+    "L13H9",
+    "L17H8"
+  ],
+  "strong_edges": [
+    "MLP11->MLP16",
+    "MLP16->MLP19",
+    "MLP16->MLP17"
+  ],
+  "weak_edges": [
+    "MLP19->L20H5",
+    "MLP19->L21H12",
+    "MLP19->MLP27",
+    "MLP19->L23H6"
+  ],
+  "candidate_edges": []
+}

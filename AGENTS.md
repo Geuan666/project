@@ -5,7 +5,7 @@
 ```text
 project/
 ├── AGENTS.md                         # Codex 协作规则与项目总览
-├── task.md                           # 当前主任务顺序
+├── task.md                           # 历史任务顺序与旧推进计划
 ├── history.md                        # 数据、方法、结果、机制假说历史
 ├── survey/
 │   ├── references/                   # 外部论文与参考仓库入口
@@ -17,11 +17,14 @@ project/
 │   │   └── attentionhead/            # 注意力头专项实验代码
 │   ├── datasets/                     # clean/corrupt 成对数据
 │   └── results/
-│       ├── legacy/                   # 历史主结果与分层整理
-│       └── attentionhead/            # 注意力头实验结果
+│       ├── attentionhead/            # 注意力头全量聚合结果
+│       ├── instruction_integration/  # 模块 1 最终结果包
+│       ├── output_route_decision/    # 模块 2 最终结果包
+│       ├── tool_call_construction/   # 模块 3 最终结果包
+│       ├── tool_call_suppression/    # 模块 4 最终结果包
+│       └── legacy/                   # 最终 signed circuit 与旧主结果包
 ├── paper/                            # 论文主文、图表、草稿
-├── .venvs/                           # 本地环境
-└── tmp/                              # 临时文件与探针输出
+└── .venvs/                           # 本地环境
 ```
 
 ## 行为规则
@@ -45,7 +48,17 @@ project/
 - 当前已经得到一张通过充分性和必要性验证的最终 signed circuit：`24` 个节点、`64` 条边；主结果集中在 `experiment/results/legacy/final` 对应的结果包中。
 - 当前新的总机制假说分为 4 个模块：`Instruction Integration`、`Output-Route Decision`、`Tool-Call Construction`、`Tool-Call Suppression`。
 - 注意力头全量聚合实验已经完成：覆盖 `1722` 个样本、`448` 个注意力头，结果保存在 `experiment/results/attentionhead/20260319-121000-attention-head-full/`，后续可直接为模块分析服务。
-- 本轮重构的目标不是推翻旧结果，而是把有价值的代码、数据和结果重新整理进一个更适合人和 Codex 协同推进的项目结构。
+- 当前 4 个模块都已经完成并冻结，规范入口分别是：
+  - `experiment/results/instruction_integration/20260319-155729-instruction-integration-full/`
+  - `experiment/results/output_route_decision/20260319-110839-output-route-decision/`
+  - `experiment/results/tool_call_construction/20260320-031957-tool-call-construction/`
+  - `experiment/results/tool_call_suppression/20260320-065246-tool-call-suppression/`
+- 四个模块的当前最稳结论是：
+  - `Instruction Integration`: `L2H14 + L11H5 -> MLP11`
+  - `Output-Route Decision`: `MLP11 -> MLP16 -> MLP19`
+  - `Tool-Call Construction`: `MLP19 -> L20H5 -> (L21H1 / L21H12) -> L24H6 -> MLP27`
+  - `Tool-Call Suppression`: `MLP16 -> MLP17` 分叉进入 `L16H4 -> MLP17 -> L23H6`
+- 当前最重要的工作已经从“继续扩模块实验”转为“统一总图、统一叙事、统一论文主文写法”。
 
 ## 当前机制猜想（英文）
 

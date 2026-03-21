@@ -1,0 +1,38 @@
+Scientific paper figure draft, portrait 9:16, white background, clean vector infographic.
+
+Show a mechanistic interpretability diagram for tool-use decision in a large language model.
+
+Top area: sparse neural circuit with colored nodes and arrows.
+Bottom area: four module boxes connected by arrows:
+Instruction Integration -> Output-Route Decision -> Tool-Call Construction
+and Output-Route Decision -> Tool-Call Suppression.
+
+Color code:
+- blue: Instruction Integration
+- orange: Output-Route Decision
+- green: Tool-Call Construction
+- red: Tool-Call Suppression
+
+In the top circuit, make an orange central spine with three labeled nodes:
+MLP11 -> MLP16 -> MLP19
+
+Visual meaning:
+- MLP11 = earliest route writer
+- MLP16 = shared amplifier
+- MLP19 = late fanout hub
+
+Add one strong branch from MLP16 toward the red suppression branch.
+Add several weaker fanout arrows from MLP19 toward green and red downstream nodes.
+
+Include only short readable labels:
+Instruction Integration
+Output-Route Decision
+Tool-Call Construction
+Tool-Call Suppression
+MLP11
+MLP16
+MLP19
+tool route
+direct-answer route
+
+Style: serious NeurIPS / ICML mechanism figure, minimal text, sharp alignment, lots of whitespace, no watermark, no poster style.

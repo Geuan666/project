@@ -1,0 +1,15 @@
+{
+  "n_samples": 1722,
+  "geometry_nodes": [
+    "MLP11",
+    "MLP16",
+    "MLP19"
+  ],
+  "experiment1_per_sample_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment1_per_sample.csv",
+  "experiment1_condition_summary_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment1_condition_summary.csv",
+  "experiment1_blocked_summary_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment1_blocked_summary.csv",
+  "experiment2_per_sample_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment2_per_sample.csv",
+  "experiment2_condition_summary_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment2_condition_summary.csv",
+  "experiment2_joint_comparison_summary_csv": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/experiment2_joint_comparison_summary.csv",
+  "report_md": "/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full/instruction_integration_refine_report.md"
+}

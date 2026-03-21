@@ -1,0 +1,32 @@
+{
+  "actual_n": 1722,
+  "anchor_nodes": [
+    "L20H5",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "support_nodes": [
+    "MLP19",
+    "L21H1"
+  ],
+  "candidate_nodes": [
+    "L25H10",
+    "L25H13",
+    "L26H15",
+    "L27H7",
+    "MLP24",
+    "MLP25",
+    "MLP26"
+  ],
+  "artifacts": {
+    "report_md": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/tool_call_construction_refine_report.md",
+    "bug_note_md": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/stagewise_bug_note.md",
+    "stagewise_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/construction_stagewise_trajectory.png",
+    "top_token_change_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/construction_top_token_change.png",
+    "node_writeout_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/construction_node_writeout.png",
+    "route_fanout_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/construction_route_fanout.png",
+    "branch_compare_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/l21_branch_comparison.png",
+    "shortcut_png": "/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction/figures/mlp19_mlp27_shortcut_audit.png"
+  }
+}

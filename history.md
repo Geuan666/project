@@ -51,7 +51,7 @@
 - 最终 signed circuit：`24` 个节点、`64` 条边。
 - 该电路通过了充分性和必要性层面的验证。
 - 当前正式结果包保存在 [experiment/results/legacy/final](/root/autodl-tmp/project/experiment/results/legacy/final)。
-- `legacy` 结果的分层整理索引保存在 [experiment/results/legacy/CURATION.md](/root/autodl-tmp/project/experiment/results/legacy/CURATION.md)。
+- 为了后续模块化重构，`legacy` 目录目前只保留仍有直接参考价值的主结果包，以及最小的 raw provenance：`experiment/results/legacy/final/archive/raw_runs/13-01-39-final-kl`。
 - 对应代码入口主要在 [experiment/code/src](/root/autodl-tmp/project/experiment/code/src) 和 [experiment/code/scripts](/root/autodl-tmp/project/experiment/code/scripts)。
 
 如果只从“找到 faithful circuit”这个角度看，这个项目其实已经足够形成一篇论文。但目前的问题不是电路对不对，而是叙事和机制解释还没有完全收束。
@@ -147,3 +147,76 @@
 - 高价值但尚未完全收束的结果保留为参考；
 - 更早期、近似性更强或主要服务过程记录的结果降级归档；
 - 后续所有新工作，都直接围绕 4 个模块推进。
+
+## 5. 当前冻结下来的 4 个模块
+
+经过这一轮模块化重构，现在 4 个模块都已经分别完成，并且每个模块都有自己当前应优先引用的结果包。
+
+### 5.1 `Instruction Integration`
+
+当前最稳的结论是：
+
+- `L2H14` 提供最早的 opening-side ingress；
+- `L11H5` 是进入 `MLP11` 的 main same-block handoff head；
+- `L2H14 + L11H5` 构成最小两段式 ingress group；
+- `MLP11` 是 `Instruction Integration` 的出口，同时也是 `Output-Route Decision` 的入口。
+
+当前规范结果包：
+
+- [experiment/results/instruction_integration/20260319-155729-instruction-integration-full](/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full)
+
+### 5.2 `Output-Route Decision`
+
+当前最稳的结论是：
+
+- `MLP11 -> MLP16 -> MLP19` 实现逐层重编码的连续 `route score`；
+- 这个模块决定的不是单个 token，而是“工具协议输出 vs 直接回答”的输出路线偏好；
+- `MLP16 -> MLP17` 是 direct-answer / suppressive 一侧的强分叉边；
+- `MLP19` 是 tool-side 的 late fanout hub，而不是单一瓶颈。
+
+当前规范结果包：
+
+- [experiment/results/output_route_decision/20260319-110839-output-route-decision](/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision)
+
+### 5.3 `Tool-Call Construction`
+
+当前最稳的结论是：
+
+- `MLP19` 把 tool-route state 扇出到 construction 区；
+- `L20H5` 是 construction ingress / payload binder；
+- `L21H1` 与 `L21H12` 不是简单冗余，而是两条不同的 late routing；
+- `L24H6` 更像 formatter / protocol commitment；
+- `MLP27` 是主 writer；
+- `MLP19 -> MLP27` 虽强，但当前只能写成 strong parallel receipt，不能强写成独立 bypass 主路。
+
+当前规范结果包：
+
+- [experiment/results/tool_call_construction/20260320-031957-tool-call-construction](/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction)
+
+### 5.4 `Tool-Call Suppression`
+
+当前最稳的结论是：
+
+- `MLP16 -> MLP17` 是从 `Output-Route Decision` 进入 suppressive line 的强 fork edge；
+- `L16H4` 是 suppressive reader / ingress；
+- `MLP17` 是主 suppressive writer，既抬高 `no_tool`，也压低 `<tool_call>`；
+- `L23H6` 更像 late suppressive relay，而不是主要 writer。
+
+当前规范结果包：
+
+- [experiment/results/tool_call_suppression/20260320-065246-tool-call-suppression](/root/autodl-tmp/project/experiment/results/tool_call_suppression/20260320-065246-tool-call-suppression)
+
+## 6. 当前项目已经收束成什么样
+
+到目前为止，这个项目已经不再缺“模块实验”，而是开始转向“总图和总叙事”的阶段。
+
+现在最稳的统一主线是：
+
+> 模型先通过 `Instruction Integration` 把开头要求、函数体、文件名和后半句说明整合起来；随后通过 `Output-Route Decision` 把这些信息压成连续的输出路线分数；如果 tool-route 一侧占优，状态就进入 `Tool-Call Construction`，被逐步组织成 `<tool_call>` 的首词偏好；如果 direct-answer 一侧占优，状态就进入 `Tool-Call Suppression`，被写成更强的 `no_tool` / 普通回答状态，同时压住 tool path。
+
+因此，当前最重要的后续工作已经变成：
+
+- 统一 4 个模块之间的边界节点和接口节点；
+- 统一论文主文里的机制叙事；
+- 统一总图、图注和结果段的表达；
+- 在不破坏当前模块结论的前提下，继续清理旧脚本、旧结果和旧命名。
