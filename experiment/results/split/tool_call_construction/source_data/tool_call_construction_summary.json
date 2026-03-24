@@ -1,0 +1,56 @@
+{
+  "anchor_nodes": [
+    "L20H5",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "support_nodes": [
+    "MLP19",
+    "L21H1"
+  ],
+  "candidate_nodes": [
+    "L25H10",
+    "L25H13",
+    "L26H15",
+    "L27H7",
+    "MLP24",
+    "MLP25",
+    "MLP26"
+  ],
+  "tool_token_text": "<tool_call>",
+  "top_competitors": [
+    [
+      "I",
+      1214
+    ],
+    [
+      "The",
+      5
+    ],
+    [
+      "To",
+      4
+    ]
+  ],
+  "actual_n": 1223,
+  "artifacts": {
+    "report_md": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/tool_call_construction_report.md",
+    "node_writeout_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_node_writeout.png",
+    "node_projection_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_node_projection.png",
+    "stagewise_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_stagewise_trajectory.png",
+    "top_token_change_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_top_token_change.png",
+    "route_fanout_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_route_fanout.png",
+    "candidate_patch_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_candidate_patch.png",
+    "mean_logit_lens_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_mean_logit_lens.png",
+    "combined_attention_panel": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/construction_attention_panels.png",
+    "L20H5_density": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L20H5/density_heatmap.png",
+    "L20H5_decision": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L20H5/decision_row.png",
+    "L21H1_density": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L21H1/density_heatmap.png",
+    "L21H1_decision": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L21H1/decision_row.png",
+    "L21H12_density": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L21H12/density_heatmap.png",
+    "L21H12_decision": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L21H12/decision_row.png",
+    "L24H6_density": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L24H6/density_heatmap.png",
+    "L24H6_decision": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/source_data/figures/L24H6/decision_row.png"
+  }
+}

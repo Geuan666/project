@@ -1,0 +1,67 @@
+{
+  "schema_nodes": [
+    "L21H12",
+    "MLP27"
+  ],
+  "summary_rows": [
+    {
+      "base_variant": "clean_no_protocol",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1223,
+      "rescue_ratio_median": 1.7266187050359711,
+      "top1_rate": 0.011447260834014717,
+      "boundary_flip_rate": 0.032706459525756335
+    },
+    {
+      "base_variant": "clean_no_protocol",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1223,
+      "rescue_ratio_median": 2.528340517241379,
+      "top1_rate": 0.4627964022894522,
+      "boundary_flip_rate": 0.5200327064595257
+    },
+    {
+      "base_variant": "clean_no_schema",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1223,
+      "rescue_ratio_median": 0.5279187817258884,
+      "top1_rate": 0.5388389206868357,
+      "boundary_flip_rate": 0.5960752248569092
+    },
+    {
+      "base_variant": "clean_no_schema",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1223,
+      "rescue_ratio_median": 0.5909598214285714,
+      "top1_rate": 0.7375306623058054,
+      "boundary_flip_rate": 0.830744071954211
+    },
+    {
+      "base_variant": "clean_schema_mismatch",
+      "step_idx": 1,
+      "node": "L21H12",
+      "n_samples": 1223,
+      "rescue_ratio_median": 0.852112676056338,
+      "top1_rate": 0.4652493867538839,
+      "boundary_flip_rate": 0.5077677841373671
+    },
+    {
+      "base_variant": "clean_schema_mismatch",
+      "step_idx": 2,
+      "node": "MLP27",
+      "n_samples": 1223,
+      "rescue_ratio_median": 1.0250699626865671,
+      "top1_rate": 0.9239574816026165,
+      "boundary_flip_rate": 0.9664758789860998
+    }
+  ],
+  "artifacts": {
+    "summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/schema_stagewise/schema_stagewise_summary.csv",
+    "per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/schema_stagewise/schema_stagewise_per_sample.csv",
+    "plot": "/root/autodl-tmp/project/experiment/results/split/pipeline/schema_stagewise/schema_stagewise_plot.png"
+  }
+}

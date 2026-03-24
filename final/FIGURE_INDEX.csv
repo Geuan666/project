@@ -1,16 +1,16 @@
-figure,filename,title,source
-图1,figure_01_final_signed_circuit.png,最终 signed circuit 总览,legacy/final
-图2,figure_02_bidirectional_union_circuit.png,双向反转后的联合电路,legacy/final
-图3,figure_03_earliest_reader_vs_mlp11.png,L2H14 与 MLP11 对照图,legacy/final
-图4,figure_04_instruction_integration_mid_support.png,Instruction Integration 的中层 support 图,module1 package
-图5,figure_05_route_score_summary.png,模块 2 的 route score 分离度与相关性,custom from module2 CSV
-图6,figure_06_decision_spine_edge_mediation.png,模块 2 的主干边中介量对比,custom from module2 CSV
-图7,figure_07_decision_module_patch_progression.png,模块 2 三段 spine 的累积推动效果,custom from module2 CSV
-图8,figure_08_mlp11_projection_trajectory_heatmap.png,MLP11 编辑后的下游投影轨迹,legacy/final
-图9,figure_09_mlp11_final_writer_effect.png,MLP11 对最终 writer 的影响,legacy/final
-图10,figure_10_construction_stagewise_trajectory.png,Tool-Call Construction 的 stagewise 轨迹,module3 package
-图11,figure_11_construction_branch_comparison.png,两条 late construction branch 的比较,module3 package
-图12,figure_12_construction_shortcut_audit.png,MLP19 到 MLP27 的 shortcut 审计,module3 package
-图13,figure_13_suppression_stagewise_trajectory.png,Tool-Call Suppression 的 stagewise 轨迹,module4 package
-图14,figure_14_suppression_node_writeout.png,suppressive 节点写出图,module4 package
-图15,figure_15_suppression_downstream_heatmap.png,suppressive 下游干扰热图,module4 package
+figure,filename,title,source,note
+图1,figure_01_final_signed_circuit.png,最终 signed circuit 总览,split/pipeline (train 1223 重新发现),拓扑与全量完全一致
+图2,figure_02_bidirectional_union_circuit.png,双向反转后的联合电路,split/pipeline,
+图3,figure_03_earliest_reader_vs_mlp11.png,L2H14 与 MLP11 对照图,split/instruction_integration,
+图4,figure_04_instruction_integration_mid_support.png,Instruction Integration 的中层 support 图,split/attentionhead,
+图5,figure_05_route_score_summary.png,模块 2 的 route score 分离度与相关性,split/output_route_decision,需用 train 数字重画
+图6,figure_06_decision_spine_edge_mediation.png,模块 2 的主干边中介量对比,split/output_route_decision,需用 train 数字重画
+图7,figure_07_decision_module_patch_progression.png,模块 2 三段 spine 的累积推动效果,split/output_route_decision,需用 train 数字重画
+图8,figure_08_mlp11_projection_trajectory_heatmap.png,MLP11 编辑后的下游投影轨迹,split/pipeline,
+图9,figure_09_mlp11_final_writer_effect.png,MLP11 对最终 writer 的影响,split/pipeline,
+图10,figure_10_construction_stagewise_trajectory.png,Tool-Call Construction 的 stagewise 轨迹,split/tool_call_construction,需用 train 数字重画
+图11,figure_11_construction_branch_comparison.png,两条 late construction branch 的比较,split/tool_call_construction,需用 train 数字重画
+图12,figure_12_construction_shortcut_audit.png,MLP19 到 MLP27 的 shortcut 审计,split/tool_call_construction,需用 train 数字重画
+图13,figure_13_suppression_stagewise_trajectory.png,Tool-Call Suppression 的 stagewise 轨迹,split/tool_call_suppression,需用 train 数字重画
+图14,figure_14_suppression_node_writeout.png,suppressive 节点写出图,split/tool_call_suppression,需用 train 数字重画
+图15,figure_15_suppression_downstream_heatmap.png,suppressive 下游干扰热图,split/tool_call_suppression,需用 train 数字重画

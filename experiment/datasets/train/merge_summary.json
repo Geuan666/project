@@ -1,0 +1,47 @@
+{
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "output_root": "/root/autodl-tmp/project/experiment/datasets/train",
+  "strict_pruned": true,
+  "dropped_rows": 0,
+  "corrupt_rows": 1223,
+  "clean_rows": 1223,
+  "language_counts": {
+    "cpp": 415,
+    "java": 414,
+    "python": 394
+  },
+  "corrupt_candidate_counts": {
+    "author": 85,
+    "build": 80,
+    "build out": 82,
+    "carefully implement": 88,
+    "compose": 86,
+    "craft": 78,
+    "design": 74,
+    "develop": 81,
+    "devise": 85,
+    "formulate": 76,
+    "implement": 86,
+    "independently develop": 81,
+    "manually develop": 79,
+    "properly develop": 81,
+    "supply": 81
+  },
+  "clean_candidate_counts": {
+    "append": 84,
+    "create": 76,
+    "directly build": 84,
+    "directly implement": 82,
+    "edit": 82,
+    "finalize": 78,
+    "insert": 83,
+    "manually build": 82,
+    "paste": 81,
+    "prefill": 83,
+    "prepare": 79,
+    "properly add": 81,
+    "save": 85,
+    "write": 81,
+    "write out": 82
+  }
+}

@@ -56,7 +56,8 @@ def main() -> None:
     parser.add_argument("--model-path", type=str, required=True)
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--skip-plots", action="store_true")
-    parser.add_argument("--ct-head-mode", default="ap_proxy")
+    parser.add_argument("--head-score-mode", default="ap")
+    parser.add_argument("--ct-head-mode", dest="legacy_head_score_mode", default=None, help=argparse.SUPPRESS)
     parser.add_argument("--causal-eval-max-samples", type=int, default=0)
     parser.add_argument("--functional-validate-max-samples", type=int, default=0)
     parser.add_argument("--family-mediation-max-samples", type=int, default=0)
@@ -82,6 +83,13 @@ def main() -> None:
     env = os.environ.copy()
     env["PYTHONPATH"] = f"{project_root / 'src'}:{env['PYTHONPATH']}" if env.get("PYTHONPATH") else str(project_root / "src")
     env["PYTORCH_CUDA_ALLOC_CONF"] = env.get("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+    if args.legacy_head_score_mode is None:
+        head_score_mode = args.head_score_mode
+    else:
+        head_score_mode = {"ap_proxy": "ap", "exact": "exact_patch"}.get(
+            args.legacy_head_score_mode,
+            args.legacy_head_score_mode,
+        )
 
     py = sys.executable
     dataset_root = str(Path(args.dataset_root).resolve())
@@ -125,7 +133,7 @@ def main() -> None:
         "--dataset-root", dataset_root,
         "--model-path", model_path,
         "--device", device,
-        "--ct-head-mode", args.ct_head_mode,
+        "--head-score-mode", head_score_mode,
         "--resume",
     ]
     if args.skip_plots:

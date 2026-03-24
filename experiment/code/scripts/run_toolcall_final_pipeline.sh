@@ -20,7 +20,7 @@ RUN_TAG="${RUN_TAG:-$(date +%d-%H-%M)-final-kl}"
 RUN_ROOT="${RUN_ROOT:-$PROJECT_ROOT/results/$RUN_TAG}"
 SAMPLE_IDS="${SAMPLE_IDS:-}"
 MAX_SAMPLES="${MAX_SAMPLES:-0}"
-DISCOVERY_CT_HEAD_MODE="${DISCOVERY_CT_HEAD_MODE:-ap_proxy}"
+DISCOVERY_HEAD_SCORE_MODE="${DISCOVERY_HEAD_SCORE_MODE:-${DISCOVERY_CT_HEAD_MODE:-ap}}"
 SKIP_PLOTS="${SKIP_PLOTS:-1}"
 RESUME_DISCOVERY="${RESUME_DISCOVERY:-1}"
 FAMILY_MEDIATION_MAX_SAMPLES="${FAMILY_MEDIATION_MAX_SAMPLES:-0}"
@@ -105,7 +105,7 @@ fi
 python scripts/mine_toolcall_batch.py \
   "${common_batch_args[@]}" \
   --out-root "$FORWARD_BATCH" \
-  --ct-head-mode "$DISCOVERY_CT_HEAD_MODE"
+  --head-score-mode "$DISCOVERY_HEAD_SCORE_MODE"
 
 python scripts/aggregate_toolcall_behavior.py \
   --input-root "$FORWARD_BATCH" \
@@ -118,7 +118,7 @@ python scripts/aggregate_toolcall_behavior.py \
 python scripts/mine_toolcall_reverse_batch.py \
   "${common_batch_args[@]}" \
   --out-root "$REVERSE_BATCH" \
-  --ct-head-mode "$DISCOVERY_CT_HEAD_MODE"
+  --head-score-mode "$DISCOVERY_HEAD_SCORE_MODE"
 
 python scripts/aggregate_toolcall_behavior.py \
   --input-root "$REVERSE_BATCH" \

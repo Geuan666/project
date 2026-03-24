@@ -1,0 +1,136 @@
+{
+  "n_samples": 1223,
+  "groups": {
+    "reverse_only_core": [
+      "L16H4",
+      "L16H8",
+      "L20H5"
+    ],
+    "shared_core": [
+      "L17H8",
+      "L21H1",
+      "L21H12",
+      "L23H6",
+      "L24H6",
+      "MLP16",
+      "MLP17",
+      "MLP19",
+      "MLP27"
+    ],
+    "forward_selective": [
+      "L18H14",
+      "L21H1",
+      "L21H12",
+      "L23H5",
+      "L23H6",
+      "L2H14",
+      "MLP11",
+      "MLP21"
+    ],
+    "reverse_selective": [
+      "L15H5",
+      "L16H13",
+      "L16H4",
+      "L16H8",
+      "L16H9",
+      "L17H2",
+      "MLP12",
+      "MLP17"
+    ],
+    "shared_backbone": [
+      "L12H6",
+      "L13H9",
+      "L16H4",
+      "L16H8",
+      "L17H8",
+      "L20H5",
+      "L21H1",
+      "L21H12",
+      "L23H6",
+      "L24H6",
+      "MLP11",
+      "MLP12",
+      "MLP16",
+      "MLP17",
+      "MLP19",
+      "MLP27"
+    ]
+  },
+  "matrix": "aligned",
+  "metrics": {
+    "promote__forward_selective__ratio": {
+      "n": 1223,
+      "median": 0.9865480132450332,
+      "mean": 0.9747606781499626,
+      "bootstrap_median": {
+        "mean": 0.9866442538478652,
+        "lo": 0.9855925324675324,
+        "hi": 0.9877520161290323
+      }
+    },
+    "promote__shared_backbone__ratio": {
+      "n": 1223,
+      "median": 0.9993980094178082,
+      "mean": 0.9983147243891681,
+      "bootstrap_median": {
+        "mean": 0.9993993250878956,
+        "lo": 0.9993411707535885,
+        "hi": 0.9994772886618589
+      }
+    },
+    "promote__shared_core__ratio": {
+      "n": 1223,
+      "median": 0.9993526785714286,
+      "mean": 0.9977276085850112,
+      "bootstrap_median": {
+        "mean": 0.9993438348008413,
+        "lo": 0.9992767717050209,
+        "hi": 0.999405570652174
+      }
+    },
+    "suppress__reverse_only_core__ratio": {
+      "n": 1223,
+      "median": 0.6007905138339921,
+      "mean": 0.5988235260776487,
+      "bootstrap_median": {
+        "mean": 0.6002125369721755,
+        "lo": 0.5878378378378378,
+        "hi": 0.613013698630137
+      }
+    },
+    "suppress__reverse_selective__ratio": {
+      "n": 1223,
+      "median": 0.8903061224489796,
+      "mean": 0.8580523483116491,
+      "bootstrap_median": {
+        "mean": 0.8904480556882095,
+        "lo": 0.88420245398773,
+        "hi": 0.8963607594936709
+      }
+    },
+    "suppress__shared_backbone__ratio": {
+      "n": 1223,
+      "median": 0.9958286199095022,
+      "mean": 0.9928464011674907,
+      "bootstrap_median": {
+        "mean": 0.9958180059113638,
+        "lo": 0.9954780910326086,
+        "hi": 0.9960714285714286
+      }
+    },
+    "suppress__shared_core__ratio": {
+      "n": 1223,
+      "median": 0.9944196428571429,
+      "mean": 0.9911411329644868,
+      "bootstrap_median": {
+        "mean": 0.9944251151928398,
+        "lo": 0.9940659153005464,
+        "hi": 0.9947076612903226
+      }
+    }
+  },
+  "artifacts": {
+    "per_sample_json": "/root/autodl-tmp/project/experiment/results/split/pipeline/causal_aligned/per_sample_cross_eval.json",
+    "summary_json": "/root/autodl-tmp/project/experiment/results/split/pipeline/causal_aligned/cross_eval_summary.json"
+  }
+}

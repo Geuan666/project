@@ -1,0 +1,4 @@
+node,n_samples,clean_tool_logit_median,clean_no_tool_logit_median,corrupt_tool_logit_median,corrupt_no_tool_logit_median,tool_logit_delta_median,no_tool_logit_delta_median,direction_alignment_median
+L16H4,1223,-0.859375,4.34375,-0.96484375,4.25,-0.07421875,-0.125,0.6437433362007141
+L23H6,1223,1.890625,8.0625,0.31640625,7.34375,-1.60986328125,-0.5625,0.9262148141860962
+MLP17,1223,-1.7421875,4.9375,-1.7578125,5.21875,-0.015625,0.1875,0.6495018005371094

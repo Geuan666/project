@@ -54,7 +54,7 @@ python scripts/mine_toolcall_reverse_batch.py \
   --model-path "$MODEL_PATH" \
   --out-root "$REVERSE_BATCH_ROOT" \
   --device "$DEVICE" \
-  --ct-head-mode ap_proxy \
+  --head-score-mode ap \
   --resume \
   --skip-plots
 

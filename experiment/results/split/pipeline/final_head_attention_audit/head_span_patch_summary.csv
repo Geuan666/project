@@ -1,0 +1,11 @@
+head,family,span,rescue_ratio_median,top1_rate
+L16H4,no_tool,file_target,0.0,0.0
+L16H4,no_tool,function_body_anchor,0.0040650406504065045,0.0008176614881439084
+L16H4,no_tool,lead_phrase,0.0,0.0
+L16H4,no_tool,tail_suffix,0.00881057268722467,0.0008176614881439084
+L16H4,no_tool,task_body,0.02127659574468085,0.0008176614881439084
+L23H6,no_tool,file_target,0.0,0.0
+L23H6,no_tool,function_body_anchor,0.0,0.0
+L23H6,no_tool,lead_phrase,0.0,0.0
+L23H6,no_tool,tail_suffix,0.0,0.0
+L23H6,no_tool,task_body,0.0,0.0

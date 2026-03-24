@@ -1,0 +1,38 @@
+{
+  "project_root": "/root/autodl-tmp/project",
+  "dataset_root": "/root/autodl-tmp/project/experiment/datasets/train",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "n_layers": 28,
+  "n_heads": 16,
+  "n_spans": 10,
+  "span_names": [
+    "system_preamble",
+    "tools_block",
+    "tool_instruction",
+    "tool_call_example",
+    "user_lead_phrase",
+    "function_body_anchor",
+    "file_target",
+    "instruction_suffix",
+    "task_body",
+    "assistant_prefix"
+  ],
+  "condition_names": [
+    "clean",
+    "corrupt"
+  ],
+  "n_requested_samples": 1223,
+  "n_valid_samples": 1223,
+  "n_skipped_samples": 0,
+  "elapsed_sec": 710.8553290367126,
+  "artifacts": {
+    "aggregate_arrays": "/root/autodl-tmp/project/experiment/results/split/attentionhead/summary/aggregate_arrays.npz",
+    "heatmap_csv": "/root/autodl-tmp/project/experiment/results/split/attentionhead/summary/head_heatmap_summary.csv",
+    "decision_row_csv": "/root/autodl-tmp/project/experiment/results/split/attentionhead/summary/head_decision_row_summary.csv",
+    "span_token_count_csv": "/root/autodl-tmp/project/experiment/results/split/attentionhead/summary/span_token_count_summary.csv",
+    "head_plot_index_csv": "/root/autodl-tmp/project/experiment/results/split/attentionhead/summary/head_plot_index.csv",
+    "plot_root": "/root/autodl-tmp/project/experiment/results/split/attentionhead/plots"
+  }
+}

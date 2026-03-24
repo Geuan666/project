@@ -85,7 +85,8 @@ def main() -> None:
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--discovery-project-root", type=str, default="")
     parser.add_argument("--skip-plots", action="store_true")
-    parser.add_argument("--relp-ct-head-mode", type=str, default="approx_proxy")
+    parser.add_argument("--relp-head-score-mode", type=str, default="approx_proxy")
+    parser.add_argument("--relp-ct-head-mode", dest="legacy_relp_head_score_mode", type=str, default=None, help=argparse.SUPPRESS)
     parser.add_argument("--relp-mlp-mode", type=str, default="approx_proxy")
     parser.add_argument("--eap-ig-steps", type=int, default=6)
     parser.add_argument("--eap-edge-counts", type=str, default="12,20,28,40")
@@ -136,6 +137,7 @@ def main() -> None:
     final_report = run_root / "FINAL_REPORT.md"
 
     if args.method == "relp":
+        relp_head_score_mode = args.relp_head_score_mode if args.legacy_relp_head_score_mode is None else args.legacy_relp_head_score_mode
         forward_cmd = [
             py, str(discovery_root / "scripts" / "mine_toolcall_batch.py"),
             "--source", "dataset",
@@ -146,7 +148,7 @@ def main() -> None:
             "--resume",
             "--objective-kind", "kl",
             "--attribution-backend", "relp",
-            "--ct-head-mode", args.relp_ct_head_mode,
+            "--ct-head-mode", relp_head_score_mode,
             "--mlp-mode", args.relp_mlp_mode,
         ]
         reverse_cmd = [
@@ -159,7 +161,7 @@ def main() -> None:
             "--resume",
             "--objective-kind", "kl",
             "--attribution-backend", "relp",
-            "--ct-head-mode", args.relp_ct_head_mode,
+            "--ct-head-mode", relp_head_score_mode,
             "--mlp-mode", args.relp_mlp_mode,
         ]
     else:

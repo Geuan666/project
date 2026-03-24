@@ -1,0 +1,83 @@
+{
+  "seed": 42,
+  "test_ratio": 0.3,
+  "n_total": 1722,
+  "n_train": 1223,
+  "n_test": 499,
+  "per_lang": {
+    "cpp": {
+      "train": 415,
+      "test": 168
+    },
+    "java": {
+      "train": 414,
+      "test": 170
+    },
+    "python": {
+      "train": 394,
+      "test": 161
+    }
+  },
+  "per_clean_candidate": {
+    "append": {
+      "train": 84,
+      "test": 35
+    },
+    "create": {
+      "train": 76,
+      "test": 31
+    },
+    "directly build": {
+      "train": 84,
+      "test": 35
+    },
+    "directly implement": {
+      "train": 82,
+      "test": 34
+    },
+    "edit": {
+      "train": 82,
+      "test": 33
+    },
+    "finalize": {
+      "train": 78,
+      "test": 31
+    },
+    "insert": {
+      "train": 83,
+      "test": 34
+    },
+    "manually build": {
+      "train": 82,
+      "test": 33
+    },
+    "paste": {
+      "train": 81,
+      "test": 34
+    },
+    "prefill": {
+      "train": 83,
+      "test": 34
+    },
+    "prepare": {
+      "train": 79,
+      "test": 33
+    },
+    "properly add": {
+      "train": 81,
+      "test": 33
+    },
+    "save": {
+      "train": 85,
+      "test": 34
+    },
+    "write": {
+      "train": 81,
+      "test": 32
+    },
+    "write out": {
+      "train": 82,
+      "test": 33
+    }
+  }
+}

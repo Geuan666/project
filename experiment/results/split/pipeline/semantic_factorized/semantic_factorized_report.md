@@ -1,0 +1,108 @@
+# Semantic Factorized Counterfactual Report
+
+## Direct Variant Effects
+- `clean_full`: tool `0.000`, no-tool `-3.203`, tool-top1 `1.000`, boundary `1.000`
+- `clean_no_protocol`: tool `-13.000`, no-tool `-0.420`, tool-top1 `0.000`, boundary `0.000`
+- `clean_no_schema`: tool `-3.109`, no-tool `-0.195`, tool-top1 `0.098`, boundary `0.119`
+- `clean_schema_mismatch`: tool `-5.062`, no-tool `-0.178`, tool-top1 `0.050`, boundary `0.055`
+- `corrupt_full`: tool `-4.594`, no-tool `0.000`, tool-top1 `0.000`, boundary `0.000`
+
+## Representative Head Reads
+- `no_tool_reader` / `L16H4` / `clean_full` / `tools_block`: `0.023`
+- `no_tool_reader` / `L16H4` / `clean_full` / `tools_payload`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_full` / `tool_call_tags`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_full` / `protocol_payload`: `nan`
+- `no_tool_reader` / `L16H4` / `clean_full` / `user_block`: `0.454`
+- `no_tool_reader` / `L16H4` / `clean_full` / `prefix_16`: `0.122`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `tools_block`: `0.015`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `tools_payload`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `tool_call_tags`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `protocol_payload`: `0.002`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `user_block`: `0.493`
+- `no_tool_reader` / `L16H4` / `clean_no_protocol` / `prefix_16`: `0.074`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `tools_block`: `0.007`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `tools_payload`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `tool_call_tags`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `protocol_payload`: `nan`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `user_block`: `0.427`
+- `no_tool_reader` / `L16H4` / `clean_no_schema` / `prefix_16`: `0.112`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `tools_block`: `0.021`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `tools_payload`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `tool_call_tags`: `0.000`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `protocol_payload`: `nan`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `user_block`: `0.508`
+- `no_tool_reader` / `L16H4` / `clean_schema_mismatch` / `prefix_16`: `0.115`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `tools_block`: `0.018`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `tools_payload`: `0.000`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `tool_call_tags`: `0.000`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `protocol_payload`: `nan`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `user_block`: `0.511`
+- `no_tool_reader` / `L16H4` / `corrupt_full` / `prefix_16`: `0.116`
+- `query_reader` / `L2H14` / `clean_full` / `tools_block`: `0.146`
+- `query_reader` / `L2H14` / `clean_full` / `tools_payload`: `0.001`
+- `query_reader` / `L2H14` / `clean_full` / `tool_call_tags`: `0.003`
+- `query_reader` / `L2H14` / `clean_full` / `protocol_payload`: `nan`
+- `query_reader` / `L2H14` / `clean_full` / `user_block`: `0.308`
+- `query_reader` / `L2H14` / `clean_full` / `prefix_16`: `0.140`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `tools_block`: `0.148`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `tools_payload`: `0.001`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `tool_call_tags`: `0.003`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `protocol_payload`: `0.034`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `user_block`: `0.299`
+- `query_reader` / `L2H14` / `clean_no_protocol` / `prefix_16`: `0.138`
+- `query_reader` / `L2H14` / `clean_no_schema` / `tools_block`: `0.049`
+- `query_reader` / `L2H14` / `clean_no_schema` / `tools_payload`: `0.001`
+- `query_reader` / `L2H14` / `clean_no_schema` / `tool_call_tags`: `0.004`
+- `query_reader` / `L2H14` / `clean_no_schema` / `protocol_payload`: `nan`
+- `query_reader` / `L2H14` / `clean_no_schema` / `user_block`: `0.340`
+- `query_reader` / `L2H14` / `clean_no_schema` / `prefix_16`: `0.166`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `tools_block`: `0.149`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `tools_payload`: `0.001`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `tool_call_tags`: `0.003`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `protocol_payload`: `nan`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `user_block`: `0.308`
+- `query_reader` / `L2H14` / `clean_schema_mismatch` / `prefix_16`: `0.143`
+- `query_reader` / `L2H14` / `corrupt_full` / `tools_block`: `0.138`
+- `query_reader` / `L2H14` / `corrupt_full` / `tools_payload`: `0.001`
+- `query_reader` / `L2H14` / `corrupt_full` / `tool_call_tags`: `0.003`
+- `query_reader` / `L2H14` / `corrupt_full` / `protocol_payload`: `nan`
+- `query_reader` / `L2H14` / `corrupt_full` / `user_block`: `0.355`
+- `query_reader` / `L2H14` / `corrupt_full` / `prefix_16`: `0.131`
+- `schema_reader` / `L21H12` / `clean_full` / `tools_block`: `0.247`
+- `schema_reader` / `L21H12` / `clean_full` / `tools_payload`: `0.025`
+- `schema_reader` / `L21H12` / `clean_full` / `tool_call_tags`: `0.015`
+- `schema_reader` / `L21H12` / `clean_full` / `protocol_payload`: `nan`
+- `schema_reader` / `L21H12` / `clean_full` / `user_block`: `0.049`
+- `schema_reader` / `L21H12` / `clean_full` / `prefix_16`: `0.086`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `tools_block`: `0.227`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `tools_payload`: `0.038`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `tool_call_tags`: `0.026`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `protocol_payload`: `0.118`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `user_block`: `0.190`
+- `schema_reader` / `L21H12` / `clean_no_protocol` / `prefix_16`: `0.180`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `tools_block`: `0.229`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `tools_payload`: `0.029`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `tool_call_tags`: `0.008`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `protocol_payload`: `nan`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `user_block`: `0.105`
+- `schema_reader` / `L21H12` / `clean_no_schema` / `prefix_16`: `0.201`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `tools_block`: `0.347`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `tools_payload`: `0.045`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `tool_call_tags`: `0.014`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `protocol_payload`: `nan`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `user_block`: `0.161`
+- `schema_reader` / `L21H12` / `clean_schema_mismatch` / `prefix_16`: `0.178`
+- `schema_reader` / `L21H12` / `corrupt_full` / `tools_block`: `0.310`
+- `schema_reader` / `L21H12` / `corrupt_full` / `tools_payload`: `0.026`
+- `schema_reader` / `L21H12` / `corrupt_full` / `tool_call_tags`: `0.009`
+- `schema_reader` / `L21H12` / `corrupt_full` / `protocol_payload`: `nan`
+- `schema_reader` / `L21H12` / `corrupt_full` / `user_block`: `0.115`
+- `schema_reader` / `L21H12` / `corrupt_full` / `prefix_16`: `0.174`
+
+## Path Rescue
+- `no_tool_path` on `clean_full`: rescue `0.792`, top1 `0.517`, boundary `0.473`
+- `query_tool_path` on `corrupt_full`: rescue `0.815`, top1 `0.322`, boundary `0.312`
+- `schema_tool_path` on `clean_no_protocol`: rescue `2.528`, top1 `0.463`, boundary `0.520`
+- `schema_tool_path` on `clean_no_schema`: rescue `0.591`, top1 `0.738`, boundary `0.831`
+- `schema_tool_path` on `clean_schema_mismatch`: rescue `1.025`, top1 `0.924`, boundary `0.966`
+

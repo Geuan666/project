@@ -176,6 +176,19 @@ def parse_head(node_name: str) -> Tuple[int, int]:
     return int(m.group(1)), int(m.group(2))
 
 
+def normalize_head_score_mode(raw: str) -> str:
+    mode = (raw or "").strip().lower()
+    aliases = {
+        "ap": "ap",
+        "ap_proxy": "ap",
+        "exact": "exact_patch",
+        "exact_patch": "exact_patch",
+    }
+    if mode not in aliases:
+        raise ValueError(f"Unknown head score mode: {raw}")
+    return aliases[mode]
+
+
 # -----------------------------
 # Patching evaluation
 # -----------------------------
@@ -249,7 +262,7 @@ def evaluate_on_base_with_source(
     return float(objective_from_logits(logits, target_token, distractor_token).item())
 
 
-def compute_ct_head_gain(
+def compute_exact_patch_head_gain(
     model: HookedTransformer,
     corrupt_tokens: torch.Tensor,
     clean_cache_cpu: Dict[str, torch.Tensor],
@@ -272,7 +285,7 @@ def compute_ct_head_gain(
     else:
         layer_sequence = [layer for layer in range(n_layers) if candidate_heads_by_layer.get(layer)]
 
-    for layer in tqdm(layer_sequence, desc="CT head", leave=False):
+    for layer in tqdm(layer_sequence, desc="Exact head patch", leave=False):
         cache_name = f"blocks.{layer}.attn.hook_z"
         clean_act = clean_cache_cpu[cache_name].to(corrupt_tokens.device)
         layer_heads = (
@@ -312,6 +325,31 @@ def compute_ct_head_gain(
                 cur_batch_size = max(1, cur_batch_size // 2)
 
     return scores
+
+
+def compute_ct_head_gain(
+    model: HookedTransformer,
+    corrupt_tokens: torch.Tensor,
+    clean_cache_cpu: Dict[str, torch.Tensor],
+    target_token: int | DistributionObjective,
+    distractor_token: int | None,
+    corrupt_obj: float,
+    head_batch_size: int = 0,
+    candidate_heads_by_layer: Optional[Dict[int, Sequence[int]]] = None,
+    fallback_scores: Optional[torch.Tensor] = None,
+) -> torch.Tensor:
+    """Backward-compatible alias for exact clean->corrupt head patch scoring."""
+    return compute_exact_patch_head_gain(
+        model=model,
+        corrupt_tokens=corrupt_tokens,
+        clean_cache_cpu=clean_cache_cpu,
+        target_token=target_token,
+        distractor_token=distractor_token,
+        corrupt_obj=corrupt_obj,
+        head_batch_size=head_batch_size,
+        candidate_heads_by_layer=candidate_heads_by_layer,
+        fallback_scores=fallback_scores,
+    )
 
 
 def select_ct_candidate_heads(
@@ -371,7 +409,7 @@ def compute_mlp_gain(
     start = 0
     cur_batch_size = n_layers if layer_batch_size <= 0 else max(1, min(n_layers, int(layer_batch_size)))
 
-    with tqdm(total=n_layers, desc="CT MLP", leave=False) as pbar:
+    with tqdm(total=n_layers, desc="Exact MLP patch", leave=False) as pbar:
         while start < n_layers:
             batch_layers = list(range(start, min(start + cur_batch_size, n_layers)))
             batch_tokens = corrupt_tokens.repeat(len(batch_layers), 1)
@@ -508,13 +546,19 @@ def compute_ap_head_gain_lowmem(
 class NodeScore:
     name: str
     score: float
-    ct: float
+    exact_patch: float
     ap: float
 
 
-def pick_nodes(ct_head: torch.Tensor, ap_head: torch.Tensor, mlp_gain: torch.Tensor) -> Tuple[List[str], List[str], List[NodeScore]]:
-    n_layers, n_heads = ct_head.shape
-    combo = 0.55 * ct_head + 0.45 * ap_head
+def pick_nodes(
+    head_score: torch.Tensor,
+    ap_head: torch.Tensor,
+    mlp_gain: torch.Tensor,
+    *,
+    head_score_mode: str,
+) -> Tuple[List[str], List[str], List[NodeScore]]:
+    n_layers, n_heads = head_score.shape
+    combo = 0.55 * head_score + 0.45 * ap_head
 
     head_rank: List[Tuple[int, int, float]] = []
     for l in range(n_layers):
@@ -573,14 +617,25 @@ def pick_nodes(ct_head: torch.Tensor, ap_head: torch.Tensor, mlp_gain: torch.Ten
     for name in detailed_nodes:
         if name.startswith("MLP"):
             l = int(name[3:])
-            score_table.append(NodeScore(name=name, score=float(mlp_gain[l].item()), ct=float(mlp_gain[l].item()), ap=0.0))
+            score_table.append(
+                NodeScore(
+                    name=name,
+                    score=float(mlp_gain[l].item()),
+                    exact_patch=float(mlp_gain[l].item()),
+                    ap=0.0,
+                )
+            )
         else:
             l, h = parse_head(name)
             score_table.append(
                 NodeScore(
                     name=name,
                     score=float(combo[l, h].item()),
-                    ct=float(ct_head[l, h].item()),
+                    exact_patch=(
+                        float(head_score[l, h].item())
+                        if normalize_head_score_mode(head_score_mode) == "exact_patch"
+                        else float("nan")
+                    ),
                     ap=float(ap_head[l, h].item()),
                 )
             )
@@ -969,7 +1024,7 @@ def run_one_sample(
     model: HookedTransformer,
     tokenizer,
     model_path: str,
-    ct_head_mode: str = "exact",
+    head_score_mode: str = "ap",
     skip_plots: bool = False,
 ) -> Dict[str, object]:
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -1051,38 +1106,50 @@ def run_one_sample(
             ap_head = torch.zeros(model.cfg.n_layers, model.cfg.n_heads, dtype=torch.float32)
     model.reset_hooks()
 
-    ct_ap_top_per_layer = max(
-        0,
-        int(os.environ.get("TOOLCALL_CT_AP_PER_LAYER", os.environ.get("ACDC_CT_AP_PER_LAYER", "0"))),
-    )
-    ct_ap_top_global = max(
-        0,
-        int(os.environ.get("TOOLCALL_CT_AP_TOP_GLOBAL", os.environ.get("ACDC_CT_AP_TOP_GLOBAL", "0"))),
-    )
-    ct_candidate_heads = None
-    ct_mode = "exact"
-    if ap_mode != "zero_fallback":
-        ct_candidate_heads = select_ct_candidate_heads(
-            ap_head,
-            ap_top_per_layer=ct_ap_top_per_layer,
-            ap_top_global=ct_ap_top_global,
-        )
-        if ct_candidate_heads:
-            ct_mode = "ap_pruned_exact_ct"
+    requested_head_score_mode = normalize_head_score_mode(head_score_mode)
 
-    if ct_head_mode == "ap_proxy":
-        ct_head = ap_head.detach().float().cpu().clone()
-        ct_mode = "ap_proxy"
+    head_ap_top_per_layer = max(
+        0,
+        int(
+            os.environ.get(
+                "TOOLCALL_HEAD_AP_PER_LAYER",
+                os.environ.get("TOOLCALL_CT_AP_PER_LAYER", os.environ.get("ACDC_CT_AP_PER_LAYER", "0")),
+            )
+        ),
+    )
+    head_ap_top_global = max(
+        0,
+        int(
+            os.environ.get(
+                "TOOLCALL_HEAD_AP_TOP_GLOBAL",
+                os.environ.get("TOOLCALL_CT_AP_TOP_GLOBAL", os.environ.get("ACDC_CT_AP_TOP_GLOBAL", "0")),
+            )
+        ),
+    )
+    head_candidate_heads = None
+    actual_head_score_mode = "exact_patch"
+    if ap_mode != "zero_fallback":
+        head_candidate_heads = select_ct_candidate_heads(
+            ap_head,
+            ap_top_per_layer=head_ap_top_per_layer,
+            ap_top_global=head_ap_top_global,
+        )
+        if head_candidate_heads:
+            actual_head_score_mode = "ap_pruned_exact_patch"
+
+    if requested_head_score_mode == "ap":
+        head_score = ap_head.detach().float().cpu().clone()
+        actual_head_score_mode = "ap"
     else:
-        ct_head = compute_ct_head_gain(
+        head_score = compute_exact_patch_head_gain(
             model=model,
             corrupt_tokens=corrupt_tokens,
             clean_cache_cpu=clean_cache_cpu,
             target_token=endpoint_objective,
             distractor_token=None,
             corrupt_obj=corrupt_obj,
-            candidate_heads_by_layer=ct_candidate_heads,
-            fallback_scores=ap_head if ct_candidate_heads else None,
+            candidate_heads_by_layer=head_candidate_heads,
+            fallback_scores=ap_head if head_candidate_heads else None,
         )
 
     mlp_gain = compute_mlp_gain(
@@ -1094,7 +1161,12 @@ def run_one_sample(
         corrupt_obj=corrupt_obj,
     )
 
-    detailed_nodes, rough_nodes, score_table = pick_nodes(ct_head, ap_head, mlp_gain)
+    detailed_nodes, rough_nodes, score_table = pick_nodes(
+        head_score,
+        ap_head,
+        mlp_gain,
+        head_score_mode=requested_head_score_mode,
+    )
     score_lookup = {s.name: s.score for s in score_table}
     detailed_edges = build_edges(detailed_nodes, score_lookup=score_lookup, max_parents=2)
     rough_edges = build_edges(rough_nodes, score_lookup=score_lookup, max_parents=2)
@@ -1170,9 +1242,13 @@ def run_one_sample(
             out_dir / "ap_head_heatmap.png",
         )
         plot_head_heatmap(
-            ct_head.numpy(),
-            "Causal Tracing Head Heatmap (CT)",
-            out_dir / "ct_head_heatmap.png",
+            head_score.numpy(),
+            (
+                "Head Score Heatmap (AP)"
+                if actual_head_score_mode == "ap"
+                else "Head Score Heatmap (Exact clean-to-corrupt patch)"
+            ),
+            out_dir / "head_score_heatmap.png",
         )
         plot_probe(
             out_path=out_dir / f"{probe_head}_probe.png",
@@ -1222,14 +1298,15 @@ def run_one_sample(
         "distractor_token_id": distractor_token,
         "distractor_token_str": tokenizer.decode([distractor_token]),
         "ap_mode": ap_mode,
-        "ct_mode": ct_mode,
+        "head_score_mode": actual_head_score_mode,
+        "head_score_mode_requested": requested_head_score_mode,
         "objective_mode": "negative_kl_to_clean_endpoint",
         "objective_endpoint": "tool_call",
         "objective_temperature": endpoint_temperature,
         "objective_masked_token_ids": list(endpoint_masked_token_ids),
-        "ct_candidate_ap_top_per_layer": ct_ap_top_per_layer,
-        "ct_candidate_ap_top_global": ct_ap_top_global,
-        "ct_candidate_head_count": sum(len(v) for v in ct_candidate_heads.values()) if ct_candidate_heads else 0,
+        "head_candidate_ap_top_per_layer": head_ap_top_per_layer,
+        "head_candidate_ap_top_global": head_ap_top_global,
+        "head_candidate_count": sum(len(v) for v in head_candidate_heads.values()) if head_candidate_heads else 0,
         "clean_obj": clean_obj,
         "corrupt_obj": corrupt_obj,
         "gap": gap,
@@ -1268,12 +1345,12 @@ def run_one_sample(
         "sample_catalog_record": sample.catalog_record(),
         "endpoint_distribution_summary": endpoint_summary,
         "top_node_scores": [
-            {"name": s.name, "score": s.score, "ct": s.ct, "ap": s.ap}
+            {"name": s.name, "score": s.score, "exact_patch": s.exact_patch, "ap": s.ap}
             for s in score_table
         ],
         "artifacts": {
             "ap_head_heatmap": str(out_dir / "ap_head_heatmap.png"),
-            "ct_head_heatmap": str(out_dir / "ct_head_heatmap.png"),
+            "head_score_heatmap": str(out_dir / "head_score_heatmap.png"),
             "probe": str(out_dir / f"{probe_head}_probe.png"),
             "final_circuit_detailed": str(out_dir / "final_circuit_detailed.png"),
             "final_circuit": str(out_dir / "final_circuit.png"),
@@ -1298,7 +1375,8 @@ def main() -> None:
     parser.add_argument("--model-path", type=str, default=str(MODEL_PATH_DEFAULT))
     parser.add_argument("--out-dir", type=str, default=str(RESULTS_ROOT / "manual_run" / "single_sample"))
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--ct-head-mode", choices=["exact", "ap_proxy"], default="exact")
+    parser.add_argument("--head-score-mode", choices=["ap", "exact_patch"], default="ap")
+    parser.add_argument("--ct-head-mode", dest="legacy_head_score_mode", choices=["exact", "ap_proxy"], default=None, help=argparse.SUPPRESS)
     parser.add_argument("--skip-plots", action="store_true")
     args = parser.parse_args()
 
@@ -1316,13 +1394,16 @@ def main() -> None:
         out_dir.mkdir(parents=True, exist_ok=True)
 
     model, tokenizer = load_hooked_qwen3(args.model_path, device=args.device, dtype=torch.bfloat16)
+    head_score_mode = args.head_score_mode
+    if args.legacy_head_score_mode is not None:
+        head_score_mode = normalize_head_score_mode(args.legacy_head_score_mode)
     summary = run_one_sample(
         sample=sample,
         out_dir=out_dir,
         model=model,
         tokenizer=tokenizer,
         model_path=args.model_path,
-        ct_head_mode=args.ct_head_mode,
+        head_score_mode=head_score_mode,
         skip_plots=args.skip_plots,
     )
 

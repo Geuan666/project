@@ -1,0 +1,11 @@
+{
+  "n_samples": 1223,
+  "projection_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_projection_summary.csv",
+  "direction_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_direction_summary.csv",
+  "intervention_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_intervention_summary.csv",
+  "stagewise_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_stagewise_summary.csv",
+  "focused_evidence_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_focused_evidence_table.csv",
+  "claim_tiers_json": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_claim_tiers.json",
+  "still_unsolved_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_still_unsolved.csv",
+  "report_md": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction/suppression_mechanism_report.md"
+}

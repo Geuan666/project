@@ -33,7 +33,7 @@ from toolcall_circuit.dataset import (
     select_samples,
 )
 from toolcall_circuit.paths import DATASETS_ROOT, MODEL_PATH_DEFAULT, RESULTS_ROOT
-from toolcall_circuit.single_sample import load_hooked_qwen3, run_one_sample
+from toolcall_circuit.single_sample import load_hooked_qwen3, normalize_head_score_mode, run_one_sample
 
 
 def save_summary_csv(rows: Sequence[Dict[str, object]], out_path: Path) -> None:
@@ -55,6 +55,7 @@ def save_summary_csv(rows: Sequence[Dict[str, object]], out_path: Path) -> None:
         "probe_head",
         "target_token_str",
         "distractor_token_str",
+        "head_score_mode",
         "ap_mode",
         "error",
     ]
@@ -82,6 +83,7 @@ def make_row_from_summary(summary: Dict[str, object], status: str, error: str = 
         "probe_head": summary.get("probe_head"),
         "target_token_str": summary.get("target_token_str"),
         "distractor_token_str": summary.get("distractor_token_str"),
+        "head_score_mode": summary.get("head_score_mode"),
         "ap_mode": summary.get("ap_mode"),
         "error": error,
     }
@@ -104,9 +106,13 @@ def main() -> None:
     parser.add_argument("--max-samples", type=int, default=0, help="0 means run all selected samples.")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--stop-on-error", action="store_true")
-    parser.add_argument("--ct-head-mode", choices=["exact", "ap_proxy"], default="exact")
+    parser.add_argument("--head-score-mode", choices=["ap", "exact_patch"], default="ap")
+    parser.add_argument("--ct-head-mode", dest="legacy_head_score_mode", choices=["exact", "ap_proxy"], default=None, help=argparse.SUPPRESS)
     parser.add_argument("--skip-plots", action="store_true")
     args = parser.parse_args()
+    head_score_mode = args.head_score_mode
+    if args.legacy_head_score_mode is not None:
+        head_score_mode = normalize_head_score_mode(args.legacy_head_score_mode)
 
     out_root = Path(args.out_root).resolve()
     out_root.mkdir(parents=True, exist_ok=True)
@@ -174,7 +180,7 @@ def main() -> None:
                 model=model,
                 tokenizer=tokenizer,
                 model_path=args.model_path,
-                ct_head_mode=args.ct_head_mode,
+                head_score_mode=head_score_mode,
                 skip_plots=args.skip_plots,
             )
             row = make_row_from_summary(summary, status="ok")
@@ -204,6 +210,7 @@ def main() -> None:
                 "probe_head": "",
                 "target_token_str": "",
                 "distractor_token_str": "",
+                "head_score_mode": "",
                 "ap_mode": "",
                 "error": repr(ex),
             }

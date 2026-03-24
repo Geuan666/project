@@ -1,0 +1,16 @@
+{
+  "route_root": "/root/autodl-tmp/project/experiment/results/split/output_route_decision",
+  "minimal_cue_root": "/root/autodl-tmp/project/experiment/results/split/pipeline/minimal_cue_mechanism",
+  "suppression_root": "/root/autodl-tmp/project/experiment/results/split/pipeline/suppression_direction",
+  "output_root": "/root/autodl-tmp/project/experiment/results/split/test_validation/suppression_legacy_root",
+  "files": [
+    "focused_mechanism_table.csv",
+    "minimal_cue_mechanism_summary.json",
+    "suppression_claim_tiers.json",
+    "suppression_direction_summary.csv",
+    "suppression_focused_evidence_table.csv",
+    "suppression_intervention_summary.csv",
+    "suppression_projection_summary.csv",
+    "suppression_stagewise_summary.csv"
+  ]
+}

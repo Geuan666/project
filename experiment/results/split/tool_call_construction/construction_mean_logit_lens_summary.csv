@@ -1,0 +1,7 @@
+node,tool_logit,tool_rank,top_tokens,clean_top_token,corrupt_tool_logit
+MLP19,0.06534935534000397,60534,itä | Alright | [code | 您好 | ions | itz | GAN | zh,itä,0.10458691418170929
+L20H5,-0.042635515332221985,72989, XML | XML | /XML | 患儿 | (xml | (XML |  xml | JSON, XML,-0.09186334908008575
+L21H1,0.1664748340845108,8480,\n    \n | \n        \n | acity | \n      \n | \n            \n |   \n | � |     \n,\n    \n,0.09799546748399734
+L21H12,0.17538508772850037,8718,\n    \n | \n        \n |  \n |   \n | alus |  Cart |     \n |  traits,\n    \n,0.1377178132534027
+L24H6,2.4776394367218018,1871,ukkan |  bör |  Jazeera |  padr |  vriend | ursos |  Ihnen | achten,ukkan,2.145160675048828
+MLP27,13.551597595214844,1,<tool_call> | ้น | AVING |  unwitting | .ClientSize | LIKELY | 得天 |  quarters,<tool_call>,12.824195861816406

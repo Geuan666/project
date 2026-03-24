@@ -1,0 +1,20 @@
+{
+  "train_dataset_root": "/root/autodl-tmp/project/experiment/datasets/train",
+  "test_dataset_root": "/root/autodl-tmp/project/experiment/datasets/test",
+  "n_train": 1223,
+  "n_test": 499,
+  "construction_steps": [
+    "corrupt_full",
+    "plus_MLP19",
+    "plus_L20H5",
+    "plus_L21H1",
+    "plus_L21H12",
+    "plus_L24H6",
+    "plus_MLP27"
+  ],
+  "suppression_steps": [
+    "read_only",
+    "writer_added",
+    "late_relay_added"
+  ]
+}

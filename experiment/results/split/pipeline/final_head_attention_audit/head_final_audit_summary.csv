@@ -1,0 +1,3 @@
+head,family,best_read_span,best_read_mass_median,best_read_density_median,best_causal_span,best_causal_span_rescue_median,best_causal_span_top1_rate,best_qkv_component,best_qkv_rescue_median,best_qkv_top1_rate
+L16H4,no_tool,tail_suffix,0.10683314502239227,0.009712103754281998,task_body,0.02127659574468085,0.0008176614881439084,z,0.19680851063829788,0.01062959934587081
+L23H6,no_tool,file_target,0.0010648159077391028,0.0005324079538695514,file_target,0.0,0.0,z,0.28160919540229884,0.017988552739165987

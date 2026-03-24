@@ -1,0 +1,938 @@
+{
+  "sample_id": "apps_python_141",
+  "sample_rank": 254,
+  "filename": "apps_python_141.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "clean_prompt": "/root/autodl-tmp/project/experiment/datasets/train/clean/apps_python_141.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/experiment/datasets/train/corrupt/apps_python_141.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 290,
+  "corrupt_prompt_token_length": 290,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 151657,
+  "target_token_str": "<tool_call>",
+  "distractor_token_id": 40,
+  "distractor_token_str": "I",
+  "ap_mode": "full",
+  "ct_mode": "ap_proxy",
+  "objective_mode": "negative_kl_to_clean_endpoint",
+  "objective_endpoint": "tool_call",
+  "objective_temperature": 1.0,
+  "objective_masked_token_ids": [],
+  "ct_candidate_ap_top_per_layer": 0,
+  "ct_candidate_ap_top_global": 0,
+  "ct_candidate_head_count": 0,
+  "clean_obj": 0.0,
+  "corrupt_obj": -5.8125,
+  "gap": 5.8125,
+  "clean_kl_to_endpoint": -0.0,
+  "corrupt_kl_to_endpoint": 5.8125,
+  "endpoint_js_divergence": 0.53125,
+  "detailed_obj": -0.0020294189453125,
+  "detailed_ratio_vs_gap": 0.9996508526545699,
+  "detailed_kl_recovery_ratio": 0.9996508526545699,
+  "rough_obj": -0.032470703125,
+  "rough_ratio_vs_gap": 0.9944136424731183,
+  "rough_kl_recovery_ratio": 0.9944136424731183,
+  "clean_with_detailed_corrupted": -6.0,
+  "necessity_drop": 6.0,
+  "necessity_ratio_vs_gap": 1.032258064516129,
+  "necessity_kl_drop_ratio": 1.032258064516129,
+  "clean_with_rough_corrupted": -5.4375,
+  "rough_necessity_drop": 5.4375,
+  "rough_necessity_ratio_vs_gap": 0.9354838709677419,
+  "rough_necessity_kl_drop_ratio": 0.9354838709677419,
+  "probe_head": "L21H1",
+  "probe_corrupt_with_head": -2.34375,
+  "probe_clean_with_head_corrupt": -0.11474609375,
+  "detailed_nodes": [
+    "MLP6",
+    "L9H5",
+    "MLP12",
+    "L12H3",
+    "MLP16",
+    "MLP17",
+    "L17H8",
+    "L18H14",
+    "MLP19",
+    "L20H5",
+    "L21H1",
+    "L21H12",
+    "L21H8",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "MLP6"
+    ],
+    [
+      "Input Embed",
+      "L9H5"
+    ],
+    [
+      "MLP6",
+      "L9H5"
+    ],
+    [
+      "L9H5",
+      "MLP12"
+    ],
+    [
+      "MLP6",
+      "MLP12"
+    ],
+    [
+      "MLP6",
+      "L12H3"
+    ],
+    [
+      "L9H5",
+      "L12H3"
+    ],
+    [
+      "MLP12",
+      "MLP16"
+    ],
+    [
+      "L12H3",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP17"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "MLP12",
+      "L17H8"
+    ],
+    [
+      "MLP17",
+      "L18H14"
+    ],
+    [
+      "MLP16",
+      "L18H14"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "L18H14",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "MLP17",
+      "L20H5"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "MLP19",
+      "L21H8"
+    ],
+    [
+      "MLP17",
+      "L21H8"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L17H8",
+      "L21H1"
+    ],
+    [
+      "L20H5",
+      "L21H1"
+    ],
+    [
+      "L21H8",
+      "L24H6"
+    ]
+  ],
+  "rough_nodes": [
+    "MLP6",
+    "MLP12",
+    "MLP17",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L24H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "MLP6"
+    ],
+    [
+      "Input Embed",
+      "MLP12"
+    ],
+    [
+      "MLP6",
+      "MLP12"
+    ],
+    [
+      "MLP12",
+      "MLP17"
+    ],
+    [
+      "MLP6",
+      "MLP17"
+    ],
+    [
+      "MLP17",
+      "MLP19"
+    ],
+    [
+      "MLP12",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP17",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP17",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L21H12",
+      "L24H6"
+    ],
+    [
+      "L24H6",
+      "MLP27"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H1",
+      "Residual Output: <tool_call>"
+    ]
+  ],
+  "contrast_positions": [
+    137
+  ],
+  "contrast_spans": [
+    [
+      137
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 137,
+      "clean_token": " add",
+      "corrupt_token": " develop"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281
+  ],
+  "sample_catalog_record": {
+    "sample_id": "apps_python_141",
+    "sample_rank": 254,
+    "filename": "apps_python_141.txt",
+    "clean_path": "/root/autodl-tmp/project/experiment/datasets/train/clean/apps_python_141.txt",
+    "corrupt_path": "/root/autodl-tmp/project/experiment/datasets/train/corrupt/apps_python_141.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "properly add",
+    "clean_candidate_type": "phrase",
+    "corrupt_candidate": "properly develop",
+    "corrupt_candidate_type": "phrase",
+    "dataset_name": "apps",
+    "language": "python",
+    "global_row_id": 47,
+    "clean_prompt_token_length": 290,
+    "corrupt_prompt_token_length": 290,
+    "clean_manifest": {
+      "global_row_id": 47,
+      "source_path": "/root/autodl-tmp/datasets/apps_python_141.txt",
+      "source_filename": "apps_python_141.txt",
+      "dataset_name": "apps",
+      "language": "python",
+      "sample_index": 141,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "17c5d0b659d436f9a1852c59d6903633454069b5",
+      "original_prompt_char_length": 1153,
+      "dataset": "apps",
+      "split_local_id": 141,
+      "original_source_id": "1633",
+      "original_source_path": "/root/autodl-tmp/data/APPS/train",
+      "original_source_split": "train",
+      "original_source_row_index": 1633,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "apps_python_141.txt",
+      "assigned_candidate": "properly develop",
+      "assigned_candidate_type": "phrase",
+      "assigned_candidate_slug": "properly_develop",
+      "assigned_tool_call_prob": 0.004170723259449005,
+      "assigned_tool_call_rank": 5,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.9006255269050598,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.05080981180071831,
+      "assigned_top1_top2_prob_gap": 0.8498157151043415,
+      "assigned_rendered_first_user_line": "Properly develop the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "03978e2cb81bef0f2fb806829004a603d7b150ff",
+      "corrupt_candidate": "properly develop",
+      "corrupt_candidate_type": "phrase",
+      "clean_candidate": "properly add",
+      "clean_candidate_type": "phrase",
+      "clean_candidate_slug": "properly_add",
+      "clean_rendered_first_user_line": "Properly add the function body in solve.py based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.8914361000061035,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 290,
+      "clean_prompt_token_length": 290,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.8914361000061035,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.09395666420459747,
+      "clean_top1_top2_prob_gap": 0.797479435801506,
+      "clean_tool_call_prob": 0.8914361000061035,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true,
+      "source_pool": "project_datasets_base",
+      "selection_batch": "base",
+      "extra_group": null,
+      "extra_row_id": NaN,
+      "assigned_candidate_word_count": NaN,
+      "assigned_prompt_token_length": NaN,
+      "clean_candidate_word_count": NaN
+    },
+    "corrupt_manifest": {
+      "global_row_id": 47,
+      "source_path": "/root/autodl-tmp/datasets/apps_python_141.txt",
+      "source_filename": "apps_python_141.txt",
+      "dataset_name": "apps",
+      "language": "python",
+      "sample_index": 141,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "17c5d0b659d436f9a1852c59d6903633454069b5",
+      "original_prompt_char_length": 1153,
+      "dataset": "apps",
+      "split_local_id": 141,
+      "original_source_id": "1633",
+      "original_source_path": "/root/autodl-tmp/data/APPS/train",
+      "original_source_split": "train",
+      "original_source_row_index": 1633,
+      "rule_based_validation_passed": true,
+      "llm_audit_passed": true,
+      "repaired": true,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "apps_python_141.txt",
+      "assigned_candidate": "properly develop",
+      "assigned_candidate_type": "phrase",
+      "assigned_candidate_slug": "properly_develop",
+      "assigned_tool_call_prob": 0.004170723259449005,
+      "assigned_tool_call_rank": 5,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.9006255269050598,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.05080981180071831,
+      "assigned_top1_top2_prob_gap": 0.8498157151043415,
+      "assigned_rendered_first_user_line": "Properly develop the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "03978e2cb81bef0f2fb806829004a603d7b150ff",
+      "source_pool": "project_datasets_base",
+      "selection_batch": "base",
+      "extra_group": null,
+      "extra_row_id": NaN,
+      "assigned_candidate_word_count": NaN,
+      "assigned_prompt_token_length": NaN
+    }
+  },
+  "endpoint_distribution_summary": {
+    "tool_objective": {
+      "mode": "negative_kl_to_endpoint",
+      "endpoint_label": "tool_call",
+      "temperature": 1.0,
+      "masked_token_ids": [],
+      "top_token_id": 151657,
+      "top_token_str": "<tool_call>"
+    },
+    "no_tool_objective": {
+      "mode": "negative_kl_to_endpoint",
+      "endpoint_label": "no_tool",
+      "temperature": 1.0,
+      "masked_token_ids": [],
+      "top_token_id": 40,
+      "top_token_str": "I"
+    },
+    "tool_topk": [
+      {
+        "token_id": 151657,
+        "token": "<tool_call>",
+        "prob": 0.90625
+      },
+      {
+        "token_id": 40,
+        "token": "I",
+        "prob": 0.08447265625
+      },
+      {
+        "token_id": 785,
+        "token": "The",
+        "prob": 0.004791259765625
+      },
+      {
+        "token_id": 39814,
+        "token": "Sure",
+        "prob": 0.002899169921875
+      },
+      {
+        "token_id": 151668,
+        "token": "</think>",
+        "prob": 0.00113677978515625
+      },
+      {
+        "token_id": 1249,
+        "token": "To",
+        "prob": 0.0007781982421875
+      },
+      {
+        "token_id": 8420,
+        "token": "Here",
+        "prob": 0.0002307891845703125
+      },
+      {
+        "token_id": 10061,
+        "token": "Let",
+        "prob": 0.00020313262939453125
+      },
+      {
+        "token_id": 151665,
+        "token": "<tool_response>",
+        "prob": 0.000148773193359375
+      },
+      {
+        "token_id": 2132,
+        "token": "It",
+        "prob": 0.0001316070556640625
+      },
+      {
+        "token_id": 132665,
+        "token": "правля",
+        "prob": 5.4836273193359375e-05
+      },
+      {
+        "token_id": 73594,
+        "token": "```",
+        "prob": 5.4836273193359375e-05
+      }
+    ],
+    "no_tool_topk": [
+      {
+        "token_id": 40,
+        "token": "I",
+        "prob": 0.87890625
+      },
+      {
+        "token_id": 1249,
+        "token": "To",
+        "prob": 0.072265625
+      },
+      {
+        "token_id": 785,
+        "token": "The",
+        "prob": 0.0341796875
+      },
+      {
+        "token_id": 39814,
+        "token": "Sure",
+        "prob": 0.00762939453125
+      },
+      {
+        "token_id": 10061,
+        "token": "Let",
+        "prob": 0.0021820068359375
+      },
+      {
+        "token_id": 151657,
+        "token": "<tool_call>",
+        "prob": 0.00116729736328125
+      },
+      {
+        "token_id": 8420,
+        "token": "Here",
+        "prob": 0.00102996826171875
+      },
+      {
+        "token_id": 2132,
+        "token": "It",
+        "prob": 0.0006256103515625
+      },
+      {
+        "token_id": 95456,
+        "token": "Certainly",
+        "prob": 0.000431060791015625
+      },
+      {
+        "token_id": 80022,
+        "token": "Hmm",
+        "prob": 0.000335693359375
+      },
+      {
+        "token_id": 73594,
+        "token": "```",
+        "prob": 0.0002956390380859375
+      },
+      {
+        "token_id": 750,
+        "token": "def",
+        "prob": 0.00020313262939453125
+      }
+    ],
+    "endpoint_js_divergence": 0.53125
+  },
+  "top_node_scores": [
+    {
+      "name": "MLP17",
+      "score": 4.6953125,
+      "ct": 4.6953125,
+      "ap": 0.0
+    },
+    {
+      "name": "L21H1",
+      "score": 4.59375,
+      "ct": 4.59375,
+      "ap": 4.59375
+    },
+    {
+      "name": "MLP27",
+      "score": 4.390625,
+      "ct": 4.390625,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 4.34375,
+      "ct": 4.34375,
+      "ap": 4.34375
+    },
+    {
+      "name": "L21H12",
+      "score": 3.765625,
+      "ct": 3.765625,
+      "ap": 3.765625
+    },
+    {
+      "name": "MLP19",
+      "score": 3.6875,
+      "ct": 3.6875,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP16",
+      "score": 3.5625,
+      "ct": 3.5625,
+      "ap": 0.0
+    },
+    {
+      "name": "L23H6",
+      "score": 3.046875,
+      "ct": 3.046875,
+      "ap": 3.046875
+    },
+    {
+      "name": "MLP12",
+      "score": 3.03125,
+      "ct": 3.03125,
+      "ap": 0.0
+    },
+    {
+      "name": "L18H14",
+      "score": 2.1875,
+      "ct": 2.1875,
+      "ap": 2.1875
+    },
+    {
+      "name": "MLP6",
+      "score": 1.84375,
+      "ct": 1.84375,
+      "ap": 0.0
+    },
+    {
+      "name": "L12H3",
+      "score": 1.3671875,
+      "ct": 1.3671875,
+      "ap": 1.3671875
+    },
+    {
+      "name": "L17H8",
+      "score": 1.3359375,
+      "ct": 1.3359375,
+      "ap": 1.3359375
+    },
+    {
+      "name": "L20H5",
+      "score": 1.3125,
+      "ct": 1.3125,
+      "ap": 1.3125
+    },
+    {
+      "name": "L21H8",
+      "score": 1.3046875,
+      "ct": 1.3046875,
+      "ap": 1.3046875
+    },
+    {
+      "name": "L9H5",
+      "score": 0.9453125,
+      "ct": 0.9453125,
+      "ap": 0.9453125
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_141/ap_head_heatmap.png",
+    "ct_head_heatmap": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_141/ct_head_heatmap.png",
+    "probe": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_141/L21H1_probe.png",
+    "final_circuit_detailed": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_141/final_circuit_detailed.png",
+    "final_circuit": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_141/final_circuit.png"
+  }
+}

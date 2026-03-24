@@ -148,6 +148,56 @@
 - 更早期、近似性更强或主要服务过程记录的结果降级归档；
 - 后续所有新工作，都直接围绕 4 个模块推进。
 
+## 7. 数据分离与泛化验证
+
+在完成 4 个模块的全量实验后，项目进行了一次关键的方法论升级：将全部 1722 对样本按 70/30 比例划分为 train 集和 test 集，在 train 集上重新从头发现电路，在 test 集上验证泛化性。
+
+### 7.1 分层抽样
+
+- 按 `lang`（Python/Java/C++）× `clean_candidate`（15 种 clean 动词）分层随机抽样。
+- `seed=42`，保证可复现。
+- 最终划分：**train 1223 对（71.0%）**、**test 499 对（29.0%）**。
+- 每种语言、每种动词在 train/test 中的分布大致均匀。
+- 元数据记录在 `experiment/datasets/split_summary.json`。
+
+### 7.2 train 集上的重新发现
+
+在 train 集上完整重跑了主流水线（前向挖掘、反向挖掘、双向分析、签名电路构建、因果验证）和全部 4 个模块分析。结果：
+
+- signed circuit 拓扑完全不变：仍为 **24 个节点、64 条边**。
+- 电路 KL recovery：promote 1.000、suppress 0.998。
+- 四个模块的结论与全量实验完全一致，未出现任何节点增减或主链变化。
+
+### 7.3 test 集上的泛化验证
+
+这是本轮最关键的产出。在 test 集上，**用 train 集上学到的 route score 方向和电路结构**进行验证：
+
+| 指标 | 全量 (1722) | Train (1223) | Test (499) | Train→Test Δ |
+|---|---|---|---|---|
+| R_module AUC | 0.9947 | 0.9946 | **0.9943** | 0.0003 |
+| MLP11 Spearman | 0.770 | 0.773 | **0.762** | 0.011 |
+| MLP16 Spearman | 0.855 | 0.855 | **0.843** | 0.012 |
+| Construction +MLP27 top1 | 97.68% | 97.87% | **97.19%** | 0.68% |
+| Suppression +L23H6 no-tool top1 | 78.28% | 78.99% | **78.16%** | 0.83% |
+
+**所有核心指标在 test 集上的下降不超过 1%**，证明电路结构和 route score 方向不是对特定样本的过拟合，而是模型内部真实存在的稳定计算模式。
+
+### 7.4 结果位置
+
+- train 主流水线：`experiment/results/split/pipeline/`
+- train 注意力头：`experiment/results/split/attentionhead/`
+- train 模块 1–4：`experiment/results/split/{instruction_integration,output_route_decision,tool_call_construction,tool_call_suppression}/`
+- test 验证：`experiment/results/split/test_validation/`
+- 全量对比表：`experiment/results/split/split_comparison_summary.md`
+
+### 7.5 范式转换
+
+从这一步开始，项目正式转入 **Discovery / Validation 分离范式**：
+
+- 所有后续新实验（包括模型 scale-up、模块补强等）都必须在 train 集上发现、在 test 集上验证。
+- 论文中引用的所有数字必须同时报告 train 和 test。
+- 旧的全量结果（`results/` 下不在 `split/` 内的目录）降级为历史参考。
+
 ## 5. 当前冻结下来的 4 个模块
 
 经过这一轮模块化重构，现在 4 个模块都已经分别完成，并且每个模块都有自己当前应优先引用的结果包。
