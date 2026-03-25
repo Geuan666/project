@@ -1,0 +1,17 @@
+head,rank,query_span,key_span,density_mean
+L2H14,1,instruction_suffix,file_target,0.08169908192882944
+L2H14,2,instruction_suffix,function_body_anchor,0.03427163835611874
+L2H14,3,task_body,file_target,0.03072732704054208
+L2H14,4,instruction_suffix,user_lead_phrase,0.030292997388009252
+L2H14,5,function_body_anchor,user_lead_phrase,0.024829629651032456
+L2H14,6,file_target,function_body_anchor,0.017077276301939566
+L2H14,7,file_target,system_preamble,0.012001381317368318
+L2H14,8,user_lead_phrase,system_preamble,0.011649116369623779
+L11H5,1,instruction_suffix,file_target,0.09212606181851295
+L11H5,2,file_target,function_body_anchor,0.03239620594994659
+L11H5,3,function_body_anchor,user_lead_phrase,0.03236254111719748
+L11H5,4,instruction_suffix,function_body_anchor,0.03064223784398979
+L11H5,5,file_target,user_lead_phrase,0.019283926042096836
+L11H5,6,user_lead_phrase,system_preamble,0.01747618314375277
+L11H5,7,instruction_suffix,user_lead_phrase,0.01689100410588975
+L11H5,8,file_target,system_preamble,0.014007977463566955

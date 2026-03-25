@@ -1,0 +1,15 @@
+{
+  "dataset_root": "/root/autodl-tmp/project/experiment/datasets/test",
+  "n_samples": 499,
+  "n_unique_first_tokens": 3,
+  "top1_token_id": 40,
+  "top1_token_text": "I",
+  "top1_share_pct": 99.19839679358718,
+  "top5_share_pct": 100.0,
+  "top10_share_pct": 100.0,
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/corrupt_first_token_test_per_sample.csv",
+    "distribution_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/corrupt_first_token_test_distribution.csv",
+    "summary_json": "/root/autodl-tmp/project/experiment/results/split/test_validation/corrupt_first_token_test_summary.json"
+  }
+}

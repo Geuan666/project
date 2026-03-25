@@ -28,6 +28,9 @@
     "node_writeout_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_node_writeout.png",
     "downstream_heatmap_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_downstream_heatmap.png",
     "candidate_comparison_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_candidate_comparison.png",
-    "attention_panel_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_attention_panels.png"
+    "attention_panel_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_attention_panels.png",
+    "logit_lens_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_logit_lens.png",
+    "corrupt_first_token_distribution_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/corrupt_first_token_test_distribution.csv",
+    "corrupt_first_token_summary_json": "/root/autodl-tmp/project/experiment/results/split/test_validation/corrupt_first_token_test_summary.json"
   }
 }

@@ -1,3 +1,0 @@
-source,target_group,targets,n_samples,promote_route_mediated_ratio_median,promote_route_mediated_ratio_mean,erase_route_mediated_ratio_median,erase_route_mediated_ratio_mean
-MLP19,tool_out_group,L20H5|L21H12|MLP27,1722,0.19550528989498545,0.18665324963722588,0.09029759938175963,0.09553003138770363
-MLP19,full_out_group,L20H5|L21H12|MLP27|L23H6,1722,0.21168043588575874,0.20547509425003435,0.10270649322991392,0.1074657126693941

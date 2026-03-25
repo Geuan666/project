@@ -1,3 +1,0 @@
-issue,current_best_answer,blocker,minimal_next_evidence
-exact_microfeature_inside_l2h14,`L2H14` reads an opening-side bundle with a weak shared file-vs-answer component,the reader-side component is real but not yet uniquely named at the microfeature level,within-opening matched counterfactual or edge-restricted DAS on `L2H14 -> MLP11`
-exact_microfeature_inside_l16h4,`L16H4` reads a user-side ordinary-answer bundle concentrated in task-body / tail-suffix tokens,"the suppressive reader is localized, but the exact subfeature name is still broader than ideal",within-task matched counterfactual or edge-restricted DAS on `L16H4 -> MLP17`

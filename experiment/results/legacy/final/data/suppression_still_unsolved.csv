@@ -1,2 +1,0 @@
-issue,current_best_answer,blocker,minimal_next_evidence
-exact_l16h4_microfeature_name,`L16H4` reads a user-side ordinary-answer bundle concentrated in the task body / tail suffix region,"current span evidence separates user-side suppressive content from tool-schema content, but does not uniquely isolate a single microfeature",a within-task matched counterfactual or DAS-style probe restricted to the `L16H4 -> MLP17` edge

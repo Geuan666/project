@@ -1,0 +1,37 @@
+{
+  "tool_token_text": "<tool_call>",
+  "tool_token_id": 151657,
+  "train_n_samples": 1223,
+  "test_n_samples": 499,
+  "train_metrics": {
+    "tool_logit_start_median": -15.0,
+    "tool_logit_after_l16_median": -8.875,
+    "tool_logit_after_mlp17_layer_median": -8.6875,
+    "tool_logit_before_l23h6_layer_median": -5.96875,
+    "tool_logit_after_l23h6_layer_median": -4.96875,
+    "tool_logit_final_median": 18.875,
+    "tool_logit_min_stage": "0_pre",
+    "tool_logit_min_median": -15.0,
+    "tool_logit_first_positive_stage": "26_pre",
+    "tool_logit_first_positive_median": 1.3359375
+  },
+  "test_metrics": {
+    "tool_logit_start_median": -15.0,
+    "tool_logit_after_l16_median": -8.875,
+    "tool_logit_after_mlp17_layer_median": -8.6875,
+    "tool_logit_before_l23h6_layer_median": -5.9375,
+    "tool_logit_after_l23h6_layer_median": -4.96875,
+    "tool_logit_final_median": 18.875,
+    "tool_logit_min_stage": "0_pre",
+    "tool_logit_min_median": -15.0,
+    "tool_logit_first_positive_stage": "26_pre",
+    "tool_logit_first_positive_median": 1.359375
+  },
+  "artifacts": {
+    "train_per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/suppression_logit_lens_train_per_sample.csv",
+    "train_summary_csv": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/suppression_logit_lens_train_summary.csv",
+    "test_per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/suppression_logit_lens_test_per_sample.csv",
+    "test_summary_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/suppression_logit_lens_test_summary.csv",
+    "figure_png": "/root/autodl-tmp/project/experiment/results/split/tool_call_suppression/figures/suppression_logit_lens.png"
+  }
+}

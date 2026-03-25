@@ -1,8 +1,0 @@
-edge,object_language_claim,mediated_evidence,strength
-L20H5->L21H1,passes the instruction-conditioned ingress state into a late query router,0.052,weak-main-text
-L20H5->L21H12,passes the instruction-conditioned ingress state into the main commitment-conditioned late router,0.094,main-text
-L21H1->MLP27,sends late user-conditioned routed state into the final writer,0.292,weak-main-text
-L21H12->MLP27,sends the main commitment-conditioned late state into the final writer,0.328,main-text
-L16H4->MLP17,passes the competing no-tool-biased user-side state into the no-tool writer,0.076,main-text
-MLP17->L23H6,passes the written no-tool state into the late suppressive relay,0.066,main-text
-MLP17->L20H5,suppresses the user-conditioned tool ingress route,0.049,weak-main-text

@@ -1,9 +1,0 @@
-{
-  "dataset_root": "/root/autodl-tmp/project/experiment/datasets",
-  "n_samples": 1722,
-  "route_score_summary_csv": "/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision/route_score_summary.csv",
-  "edge_summary_csv": "/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision/route_edge_summary.csv",
-  "edge_group_summary_csv": "/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision/route_edge_group_summary.csv",
-  "tiers_json": "/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision/node_edge_tiers.json",
-  "report_md": "/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision/output_route_decision_refine_report.md"
-}

@@ -1,0 +1,130 @@
+{
+  "groups": {
+    "symmetric_backbone": [
+      "L12H6",
+      "L13H9",
+      "MLP16",
+      "L17H8",
+      "MLP19",
+      "L20H5",
+      "L24H6",
+      "MLP27"
+    ],
+    "tool_bias_backbone": [
+      "MLP11",
+      "L21H1",
+      "L21H12",
+      "L23H6"
+    ],
+    "no_tool_bias_backbone": [
+      "MLP12",
+      "L16H4",
+      "L16H8",
+      "MLP17"
+    ],
+    "tool_tail": [
+      "L2H14",
+      "L18H14",
+      "MLP21",
+      "L23H5"
+    ],
+    "no_tool_tail": [
+      "L15H5",
+      "L16H13",
+      "L16H9",
+      "L17H2"
+    ]
+  },
+  "artifacts": {
+    "per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/signed_validate/signed_group_per_sample.csv",
+    "summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/signed_validate/signed_group_summary.csv",
+    "summary_json": "/root/autodl-tmp/project/experiment/results/split/pipeline/signed_validate/signed_group_report.json",
+    "heatmap_png": "/root/autodl-tmp/project/experiment/results/split/pipeline/signed_validate/signed_group_validation_heatmap.png"
+  },
+  "summary_rows": [
+    {
+      "group": "full_signed_circuit",
+      "group_label": "full_signed_circuit",
+      "n_samples": 1223,
+      "n_nodes": 24,
+      "promote_suff_ratio_median": 0.9996836672547043,
+      "suppress_suff_ratio_median": 0.9979725713315217,
+      "promote_tool_top1_rate": 0.9983646770237122,
+      "suppress_no_tool_top1_rate": 0.9967293540474244,
+      "promote_nec_drop_median": 0.0,
+      "suppress_nec_drop_median": 0.0,
+      "promote_nec_top1_drop_mean": 0.0,
+      "suppress_nec_top1_drop_mean": 0.0
+    },
+    {
+      "group": "symmetric_backbone",
+      "group_label": "Symmetric Backbone",
+      "n_samples": 1223,
+      "n_nodes": 8,
+      "promote_suff_ratio_median": 0.9940676867219918,
+      "suppress_suff_ratio_median": 0.9857758620689655,
+      "promote_tool_top1_rate": 0.9738348323793949,
+      "suppress_no_tool_top1_rate": 0.9877350776778414,
+      "promote_nec_drop_median": 0.0006251335144042969,
+      "suppress_nec_drop_median": -0.003263231734154881,
+      "promote_nec_top1_drop_mean": 0.004905968928863451,
+      "suppress_nec_top1_drop_mean": 0.004088307440719542
+    },
+    {
+      "group": "tool_bias_backbone",
+      "group_label": "Tool-Bias Backbone",
+      "n_samples": 1223,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.9646493212669683,
+      "suppress_suff_ratio_median": 0.8674812030075187,
+      "promote_tool_top1_rate": 0.777596075224857,
+      "suppress_no_tool_top1_rate": 0.6680294358135732,
+      "promote_nec_drop_median": 0.0005900065104167407,
+      "suppress_nec_drop_median": -0.0011077425373133831,
+      "promote_nec_top1_drop_mean": 0.005723630417007359,
+      "suppress_nec_top1_drop_mean": 0.0024529844644317253
+    },
+    {
+      "group": "no_tool_bias_backbone",
+      "group_label": "No-Tool-Bias Backbone",
+      "n_samples": 1223,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.8862179487179487,
+      "suppress_suff_ratio_median": 0.7981927710843374,
+      "promote_tool_top1_rate": 0.5126737530662305,
+      "suppress_no_tool_top1_rate": 0.5396565821749796,
+      "promote_nec_drop_median": 0.0002495073804669179,
+      "suppress_nec_drop_median": -0.0015684185606060774,
+      "promote_nec_top1_drop_mean": 0.004088307440719542,
+      "suppress_nec_top1_drop_mean": 0.006541291905151268
+    },
+    {
+      "group": "tool_tail",
+      "group_label": "Tool Tail",
+      "n_samples": 1223,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.6900826446280992,
+      "suppress_suff_ratio_median": 0.4095744680851064,
+      "promote_tool_top1_rate": 0.10629599345870809,
+      "suppress_no_tool_top1_rate": 0.07277187244480784,
+      "promote_nec_drop_median": 8.791302322253003e-05,
+      "suppress_nec_drop_median": -0.0016519823788546661,
+      "promote_nec_top1_drop_mean": 0.001635322976287817,
+      "suppress_nec_top1_drop_mean": 0.0024529844644317253
+    },
+    {
+      "group": "no_tool_tail",
+      "group_label": "No-Tool Tail",
+      "n_samples": 1223,
+      "n_nodes": 4,
+      "promote_suff_ratio_median": 0.46798029556650245,
+      "suppress_suff_ratio_median": 0.3544973544973545,
+      "promote_tool_top1_rate": 0.013900245298446443,
+      "suppress_no_tool_top1_rate": 0.07195421095666395,
+      "promote_nec_drop_median": 7.05608742768149e-06,
+      "suppress_nec_drop_median": -0.00019171779141102796,
+      "promote_nec_top1_drop_mean": 0.0008176614881439084,
+      "suppress_nec_top1_drop_mean": 0.0
+    }
+  ]
+}

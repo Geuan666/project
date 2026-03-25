@@ -1,0 +1,25 @@
+{
+  "official_train_csv": "/root/autodl-tmp/project/experiment/results/split/output_route_decision/route_score_summary.csv",
+  "official_test_csv": "/root/autodl-tmp/project/experiment/results/split/test_validation/route_score_test_validation.csv",
+  "diffs": {
+    "MLP11": {
+      "train_auc_delta": -0.000720718793310815,
+      "test_auc_delta": 0.00012449749197795956,
+      "train_clean_delta": -0.009917224386031931,
+      "test_clean_delta": -0.043304222380168955
+    },
+    "MLP16": {
+      "train_auc_delta": -0.00023801103007292657,
+      "test_auc_delta": 0.0005261023048100943,
+      "train_clean_delta": -0.0034126207337474845,
+      "test_clean_delta": -0.01029605346240503
+    },
+    "MLP19": {
+      "train_auc_delta": -0.000720718793310815,
+      "test_auc_delta": 0.0003614443315488325,
+      "train_clean_delta": 0.012570218591103632,
+      "test_clean_delta": 0.007217252559872822
+    }
+  },
+  "max_abs_auc_delta": 0.000720718793310815
+}

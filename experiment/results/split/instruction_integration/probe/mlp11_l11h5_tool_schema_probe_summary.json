@@ -1,0 +1,28 @@
+{
+  "train_dataset_root": "/root/autodl-tmp/project/experiment/datasets/train",
+  "test_dataset_root": "/root/autodl-tmp/project/experiment/datasets/test",
+  "n_train_pairs": 1223,
+  "n_test_pairs": 499,
+  "train_baseline": {
+    "accuracy": 1.0,
+    "clean_positive_rate": 1.0,
+    "corrupt_negative_rate": 1.0
+  },
+  "test_baseline": {
+    "accuracy": 1.0,
+    "clean_positive_rate": 1.0,
+    "corrupt_negative_rate": 1.0
+  },
+  "test_masked": {
+    "accuracy": 1.0,
+    "clean_positive_rate": 1.0,
+    "corrupt_negative_rate": 1.0
+  },
+  "delta": {
+    "accuracy_drop": 0.0,
+    "clean_positive_rate_drop": 0.0,
+    "corrupt_negative_rate_drop": 0.0
+  },
+  "probe_type": "StandardScaler + LogisticRegression(liblinear)",
+  "mask": "L11H5 attention weights to tool_schema zeroed; not token replacement"
+}

@@ -1,0 +1,30 @@
+{
+  "scope": {
+    "train_n": 1223,
+    "test_n": 499,
+    "max_samples_override": 0
+  },
+  "figures": {
+    "figure6_stagewise": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/figures/figure6_construction_stagewise_train_test.png",
+    "logit_lens": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/figures/construction_logit_lens_train.png",
+    "branch_compare": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/figures/l21_branch_comparison_paper.png",
+    "attention_roles": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/figures/construction_attention_roles.png"
+  },
+  "tables": {
+    "train_logit_lens_summary_csv": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/construction_logit_lens_train_summary.csv",
+    "report_md": "/root/autodl-tmp/project/experiment/results/split/tool_call_construction/tool_call_construction_paper_report.md"
+  },
+  "key_metrics": {
+    "train_final_top1": 0.9787408013082584,
+    "test_final_top1": 0.9719438877755511,
+    "train_l21h1_top1": 0.48896156991005724,
+    "train_l21h12_top1": 0.8585445625511039,
+    "l21h1_only_top1": 0.48896156991005724,
+    "l21h12_only_top1": 0.6729354047424366,
+    "l21h1_l24h6_top1": 0.731807031888798,
+    "l21h12_l24h6_top1": 0.83892068683565,
+    "clean_final_logit": 22.625,
+    "corrupt_final_logit": 18.875,
+    "delta_final_logit": 3.75
+  }
+}

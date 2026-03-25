@@ -1,0 +1,474 @@
+{
+  "variant_summary_rows": [
+    {
+      "variant": "clean_full",
+      "n_samples": 1223,
+      "tool_score_median": 0.0,
+      "no_tool_score_median": -3.203125,
+      "decision_score_median": 3.203125,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "n_samples": 1223,
+      "tool_score_median": -4.59375,
+      "no_tool_score_median": 0.0,
+      "decision_score_median": -4.59375,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 0.9983646770237122
+    },
+    {
+      "variant": "corrupt_full",
+      "n_samples": 1223,
+      "tool_score_median": -4.59375,
+      "no_tool_score_median": 0.0,
+      "decision_score_median": -4.59375,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 0.9983646770237122
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "n_samples": 1223,
+      "tool_score_median": 0.0,
+      "no_tool_score_median": -3.203125,
+      "decision_score_median": 3.203125,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0
+    }
+  ],
+  "read_summary_rows": [
+    {
+      "variant": "clean_full",
+      "component": "L16H4",
+      "set": "instruction_line",
+      "mass_median": 0.14723171293735504
+    },
+    {
+      "variant": "clean_full",
+      "component": "L16H4",
+      "set": "task_body",
+      "mass_median": 0.28641846776008606
+    },
+    {
+      "variant": "clean_full",
+      "component": "L20H5",
+      "set": "instruction_line",
+      "mass_median": 0.14397692680358887
+    },
+    {
+      "variant": "clean_full",
+      "component": "L20H5",
+      "set": "task_body",
+      "mass_median": 0.04616579785943031
+    },
+    {
+      "variant": "clean_full",
+      "component": "L21H1",
+      "set": "instruction_line",
+      "mass_median": 0.042899373918771744
+    },
+    {
+      "variant": "clean_full",
+      "component": "L21H1",
+      "set": "task_body",
+      "mass_median": 0.18167126178741455
+    },
+    {
+      "variant": "clean_full",
+      "component": "L21H12",
+      "set": "instruction_line",
+      "mass_median": 0.02373926341533661
+    },
+    {
+      "variant": "clean_full",
+      "component": "L21H12",
+      "set": "task_body",
+      "mass_median": 0.012275842018425465
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L16H4",
+      "set": "instruction_line",
+      "mass_median": 0.15735583007335663
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L16H4",
+      "set": "task_body",
+      "mass_median": 0.3353949785232544
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L20H5",
+      "set": "instruction_line",
+      "mass_median": 0.26308366656303406
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L20H5",
+      "set": "task_body",
+      "mass_median": 0.08139863610267639
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L21H1",
+      "set": "instruction_line",
+      "mass_median": 0.056410014629364014
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L21H1",
+      "set": "task_body",
+      "mass_median": 0.17640924453735352
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L21H12",
+      "set": "instruction_line",
+      "mass_median": 0.06740808486938477
+    },
+    {
+      "variant": "clean_with_corrupt_instruction",
+      "component": "L21H12",
+      "set": "task_body",
+      "mass_median": 0.03833753615617752
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L16H4",
+      "set": "instruction_line",
+      "mass_median": 0.15735583007335663
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L16H4",
+      "set": "task_body",
+      "mass_median": 0.3353949785232544
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L20H5",
+      "set": "instruction_line",
+      "mass_median": 0.26308366656303406
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L20H5",
+      "set": "task_body",
+      "mass_median": 0.08139863610267639
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L21H1",
+      "set": "instruction_line",
+      "mass_median": 0.056410014629364014
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L21H1",
+      "set": "task_body",
+      "mass_median": 0.17640924453735352
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L21H12",
+      "set": "instruction_line",
+      "mass_median": 0.06740808486938477
+    },
+    {
+      "variant": "corrupt_full",
+      "component": "L21H12",
+      "set": "task_body",
+      "mass_median": 0.03833753615617752
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L16H4",
+      "set": "instruction_line",
+      "mass_median": 0.14723171293735504
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L16H4",
+      "set": "task_body",
+      "mass_median": 0.28641846776008606
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L20H5",
+      "set": "instruction_line",
+      "mass_median": 0.14397692680358887
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L20H5",
+      "set": "task_body",
+      "mass_median": 0.04616579785943031
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L21H1",
+      "set": "instruction_line",
+      "mass_median": 0.042899373918771744
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L21H1",
+      "set": "task_body",
+      "mass_median": 0.18167126178741455
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L21H12",
+      "set": "instruction_line",
+      "mass_median": 0.02373926341533661
+    },
+    {
+      "variant": "corrupt_with_clean_instruction",
+      "component": "L21H12",
+      "set": "task_body",
+      "mass_median": 0.012275842018425465
+    }
+  ],
+  "query_summary_rows": [
+    {
+      "step_idx": 1,
+      "nodes": "L20H5",
+      "rescue_ratio_median": 0.3048128342245989,
+      "decision_score_median": -3.051513671875,
+      "tool_top1_rate": 0.005723630417007359,
+      "boundary_flip_rate": 0.0024529844644317253
+    },
+    {
+      "step_idx": 2,
+      "nodes": "L20H5|L21H1",
+      "rescue_ratio_median": 0.723744292237443,
+      "decision_score_median": -0.984375,
+      "tool_top1_rate": 0.20032706459525756,
+      "boundary_flip_rate": 0.19705641864268192
+    },
+    {
+      "step_idx": 3,
+      "nodes": "L20H5|L21H1|L21H12",
+      "rescue_ratio_median": 0.9417682926829268,
+      "decision_score_median": 0.693359375,
+      "tool_top1_rate": 0.6950122649223222,
+      "boundary_flip_rate": 0.7424366312346689
+    },
+    {
+      "step_idx": 4,
+      "nodes": "L20H5|L21H1|L21H12|L24H6",
+      "rescue_ratio_median": 0.971318493150685,
+      "decision_score_median": 1.2578125,
+      "tool_top1_rate": 0.8552739165985282,
+      "boundary_flip_rate": 0.9182338511856092
+    },
+    {
+      "step_idx": 5,
+      "nodes": "L20H5|L21H1|L21H12|L24H6|MLP27",
+      "rescue_ratio_median": 0.9910451061320755,
+      "decision_score_median": 1.928955078125,
+      "tool_top1_rate": 0.9394930498773508,
+      "boundary_flip_rate": 0.9934587080948487
+    }
+  ],
+  "no_tool_summary_rows": [
+    {
+      "step_idx": 1,
+      "nodes": "L16H4",
+      "rescue_ratio_median": 0.19680851063829788,
+      "decision_score_median": -2.492919921875,
+      "no_tool_top1_rate": 0.01062959934587081,
+      "boundary_flip_rate": 0.0008176614881439084
+    },
+    {
+      "step_idx": 2,
+      "nodes": "L16H4|MLP17",
+      "rescue_ratio_median": 0.6055555555555555,
+      "decision_score_median": -0.9951171875,
+      "no_tool_top1_rate": 0.2542927228127555,
+      "boundary_flip_rate": 0.18070318887980377
+    },
+    {
+      "step_idx": 3,
+      "nodes": "L16H4|MLP17|L23H6",
+      "rescue_ratio_median": 0.7924528301886793,
+      "decision_score_median": -0.0859375,
+      "no_tool_top1_rate": 0.5167620605069502,
+      "boundary_flip_rate": 0.473426001635323
+    }
+  ],
+  "top_clean_instructions": [
+    [
+      "Directly build the function body in solve.py based on the function definition and docstring below:",
+      80
+    ],
+    [
+      "Create the function body in solve.cpp based on the function definition and docstring below:",
+      61
+    ],
+    [
+      "Edit the function body in solve.java based on the function definition and docstring below:",
+      54
+    ],
+    [
+      "Append the function body in solve.java based on the function definition and docstring below:",
+      53
+    ],
+    [
+      "Finalize the function body in solve.java based on the function definition and docstring below:",
+      52
+    ],
+    [
+      "Prefill the function body in solve.java based on the function definition and docstring below:",
+      52
+    ],
+    [
+      "Save the function body in solve.java based on the function definition and docstring below:",
+      51
+    ],
+    [
+      "Manually build the function body in solve.py based on the function definition and docstring below:",
+      50
+    ],
+    [
+      "Prepare the function body in solve.cpp based on the function definition and docstring below:",
+      49
+    ],
+    [
+      "Write out the function body in solve.py based on the function definition and docstring below:",
+      49
+    ],
+    [
+      "Write the function body in solve.cpp based on the function definition and docstring below:",
+      47
+    ],
+    [
+      "Properly add the function body in solve.cpp based on the function definition and docstring below:",
+      44
+    ],
+    [
+      "Directly implement the function body in solve.py based on the function definition and docstring below:",
+      37
+    ],
+    [
+      "Insert the function body in solve.cpp based on the function definition and docstring below:",
+      36
+    ],
+    [
+      "Paste the function body in solve.java based on the function definition and docstring below:",
+      35
+    ],
+    [
+      "Insert the function body in solve.java based on the function definition and docstring below:",
+      33
+    ],
+    [
+      "Append the function body in solve.cpp based on the function definition and docstring below:",
+      31
+    ],
+    [
+      "Write out the function body in solve.cpp based on the function definition and docstring below:",
+      28
+    ],
+    [
+      "Properly add the function body in solve.py based on the function definition and docstring below:",
+      26
+    ],
+    [
+      "Directly implement the function body in solve.cpp based on the function definition and docstring below:",
+      24
+    ]
+  ],
+  "top_corrupt_instructions": [
+    [
+      "Develop the function body in solve.cpp based on the function definition and docstring below:",
+      66
+    ],
+    [
+      "Independently develop the function body in solve.py based on the function definition and docstring below:",
+      61
+    ],
+    [
+      "Implement the function body in solve.cpp based on the function definition and docstring below:",
+      60
+    ],
+    [
+      "Author the function body in solve.cpp based on the function definition and docstring below:",
+      59
+    ],
+    [
+      "Compose the function body in solve.java based on the function definition and docstring below:",
+      57
+    ],
+    [
+      "Carefully implement the function body in solve.py based on the function definition and docstring below:",
+      54
+    ],
+    [
+      "Devise the function body in solve.java based on the function definition and docstring below:",
+      52
+    ],
+    [
+      "Manually develop the function body in solve.py based on the function definition and docstring below:",
+      52
+    ],
+    [
+      "Formulate the function body in solve.java based on the function definition and docstring below:",
+      52
+    ],
+    [
+      "Build out the function body in solve.py based on the function definition and docstring below:",
+      49
+    ],
+    [
+      "Build the function body in solve.java based on the function definition and docstring below:",
+      49
+    ],
+    [
+      "Supply the function body in solve.java based on the function definition and docstring below:",
+      46
+    ],
+    [
+      "Craft the function body in solve.java based on the function definition and docstring below:",
+      46
+    ],
+    [
+      "Properly develop the function body in solve.cpp based on the function definition and docstring below:",
+      44
+    ],
+    [
+      "Design the function body in solve.java based on the function definition and docstring below:",
+      42
+    ],
+    [
+      "Carefully implement the function body in solve.cpp based on the function definition and docstring below:",
+      29
+    ],
+    [
+      "Supply the function body in solve.py based on the function definition and docstring below:",
+      29
+    ],
+    [
+      "Build out the function body in solve.cpp based on the function definition and docstring below:",
+      28
+    ],
+    [
+      "Craft the function body in solve.cpp based on the function definition and docstring below:",
+      27
+    ],
+    [
+      "Build the function body in solve.cpp based on the function definition and docstring below:",
+      27
+    ]
+  ],
+  "artifacts": {
+    "variant_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_variant_summary.csv",
+    "read_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_read_summary.csv",
+    "query_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_query_chain_summary.csv",
+    "no_tool_summary_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_no_tool_chain_summary.csv",
+    "variant_plot": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_variant_effects.png",
+    "instruction_pairs_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_commitment/instruction_pairs.csv"
+  }
+}

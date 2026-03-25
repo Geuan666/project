@@ -1,0 +1,79 @@
+{
+  "variant_summary_rows": [
+    {
+      "variant": "clean_full",
+      "n_samples": 1223,
+      "decision_score_median": 3.203125,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0
+    },
+    {
+      "variant": "clean_with_corrupt_lead",
+      "n_samples": 1223,
+      "decision_score_median": -4.59375,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 0.9983646770237122
+    },
+    {
+      "variant": "corrupt_full",
+      "n_samples": 1223,
+      "decision_score_median": -4.59375,
+      "tool_top1_rate": 0.0,
+      "no_tool_top1_rate": 0.9983646770237122
+    },
+    {
+      "variant": "corrupt_with_clean_lead",
+      "n_samples": 1223,
+      "decision_score_median": 3.203125,
+      "tool_top1_rate": 1.0,
+      "no_tool_top1_rate": 0.0
+    }
+  ],
+  "query_summary_rows": [
+    {
+      "step_idx": 1,
+      "nodes": "L20H5",
+      "rescue_ratio_median": 0.3048128342245989,
+      "decision_score_median": -3.051513671875,
+      "tool_top1_rate": 0.005723630417007359,
+      "boundary_flip_rate": 0.0024529844644317253
+    },
+    {
+      "step_idx": 2,
+      "nodes": "L20H5|L21H1",
+      "rescue_ratio_median": 0.723744292237443,
+      "decision_score_median": -0.984375,
+      "tool_top1_rate": 0.20032706459525756,
+      "boundary_flip_rate": 0.19705641864268192
+    },
+    {
+      "step_idx": 3,
+      "nodes": "L20H5|L21H1|L21H12",
+      "rescue_ratio_median": 0.9417682926829268,
+      "decision_score_median": 0.693359375,
+      "tool_top1_rate": 0.6950122649223222,
+      "boundary_flip_rate": 0.7424366312346689
+    },
+    {
+      "step_idx": 4,
+      "nodes": "L20H5|L21H1|L21H12|L24H6",
+      "rescue_ratio_median": 0.971318493150685,
+      "decision_score_median": 1.2578125,
+      "tool_top1_rate": 0.8552739165985282,
+      "boundary_flip_rate": 0.9182338511856092
+    },
+    {
+      "step_idx": 5,
+      "nodes": "L20H5|L21H1|L21H12|L24H6|MLP27",
+      "rescue_ratio_median": 0.9910451061320755,
+      "decision_score_median": 1.928955078125,
+      "tool_top1_rate": 0.9394930498773508,
+      "boundary_flip_rate": 0.9934587080948487
+    }
+  ],
+  "artifacts": {
+    "variant_per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_lead/instruction_lead_variant_per_sample.csv",
+    "query_per_sample_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_lead/instruction_lead_query_per_sample.csv",
+    "pair_csv": "/root/autodl-tmp/project/experiment/results/split/pipeline/instruction_lead/instruction_lead_pairs.csv"
+  }
+}

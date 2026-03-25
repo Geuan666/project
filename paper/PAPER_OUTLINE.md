@@ -49,7 +49,7 @@
 - **Span Patching → 注意力头热图**：展示哪些头在跨 span 绑定信息（如 `L2H14` 的早期入口、`L11H5` 的 MLP11 交接）。
 - **[Figure 3: Attention Head Span Heatmap]**
 - **Span Knockout 因果验证**：消除特定输入 span 后，MLPX route score 显著下降(或者probe结果下降)，证明整合确实发生。
-- 结论：待定
+- **Conclusion Paragraph**: Before the route-decision spine stabilizes, a complementary two-head ingress group feeds `MLP11`: `L11H5` shows stable positive dependence on the tool schema, lead phrase, function-body anchor, filename, and request suffix, whereas `L2H14` contributes a narrower early-ingress signal centered on the lead phrase, filename, and request suffix, with weaker but same-sign function-body/task-body dependence. Figure 3 supports this split descriptively, with `L2H14` behaving like an earlier cross-span ingress head and `L11H5` behaving like the main same-block handoff head into `MLP11`. The joint `L2H14 + L11H5` route rescue is only 0.060, but this is a head-level local causal contribution rather than a full module flip, so it is consistent with a distributed ingress stage whose strongest discrete head pair only partially recovers the downstream decision state. `MLP11` is therefore best treated as the output boundary of Instruction Integration and the input boundary of Output-Route Decision, and this boundary generalizes cleanly to held-out data (`R_module` AUC on test = 0.9943).
 
 ### 模块 2：Output-Route Decision [1.5P]
 

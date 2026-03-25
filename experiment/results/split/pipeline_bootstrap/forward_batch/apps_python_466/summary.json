@@ -1,0 +1,864 @@
+{
+  "sample_id": "apps_python_466",
+  "sample_rank": 873,
+  "filename": "apps_python_466.txt",
+  "source_kind": "dataset_root",
+  "q_index": null,
+  "clean_prompt": "/root/autodl-tmp/project/experiment/datasets/train/clean/apps_python_466.txt",
+  "corrupt_prompt": "/root/autodl-tmp/project/experiment/datasets/train/corrupt/apps_python_466.txt",
+  "model_path": "/root/autodl-tmp/Qwen/Qwen3-1.7B",
+  "clean_prompt_token_length": 220,
+  "corrupt_prompt_token_length": 220,
+  "token_lengths_aligned": true,
+  "target_tokenization": {
+    "text": "<tool_call>",
+    "token_ids": [
+      151657
+    ],
+    "tokens": [
+      "<tool_call>"
+    ],
+    "length": 1,
+    "is_single_token": true
+  },
+  "target_token_id": 151657,
+  "target_token_str": "<tool_call>",
+  "distractor_token_id": 40,
+  "distractor_token_str": "I",
+  "ap_mode": "full",
+  "ct_mode": "ap_proxy",
+  "objective_mode": "negative_kl_to_clean_endpoint",
+  "objective_endpoint": "tool_call",
+  "objective_temperature": 1.0,
+  "objective_masked_token_ids": [],
+  "ct_candidate_ap_top_per_layer": 0,
+  "ct_candidate_ap_top_global": 0,
+  "ct_candidate_head_count": 0,
+  "clean_obj": 0.0,
+  "corrupt_obj": -4.46875,
+  "gap": 4.46875,
+  "clean_kl_to_endpoint": -0.0,
+  "corrupt_kl_to_endpoint": 4.46875,
+  "endpoint_js_divergence": 0.6171875,
+  "detailed_obj": -0.00811767578125,
+  "detailed_ratio_vs_gap": 0.9981834571678322,
+  "detailed_kl_recovery_ratio": 0.9981834571678322,
+  "rough_obj": -0.0098876953125,
+  "rough_ratio_vs_gap": 0.9977873688811189,
+  "rough_kl_recovery_ratio": 0.9977873688811189,
+  "clean_with_detailed_corrupted": -4.5,
+  "necessity_drop": 4.5,
+  "necessity_ratio_vs_gap": 1.006993006993007,
+  "necessity_kl_drop_ratio": 1.006993006993007,
+  "clean_with_rough_corrupted": -3.578125,
+  "rough_necessity_drop": 3.578125,
+  "rough_necessity_ratio_vs_gap": 0.8006993006993007,
+  "rough_necessity_kl_drop_ratio": 0.8006993006993007,
+  "probe_head": "L21H1",
+  "probe_corrupt_with_head": -0.8203125,
+  "probe_clean_with_head_corrupt": -0.0211181640625,
+  "detailed_nodes": [
+    "MLP4",
+    "MLP8",
+    "L12H0",
+    "L12H6",
+    "MLP16",
+    "L16H8",
+    "L16H9",
+    "L17H8",
+    "MLP19",
+    "L20H5",
+    "MLP21",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "L24H6",
+    "MLP27"
+  ],
+  "detailed_edges": [
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "Input Embed",
+      "MLP8"
+    ],
+    [
+      "MLP4",
+      "MLP8"
+    ],
+    [
+      "MLP4",
+      "L12H0"
+    ],
+    [
+      "MLP8",
+      "L12H0"
+    ],
+    [
+      "MLP4",
+      "L12H6"
+    ],
+    [
+      "MLP8",
+      "L12H6"
+    ],
+    [
+      "L12H6",
+      "MLP16"
+    ],
+    [
+      "L12H0",
+      "MLP16"
+    ],
+    [
+      "L12H6",
+      "L16H8"
+    ],
+    [
+      "MLP4",
+      "L16H8"
+    ],
+    [
+      "L12H6",
+      "L16H9"
+    ],
+    [
+      "MLP4",
+      "L16H9"
+    ],
+    [
+      "L16H9",
+      "L17H8"
+    ],
+    [
+      "MLP16",
+      "L17H8"
+    ],
+    [
+      "L16H9",
+      "MLP19"
+    ],
+    [
+      "L17H8",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L20H5"
+    ],
+    [
+      "MLP16",
+      "L20H5"
+    ],
+    [
+      "L20H5",
+      "MLP21"
+    ],
+    [
+      "MLP19",
+      "MLP21"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "L20H5",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "L20H5",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "L24H6"
+    ],
+    [
+      "L23H6",
+      "L24H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L24H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L16H8",
+      "L21H1"
+    ],
+    [
+      "MLP21",
+      "L23H6"
+    ]
+  ],
+  "rough_nodes": [
+    "MLP4",
+    "L12H6",
+    "MLP16",
+    "MLP19",
+    "L21H1",
+    "L21H12",
+    "L23H6",
+    "MLP27"
+  ],
+  "rough_edges": [
+    [
+      "Input Embed",
+      "MLP4"
+    ],
+    [
+      "Input Embed",
+      "L12H6"
+    ],
+    [
+      "MLP4",
+      "L12H6"
+    ],
+    [
+      "L12H6",
+      "MLP16"
+    ],
+    [
+      "MLP4",
+      "MLP16"
+    ],
+    [
+      "MLP16",
+      "MLP19"
+    ],
+    [
+      "L12H6",
+      "MLP19"
+    ],
+    [
+      "MLP19",
+      "L21H1"
+    ],
+    [
+      "MLP16",
+      "L21H1"
+    ],
+    [
+      "MLP19",
+      "L21H12"
+    ],
+    [
+      "MLP16",
+      "L21H12"
+    ],
+    [
+      "L21H1",
+      "L23H6"
+    ],
+    [
+      "L21H12",
+      "L23H6"
+    ],
+    [
+      "L21H1",
+      "MLP27"
+    ],
+    [
+      "L21H12",
+      "MLP27"
+    ],
+    [
+      "MLP27",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L23H6",
+      "Residual Output: <tool_call>"
+    ],
+    [
+      "L21H1",
+      "Residual Output: <tool_call>"
+    ]
+  ],
+  "contrast_positions": [
+    134
+  ],
+  "contrast_spans": [
+    [
+      134
+    ]
+  ],
+  "contrast_token_details": [
+    {
+      "position": 134,
+      "clean_token": "Write",
+      "corrupt_token": "Build"
+    }
+  ],
+  "tool_call_open_positions": [
+    106,
+    111
+  ],
+  "tool_call_close_positions": [
+    107,
+    128
+  ],
+  "tool_call_tag_positions": [
+    106,
+    107,
+    111,
+    128
+  ],
+  "tools_block_positions": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "user_block_positions": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211
+  ],
+  "sample_catalog_record": {
+    "sample_id": "apps_python_466",
+    "sample_rank": 873,
+    "filename": "apps_python_466.txt",
+    "clean_path": "/root/autodl-tmp/project/experiment/datasets/train/clean/apps_python_466.txt",
+    "corrupt_path": "/root/autodl-tmp/project/experiment/datasets/train/corrupt/apps_python_466.txt",
+    "source_kind": "dataset_root",
+    "legacy_index": null,
+    "clean_candidate": "write out",
+    "clean_candidate_type": "phrase",
+    "corrupt_candidate": "build out",
+    "corrupt_candidate_type": "phrase",
+    "dataset_name": "apps",
+    "language": "python",
+    "global_row_id": 2314,
+    "clean_prompt_token_length": 220,
+    "corrupt_prompt_token_length": 220,
+    "clean_manifest": {
+      "global_row_id": 2314,
+      "source_path": "/root/autodl-tmp/datasets_extra_1500/apps_python_663.txt",
+      "source_filename": "apps_python_663.txt",
+      "dataset_name": "apps",
+      "language": "python",
+      "sample_index": 663,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "c2daf58d23151f6e46e5638958a53c8466bbf533",
+      "original_prompt_char_length": 1006,
+      "dataset": "apps",
+      "split_local_id": 663,
+      "original_source_id": "apps_python_663",
+      "original_source_path": "/root/autodl-tmp/datasets_extra_1500/apps_python_663.txt",
+      "original_source_split": "datasets_extra_1500",
+      "original_source_row_index": 663,
+      "rule_based_validation_passed": null,
+      "llm_audit_passed": null,
+      "repaired": false,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "apps_python_466.txt",
+      "assigned_candidate": "build out",
+      "assigned_candidate_type": "phrase",
+      "assigned_candidate_slug": "build_out",
+      "assigned_tool_call_prob": 0.006307840812951326,
+      "assigned_tool_call_rank": 5,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.729087233543396,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.23669998347759247,
+      "assigned_top1_top2_prob_gap": 0.49238725006580353,
+      "assigned_rendered_first_user_line": "Build out the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "63a06db403621fe495cac1bf238da2d6f33c84fc",
+      "corrupt_candidate": "build out",
+      "corrupt_candidate_type": "phrase",
+      "clean_candidate": "write out",
+      "clean_candidate_type": "phrase",
+      "clean_candidate_slug": "write_out",
+      "clean_rendered_first_user_line": "Write out the function body in solve.py based on the function definition and docstring below:",
+      "precomputed_tool_call_prob": 0.9710243344306946,
+      "precomputed_is_tool_call_top1": true,
+      "corrupt_prompt_token_length": 220,
+      "clean_prompt_token_length": 220,
+      "token_length_aligned": true,
+      "clean_top1_token_id": 151657,
+      "clean_top1_token_str": "<tool_call>",
+      "clean_top1_prob": 0.9710243344306946,
+      "clean_top2_token_id": 40,
+      "clean_top2_token_str": "I",
+      "clean_top2_prob": 0.025876924395561218,
+      "clean_top1_top2_prob_gap": 0.9451474100351334,
+      "clean_tool_call_prob": 0.9710243344306946,
+      "clean_tool_call_rank": 1,
+      "clean_is_tool_call_top1": true,
+      "clean_pass_p50": true,
+      "source_pool": "datasets_extra_1500",
+      "selection_batch": "extra600_20260312",
+      "extra_group": "apps_python",
+      "extra_row_id": 626.0,
+      "assigned_candidate_word_count": 2.0,
+      "assigned_prompt_token_length": 220.0,
+      "clean_candidate_word_count": 2.0
+    },
+    "corrupt_manifest": {
+      "global_row_id": 2314,
+      "source_path": "/root/autodl-tmp/datasets_extra_1500/apps_python_663.txt",
+      "source_filename": "apps_python_663.txt",
+      "dataset_name": "apps",
+      "language": "python",
+      "sample_index": 663,
+      "template_kind": "solve.py",
+      "original_first_user_line": "Write the function body in solve.py based on the function definition and docstring below:",
+      "original_prompt_sha1": "c2daf58d23151f6e46e5638958a53c8466bbf533",
+      "original_prompt_char_length": 1006,
+      "dataset": "apps",
+      "split_local_id": 663,
+      "original_source_id": "apps_python_663",
+      "original_source_path": "/root/autodl-tmp/datasets_extra_1500/apps_python_663.txt",
+      "original_source_split": "datasets_extra_1500",
+      "original_source_row_index": 663,
+      "rule_based_validation_passed": null,
+      "llm_audit_passed": null,
+      "repaired": false,
+      "replaced": false,
+      "mbpp_explicit_sanitized_subset": null,
+      "mbpp_sanitization_source": null,
+      "output_filename": "apps_python_466.txt",
+      "assigned_candidate": "build out",
+      "assigned_candidate_type": "phrase",
+      "assigned_candidate_slug": "build_out",
+      "assigned_tool_call_prob": 0.006307840812951326,
+      "assigned_tool_call_rank": 5,
+      "assigned_top1_token_id": 40,
+      "assigned_top1_token_str": "I",
+      "assigned_top1_prob": 0.729087233543396,
+      "assigned_top2_token_id": 1249,
+      "assigned_top2_token_str": "To",
+      "assigned_top2_prob": 0.23669998347759247,
+      "assigned_top1_top2_prob_gap": 0.49238725006580353,
+      "assigned_rendered_first_user_line": "Build out the function body in solve.py based on the function definition and docstring below:",
+      "assigned_prompt_sha1": "63a06db403621fe495cac1bf238da2d6f33c84fc",
+      "source_pool": "datasets_extra_1500",
+      "selection_batch": "extra600_20260312",
+      "extra_group": "apps_python",
+      "extra_row_id": 626.0,
+      "assigned_candidate_word_count": 2.0,
+      "assigned_prompt_token_length": 220.0
+    }
+  },
+  "endpoint_distribution_summary": {
+    "tool_objective": {
+      "mode": "negative_kl_to_endpoint",
+      "endpoint_label": "tool_call",
+      "temperature": 1.0,
+      "masked_token_ids": [],
+      "top_token_id": 151657,
+      "top_token_str": "<tool_call>"
+    },
+    "no_tool_objective": {
+      "mode": "negative_kl_to_endpoint",
+      "endpoint_label": "no_tool",
+      "temperature": 1.0,
+      "masked_token_ids": [],
+      "top_token_id": 40,
+      "top_token_str": "I"
+    },
+    "tool_topk": [
+      {
+        "token_id": 151657,
+        "token": "<tool_call>",
+        "prob": 0.9765625
+      },
+      {
+        "token_id": 40,
+        "token": "I",
+        "prob": 0.0203857421875
+      },
+      {
+        "token_id": 1249,
+        "token": "To",
+        "prob": 0.000885009765625
+      },
+      {
+        "token_id": 10061,
+        "token": "Let",
+        "prob": 0.000392913818359375
+      },
+      {
+        "token_id": 785,
+        "token": "The",
+        "prob": 0.000278472900390625
+      },
+      {
+        "token_id": 151668,
+        "token": "</think>",
+        "prob": 0.00021648406982421875
+      },
+      {
+        "token_id": 39814,
+        "token": "Sure",
+        "prob": 0.0001583099365234375
+      },
+      {
+        "token_id": 98574,
+        "token": "Пер",
+        "prob": 6.628036499023438e-05
+      },
+      {
+        "token_id": 151665,
+        "token": "<tool_response>",
+        "prob": 5.14984130859375e-05
+      },
+      {
+        "token_id": 8420,
+        "token": "Here",
+        "prob": 4.267692565917969e-05
+      },
+      {
+        "token_id": 50455,
+        "token": " Steelers",
+        "prob": 9.5367431640625e-06
+      },
+      {
+        "token_id": 5338,
+        "token": "First",
+        "prob": 8.940696716308594e-06
+      }
+    ],
+    "no_tool_topk": [
+      {
+        "token_id": 40,
+        "token": "I",
+        "prob": 0.70703125
+      },
+      {
+        "token_id": 1249,
+        "token": "To",
+        "prob": 0.259765625
+      },
+      {
+        "token_id": 10061,
+        "token": "Let",
+        "prob": 0.01300048828125
+      },
+      {
+        "token_id": 151657,
+        "token": "<tool_call>",
+        "prob": 0.0089111328125
+      },
+      {
+        "token_id": 785,
+        "token": "The",
+        "prob": 0.0069580078125
+      },
+      {
+        "token_id": 39814,
+        "token": "Sure",
+        "prob": 0.0017547607421875
+      },
+      {
+        "token_id": 8420,
+        "token": "Here",
+        "prob": 0.0012054443359375
+      },
+      {
+        "token_id": 73594,
+        "token": "```",
+        "prob": 0.0003452301025390625
+      },
+      {
+        "token_id": 1654,
+        "token": "We",
+        "prob": 0.00019073486328125
+      },
+      {
+        "token_id": 641,
+        "token": "In",
+        "prob": 0.000148773193359375
+      },
+      {
+        "token_id": 151668,
+        "token": "</think>",
+        "prob": 0.00014019012451171875
+      },
+      {
+        "token_id": 28715,
+        "token": "Based",
+        "prob": 0.00014019012451171875
+      }
+    ],
+    "endpoint_js_divergence": 0.6171875
+  },
+  "top_node_scores": [
+    {
+      "name": "L21H1",
+      "score": 7.3125,
+      "ct": 7.3125,
+      "ap": 7.3125
+    },
+    {
+      "name": "L21H12",
+      "score": 4.96875,
+      "ct": 4.96875,
+      "ap": 4.96875
+    },
+    {
+      "name": "L23H6",
+      "score": 3.546875,
+      "ct": 3.546875,
+      "ap": 3.546875
+    },
+    {
+      "name": "MLP27",
+      "score": 3.4296875,
+      "ct": 3.4296875,
+      "ap": 0.0
+    },
+    {
+      "name": "MLP19",
+      "score": 3.1640625,
+      "ct": 3.1640625,
+      "ap": 0.0
+    },
+    {
+      "name": "L24H6",
+      "score": 2.9375,
+      "ct": 2.9375,
+      "ap": 2.9375
+    },
+    {
+      "name": "L16H9",
+      "score": 2.75,
+      "ct": 2.75,
+      "ap": 2.75
+    },
+    {
+      "name": "MLP16",
+      "score": 2.5,
+      "ct": 2.5,
+      "ap": 0.0
+    },
+    {
+      "name": "L20H5",
+      "score": 2.296875,
+      "ct": 2.296875,
+      "ap": 2.296875
+    },
+    {
+      "name": "L17H8",
+      "score": 2.0,
+      "ct": 2.0,
+      "ap": 2.0
+    },
+    {
+      "name": "MLP21",
+      "score": 1.96875,
+      "ct": 1.96875,
+      "ap": 0.0
+    },
+    {
+      "name": "L16H8",
+      "score": 1.9609375,
+      "ct": 1.9609375,
+      "ap": 1.9609375
+    },
+    {
+      "name": "L12H6",
+      "score": 0.8515625,
+      "ct": 0.8515625,
+      "ap": 0.8515625
+    },
+    {
+      "name": "MLP4",
+      "score": 0.78125,
+      "ct": 0.78125,
+      "ap": 0.0
+    },
+    {
+      "name": "L12H0",
+      "score": 0.76953125,
+      "ct": 0.76953125,
+      "ap": 0.76953125
+    },
+    {
+      "name": "MLP8",
+      "score": 0.21875,
+      "ct": 0.21875,
+      "ap": 0.0
+    }
+  ],
+  "artifacts": {
+    "ap_head_heatmap": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_466/ap_head_heatmap.png",
+    "ct_head_heatmap": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_466/ct_head_heatmap.png",
+    "probe": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_466/L21H1_probe.png",
+    "final_circuit_detailed": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_466/final_circuit_detailed.png",
+    "final_circuit": "/root/autodl-tmp/project/experiment/results/split/pipeline/forward_batch/apps_python_466/final_circuit.png"
+  }
+}

@@ -1,0 +1,4 @@
+split,node,probe_vs_local_route_spearman,probe_vs_module_route_spearman,probe_auc
+test,MLP11,0.8900888575081495,0.922352999649016,1.0
+test,MLP16,0.9406679600567879,0.9160067961984735,1.0
+test,MLP19,0.9327879466089688,0.8932254344864922,1.0

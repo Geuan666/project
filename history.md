@@ -1,272 +1,198 @@
 # 项目历史
 
-## 1. 数据构造与问题设定
+## 1. 问题设定与数据起点
 
-这个项目的起点不是一般的工具调用分析，而是一个非常刻意的数据构造：在每一对样本中，只改用户提示开头的一个动词或一个很短的词组，其余主体内容尽量保持不变。
+这个项目研究的不是一般意义上的“工具调用好不好用”，而是一个更具体的问题：
 
-当前保留的数据入口在 [experiment/datasets](/root/autodl-tmp/project/experiment/datasets)。这批数据有几个关键特征：
+> 为什么只改用户提示开头的一个动词或很短的词组，模型首个输出词就会在 `<tool_call>` 和普通回答之间翻转？
 
-- `1700+` 对 clean/corrupt 样本。
-- 使用 Qwen 原生工具调用格式。
-- 关闭 thinking 模式。
-- 当前统一使用的模型是 `/root/autodl-tmp/Qwen/Qwen3-1.7B`。
-- 每对样本只有首个 user prompt 的一个动词或短词组不同。
-- `clean` 会把首个输出词推向 `<tool_call>`。
-- `corrupt` 不会把首个输出词推向 `<tool_call>`，而是落到普通回答一侧。
+数据入口在 `experiment/datasets/`。当前冻结的设定是：
 
-这批数据的重要性，不是再去证明“第一词很重要”，而是给了我们一个非常干净的最小干预接口：
+- 模型：`/root/autodl-tmp/Qwen/Qwen3-1.7B`
+- 数据：`1722` 对 clean/corrupt 样本
+- 语言分布：Python `555` / Java `584` / C++ `583`
+- 格式：Qwen 原生工具调用模板，关闭 thinking
+- 控制变量：每对样本除开头要求词外尽量保持一致
 
-> 只改开头要求的一小段，首个输出词就会翻转。
+这批数据的价值在于，它提供了一个非常干净的最小干预接口：只改一句开头要求，就能让首个输出词翻转。因此后续电路分析有明确的因果对象，而不是在追整段提示词风格差异。
 
-也正因为这个接口足够干净，我们才有机会追问：模型内部到底是如何把这么小的提示差异，逐层放大成最终的工具调用决策的。
+## 2. 从整体电路到双向机制
 
-## 2. 电路定位、方法创新与电路验证
+在数据构造完成后，项目的第二阶段是定位负责这类翻转的真实电路。这里并不是单靠一种方法，而是结合了电路聚合、patching、边级中介量和节点级干预。
 
-在有了成对数据以后，项目进入第二阶段：寻找真正负责这类翻转现象的电路。
+这一步最重要的方法升级是双向反转：
 
-这部分工作并不是只依赖一种方法，而是结合了多种差分和因果工具去聚合电路，包括但不限于：
+- 正向：把 `<tool_call>` 一侧当作目标，找促进工具调用的链
+- 反向：把 `<tool_call>` 一侧当作反例，找压制工具调用、推动 no-tool 的链
 
-- Path Patching
-- EAP-IG
-- 头、MLP、边级别的补丁与干预
-- 聚合式电路筛选
-- 结构和行为层面的验证
+双向做法的结果是，项目最后得到的不是一条单边促进链，而是一条共享 backbone 加两条竞争分支的机制结构。当前在 train 集上重新发现后的正式总电路仍为：
 
-项目在这里做出的关键方法创新，是**双向反转**。
+- `24` 个节点
+- `64` 条边
 
-以前的很多电路定位工作，天然更容易找到“促进某个目标输出”的那条线，但不容易把真正的抑制路线也找完整。这里我们采用了双向做法：
+对应正式结果入口：
 
-- 可以把 `<tool_call>` 一侧当作 clean 来找促进工具调用的部分；
-- 也可以反过来把 `<tool_call>` 一侧当作 corrupt，去找压制工具调用、推动 `no_tool` 的部分。
+- `experiment/results/split/pipeline/final_signed_circuit/`
+- `experiment/results/split/pipeline/bidirectional/`
+- `experiment/results/split/pipeline/signed_validate/`
 
-这个设计带来的直接好处是：
+## 3. 正式范式升级：Discovery / Validation 分离
 
-- 不只找到促进线；
-- 也能找到抑制线；
-- 还能找出两边共享的部分；
-- 最终得到的电路更 faithful，更接近真实决策过程。
+早期实验曾经在全量 `1722` 对样本上完成一轮完整发现，但当前正式口径已经统一切换为 split 范式：
 
-目前已经得到并保留的核心结果是：
+- 按 `lang × clean_candidate` 分层抽样
+- `seed=42`
+- train `1223` / test `499`
 
-- 最终 signed circuit：`24` 个节点、`64` 条边。
-- 该电路通过了充分性和必要性层面的验证。
-- 当前正式结果包保存在 [experiment/results/legacy/final](/root/autodl-tmp/project/experiment/results/legacy/final)。
-- 为了后续模块化重构，`legacy` 目录目前只保留仍有直接参考价值的主结果包，以及最小的 raw provenance：`experiment/results/legacy/final/archive/raw_runs/13-01-39-final-kl`。
-- 对应代码入口主要在 [experiment/code/src](/root/autodl-tmp/project/experiment/code/src) 和 [experiment/code/scripts](/root/autodl-tmp/project/experiment/code/scripts)。
+从这一步开始，所有正式结论都要求：
 
-如果只从“找到 faithful circuit”这个角度看，这个项目其实已经足够形成一篇论文。但目前的问题不是电路对不对，而是叙事和机制解释还没有完全收束。
+1. 在 train 集上发现方向、节点、边和模块主链
+2. 在 test 集上只用 train 学到的结构做泛化验证
 
-## 3. 机制假说、现有高价值实验与重构理由
+当前最关键的全局验证结果见 `experiment/results/split/split_comparison_summary.md`：
 
-在找到电路并验证之后，项目进入第三阶段：试图解释电路中的节点和边，到底在做什么。
+| 指标 | Train | Test | 结论 |
+| --- | ---: | ---: | --- |
+| `R_module` AUC | `0.9946` | `0.9943` | 几乎无下降 |
+| Construction `+MLP27` top-1 | `97.9%` | `97.2%` | 渐进构造链稳定 |
+| Suppression `+L23H6` no-tool top-1 | `79.0%` | `78.2%` | 抑制链稳定 |
+| Signed circuit 规模 | `24 / 64` | 复用 train 结构 | 结构未塌缩 |
 
-过去这一阶段已经积累了非常多实验，也留下了很多结果文件。它们并不是没价值，恰恰相反，其中很多都很关键，但目前的主要问题是：
+这意味着当前主叙事不是对特定样本的过拟合，而是模型内部更稳定的计算模式。
 
-- 实验太多；
-- 命名体系不统一；
-- 叙事链条不够收束；
-- 结果虽然多，但还没有完全组织成一个论文级的整体机制。
+## 4. 模块 1：Instruction Integration
 
-经过前面的讨论，现在新的总机制假说已经收束为 4 个模块：
+正式结果入口：
 
-1. `Instruction Integration`
-2. `Output-Route Decision`
-3. `Tool-Call Construction`
-4. `Tool-Call Suppression`
+- `experiment/results/split/instruction_integration/instruction_integration_module1_report.md`
 
-### 当前机制猜想（英文）
+当前最稳结论是：
 
-> Before generating the first output token, the model first performs Instruction Integration, combining the opening request with the function-body phrase, the filename, and the remaining task description into a unified representation of what kind of answer is being asked for. It then enters an Output-Route Decision stage, where this integrated instruction state is converted into a stable internal choice between a tool-mediated output route and a direct-response route. If the decision favors the tool route, a Tool-Call Construction mechanism organizes filename cues, function-body content, and call-format structure to push the first token toward `<tool_call>`. If the decision favors the direct-response route, a competing Tool-Call Suppression mechanism strengthens the no-tool state while actively inhibiting the tool-calling pathway. In this view, tool use is not treated as an isolated yes-or-no switch, but as the outcome of a broader decision about how the answer should be produced and delivered.
+- `L2H14` 不是全能整合头，而是更早的 ingress 头
+- `L11H5` 是更明确的 `MLP11` same-block handoff 头
+- `MLP11` 是模块 1 的出口，也是模块 2 的入口
 
-对应的中文理解是：
+当前最硬的数字有三类：
 
-> 模型先把开头要求、函数体、文件名和后半段说明放在一起理解；随后形成“接下来应该走哪条输出路线”的稳定内部决定；如果决定走工具路线，后面的节点就组织文件名、函数体和调用格式，把首个输出词推向 `<tool_call>`；如果决定不走工具路线，另一条链就写强 `no_tool`，同时压住工具调用路线。
+- `L11H5 -> MLP11` local rescue = `0.196`
+- `L2H14 + L11H5` route rescue = `0.060`
+- held-out test：
+  - `MLP11` route AUC = `0.9677`
+  - `R_module` AUC = `0.9943`
 
-这一部分现阶段最有价值、应该保留并继续利用的材料主要有：
+模块 1 当前最可信的写法，不是“两个头对称地整合所有输入”，而是“一个较早入口头加一个较晚交接头，把分散的开头要求、函数体、文件名和说明整成一份可交给 `MLP11` 的状态”。
 
-### 3.1 正式结果包
+## 5. 模块 2：Output-Route Decision
 
-- [experiment/results/legacy/final/docs](/root/autodl-tmp/project/experiment/results/legacy/final/docs)
-- [experiment/results/legacy/final/data](/root/autodl-tmp/project/experiment/results/legacy/final/data)
-- [experiment/results/legacy/final/figures](/root/autodl-tmp/project/experiment/results/legacy/final/figures)
+正式结果入口：
 
-这里面包含当前主文档、图索引、数据索引、最终电路表、功能分组表、机制证据表等，是后续重构时最需要持续参考的正式出口。
+- `experiment/results/split/output_route_decision/output_route_decision_paper_assets.md`
 
-### 3.2 机制相关高价值实验
+这一模块是当前整条机制线上最稳定的中枢。正式结论是：
 
-下面这些实验结果虽然当前叙事还不够整齐，但都非常有价值，应作为重构时的重点保留材料：
+- `MLP11 -> MLP16 -> MLP19` 形成决策主干
+- 这里写出来的不是具体 token，而是更上层的输出路线状态
+- 这个状态更适合写成逐层重编码的 `route score`
 
-- earliest reader 相关实验  
-  说明最早的提示读取从哪里开始，以及它和后续稳定状态之间的关系。
-- `MLP11 -> MLP16 -> MLP19` 方向编辑与桥接实验  
-  这是当前支撑“中间稳定状态/决策模块”的最强证据之一。
-- suppressive chain 相关实验  
-  支撑 `L16H4 -> MLP17 -> L23H6` 这一条路不只是相关，而是真的在推动 `no_tool` 并干扰工具路线。
-- 最终 signed circuit、功能分组、家族分组、层轨迹等实验  
-  它们帮助我们理解哪些节点是主干、哪些是偏置、哪些是辅助。
+最关键的数字：
 
-### 3.3 注意力头专项实验
+| 节点 | Train route AUC | Test route AUC |
+| --- | ---: | ---: |
+| `MLP11` | `0.9661` | `0.9677` |
+| `MLP16` | `0.9960` | `0.9956` |
+| `MLP19` | `0.9947` | `0.9934` |
+| `R_module` | `0.9946` | `0.9943` |
 
-注意力头这一块尤其值得保留。
+三条关键边的中介量都稳定为 strong：
 
-当前已经完成一次全量聚合实验，结果位于：
+- `MLP11 -> MLP16`: promote `0.156`
+- `MLP16 -> MLP19`: promote `0.095`
+- `MLP16 -> MLP17`: promote `0.149`
 
-- [experiment/results/attentionhead/20260319-121000-attention-head-full](/root/autodl-tmp/project/experiment/results/attentionhead/20260319-121000-attention-head-full)
+同时，三对局部方向余弦都接近 `0`，说明模块 2 更像逐层重编码，而不是把同一条方向原封不动搬运到后层。
 
-这部分实验已经覆盖：
+## 6. 模块 3：Tool-Call Construction
 
-- `1722` 个样本；
-- `448` 个注意力头；
-- `mass` 和 `density` 两个指标；
-- 每个头的 `10x10` span heatmap；
-- 每个头的 decision-row 图；
-- 以及后续自动分析产物。
+正式结果入口：
 
-这一块的价值在于，它让我们第一次能系统地看清：
+- `experiment/results/split/tool_call_construction/tool_call_construction_paper_report.md`
 
-- 哪些头在看开头要求；
-- 哪些头在看文件名、函数体和后半句说明；
-- 哪些头在靠近 `<tool_call>` 组装；
-- 哪些头在参与 suppressive 路线。
+这一模块回答的是：当 route state 已经偏向工具路线时，模型怎样把 `<tool_call>` 真正构造出来。
 
-哪怕其中一些结果暂时还没有完全写进主叙事，它们也已经构成后续模块分析的重要证据库。
+当前冻结主链：
 
-## 4. 为什么现在要重构
+`MLP19 -> L20H5 -> (L21H1 / L21H12) -> L24H6 -> MLP27`
 
-现在重构不是因为项目没有结果，而是因为项目已经有了太多结果，但它们还没有被放进一个足够清楚、足够统一、足够适合人和 Codex 协作推进的结构里。
+最关键的 stagewise 结果：
 
-这次重构的目标可以概括为 3 句话：
+- train：`0.0% -> 4.3% -> 14.6% -> 48.9% -> 85.9% -> 92.8% -> 97.9%`
+- test：`0.0% -> 4.8% -> 16.0% -> 53.7% -> 86.2% -> 91.2% -> 97.2%`
 
-- 保留真正有价值的代码、数据和结果；
-- 用更统一的目录、文档和任务顺序重新组织它们；
-- 让后面的工作直接围绕 4 个模块推进，而不是继续在旧实验堆里扩散。
+这说明模块 3 的核心不是某一个节点瞬间决定 `<tool_call>`，而是一条渐进组装链。
 
-因此，本轮采用的是“保留核心、明确分层”的整理方式：
+当前还明确冻结了两点：
 
-- 正式保留的结果继续作为主叙事出口；
-- 高价值但尚未完全收束的结果保留为参考；
-- 更早期、近似性更强或主要服务过程记录的结果降级归档；
-- 后续所有新工作，都直接围绕 4 个模块推进。
+- `MLP19` 是 route-state relay / late fanout，不是 construction initiator
+- `L21H12` 明显强于 `L21H1`
+  - `L21H12_only` `<tool_call>` top-1 = `67.3%`
+  - `L21H1_only` `<tool_call>` top-1 = `48.9%`
 
-## 7. 数据分离与泛化验证
+late writer 证据集中在：
 
-在完成 4 个模块的全量实验后，项目进行了一次关键的方法论升级：将全部 1722 对样本按 70/30 比例划分为 train 集和 test 集，在 train 集上重新从头发现电路，在 test 集上验证泛化性。
+- `L24H6` delta margin = `0.257`
+- `MLP27` delta margin = `1.609`
 
-### 7.1 分层抽样
+因此模块 3 当前最稳的论文写法是：先 relay route state，再由 late heads 分工完成 payload binding、protocol routing、format commitment，最后由 `MLP27` 把 `<tool_call>` 写强。
 
-- 按 `lang`（Python/Java/C++）× `clean_candidate`（15 种 clean 动词）分层随机抽样。
-- `seed=42`，保证可复现。
-- 最终划分：**train 1223 对（71.0%）**、**test 499 对（29.0%）**。
-- 每种语言、每种动词在 train/test 中的分布大致均匀。
-- 元数据记录在 `experiment/datasets/split_summary.json`。
+## 7. 模块 4：Tool-Call Suppression
 
-### 7.2 train 集上的重新发现
+正式结果入口：
 
-在 train 集上完整重跑了主流水线（前向挖掘、反向挖掘、双向分析、签名电路构建、因果验证）和全部 4 个模块分析。结果：
+- `experiment/results/split/tool_call_suppression/tool_call_suppression_report.md`
 
-- signed circuit 拓扑完全不变：仍为 **24 个节点、64 条边**。
-- 电路 KL recovery：promote 1.000、suppress 0.998。
-- 四个模块的结论与全量实验完全一致，未出现任何节点增减或主链变化。
+这一模块说明，普通回答路线并不是工具链缺席后的被动结果，而是一条主动 suppress `<tool_call>` 的 competing line。
 
-### 7.3 test 集上的泛化验证
+当前冻结主链：
 
-这是本轮最关键的产出。在 test 集上，**用 train 集上学到的 route score 方向和电路结构**进行验证：
+- 边界分叉：`MLP16 -> MLP17`
+- 模块主体：`L16H4 -> MLP17 -> L23H6`
 
-| 指标 | 全量 (1722) | Train (1223) | Test (499) | Train→Test Δ |
-|---|---|---|---|---|
-| R_module AUC | 0.9947 | 0.9946 | **0.9943** | 0.0003 |
-| MLP11 Spearman | 0.770 | 0.773 | **0.762** | 0.011 |
-| MLP16 Spearman | 0.855 | 0.855 | **0.843** | 0.012 |
-| Construction +MLP27 top1 | 97.68% | 97.87% | **97.19%** | 0.68% |
-| Suppression +L23H6 no-tool top1 | 78.28% | 78.99% | **78.16%** | 0.83% |
+最关键的数字：
 
-**所有核心指标在 test 集上的下降不超过 1%**，证明电路结构和 route score 方向不是对特定样本的过拟合，而是模型内部真实存在的稳定计算模式。
+- stagewise train no-tool top-1：`1.0% -> 29.9% -> 79.0%`
+- stagewise test no-tool top-1：`1.4% -> 27.1% -> 78.2%`
+- `MLP17` inject no-tool direction into clean：
+  - `<tool_call>` `-0.625`
+  - no-tool `+1.125`
+  - decision score `-1.586`
 
-### 7.4 结果位置
+`MLP17` 不只是在输出边界改 token，它还会把 construction 链的关键节点整体往 no-tool 方向推：
 
-- train 主流水线：`experiment/results/split/pipeline/`
-- train 注意力头：`experiment/results/split/attentionhead/`
-- train 模块 1–4：`experiment/results/split/{instruction_integration,output_route_decision,tool_call_construction,tool_call_suppression}/`
-- test 验证：`experiment/results/split/test_validation/`
-- 全量对比表：`experiment/results/split/split_comparison_summary.md`
+- `L20H5` `+3.549`
+- `L21H1` `+6.391`
+- `L21H12` `+7.125`
+- `L24H6` `+12.309`
+- `MLP27` `+110.862`
 
-### 7.5 范式转换
+因此模块 4 的当前最稳说法是：
 
-从这一步开始，项目正式转入 **Discovery / Validation 分离范式**：
+- `L16H4` 是 suppressive ingress / reader
+- `MLP17` 是主 suppressive writer
+- `L23H6` 更像 late relay，而不是对称意义上的最终 writer
 
-- 所有后续新实验（包括模型 scale-up、模块补强等）都必须在 train 集上发现、在 test 集上验证。
-- 论文中引用的所有数字必须同时报告 train 和 test。
-- 旧的全量结果（`results/` 下不在 `split/` 内的目录）降级为历史参考。
+## 8. 2026-03-25 的整理结论
 
-## 5. 当前冻结下来的 4 个模块
+到 `2026-03-25` 为止，项目已经完成两件关键收束工作：
 
-经过这一轮模块化重构，现在 4 个模块都已经分别完成，并且每个模块都有自己当前应优先引用的结果包。
+1. 四模块正式结果全部统一到 `project/experiment/results/split/`
+2. 高层文档只保留一套单仓库口径：
+   - `AGENTS.md`
+   - `CLAUDE.md`
+   - `history.md`
+   - `final/PROJECT_MECHANISM_GUIDE_ZH.md`
 
-### 5.1 `Instruction Integration`
+这意味着后续如果只保留一个文件夹，只需要保留：
 
-当前最稳的结论是：
+- `/root/autodl-tmp/project`
 
-- `L2H14` 提供最早的 opening-side ingress；
-- `L11H5` 是进入 `MLP11` 的 main same-block handoff head；
-- `L2H14 + L11H5` 构成最小两段式 ingress group；
-- `MLP11` 是 `Instruction Integration` 的出口，同时也是 `Output-Route Decision` 的入口。
-
-当前规范结果包：
-
-- [experiment/results/instruction_integration/20260319-155729-instruction-integration-full](/root/autodl-tmp/project/experiment/results/instruction_integration/20260319-155729-instruction-integration-full)
-
-### 5.2 `Output-Route Decision`
-
-当前最稳的结论是：
-
-- `MLP11 -> MLP16 -> MLP19` 实现逐层重编码的连续 `route score`；
-- 这个模块决定的不是单个 token，而是“工具协议输出 vs 直接回答”的输出路线偏好；
-- `MLP16 -> MLP17` 是 direct-answer / suppressive 一侧的强分叉边；
-- `MLP19` 是 tool-side 的 late fanout hub，而不是单一瓶颈。
-
-当前规范结果包：
-
-- [experiment/results/output_route_decision/20260319-110839-output-route-decision](/root/autodl-tmp/project/experiment/results/output_route_decision/20260319-110839-output-route-decision)
-
-### 5.3 `Tool-Call Construction`
-
-当前最稳的结论是：
-
-- `MLP19` 把 tool-route state 扇出到 construction 区；
-- `L20H5` 是 construction ingress / payload binder；
-- `L21H1` 与 `L21H12` 不是简单冗余，而是两条不同的 late routing；
-- `L24H6` 更像 formatter / protocol commitment；
-- `MLP27` 是主 writer；
-- `MLP19 -> MLP27` 虽强，但当前只能写成 strong parallel receipt，不能强写成独立 bypass 主路。
-
-当前规范结果包：
-
-- [experiment/results/tool_call_construction/20260320-031957-tool-call-construction](/root/autodl-tmp/project/experiment/results/tool_call_construction/20260320-031957-tool-call-construction)
-
-### 5.4 `Tool-Call Suppression`
-
-当前最稳的结论是：
-
-- `MLP16 -> MLP17` 是从 `Output-Route Decision` 进入 suppressive line 的强 fork edge；
-- `L16H4` 是 suppressive reader / ingress；
-- `MLP17` 是主 suppressive writer，既抬高 `no_tool`，也压低 `<tool_call>`；
-- `L23H6` 更像 late suppressive relay，而不是主要 writer。
-
-当前规范结果包：
-
-- [experiment/results/tool_call_suppression/20260320-065246-tool-call-suppression](/root/autodl-tmp/project/experiment/results/tool_call_suppression/20260320-065246-tool-call-suppression)
-
-## 6. 当前项目已经收束成什么样
-
-到目前为止，这个项目已经不再缺“模块实验”，而是开始转向“总图和总叙事”的阶段。
-
-现在最稳的统一主线是：
-
-> 模型先通过 `Instruction Integration` 把开头要求、函数体、文件名和后半句说明整合起来；随后通过 `Output-Route Decision` 把这些信息压成连续的输出路线分数；如果 tool-route 一侧占优，状态就进入 `Tool-Call Construction`，被逐步组织成 `<tool_call>` 的首词偏好；如果 direct-answer 一侧占优，状态就进入 `Tool-Call Suppression`，被写成更强的 `no_tool` / 普通回答状态，同时压住 tool path。
-
-因此，当前最重要的后续工作已经变成：
-
-- 统一 4 个模块之间的边界节点和接口节点；
-- 统一论文主文里的机制叙事；
-- 统一总图、图注和结果段的表达；
-- 在不破坏当前模块结论的前提下，继续清理旧脚本、旧结果和旧命名。
+后续工作应优先围绕论文主文、图表重排和少量边界补强展开，而不是再把结果分散回四个模块仓库。

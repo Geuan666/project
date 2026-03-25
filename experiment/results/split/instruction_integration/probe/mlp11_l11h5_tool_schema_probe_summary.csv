@@ -1,0 +1,5 @@
+condition,accuracy,clean_positive_rate,corrupt_negative_rate,accuracy_drop,clean_positive_rate_drop,corrupt_negative_rate_drop
+train_baseline,1.0,1.0,1.0,,,
+test_baseline,1.0,1.0,1.0,,,
+test_l11h5_tool_schema_masked,1.0,1.0,1.0,,,
+delta_test_baseline_minus_masked,,,,0.0,0.0,0.0
